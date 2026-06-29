@@ -1,4 +1,4 @@
-# Yuem Blind Watermark FastAPI
+# Yueluo Blind Watermark FastAPI
 
 Internal FastAPI wrapper around the latest released [`guofei9987/blind_watermark`](https://github.com/guofei9987/blind_watermark) (`0.4.4`). The Go backend keeps generating and validating the signed `YWM1` / `YPW1` payloads; this service only embeds or extracts opaque payload bytes.
 
