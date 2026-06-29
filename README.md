@@ -1,6 +1,6 @@
-# Yuem
+# Yueluo
 
-Yuem 是一个内容社区项目，包含 Go/Gin 后端、Next.js 前端、隐藏水印辅助服务、Android 包装工程和 OAuth2.1 示例。根目录 README 作为开发与部署入口；各子系统更细的说明保留在对应目录。
+Yueluo 是一个内容社区项目，包含 Go/Gin 后端、Next.js 前端、隐藏水印辅助服务、Android 包装工程。根目录 README 作为开发与部署入口；各子系统更细的说明保留在对应目录。
 
 ## 项目结构
 
@@ -183,7 +183,7 @@ node scripts/check-integration-readiness.mjs
 
 ## 核心能力摘要
 
-- 认证：普通用户登录/注册、OAuth2/OAuth2.1 授权接入、管理员登录、访问/刷新 token。
+- 认证：普通用户登录/注册、管理员登录、访问/刷新 token。
 - 内容：帖子、评论、点赞、收藏、关注、举报、不感兴趣、搜索、分类和推荐。
 - 上传：图片、视频、附件、分片合并、本地存储、图床和 R2/S3 兼容存储。
 - 水印：WebP 转换、图片尺寸限制、隐藏水印、受保护内容下载包动态嵌入追踪 payload。
@@ -205,7 +205,6 @@ node scripts/check-integration-readiness.mjs
 | `BACKEND_ORIGIN` / `NEXT_PUBLIC_BACKEND_ORIGIN` | Next.js 服务端和浏览器侧 API rewrite 的后端 origin。 |
 | `HIDDEN_WATERMARK_SECRET` | 隐藏水印签名密钥；为空时回退到 `FILE_SIGNING_SECRET`。 |
 | `HIDDEN_WATERMARK_ENGINE` | 隐藏水印引擎，支持 `auto`、`local`、`remote`。 |
-| `OAUTH2_REDIRECT_URI` / `OAUTH2_REDIRECT_BASE_URL` | OAuth2 回调配置。 |
 | `ADMIN_ENTRY_PATH` / `BACKEND_API_ENTRY_PATH` | 可选私有后台和 API 文档入口。 |
 
 不要把真实 token、密码、密钥、私有 Release 地址或仍有效的签名 URL 写入仓库。
