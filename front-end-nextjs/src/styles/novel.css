@@ -1,0 +1,198 @@
+.novel-card-link {
+  aspect-ratio: 3 / 5;
+  min-height: 280px;
+}
+
+@media (min-width: 768px) {
+  .novel-card-link {
+    aspect-ratio: 3 / 5;
+    min-height: 360px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .novel-card-link {
+    aspect-ratio: 3 / 5;
+    min-height: 360px;
+  }
+}
+
+.novel-content-scroll {
+  max-height: calc(100% - 64px);
+  overflow: hidden;
+  scrollbar-width: none;
+}
+
+.novel-content-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.novel-content-track {
+  animation: novel-content-drift var(--novel-content-duration, 10s) ease-in-out infinite alternate;
+}
+
+.novel-excerpt-block {
+  max-height: none;
+  overflow: hidden;
+}
+
+.novel-excerpt-block p {
+  margin: 0;
+}
+
+.novel-cover-track {
+  width: calc(var(--novel-cover-count, 1) * 100%);
+}
+
+.novel-cover-slide {
+  width: calc(100% / var(--novel-cover-count, 1));
+}
+
+.novel-cover-track[data-scroll="true"] {
+  animation: novel-cover-auto-scroll var(--novel-cover-duration, 18s) ease-in-out infinite alternate;
+}
+
+.novel-cover-track[data-scroll="false"] .novel-cover-slide img {
+  max-width: none;
+  animation: novel-cover-single-pan 9s ease-in-out infinite alternate;
+  transform-origin: center;
+}
+
+.novel-reading-content.post-markdown-content {
+  color: rgba(255, 255, 255, 0.58);
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.novel-reading-content.post-markdown-content p {
+  margin: 0 0 1.15em;
+  line-height: inherit;
+}
+
+.novel-reading-content.post-markdown-content blockquote {
+  border-left-color: rgba(255, 255, 255, 0.16);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.novel-reading-content.post-markdown-content :is(h1, h2, h3, h4, h5, h6) {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.novel-reader-body {
+  width: 100%;
+  max-width: 100%;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: var(--post-reader-font-size, 1.05rem);
+  line-height: var(--post-reader-line-height, 1.9);
+  overflow-wrap: anywhere;
+}
+
+.novel-reader-body > p {
+  margin: 0 0 1.1em;
+  line-height: inherit;
+}
+
+.novel-reader-body .novel-reading-content.post-markdown-content {
+  color: inherit;
+}
+
+.novel-reader-body .novel-reading-content.post-markdown-content p {
+  margin: 0 0 1.1em;
+}
+
+.novel-reader-body .novel-reading-content.post-markdown-content :is(h1, h2, h3, h4, h5, h6) {
+  scroll-margin-top: 4.5rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.novel-reader-body .novel-reading-content.post-markdown-content :is(pre, table) {
+  max-width: 100%;
+}
+
+.novel-reader-body .novel-reading-content.post-markdown-content img {
+  max-height: min(64dvh, 42rem);
+}
+
+/* Novel section light mode overrides */
+html[data-yuem-theme="light"] .theme-adaptive [class*="bg-[#2b2119]"] {
+  background-color: #faf6f2 !important;
+}
+
+html[data-yuem-theme="light"] .theme-adaptive [class*="bg-[#2b2119]"] [class*="text-[#f2eee8]"],
+html[data-yuem-theme="light"] .theme-adaptive [class*="text-[#f2eee8]"] {
+  color: #3d2e1f !important;
+}
+
+html[data-yuem-theme="light"] .theme-adaptive [class*="bg-[#2b2119]"] .text-white,
+html[data-yuem-theme="light"] .theme-adaptive [class*="bg-[#2b2119]"] [class*="text-white"] {
+  color: #2b1d0e !important;
+}
+
+html[data-yuem-theme="light"] .theme-adaptive [class*="bg-[#2b2119]"] [class*="text-white/"] {
+  color: rgba(43, 29, 14, 0.72) !important;
+}
+
+html[data-yuem-theme="light"] .theme-adaptive [class*="bg-[#2b2119]"] [class*="border-white/"] {
+  border-color: rgba(43, 29, 14, 0.12) !important;
+}
+
+html[data-yuem-theme="light"] .theme-adaptive [class*="bg-[#2b2119]/96"] {
+  background-color: rgba(250, 246, 242, 0.96) !important;
+}
+
+html[data-yuem-theme="light"] .theme-adaptive .novel-reading-content.post-markdown-content {
+  color: rgba(43, 29, 14, 0.72);
+}
+
+html[data-yuem-theme="light"] .theme-adaptive .novel-reading-content.post-markdown-content :is(h1, h2, h3, h4, h5, h6) {
+  color: #2b1d0e;
+}
+
+html[data-yuem-theme="light"] .theme-adaptive .novel-reading-content.post-markdown-content blockquote {
+  border-left-color: rgba(43, 29, 14, 0.16);
+  color: rgba(43, 29, 14, 0.62);
+}
+
+html[data-yuem-theme="light"] .theme-adaptive .novel-reader-body {
+  color: rgba(43, 29, 14, 0.78);
+}
+
+html[data-yuem-theme="light"] .theme-adaptive .novel-reader-body .novel-reading-content.post-markdown-content :is(h1, h2, h3, h4, h5, h6) {
+  color: #2b1d0e;
+}
+
+html[data-yuem-theme="light"] .theme-adaptive [class*="bg-[#2b2119]"] .post-comment-footer {
+  background-color: rgba(250, 246, 242, 0.96) !important;
+  border-color: rgba(43, 29, 14, 0.06) !important;
+}
+
+@keyframes novel-cover-auto-scroll {
+  0%,
+  18% {
+    transform: translate3d(0, 0, 0);
+  }
+  82%,
+  100% {
+    transform: translate3d(var(--novel-cover-travel, 0), 0, 0);
+  }
+}
+
+@keyframes novel-cover-single-pan {
+  from {
+    transform: scale(1.1) translate3d(-4%, -1%, 0);
+  }
+  to {
+    transform: scale(1.16) translate3d(4%, 1%, 0);
+  }
+}
+
+@keyframes novel-content-drift {
+  0%,
+  12% {
+    transform: translate3d(0, 0, 0);
+  }
+  88%,
+  100% {
+    transform: translate3d(0, var(--novel-content-travel, 0), 0);
+  }
+}

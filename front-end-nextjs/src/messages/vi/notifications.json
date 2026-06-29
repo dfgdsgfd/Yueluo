@@ -1,0 +1,43 @@
+{
+  "notification": {
+    "imageProtectionReady": {
+      "title": "Protected image package is ready"
+    },
+    "actions": {
+      "closeOverlay": "Đóng lớp phủ chi tiết thông báo",
+      "closeDetail": "Đóng chi tiết thông báo"
+    },
+    "giftCardRedeemed": {
+      "title": "Đổi thẻ quà tặng thành công: {name}",
+      "fallbackTitle": "Đổi thẻ quà tặng thành công",
+      "sender": "Tin nhắn hệ thống",
+      "action": "Mã thẻ đã được cấp. Nhấn để xem đầy đủ.",
+      "summary": "{name} · {value}",
+      "legacySummary": "Nhấn để xem mã thẻ đã cấp",
+      "description": "{name} bạn đổi đã được cấp.",
+      "product": "Sản phẩm",
+      "faceValue": "Mệnh giá",
+      "pointsSpent": "Điểm đã dùng",
+      "redeemedAt": "Thời gian đổi",
+      "code": "Mã thẻ",
+      "copy": "Sao chép mã thẻ",
+      "copySuccess": "Đã sao chép mã thẻ",
+      "copyFailed": "Sao chép thất bại. Hãy chọn mã thủ công."
+    }
+  },
+  "systemNotificationPopup": {
+    "activityBadge": "Cửa sổ hoạt động",
+    "systemBadge": "Cửa sổ hệ thống",
+    "activityFallbackTitle": "Thông báo hoạt động",
+    "systemFallbackTitle": "Thông báo hệ thống",
+    "activityImageAlt": "Ảnh hoạt động",
+    "systemImageAlt": "Ảnh thông báo",
+    "acknowledge": "Tôi đã biết",
+    "viewActivity": "Xem hoạt động",
+    "viewSystem": "Xem",
+    "activityDismissed": "Đã ẩn hoạt động",
+    "activityConfirmed": "Đã xác nhận hoạt động",
+    "systemConfirmed": "Đã xác nhận thông báo hệ thống",
+    "confirmFailed": "Xác nhận thất bại"
+  }
+}

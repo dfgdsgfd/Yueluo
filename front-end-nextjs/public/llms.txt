@@ -1,0 +1,23 @@
+# Yuem
+
+> Yuem is a public media feed for discovering, reading, and sharing image, video, and article posts.
+
+## Primary Pages
+
+- [Home](https://xse.yuelk.com/): Public feed and main entry point.
+- [Explore](https://xse.yuelk.com/explore): Browse public posts and discovery content.
+- [Download](https://xse.yuelk.com/download): Official app download page.
+
+## Public Content
+
+- [Public post pages](https://xse.yuelk.com/post?id=1885): Public posts use canonical URLs in the form `https://xse.yuelk.com/post?id={post_id}`.
+
+## Machine-Readable Resources
+
+- [Sitemap](https://xse.yuelk.com/sitemap.xml): Index of public pages intended for crawling.
+- [Robots policy](https://xse.yuelk.com/robots.txt): Search crawler access policy.
+
+## Access Notes
+
+- Public feed, explore, download, and public post pages are intended for indexing.
+- Account, wallet, messages, notifications, settings, admin, and publish pages require user context and are not intended for public crawling.

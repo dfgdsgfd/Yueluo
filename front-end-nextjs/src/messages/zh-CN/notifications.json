@@ -1,0 +1,43 @@
+{
+  "notification": {
+    "imageProtectionReady": {
+      "title": "保护图片包已生成"
+    },
+    "actions": {
+      "closeOverlay": "关闭通知详情遮罩",
+      "closeDetail": "关闭通知详情"
+    },
+    "giftCardRedeemed": {
+      "title": "礼品卡兑换成功：{name}",
+      "fallbackTitle": "礼品卡兑换成功",
+      "sender": "系统消息",
+      "action": "卡密已发送，点击查看完整信息",
+      "summary": "{name} · {value}",
+      "legacySummary": "点击查看已发放的卡密",
+      "description": "你兑换的 {name} 已发放。",
+      "product": "商品",
+      "faceValue": "面值",
+      "pointsSpent": "消耗积分",
+      "redeemedAt": "兑换时间",
+      "code": "卡密",
+      "copy": "复制卡密",
+      "copySuccess": "卡密已复制",
+      "copyFailed": "复制失败，请手动选择卡密"
+    }
+  },
+  "systemNotificationPopup": {
+    "activityBadge": "活动弹窗",
+    "systemBadge": "系统弹窗",
+    "activityFallbackTitle": "活动通知",
+    "systemFallbackTitle": "系统通知",
+    "activityImageAlt": "活动图片",
+    "systemImageAlt": "通知图片",
+    "acknowledge": "我知道了",
+    "viewActivity": "查看活动",
+    "viewSystem": "查看",
+    "activityDismissed": "活动已收起",
+    "activityConfirmed": "活动已确认",
+    "systemConfirmed": "系统通知已确认",
+    "confirmFailed": "确认失败"
+  }
+}

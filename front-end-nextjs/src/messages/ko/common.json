@@ -1,0 +1,304 @@
+{
+  "app": {
+    "name": "Yuem",
+    "description": "깔끔한 XHS 스타일의 계획 및 미디어 피드입니다."
+  },
+  "error": {
+    "access_blocked": "현재 접근 정책에 의해 접근이 차단되었습니다.",
+    "api_key_rate_limited": "API 키 인증 실패가 너무 많습니다. 잠시 후 다시 시도해 주세요.",
+    "balance_center_not_configured": "사용자 센터 잔액 API가 설정되지 않았습니다.",
+    "invalid_file_recycle_setting": "파일 휴지통 설정이 올바르지 않습니다.",
+    "invalid_redis_maintenance_config": "Redis 유지 관리 설정이 올바르지 않습니다.",
+    "redis_unavailable": "Redis를 사용할 수 없습니다.",
+    "redis_maintenance_busy": "Redis 유지 관리가 이미 실행 중입니다.",
+    "redis_maintenance_failed": "Redis 유지 관리에 실패했습니다."
+  },
+  "nav": {
+    "home": "홈",
+    "friends": "팔로잉",
+    "works": "작품",
+    "create": "만들기",
+    "messages": "메시지",
+    "profile": "프로필",
+    "assistant": "노트 AI",
+    "red": "RED",
+    "live": "라이브",
+    "publish": "게시",
+    "more": "더보기",
+    "logout": "로그아웃",
+    "loggingOut": "로그아웃 중...",
+    "logoutSuccess": "로그아웃되었습니다.",
+    "about": "소개",
+    "watermarkInspector": "숨김 워터마크 검사"
+  },
+  "settingsPage": {
+    "title": "시스템 설정",
+    "back": "뒤로",
+    "language": {
+      "title": "언어",
+      "description": "인터페이스 표시 언어를 변경합니다."
+    },
+    "account": {
+      "title": "계정 기능",
+      "description": "인증 프로필 및 계정 신원 도구입니다.",
+      "verificationTitle": "인증 신청",
+      "verificationDescription": "개인 또는 공식 인증 정보 제출",
+      "networkDiagnosticsTitle": "네트워크 진단",
+      "networkDiagnosticsDescription": "현재 IP, Geo, CDN 및 개인정보 위험 확인"
+    },
+    "privacy": {
+      "title": "개인정보 설정",
+      "description": "생일, 나이, 별자리 및 MBTI 공개 범위를 관리합니다.",
+      "summary": "프로필 항목 {visible}/{total}개 공개",
+      "items": {
+        "birthday": {
+          "title": "생일",
+          "description": "다른 사용자가 생일을 볼 수 있는지 설정합니다."
+        },
+        "age": {
+          "title": "나이",
+          "description": "생일로 계산한 나이를 프로필에 표시할지 설정합니다."
+        },
+        "zodiac": {
+          "title": "별자리",
+          "description": "다른 사용자가 별자리를 볼 수 있는지 설정합니다."
+        },
+        "mbti": {
+          "title": "MBTI",
+          "description": "다른 사용자가 MBTI를 볼 수 있는지 설정합니다."
+        }
+      }
+    },
+    "checkingAuth": "로그인 상태 확인 중",
+    "loading": "설정 불러오는 중",
+    "save": "시스템 설정 저장",
+    "saved": "시스템 설정을 저장했습니다",
+    "loginRequired": {
+      "title": "로그인 후 설정 업데이트",
+      "description": "로그인하면 시스템 설정을 읽고 저장할 수 있습니다.",
+      "login": "로그인"
+    },
+    "errors": {
+      "load": "시스템 설정을 불러오지 못했습니다",
+      "save": "시스템 설정을 저장하지 못했습니다"
+    },
+    "aiAutoComment": {
+      "title": "AI 자동 댓글",
+      "description": "끄면 AI가 내 콘텐츠에 자동으로 댓글을 달지 않습니다. 다른 사용자가 @yueai로 호출한 답글은 계속 작동합니다."
+    }
+  },
+  "moreMenu": {
+    "wallet": {
+      "title": "Moon Coin 잔액",
+      "loading": "불러오는 중...",
+      "error": "잔액을 불러오지 못했습니다",
+      "amount": "{amount} Moon Coin",
+      "login": "로그인 후 보기",
+      "account": "계정 {username}",
+      "detail": "지갑에서 상세 보기"
+    },
+    "invite": "가입 초대",
+    "verification": "인증 신청",
+    "theme": {
+      "title": "테마 설정",
+      "options": {
+        "system": "시스템 설정",
+        "light": "라이트",
+        "dark": "다크"
+      }
+    },
+    "systemSettings": "시스템 설정",
+    "appDownload": "앱 다운로드"
+  },
+  "tabs": {
+    "recommended": "추천",
+    "latest": "최신",
+    "hot": "인기",
+    "following": "팔로잉",
+    "videoCenter": "비디오 센터"
+  },
+  "search": {
+    "placeholder": "게시물, 작성자 또는 태그 검색",
+    "compose": "만들기",
+    "idea": "아이디어 묻기",
+    "aiBadge": "AI",
+    "submit": "검색",
+    "clear": "지우기",
+    "resultFor": "{keyword} 검색 결과"
+  },
+  "category": {
+    "all": "전체",
+    "names": {
+      "beauty": "뷰티",
+      "fashion": "패션",
+      "food": "맛집",
+      "gaming": "게임",
+      "interest": "관심사",
+      "knowledge": "지식",
+      "lifestyle": "라이프스타일",
+      "music": "음악",
+      "novel": "소설",
+      "photography": "사진",
+      "pictureSet": "이미지 모음",
+      "ropeBondage": "로프 본디지",
+      "shackles": "족쇄",
+      "sports": "스포츠",
+      "technology": "기술",
+      "travel": "여행",
+      "video": "동영상"
+    }
+  },
+  "video": {
+    "error": "비디오 재생에 실패했습니다.",
+    "loading": "비디오 불러오는 중",
+    "unavailable": "재생 가능한 비디오 URL이 없습니다."
+  },
+  "login": {
+    "title": "로그인하고 더 많은 콘텐츠 보기",
+    "description": "로그인하면 계속 둘러보고 좋아요, 저장, 댓글을 이용할 수 있습니다.",
+    "home": "피드로 돌아가기",
+    "modes": {
+      "login": "로그인",
+      "register": "가입"
+    },
+    "fields": {
+      "identifier": "이메일 또는 계정",
+      "password": "비밀번호",
+      "userID": "계정",
+      "nickname": "닉네임",
+      "email": "이메일",
+      "emailCode": "이메일 코드",
+      "captcha": "인증 코드"
+    },
+    "placeholders": {
+      "identifier": "이메일 또는 계정 입력",
+      "password": "비밀번호 입력",
+      "userID": "영문, 숫자, 밑줄 3-15자",
+      "nickname": "닉네임 입력",
+      "email": "이메일 입력",
+      "emailCode": "코드 입력",
+      "newPassword": "비밀번호 설정",
+      "captcha": "이미지 인증 코드 입력"
+    },
+    "actions": {
+      "login": "로그인",
+      "loggingIn": "로그인 중...",
+      "register": "계정 만들기",
+      "registering": "가입 중...",
+      "sendEmailCode": "코드 보내기",
+      "resendEmailCode": "다시 보내기",
+      "refreshCaptcha": "인증 코드 새로고침"
+    },
+    "success": {
+      "login": "로그인되었습니다.",
+      "register": "계정이 생성되었습니다."
+    },
+    "emailCodeSent": "이메일 코드가 전송되었습니다.",
+    "captchaAlt": "이미지 인증 코드",
+    "errors": {
+      "missingLogin": "이메일 또는 계정과 비밀번호를 입력하세요.",
+      "missingRegister": "계정, 닉네임, 이메일, 비밀번호를 입력하세요.",
+      "passwordLength": "비밀번호는 6-20자여야 합니다.",
+      "emailInvalid": "올바른 이메일 주소를 입력하세요.",
+      "emailCodeRequired": "이메일 인증 코드를 입력하세요.",
+      "captchaRequired": "이미지 인증 코드를 입력하세요.",
+      "loginFailed": "이메일/계정 또는 비밀번호가 올바르지 않습니다.",
+      "registerFailed": "가입에 실패했습니다. 입력 정보를 확인하고 다시 시도하세요.",
+      "emailCodeFailed": "이메일 코드를 보낼 수 없습니다.",
+      "captchaLoadFailed": "이미지 인증 코드를 불러올 수 없습니다.",
+      "geetestUnavailable": "GeeTest 인증이 켜져 있는 동안에는 비밀번호 가입을 사용할 수 없습니다."
+    },
+    "userCenterLogin": "로그인",
+    "redirecting": "사용자 센터를 여는 중...",
+    "loadingConfig": "인증 설정을 불러오는 중...",
+    "configLoadFailed": "인증 설정을 불러오지 못했습니다. 기본 인증 경로를 사용합니다.",
+    "oauthOnly": "로그인하면 더 많은 콘텐츠를 볼 수 있습니다.",
+    "oauthPrompt": "로그인하고 전체 기능을 계속 이용하세요.",
+    "oauthSuccess": "OAuth2 로그인 성공",
+    "oauthStatusFailed": "OAuth2 로그인 상태를 확인하지 못했습니다. 다시 시도해 주세요.",
+    "nativeStateFailed": "앱 로그인 요청이 만료되었거나 일치하지 않습니다. 다시 시도해 주세요.",
+    "nativeCancelled": "로그인이 취소되었습니다.",
+    "nativeCancelledWithDetail": "로그인이 취소되었습니다: {detail}",
+    "nativeExchangeFailed": "앱에서 로그인을 완료하지 못했습니다. 다시 시도해 주세요.",
+    "nativeExchangeFailedWithDetail": "앱에서 로그인을 완료하지 못했습니다: {detail}",
+    "nativeBackAgain": "뒤로 버튼을 한 번 더 누르면 종료됩니다",
+    "nativeOffline": "오프라인 상태입니다. Yuem이 자동으로 다시 연결합니다.",
+    "nativeCallbackTitle": "Yuem으로 돌아가기",
+    "nativeCallbackDescription": "인증이 완료되었습니다. Yuem 앱을 열어 계속하세요.",
+    "nativeCallbackOpen": "Yuem 열기",
+    "nativeCallbackInvalid": "인증 링크가 잘못되었거나 만료되었습니다.",
+    "nativeStatus": {
+      "title": "앱 로그인이 완료되지 않았습니다",
+      "callbackReceived": "브라우저 콜백이 앱에 도착했으며 로그인 상태를 처리 중입니다.",
+      "stateFailed": "로그인 요청이 만료되었거나 현재 앱 세션과 일치하지 않습니다. 다시 로그인해 주세요.",
+      "oauthError": "사용자 센터에서 인증 실패를 반환했습니다.",
+      "missingCode": "브라우저 콜백에 로그인 티켓이 없습니다.",
+      "tokenExchangeFailed": "앱이 로그인 토큰 교환에 실패했습니다.",
+      "tokenStorageFailed": "앱이 토큰을 받았지만 로컬 로그인 상태 저장에 실패했습니다.",
+      "profileFailed": "앱이 토큰을 저장했지만 현재 사용자를 확인하지 못했습니다.",
+      "signedIn": "앱 로그인 상태가 저장되었습니다.",
+      "unknown": "알 수 없는 이유로 앱 로그인이 실패했습니다.",
+      "detail": "상세: {detail}"
+    }
+  },
+  "loginUnlock": {
+    "title": "로그인하고 더 많은 콘텐츠 보기",
+    "description": "로그인하면 계속 둘러보고, 좋아요와 저장, 댓글 참여를 할 수 있습니다.",
+    "login": "로그인",
+    "later": "나중에"
+  },
+  "status": {
+    "refresh": "새로고침",
+    "refreshed": "피드가 새로고침되었습니다",
+    "liked": "좋아요 표시됨",
+    "unliked": "좋아요가 취소되었습니다"
+  },
+  "locale": {
+    "trigger": "언어 변경",
+    "label": "언어",
+    "options": {
+      "en": "English",
+      "zh-CN": "简体中文",
+      "zh-TW": "繁體中文",
+      "vi": "Tiếng Việt",
+      "ja": "日本語",
+      "ko": "한국어"
+    }
+  },
+  "maintenance": {
+    "serviceMode": "Service Mode / 유지보수 모드",
+    "title": "시스템 유지보수 중",
+    "defaultMessage": "서비스가 유지보수 중입니다. 잠시 후 다시 방문해 주세요.",
+    "estimatedRemaining": "예상 남은 시간",
+    "unknownTime": "확인 중",
+    "entryHint": "진입하려면 관리자가 제공한 전용 링크를 사용하세요.",
+    "edgeLabel": "Service Mode / 유지보수 모드",
+    "entry": {
+      "eyebrow": "SERVICE ENTRY",
+      "title": "서비스 모드로 진입 중",
+      "checking": "진입 코드를 확인하고 세션을 준비하는 중...",
+      "success": "진입이 확인되었습니다. 사이트로 이동합니다.",
+      "error": "진입 링크가 유효하지 않거나 만료되었습니다. 관리자에게 문의하세요."
+    },
+    "closeEdge": "유지보수 테두리 닫기"
+  },
+  "appDownload": {
+    "metadataTitle": "App 다운로드",
+    "backHome": "홈으로 돌아가기",
+    "badge": "App 다운로드",
+    "official": "공식 다운로드",
+    "title": "Yuem App",
+    "description": "기기에 맞는 설치 패키지를 선택하세요. 다운로드 링크, 버전, 앱 이름은 관리자 시스템 설정에서 관리됩니다.",
+    "version": "버전 {version}",
+    "build": "빌드 {build}",
+    "size": "크기 {size}",
+    "androidFastLabel": "Android 초경량판",
+    "featuresTitle": "초경량판 특징",
+    "featureTinySize": "매우 작은 용량 ≤ 1 MB",
+    "featureSameWebStyle": "웹과 완전히 동일한 스타일",
+    "featureThirdPartyLogin": "Google, Discord, Steam 등 서드파티 로그인 지원",
+    "featureNativeBridge": "브라우저 로그인 후 App으로 자동 복귀",
+    "download": "다운로드",
+    "unavailable": "아직 다운로드할 수 없습니다"
+  }
+}

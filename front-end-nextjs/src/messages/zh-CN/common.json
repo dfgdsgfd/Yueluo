@@ -1,0 +1,304 @@
+{
+  "app": {
+    "name": "Yuem",
+    "description": "简洁的小红书风格规划与媒体信息流。"
+  },
+  "error": {
+    "access_blocked": "当前访问已被访问策略阻断。",
+    "api_key_rate_limited": "API 密钥验证失败次数过多，请稍后重试。",
+    "balance_center_not_configured": "用户中心月币接口尚未配置。",
+    "invalid_file_recycle_setting": "文件回收站设置无效。",
+    "invalid_redis_maintenance_config": "Redis 自动清理配置无效。",
+    "redis_unavailable": "Redis 当前不可用。",
+    "redis_maintenance_busy": "Redis 清理任务正在执行。",
+    "redis_maintenance_failed": "Redis 清理执行失败。"
+  },
+  "nav": {
+    "home": "首页",
+    "friends": "关注",
+    "works": "作品",
+    "create": "发布",
+    "messages": "消息",
+    "profile": "我的",
+    "assistant": "笔记 AI",
+    "red": "RED",
+    "live": "直播",
+    "publish": "发布",
+    "more": "更多",
+    "logout": "退出登录",
+    "loggingOut": "正在退出...",
+    "logoutSuccess": "已退出登录。",
+    "about": "关于",
+    "watermarkInspector": "隐藏水印检验"
+  },
+  "settingsPage": {
+    "title": "系统设置",
+    "back": "返回",
+    "language": {
+      "title": "语言",
+      "description": "切换界面显示语言。"
+    },
+    "account": {
+      "title": "账号能力",
+      "description": "认证资料和账号身份入口。",
+      "verificationTitle": "申请认证",
+      "verificationDescription": "提交个人或官方认证资料",
+      "networkDiagnosticsTitle": "网络诊断",
+      "networkDiagnosticsDescription": "查看当前 IP、Geo、CDN 和隐私风险"
+    },
+    "privacy": {
+      "title": "隐私设置",
+      "description": "管理个人资料中生日、年龄、星座和 MBTI 的公开范围。",
+      "summary": "已公开 {visible}/{total} 项基础资料",
+      "items": {
+        "birthday": {
+          "title": "生日",
+          "description": "控制他人是否可以看到你的生日。"
+        },
+        "age": {
+          "title": "年龄",
+          "description": "控制个人主页是否展示根据生日计算的年龄。"
+        },
+        "zodiac": {
+          "title": "星座",
+          "description": "控制他人是否可以看到你的星座。"
+        },
+        "mbti": {
+          "title": "MBTI",
+          "description": "控制他人是否可以看到你的 MBTI。"
+        }
+      }
+    },
+    "checkingAuth": "正在检查登录状态",
+    "loading": "正在加载设置",
+    "save": "保存系统设置",
+    "saved": "系统设置已保存",
+    "loginRequired": {
+      "title": "需要登录后设置系统偏好",
+      "description": "登录后可以读取并保存你的系统设置。",
+      "login": "去登录"
+    },
+    "errors": {
+      "load": "系统设置加载失败",
+      "save": "系统设置保存失败"
+    },
+    "aiAutoComment": {
+      "title": "AI 自动评论",
+      "description": "关闭后，AI 将不会自动评论您的内容；但其他用户 @yueai 进行召唤时仍然会回复。"
+    }
+  },
+  "moreMenu": {
+    "wallet": {
+      "title": "月币余额",
+      "loading": "读取中...",
+      "error": "余额读取失败",
+      "amount": "{amount} 月币",
+      "login": "登录后查看",
+      "account": "账号 {username}",
+      "detail": "进入钱包查看明细"
+    },
+    "invite": "邀请注册",
+    "verification": "申请认证",
+    "theme": {
+      "title": "主题设置",
+      "options": {
+        "system": "跟随系统",
+        "light": "浅色",
+        "dark": "深色"
+      }
+    },
+    "systemSettings": "系统设置",
+    "appDownload": "App下载"
+  },
+  "tabs": {
+    "recommended": "推荐",
+    "latest": "最新",
+    "hot": "热门",
+    "following": "关注",
+    "videoCenter": "视频中心"
+  },
+  "search": {
+    "placeholder": "搜索笔记、作者或标签",
+    "compose": "创作",
+    "idea": "问问灵感",
+    "aiBadge": "AI",
+    "submit": "搜索",
+    "clear": "清除",
+    "resultFor": "搜索：{keyword}"
+  },
+  "category": {
+    "all": "全部",
+    "names": {
+      "beauty": "美妆",
+      "fashion": "穿搭",
+      "food": "美食",
+      "gaming": "游戏",
+      "interest": "兴趣",
+      "knowledge": "知识",
+      "lifestyle": "生活",
+      "music": "音乐",
+      "novel": "小说",
+      "photography": "摄影",
+      "pictureSet": "图集",
+      "ropeBondage": "绳缚",
+      "shackles": "镣铐",
+      "sports": "运动",
+      "technology": "科技",
+      "travel": "旅行",
+      "video": "视频"
+    }
+  },
+  "video": {
+    "error": "视频播放失败。",
+    "loading": "正在加载视频",
+    "unavailable": "暂无可播放的视频 URL。"
+  },
+  "login": {
+    "title": "登录解锁更多精彩内容",
+    "description": "登录后即可继续浏览、点赞、收藏和参与评论。",
+    "home": "返回信息流",
+    "modes": {
+      "login": "登录",
+      "register": "注册"
+    },
+    "fields": {
+      "identifier": "邮箱或账号",
+      "password": "密码",
+      "userID": "账号",
+      "nickname": "昵称",
+      "email": "邮箱",
+      "emailCode": "邮箱验证码",
+      "captcha": "验证码"
+    },
+    "placeholders": {
+      "identifier": "输入邮箱或账号",
+      "password": "输入密码",
+      "userID": "3-15 位字母、数字或下划线",
+      "nickname": "输入昵称",
+      "email": "输入邮箱",
+      "emailCode": "输入验证码",
+      "newPassword": "设置密码",
+      "captcha": "输入图形验证码"
+    },
+    "actions": {
+      "login": "登录",
+      "loggingIn": "正在登录...",
+      "register": "创建账号",
+      "registering": "正在注册...",
+      "sendEmailCode": "发送验证码",
+      "resendEmailCode": "重新发送",
+      "refreshCaptcha": "刷新验证码"
+    },
+    "success": {
+      "login": "登录成功。",
+      "register": "注册成功。"
+    },
+    "emailCodeSent": "邮箱验证码已发送。",
+    "captchaAlt": "图形验证码",
+    "errors": {
+      "missingLogin": "请输入邮箱或账号和密码。",
+      "missingRegister": "请输入账号、昵称、邮箱和密码。",
+      "passwordLength": "密码长度必须为 6-20 位。",
+      "emailInvalid": "请输入有效邮箱。",
+      "emailCodeRequired": "请输入邮箱验证码。",
+      "captchaRequired": "请输入图形验证码。",
+      "loginFailed": "邮箱/账号或密码不正确。",
+      "registerFailed": "注册失败，请检查信息后重试。",
+      "emailCodeFailed": "邮箱验证码发送失败。",
+      "captchaLoadFailed": "图形验证码加载失败。",
+      "geetestUnavailable": "当前启用 GeeTest 校验，暂不支持密码注册。"
+    },
+    "userCenterLogin": "去登录",
+    "redirecting": "正在前往用户中心...",
+    "loadingConfig": "正在读取授权配置...",
+    "configLoadFailed": "授权配置读取失败，将使用默认授权入口。",
+    "oauthOnly": "登录后即可解锁更多精彩内容。",
+    "oauthPrompt": "登录后即可继续体验完整功能。",
+    "oauthSuccess": "OAuth2 登录成功",
+    "oauthStatusFailed": "OAuth2 登录状态确认失败，请重试",
+    "nativeStateFailed": "App 登录请求已过期或不匹配，请重新登录。",
+    "nativeCancelled": "登录已取消。",
+    "nativeCancelledWithDetail": "登录已取消：{detail}",
+    "nativeExchangeFailed": "App 无法完成登录，请重试。",
+    "nativeExchangeFailedWithDetail": "App 无法完成登录：{detail}",
+    "nativeBackAgain": "再次返回即可退出",
+    "nativeOffline": "当前网络不可用，Yuem 将自动重连。",
+    "nativeCallbackTitle": "返回 Yuem",
+    "nativeCallbackDescription": "授权已经完成，请打开 Yuem App 继续。",
+    "nativeCallbackOpen": "打开 Yuem",
+    "nativeCallbackInvalid": "授权链接无效或已经过期。",
+    "nativeStatus": {
+      "title": "App 登录未完成",
+      "callbackReceived": "已收到浏览器回调，正在处理登录状态。",
+      "stateFailed": "登录请求已过期或与当前 App 不匹配，请重新发起登录。",
+      "oauthError": "用户中心返回了授权失败。",
+      "missingCode": "浏览器回调缺少一次性登录 ticket。",
+      "tokenExchangeFailed": "App 换取登录令牌失败。",
+      "tokenStorageFailed": "App 已拿到令牌，但本地登录状态写入失败。",
+      "profileFailed": "App 已写入令牌，但校验当前用户失败。",
+      "signedIn": "App 登录状态已写入。",
+      "unknown": "App 登录失败，原因未知。",
+      "detail": "详情：{detail}"
+    }
+  },
+  "loginUnlock": {
+    "title": "登录解锁更多精彩内容",
+    "description": "登录后即可继续浏览、点赞、收藏和参与评论。",
+    "login": "去登录",
+    "later": "稍后再说"
+  },
+  "status": {
+    "refresh": "刷新",
+    "refreshed": "信息流已刷新",
+    "liked": "已点赞",
+    "unliked": "已取消点赞"
+  },
+  "locale": {
+    "trigger": "切换语言",
+    "label": "语言",
+    "options": {
+      "en": "English",
+      "zh-CN": "简体中文",
+      "zh-TW": "繁體中文",
+      "vi": "Tiếng Việt",
+      "ja": "日本語",
+      "ko": "한국어"
+    }
+  },
+  "maintenance": {
+    "serviceMode": "Service Mode / 维护模式",
+    "title": "系统维护中",
+    "defaultMessage": "服务正在维护，请稍后再回来。",
+    "estimatedRemaining": "预计剩余时间",
+    "unknownTime": "待确认",
+    "entryHint": "如需进入维护入口，请使用管理员提供的专属链接。",
+    "edgeLabel": "Service Mode / 维护模式",
+    "entry": {
+      "eyebrow": "SERVICE ENTRY",
+      "title": "正在进入维护模式",
+      "checking": "正在校验入口并准备会话...",
+      "success": "入口校验成功，正在进入站点。",
+      "error": "入口无效或已过期，请联系管理员。"
+    },
+    "closeEdge": "关闭维护边框"
+  },
+  "appDownload": {
+    "metadataTitle": "App 下载",
+    "backHome": "返回首页",
+    "badge": "App 下载",
+    "official": "官方下载",
+    "title": "Yuem App",
+    "description": "选择适合你设备的安装包。下载链接、版本号和应用名称由后台系统设置统一维护。",
+    "version": "版本 {version}",
+    "build": "构建号 {build}",
+    "size": "大小 {size}",
+    "androidFastLabel": "Android 极速版",
+    "featuresTitle": "极速版特性",
+    "featureTinySize": "极小的体积 ≤ 1 MB",
+    "featureSameWebStyle": "网页样式完全相同",
+    "featureThirdPartyLogin": "支持 Google、Discord、Steam 等第三方登录",
+    "featureNativeBridge": "浏览器登录成功后自动回到 App",
+    "download": "下载",
+    "unavailable": "暂未开放下载"
+  }
+}

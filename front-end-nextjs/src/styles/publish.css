@@ -1,0 +1,352 @@
+.mobile-publish-page {
+  --mobile-publish-bg: #16161c;
+  --mobile-publish-surface: #16161c;
+  --mobile-publish-card: #1d1b24;
+  --mobile-publish-card-strong: #24212d;
+  --mobile-publish-card-muted: #211f29;
+  --mobile-publish-text: #f0edf8;
+  --mobile-publish-heading: #fbf9ff;
+  --mobile-publish-input: #f6f2ff;
+  --mobile-publish-muted: #b7b0c5;
+  --mobile-publish-subtle: #777181;
+  --mobile-publish-counter: #9c95aa;
+  --mobile-publish-accent: #b8a8ec;
+  --mobile-publish-accent-strong: #d8cffb;
+  --mobile-publish-accent-soft: rgba(184, 168, 236, 0.14);
+  --mobile-publish-border: rgba(255, 255, 255, 0.14);
+  --mobile-publish-border-soft: rgba(255, 255, 255, 0.1);
+  --mobile-publish-shadow: 0 10px 30px rgba(0, 0, 0, 0.26);
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: light) {
+  html:not([data-yuem-theme]) .mobile-publish-page {
+    --mobile-publish-bg: #ffffff;
+    --mobile-publish-surface: #ffffff;
+    --mobile-publish-card: #fdfaff;
+    --mobile-publish-card-strong: #f6f2fb;
+    --mobile-publish-card-muted: #f5f1fb;
+    --mobile-publish-text: #25252b;
+    --mobile-publish-heading: #27272d;
+    --mobile-publish-input: #303036;
+    --mobile-publish-muted: #8e8e96;
+    --mobile-publish-subtle: #b7b4bd;
+    --mobile-publish-counter: #b6b3bb;
+    --mobile-publish-accent: #8c7cc8;
+    --mobile-publish-accent-strong: #8679b6;
+    --mobile-publish-accent-soft: #f4f0fb;
+    --mobile-publish-border: #cfcbd8;
+    --mobile-publish-border-soft: #ebe7f3;
+    --mobile-publish-shadow: 0 8px 24px rgba(141, 113, 179, 0.08);
+    color-scheme: light;
+  }
+}
+
+html[data-yuem-theme="light"] .mobile-publish-page {
+  --mobile-publish-bg: #ffffff;
+  --mobile-publish-surface: #ffffff;
+  --mobile-publish-card: #fdfaff;
+  --mobile-publish-card-strong: #f6f2fb;
+  --mobile-publish-card-muted: #f5f1fb;
+  --mobile-publish-text: #25252b;
+  --mobile-publish-heading: #27272d;
+  --mobile-publish-input: #303036;
+  --mobile-publish-muted: #8e8e96;
+  --mobile-publish-subtle: #b7b4bd;
+  --mobile-publish-counter: #b6b3bb;
+  --mobile-publish-accent: #8c7cc8;
+  --mobile-publish-accent-strong: #8679b6;
+  --mobile-publish-accent-soft: #f4f0fb;
+  --mobile-publish-border: #cfcbd8;
+  --mobile-publish-border-soft: #ebe7f3;
+  --mobile-publish-shadow: 0 8px 24px rgba(141, 113, 179, 0.08);
+  color-scheme: light;
+}
+
+.mobile-markdown-editor textarea,
+.mobile-markdown-editor .ProseMirror {
+  caret-color: var(--mobile-publish-accent-strong);
+}
+
+.mobile-markdown-toolbar {
+  scrollbar-width: none;
+}
+
+.mobile-markdown-toolbar::-webkit-scrollbar {
+  display: none;
+}
+
+.mobile-markdown-live-input .ProseMirror,
+.mobile-markdown-rendered {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  color: var(--mobile-publish-input);
+  overflow-wrap: anywhere;
+}
+
+.mobile-markdown-live-input .ProseMirror {
+  min-height: 222px;
+  outline: none;
+}
+
+.mobile-markdown-live-input .ProseMirror p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  color: var(--mobile-publish-subtle);
+  pointer-events: none;
+}
+
+.mobile-markdown-live-input .ProseMirror :first-child {
+  margin-top: 0;
+}
+
+.mobile-markdown-live-input .ProseMirror :last-child {
+  margin-bottom: 0;
+}
+
+.mobile-markdown-live-input .ProseMirror-selectednode {
+  outline: 2px solid var(--mobile-publish-accent);
+  outline-offset: 2px;
+}
+
+.mobile-markdown-live-input .ProseMirror-focused {
+  touch-action: manipulation;
+}
+
+.mobile-markdown-live-input .ProseMirror p,
+.mobile-markdown-rendered p {
+  margin: 0.55em 0;
+}
+
+.mobile-markdown-live-input .ProseMirror :is(h1, h2, h3, h4, h5, h6),
+.mobile-markdown-rendered :is(h1, h2, h3, h4, h5, h6) {
+  margin: 0.8em 0 0.42em;
+  color: var(--mobile-publish-heading);
+  font-weight: 800;
+  line-height: 1.25;
+  text-wrap: balance;
+}
+
+.mobile-markdown-live-input .ProseMirror h1,
+.mobile-markdown-rendered h1 {
+  font-size: clamp(1.35rem, 1.12rem + 1vw, 1.65rem);
+}
+
+.mobile-markdown-live-input .ProseMirror h2,
+.mobile-markdown-rendered h2 {
+  font-size: clamp(1.18rem, 1.02rem + 0.72vw, 1.42rem);
+}
+
+.mobile-markdown-live-input .ProseMirror h3,
+.mobile-markdown-rendered h3 {
+  font-size: clamp(1.05rem, 0.98rem + 0.35vw, 1.2rem);
+}
+
+.mobile-markdown-live-input .ProseMirror :is(ul, ol),
+.mobile-markdown-rendered :is(ul, ol) {
+  margin: 0.55em 0;
+  padding-left: clamp(1.15rem, 5vw, 1.65rem);
+}
+
+.mobile-markdown-live-input .ProseMirror ul,
+.mobile-markdown-rendered ul {
+  list-style: disc;
+}
+
+.mobile-markdown-live-input .ProseMirror ol,
+.mobile-markdown-rendered ol {
+  list-style: decimal;
+}
+
+.mobile-markdown-live-input .ProseMirror blockquote,
+.mobile-markdown-rendered blockquote {
+  margin: 0.75em 0;
+  border-left: 3px solid var(--mobile-publish-accent);
+  padding: 0.1em 0 0.1em clamp(0.65rem, 3vw, 0.95rem);
+  color: var(--mobile-publish-muted);
+}
+
+.mobile-markdown-live-input .ProseMirror code,
+.mobile-markdown-rendered code {
+  border-radius: 0.4rem;
+  background: var(--mobile-publish-accent-soft);
+  padding: 0.08rem 0.3rem;
+  color: var(--mobile-publish-input);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.9em;
+}
+
+.mobile-markdown-live-input .ProseMirror pre,
+.mobile-markdown-rendered pre {
+  margin: 0.75em 0;
+  max-width: 100%;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  border-radius: 0.75rem;
+  background: rgba(0, 0, 0, 0.28);
+  padding: clamp(0.7rem, 3vw, 0.95rem);
+  color: #f8f8fa;
+  scrollbar-width: thin;
+}
+
+.mobile-markdown-live-input .ProseMirror pre code,
+.mobile-markdown-rendered pre code {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+  white-space: pre;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.mobile-markdown-live-input .ProseMirror a,
+.mobile-markdown-rendered a {
+  color: var(--mobile-publish-accent-strong);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.mobile-markdown-live-input .ProseMirror img,
+.mobile-markdown-rendered img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: min(48dvh, 28rem);
+  margin: 0.85em auto;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+.mobile-markdown-live-input .ProseMirror table,
+.mobile-markdown-rendered table {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+  overscroll-behavior-inline: contain;
+  scrollbar-width: thin;
+}
+
+.mobile-markdown-live-input .ProseMirror :is(th, td),
+.mobile-markdown-rendered :is(th, td) {
+  border: 1px solid var(--mobile-publish-border-soft);
+  padding: 0.45rem 0.55rem;
+  white-space: nowrap;
+}
+
+.mobile-markdown-live-input .ProseMirror .task-list-item,
+.mobile-markdown-rendered .task-list-item {
+  list-style: none;
+}
+
+.publish-rich-text-content .ProseMirror {
+  min-height: 178px;
+  color: #25252b;
+  outline: none;
+}
+
+@keyframes yuem-thinking-ticker {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.yuem-thinking-ticker-mask {
+  mask-image: linear-gradient(to right, transparent, black 18px, black calc(100% - 18px), transparent);
+}
+
+.publish-rich-text-content .ProseMirror p {
+  margin: 0.45rem 0;
+}
+
+.publish-rich-text-content .ProseMirror h1,
+.publish-rich-text-content .ProseMirror h2,
+.publish-rich-text-content .ProseMirror h3 {
+  margin: 0.85rem 0 0.45rem;
+  color: #25252b;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.publish-rich-text-content .ProseMirror h1 {
+  font-size: 1.45rem;
+}
+
+.publish-rich-text-content .ProseMirror h2 {
+  font-size: 1.2rem;
+}
+
+.publish-rich-text-content .ProseMirror ul,
+.publish-rich-text-content .ProseMirror ol {
+  margin: 0.5rem 0;
+  padding-left: 1.35rem;
+}
+
+.publish-rich-text-content .ProseMirror ul {
+  list-style: disc;
+}
+
+.publish-rich-text-content .ProseMirror ol {
+  list-style: decimal;
+}
+
+.publish-rich-text-content .ProseMirror blockquote {
+  margin: 0.75rem 0;
+  border-left: 3px solid #ff2442;
+  padding-left: 0.85rem;
+  color: #55555d;
+}
+
+.publish-rich-text-content .ProseMirror code {
+  border-radius: 0.4rem;
+  background: #f4f4f5;
+  padding: 0.08rem 0.32rem;
+  color: #25252b;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.92em;
+}
+
+.publish-rich-text-content .ProseMirror pre {
+  margin: 0.75rem 0;
+  overflow-x: auto;
+  border-radius: 0.75rem;
+  background: #25252b;
+  padding: 0.85rem;
+  color: #f8f8fa;
+}
+
+.publish-rich-text-content .ProseMirror pre code {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+}
+
+.publish-rich-text-content .ProseMirror a {
+  color: #ff2442;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.publish-rich-text-content .ProseMirror hr {
+  margin: 0.9rem 0;
+  border: 0;
+  border-top: 1px solid #e8e8eb;
+}
+
+.publish-rich-text-content .ProseMirror p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  color: #a5a5ab;
+  pointer-events: none;
+}
+
+.post-rich-text-content,

@@ -1,0 +1,87 @@
+{
+  "watermarkInspector": {
+    "title": "Hidden Watermark Inspector",
+    "back": "Back",
+    "checkingAuth": "Checking sign-in status",
+    "completed": "Inspection completed",
+    "inspecting": "Inspecting",
+    "inspect": "Start inspection",
+    "yes": "Yes",
+    "no": "No",
+    "progress": {
+      "uploading": "Uploading image",
+      "queued": "Received by server and waiting for processing",
+      "decoding": "Decoding and validating image",
+      "recovering": "Recovering screenshot crop and scale",
+      "waiting": "Waiting for the remote engine",
+      "aligning": "Aligning screenshot and reference",
+      "extracting": "Extracting hidden token",
+      "verifying": "Verifying the trace database",
+      "complete": "Processing complete",
+      "elapsed": "{seconds}s elapsed",
+      "estimated": "This is an estimated live stage. The request is still running; do not submit it again.",
+      "live": "Progress is reported by the server's actual processing stage.",
+      "heartbeat": "Server heartbeat is healthy; the task is still running.",
+      "heartbeatEngine": "The FastAPI engine heartbeat is healthy and the algorithm is still running.",
+      "heartbeatGateway": "The Go gateway is connected and waiting for the FastAPI engine.",
+      "units": "Processed {completed}/{total} candidates"
+    },
+    "loginRequired": {
+      "title": "Sign-in required",
+      "description": "This tool is available to authorized users by default. Sign in to continue.",
+      "login": "Sign in",
+      "home": "Back home"
+    },
+    "upload": {
+      "title": "Upload an image to inspect",
+      "description": "Supports JPEG, PNG, and WebP images. The system extracts a 2-4 byte hidden watermark short code and verifies it through the trace database.",
+      "choose": "Choose image",
+      "accept": "JPEG / PNG / WebP",
+      "previewAlt": "Image preview for inspection",
+      "referenceLabel": "Screenshot reference (optional)",
+      "referenceDescription": "For a cropped, resized, or rotated screenshot, choose the complete watermarked image. The local Go or remote engine will align it before extracting the token.",
+      "referenceSelected": "Reference selected: {name}",
+      "notice": "If you do not have access, ask an administrator to add your account or enable all-user access in Hidden Watermark Access."
+    },
+    "result": {
+      "title": "Inspection Result",
+      "found": "Hidden watermark found",
+      "notFound": "No recognizable hidden watermark found",
+      "empty": "Upload an image to view the inspection result",
+      "placeholder": "Results show whether the watermark exists, whether it is valid, and traceable fields."
+    },
+    "fields": {
+      "found": "Watermark found",
+      "valid": "Token valid",
+      "version": "Payload version",
+      "traceToken": "Trace token",
+      "traceType": "Trace type",
+      "traceResolved": "Database trace resolved",
+      "payloadBytes": "Payload bytes",
+      "payloadBits": "Payload bits",
+      "payloadFormat": "Payload format",
+      "watermarkEngine": "Watermark engine",
+      "uid": "Internal UID",
+      "userId": "Public user ID",
+      "username": "Username or nickname",
+      "uploadedAt": "Upload time",
+      "sourceHash": "Original file hash",
+      "customText": "Custom marker",
+      "postId": "Post ID",
+      "imageId": "Image ID",
+      "jobId": "Protection job ID",
+      "includedFields": "Included fields"
+    },
+    "errors": {
+      "unsupportedType": "Only JPEG, PNG, or WebP images are supported.",
+      "fileRequired": "Choose an image first.",
+      "fileTooLarge": "The image is larger than the configured upload limit.",
+      "invalidImage": "The uploaded file is not a valid supported image.",
+      "recoveryFailed": "The screenshot could not be recovered. Verify that the reference is its complete watermarked image.",
+      "remoteTimeout": "The remote watermark service or gateway timed out. This does not mean the image has no watermark.",
+      "remoteDisconnected": "The remote watermark progress connection was interrupted. Try again later.",
+      "forbidden": "This account is not authorized to inspect hidden watermarks.",
+      "failed": "Hidden watermark inspection failed. Try again later."
+    }
+  }
+}

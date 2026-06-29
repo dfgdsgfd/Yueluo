@@ -1,0 +1,21 @@
+FROM eclipse-temurin:21-jdk-jammy
+
+ARG ANDROID_COMMAND_LINE_TOOLS=14742923
+ARG BUNDLETOOL_VERSION=1.18.3
+ENV ANDROID_HOME=/opt/android-sdk
+ENV ANDROID_SDK_ROOT=/opt/android-sdk
+ENV PATH=/opt/android-sdk/cmdline-tools/latest/bin:/opt/android-sdk/platform-tools:/opt/android-sdk/build-tools/36.0.0:${PATH}
+
+RUN apt-get update \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends curl unzip \
+    && rm -rf /var/lib/apt/lists/* \
+    && mkdir -p /opt/android-sdk/cmdline-tools \
+    && curl -fsSL "https://dl.google.com/android/repository/commandlinetools-linux-${ANDROID_COMMAND_LINE_TOOLS}_latest.zip" -o /tmp/android-tools.zip \
+    && unzip -q /tmp/android-tools.zip -d /tmp/android-tools \
+    && mv /tmp/android-tools/cmdline-tools /opt/android-sdk/cmdline-tools/latest \
+    && rm -rf /tmp/android-tools /tmp/android-tools.zip \
+    && yes | sdkmanager --licenses >/dev/null \
+    && sdkmanager "platform-tools" "platforms;android-36" "build-tools;35.0.0" "build-tools;36.0.0" \
+    && curl -fsSL "https://github.com/google/bundletool/releases/download/${BUNDLETOOL_VERSION}/bundletool-all-${BUNDLETOOL_VERSION}.jar" -o /opt/bundletool.jar
+
+WORKDIR /workspace

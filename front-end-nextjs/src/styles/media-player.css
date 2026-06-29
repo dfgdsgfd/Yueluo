@@ -1,0 +1,50 @@
+.shaka-player-shell .shaka-video-container {
+  background: #000;
+}
+
+.shaka-player-shell .shaka-controls-container {
+  transition: opacity 180ms ease-out;
+}
+
+.shaka-player-shell .shaka-bottom-controls {
+  padding-inline: 14px;
+  padding-bottom: 10px;
+}
+
+.shaka-player-shell .shaka-controls-button-panel {
+  gap: 4px;
+}
+
+.shaka-player-shell .shaka-overflow-menu,
+.shaka-player-shell .shaka-settings-menu {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  background: rgba(18, 18, 18, 0.94);
+  backdrop-filter: blur(14px);
+}
+
+.shaka-player-shell .shaka-seek-bar-container {
+  margin-bottom: 8px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+
+  ::view-transition-old(*),
+  ::view-transition-new(*),
+  ::view-transition-group(*) {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+  }
+}
+
+button[aria-label="Open Next.js Dev Tools"] {
+  display: none !important;
+}

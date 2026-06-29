@@ -1,0 +1,117 @@
+.admin-rich-prosemirror p {
+  margin: 0.4rem 0;
+}
+
+.admin-rich-prosemirror p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  color: #9aa1ad;
+  pointer-events: none;
+}
+
+.admin-rich-prosemirror h1,
+.admin-rich-prosemirror h2,
+.admin-rich-prosemirror h3 {
+  margin: 0.8rem 0 0.4rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.admin-rich-prosemirror h1 {
+  font-size: 1.35rem;
+}
+
+.admin-rich-prosemirror h2 {
+  font-size: 1.15rem;
+}
+
+.admin-rich-prosemirror ul,
+.admin-rich-prosemirror ol {
+  margin: 0.5rem 0;
+  padding-left: 1.35rem;
+}
+
+.admin-rich-prosemirror ul {
+  list-style: disc;
+}
+
+.admin-rich-prosemirror ol {
+  list-style: decimal;
+}
+
+.admin-rich-prosemirror ul[data-type="taskList"] {
+  list-style: none;
+  padding-left: 0;
+}
+
+.admin-rich-prosemirror ul[data-type="taskList"] li {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.admin-rich-prosemirror ul[data-type="taskList"] li > label {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: flex-start;
+  padding-top: 0.35rem;
+}
+
+.admin-rich-prosemirror ul[data-type="taskList"] li > div {
+  min-width: 0;
+  flex: 1;
+}
+
+.admin-rich-prosemirror ul[data-type="taskList"] input[type="checkbox"] {
+  width: 1rem;
+  height: 1rem;
+}
+
+.admin-rich-prosemirror table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  margin: 0.75rem 0;
+}
+
+.admin-rich-prosemirror th,
+.admin-rich-prosemirror td {
+  min-width: 80px;
+  border: 1px solid #d8dde8;
+  padding: 0.45rem 0.55rem;
+  vertical-align: top;
+}
+
+.admin-rich-prosemirror th {
+  background: #f4f7fb;
+  font-weight: 700;
+}
+
+.admin-rich-prosemirror img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0.75rem 0;
+  border-radius: 8px;
+}
+
+.admin-rich-prosemirror blockquote {
+  margin: 0.75rem 0;
+  border-left: 3px solid #1d4ed8;
+  padding-left: 0.85rem;
+  color: #555b66;
+}
+
+.admin-rich-prosemirror a {
+  color: #1d4ed8;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.admin-rich-mention {
+  border-radius: 999px;
+  background: #eef6ff;
+  padding: 0.05rem 0.35rem;
+  color: #1d4ed8;
+  font-weight: 600;
+}

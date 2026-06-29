@@ -1,0 +1,1461 @@
+{
+  "adminMaintenance": {
+    "loadFailed": "유지보수 설정을 불러오지 못했습니다",
+    "saved": "유지보수 설정을 저장했습니다",
+    "saveFailed": "유지보수 설정 저장에 실패했습니다",
+    "rotated": "유지보수 진입 링크를 업데이트했습니다",
+    "rotateFailed": "유지보수 진입 링크 업데이트에 실패했습니다",
+    "copied": "유지보수 진입 링크를 복사했습니다",
+    "loading": "유지보수 설정을 불러오는 중",
+    "title": "유지보수 모드",
+    "description": "활성화하면 일반 진입에는 카운트다운 모달이 표시되고 전용 진입은 우회 및 지정 UID 자동 로그인을 지원합니다.",
+    "refresh": "새로고침",
+    "enabled": "유지보수 모드 활성화",
+    "enabledHint": "공개 API는 유지보수 상태를 반환하고 관리자와 서비스 진입은 계속 사용할 수 있습니다.",
+    "message": "유지보수 안내",
+    "autoLoginUid": "자동 로그인 UID",
+    "estimatedEnd": "예상 종료 시간",
+    "serviceEntry": "랜덤 서비스 진입",
+    "copyEntry": "진입 링크 복사",
+    "rotateEntry": "진입 링크 재생성",
+    "save": "설정 저장",
+    "borderSettings": "유지보수 테두리",
+    "borderSettingsHint": "전용 입장 링크로 들어온 뒤 화면 가장자리에 안내 테두리를 표시합니다.",
+    "borderVisible": "테두리 표시",
+    "borderDismissible": "닫기 허용",
+    "borderColor": "테두리 색상",
+    "borderOpacity": "투명도 {value}%"
+  },
+  "adminDatabase": {
+    "loadFailed": "데이터베이스 정보를 불러오지 못했습니다",
+    "repairConfirm": "비파괴 복구를 실행할까요? 임시 고유 인덱스 검증 성공 후에만 교체하며 업무 데이터는 삭제하거나 병합하지 않습니다.",
+    "repairDone": "데이터베이스 복구가 완료되었습니다",
+    "repairBlocked": "안전한 복구는 완료됐지만 중복 데이터 차단 항목 {count}개가 남았습니다.",
+    "duplicateSummary": "중복 키 {groups}개 그룹과 추가 행 {rows}개가 있습니다. 수동 처리 후 다시 시도하세요.",
+    "repairFailed": "데이터베이스 복구에 실패했습니다",
+    "loading": "데이터베이스 정보를 불러오는 중",
+    "title": "데이터베이스 관리",
+    "description": "테이블 크기, 추정 컬럼 크기, 누락 인덱스를 확인하고 안전한 원클릭 수정을 실행합니다.",
+    "refresh": "새로고침",
+    "driver": "드라이버",
+    "database": "데이터베이스",
+    "tables": "테이블 수",
+    "size": "전체 크기",
+    "tableSizes": "테이블 크기",
+    "searchTables": "테이블 검색",
+    "rows": "행",
+    "columnsFor": "{table} 컬럼",
+    "columns": "컬럼",
+    "estimatedColumnSize": "추정 컬럼 크기: {size}",
+    "indexAudit": "인덱스 / 스키마 점검",
+    "indexAuditDescription": "GORM 모델과 기대 인덱스 레지스트리를 기준으로 누락 항목을 확인합니다.",
+    "repair": "원클릭 수정",
+    "noIssues": "누락된 필드 또는 인덱스가 없습니다",
+    "nullable": "NULL 허용",
+    "notNullable": "NOT NULL",
+    "vacuumSaved": "자동 최적화 설정을 저장했습니다",
+    "vacuumSaveFailed": "자동 최적화 설정 저장 실패",
+    "vacuumRunConfirm": "VACUUM ANALYZE {table}을 실행할까요?",
+    "vacuumRunDone": "VACUUM ANALYZE 완료",
+    "vacuumRunFailed": "VACUUM ANALYZE 실패",
+    "vacuumTitle": "VACUUM ANALYZE 자동 최적화",
+    "vacuumDescription": "선택한 PostgreSQL 테이블에 일반 VACUUM ANALYZE를 실행해 통계를 갱신합니다.",
+    "vacuumRunSelected": "현재 테이블 최적화",
+    "vacuumUnsupported": "이 데이터베이스는 VACUUM ANALYZE 설정을 지원하지 않습니다",
+    "vacuumEnabled": "자동 최적화 사용",
+    "vacuumInterval": "간격(시간)",
+    "vacuumSave": "자동 설정 저장",
+    "vacuumLastResult": "최근 실행",
+    "vacuumNextRun": "다음 실행",
+    "vacuumLastRun": "마지막 실행",
+    "vacuumLastDuration": "마지막 소요 시간",
+    "vacuumNoResult": "아직 실행 결과가 없습니다"
+  },
+  "adminPortal": {
+    "brand": {
+      "name": "Yuem 커뮤니티",
+      "subtitle": "운영 관리자"
+    },
+    "loading": "관리자 화면을 여는 중",
+    "mediaLibrary": {
+      "unrestrictedUploadHint": "모든 파일 형식과 확장자를 지원합니다."
+    },
+    "login": {
+      "title": "관리자 로그인",
+      "subtitle": "Yuem 커뮤니티 운영 관리자",
+      "username": "계정",
+      "usernamePlaceholder": "admin",
+      "password": "비밀번호",
+      "submit": "관리자 로그인",
+      "success": "관리자로 로그인했습니다",
+      "errors": {
+        "failed": "로그인에 실패했습니다. 다시 시도해 주세요.",
+        "forbidden": "현재 세션에 관리자 권한이 없습니다.",
+        "invalidCredentials": "계정 또는 비밀번호가 올바르지 않습니다.",
+        "locked": "이 IP에서 로그인 실패가 너무 많습니다. {minutes}분 후 다시 시도해 주세요.",
+        "missingParams": "계정과 비밀번호를 입력해 주세요."
+      }
+    },
+    "layout": {
+      "adminRole": "관리자",
+      "backHome": "홈으로 돌아가기",
+      "backToSite": "사이트로 돌아가기",
+      "breadcrumb": "홈 / {title}",
+      "closeMenu": "메뉴 닫기",
+      "closeMenuOverlay": "메뉴 배경 닫기",
+      "logout": "로그아웃",
+      "openMenu": "메뉴 열기",
+      "refresh": "새로고침",
+      "searchPlaceholder": "사용자, 콘텐츠 또는 모듈 검색..."
+    },
+    "userManagement": {
+      "title": "사용자 포인트 관리",
+      "fields": {
+        "uid": "UID",
+        "oauth2Id": "OAuth2 ID",
+        "points": "포인트"
+      },
+      "actions": {
+        "managePoints": "포인트 관리",
+        "close": "닫기",
+        "cancel": "취소",
+        "save": "변경 저장",
+        "saving": "저장 중"
+      },
+      "operation": {
+        "label": "조정 방식",
+        "add": "추가",
+        "deduct": "차감",
+        "set": "잔액 설정"
+      },
+      "amount": {
+        "change": "변경 포인트",
+        "target": "목표 잔액",
+        "placeholder": "포인트 입력"
+      },
+      "reason": {
+        "label": "사유(선택)",
+        "placeholder": "포인트 원장에 남길 운영 메모를 입력하세요"
+      },
+      "validation": {
+        "invalidAmount": "올바른 포인트 수량을 입력하세요."
+      },
+      "messages": {
+        "saved": "포인트가 업데이트되었습니다. 현재 잔액: {points}"
+      },
+      "batchGenerate": "일괄 생성",
+      "batchGenerating": "생성 중",
+      "batchGenerateCount": "수량",
+      "batchGenerateSuccess": "사용자 {count}명을 생성했습니다."
+    },
+    "navigation": {
+      "sections": {
+        "overview": "개요",
+        "users": "사용자 및 권한",
+        "content": "콘텐츠 운영",
+        "risk": "검토 및 안전",
+        "creator": "크리에이터 및 재무",
+        "growth": "추천 및 성장",
+        "notice": "알림 및 공지",
+        "system": "앱 및 시스템"
+      },
+      "items": {
+        "dashboard": "운영 대시보드",
+        "queues": "큐 상태",
+        "logs": "로그 센터",
+        "observability": "시스템 관측",
+        "database": "데이터베이스 관리",
+        "maintenance": "유지보수 모드",
+        "operations": "운영 콘솔",
+        "withdraw": "출금 검토",
+        "invite": "초대 성장",
+        "coupon": "쿠폰 운영",
+        "points": "포인트 운영",
+        "onboardingSettings": "온보딩 설정",
+        "backendApi": "백엔드 API 보기",
+        "systemUpdate": "시스템 업데이트",
+        "componentCheck": "컴포넌트 점검",
+        "hiddenWatermarkAccess": "숨김 워터마크 권한",
+        "settings": "시스템 설정",
+        "aiAgent": "AI 에이전트",
+        "accessBlock": "접근 차단"
+      },
+      "resources": {
+        "admins": "관리자",
+        "announcements": "공지 관리",
+        "app-versions": "앱 버전",
+        "audit": "인증 검토",
+        "banned-word-categories": "금칙어 분류",
+        "banned-words": "금칙어",
+        "categories": "카테고리 관리",
+        "collections": "저장 기록",
+        "comments": "댓글 관리",
+        "users": "사용자 관리",
+        "feedback": "사용자 피드백",
+        "follows": "팔로우 관계",
+        "licenses": "라이선스 코드",
+        "likes": "좋아요 기록",
+        "media-library": "미디어 라이브러리",
+        "file-recycle-bin": "파일 휴지통",
+        "notification-templates": "알림 템플릿",
+        "open-apis": "오픈 API",
+        "posts": "콘텐츠 관리",
+        "posts-quality": "콘텐츠 품질",
+        "post-configs": "게시물 추천 규칙",
+        "quality-reward-settings": "품질 보상",
+        "content-review": "콘텐츠 검토",
+        "reports": "신고 처리",
+        "sessions": "세션 관리",
+        "system-notifications": "시스템 알림",
+        "tags": "태그 관리",
+        "user-configs": "사용자 추천 규칙",
+        "user-toolbar": "사용자 도구 모음",
+        "ai-moderation-logs": "AI 검수 로그"
+      }
+    },
+    "onboardingSettingsPanel": {
+      "title": "온보딩 설정",
+      "description": "온보딩 사용 여부, 건너뛰기 정책, 관심사 옵션, 포인트 안내 문구를 설정합니다",
+      "configTitle": "온보딩 구성",
+      "save": "저장",
+      "saved": "온보딩 설정이 저장되었습니다",
+      "loadingSettings": "온보딩 설정을 불러오는 중",
+      "emptySettings": "온보딩 설정이 없습니다",
+      "resetTitle": "사용자 온보딩 상태 초기화",
+      "resetDescription": "모든 사용자의 온보딩 완료 표시를 지우고, 데이터베이스에 완료 기록이 없는 사용자는 온보딩을 다시 보게 합니다.",
+      "resetAction": "전체 초기화",
+      "resetting": "초기화 중",
+      "resetConfirm": "모든 사용자의 온보딩 완료 상태를 초기화할까요?",
+      "resetDone": "사용자 온보딩 상태가 초기화되었습니다",
+      "resetSingleTitle": "단일 사용자 초기화",
+      "resetSingleDescription": "숫자 ID, 사용자 ID 또는 XiSe ID를 입력하면 해당 사용자만 온보딩을 다시 보게 됩니다.",
+      "resetSingleLabel": "사용자 식별자",
+      "resetSinglePlaceholder": "사용자 ID, 숫자 ID 또는 XiSe ID",
+      "resetSingleAction": "사용자 초기화",
+      "resetSingleConfirm": "{userId}의 온보딩 완료 상태를 초기화할까요?",
+      "resetSingleDone": "단일 사용자 온보딩 상태가 초기화되었습니다",
+      "resetSingleMissing": "먼저 사용자 식별자를 입력하세요.",
+      "fields": {
+        "enabled": "온보딩 사용",
+        "allowSkip": "온보딩 건너뛰기 허용",
+        "interestOptions": "온보딩 관심사 옵션",
+        "customFields": "온보딩 사용자 지정 필드",
+        "pointsIntroTitle": "포인트 안내 제목",
+        "pointsIntroSummary": "포인트 안내 요약",
+        "pointsIntroDetail": "포인트 안내 상세",
+        "avatarEnabled": "아바타 설정 표시",
+        "avatarRequired": "아바타 필수",
+        "backgroundEnabled": "배경 설정 표시",
+        "backgroundRequired": "배경 필수",
+        "nameEnabled": "이름 설정 표시",
+        "nameRequired": "이름 필수",
+        "signatureEnabled": "서명 설정 표시",
+        "signatureRequired": "서명 필수",
+        "interestsEnabled": "관심사 표시",
+        "interestsRequired": "관심사 필수",
+        "minInterests": "최소 관심사 수",
+        "resultTitle": "완료 창 제목",
+        "resultSavedText": "포인트 없음 저장 문구",
+        "walletLabel": "포인트入口 버튼 문구",
+        "walletUrl": "포인트入口 링크"
+      },
+      "hints": {
+        "enabled": "켜면 데이터베이스에 온보딩 완료 기록이 없는 로그인 사용자에게 온보딩 창을 표시합니다.",
+        "allowSkip": "끄면 사용자는 온보딩을 완료해야 하며 건너뛸 수 없습니다.",
+        "interestOptions": "아래 목록에서 관심사 옵션을 추가, 삭제, 수정하세요. 한 줄에 하나씩 붙여넣거나 [\"Bondage\", \"Handcuffs\", \"Leg irons\"] 같은 JSON도 사용할 수 있습니다.",
+        "customFields": "온보딩 폼 확장을 위한 JSON 또는 여러 줄 텍스트를 지원합니다.",
+        "pointsIntroDetail": "온보딩 완료 후 사용자가 자세히 보기를 열 때 표시됩니다.",
+        "minInterests": "관심사를 표시하고 필수로 설정한 경우에만 적용됩니다.",
+        "walletUrl": "완료 창의 포인트入口 이동 주소입니다. 내부 경로나 전체 URL을 입력할 수 있습니다."
+      },
+      "addInterest": "관심사 추가",
+      "removeInterest": "관심사 삭제",
+      "interestPlaceholder": "관심사 이름 입력",
+      "emptyInterestOptions": "아직 관심사 옵션이 없습니다. 추가해 주세요.",
+      "addSampleInterests": "샘플 추가",
+      "sampleInterests": {
+        "bondage": "Bondage",
+        "handcuffs": "Handcuffs",
+        "legIrons": "Leg irons"
+      }
+    },
+    "hiddenWatermarkAccessPanel": {
+      "title": "숨김 워터마크 권한",
+      "description": "일반 사용자가 프런트엔드 숨김 워터마크 검사 도구를 사용할 수 있는지 제어합니다",
+      "loading": "숨김 워터마크 권한을 불러오는 중",
+      "save": "저장",
+      "saved": "숨김 워터마크 권한이 저장되었습니다",
+      "saving": "저장 중",
+      "on": "켜기",
+      "off": "끄기",
+      "watermarkConfig": {
+        "title": "숨김 워터마크 설정",
+        "reference": "watermark_zero 공식 설명 기준입니다. 작성자는 WithGolay 사용을 강력히 권장합니다. D1/D2가 높을수록 압축 저항은 좋아지지만 화질 손실이 커질 수 있고, 블록이 작을수록 용량은 늘지만 노이즈가 늘 수 있습니다. 홀수 블록 크기는 짝수로 올림 처리되며 최소값은 4입니다.",
+        "runtime": {
+          "payload": "현재 페이로드",
+          "payloadValue": "{bytes}바이트 / {bits}비트",
+          "format": "페이로드 형식",
+          "engine": "엔진 모드",
+          "referenceRecovery": "스크린샷 참조 복원"
+        },
+        "fields": {
+          "enabled": "숨김 워터마크 사용",
+          "protectedOnly": "보호 콘텐츠에만 워터마크 적용",
+          "includeUid": "내부 UID 포함",
+          "includeUserId": "공개 사용자 ID 포함",
+          "includeUsername": "사용자명 또는 닉네임 포함",
+          "includeTime": "UTC 업로드 시간 포함",
+          "includeFileHash": "원본 파일 해시 포함",
+          "includeCustom": "사용자 지정 식별자 포함",
+          "customText": "사용자 지정 식별자",
+          "coefficientMode": "계수 모드",
+          "eccMode": "오류 정정",
+          "golaySeed": "Golay Shuffle Seed",
+          "blockWidth": "블록 너비",
+          "blockHeight": "블록 높이",
+          "d1": "D1 강도",
+          "d2": "D2 강도",
+          "engine": "워터마크 엔진",
+          "remotePasswordWm": "워터마크 비밀번호",
+          "remotePasswordImg": "이미지 비밀번호",
+          "remoteProfile": "원격 워터마크 프로필",
+          "remoteD1": "사용자 D1",
+          "remoteD2": "사용자 D2",
+          "protectionMaxDimension": "보호 이미지 최대 변",
+          "protectionAllowedFailurePercent": "보호 패키지 허용 실패율",
+          "protectionOutputMode": "보호 이미지 출력",
+          "protectionQuality": "보호 WebP 품질",
+          "remoteTimeout": "원격 요청 시간 제한(초)",
+          "remoteOperationTimeout": "원격 작업 시간 제한(초)",
+          "remoteEngine": "원격 알고리즘"
+        },
+        "hints": {
+          "enabled": "끄면 일반 업로드에는 숨김 워터마크를 쓰지 않습니다. 보호 패키지는 추적 워터마크를 계속 강제로 씁니다.",
+          "protectedOnly": "켜면 업로드에는 워터마크 없는 원본을 저장하고 구매자용 보호 다운로드 압축 파일을 만들 때만 워터마크를 삽입합니다.",
+          "includeUid": "가장 안정적인 추적을 위해 내부 데이터베이스 UID를 기록합니다.",
+          "includeUserId": "수동 확인을 위해 공개 사용자 ID를 기록합니다.",
+          "includeUsername": "닉네임 또는 username을 기록합니다. 개인정보 노출이 커 기본값은 꺼짐입니다.",
+          "includeTime": "워터마크 생성 시간을 UTC로 기록합니다.",
+          "includeFileHash": "원본 이미지 해시 일부를 기록해 출처 확인에 사용합니다.",
+          "includeCustom": "아래 사용자 지정 식별자를 추적 데이터베이스에 저장하며 이미지 토큰에는 삽입하지 않습니다.",
+          "customText": "추적 데이터베이스에 최대 255자까지 저장할 수 있습니다.",
+          "coefficientMode": "WithD1은 가볍고, WithD1D2는 보통 더 견고하지만 더 무겁습니다.",
+          "eccMode": "작성자는 WithGolay를 강력히 권장합니다. WithoutECC는 호환성 또는 실험용입니다.",
+          "golaySeed": "WithGolay의 결정적 셔플 seed입니다. 추출 시 같은 seed가 필요합니다.",
+          "blockShape": "작은 블록은 용량을 늘리지만 노이즈를 늘릴 수 있습니다. 라이브러리는 4 이상의 짝수를 요구합니다.",
+          "d1d2": "값이 높을수록 공격/압축에 강하지만 원본 화질에 영향을 줄 수 있습니다.",
+          "engine": "Go 로컬 알고리즘 또는 내부 FastAPI 원격 서비스를 선택합니다.",
+          "remotePasswordWm": "blind_watermark의 password_wm입니다. 삽입과 추출에서 같은 값을 사용해야 합니다.",
+          "remotePasswordImg": "blind_watermark의 password_img입니다. 삽입과 추출에서 같은 값을 사용해야 합니다.",
+          "remoteBlockShape": "원격 blind_watermark의 블록 크기입니다. 블록이 작을수록 용량은 늘지만 화질에 영향을 줄 수 있습니다.",
+          "remoteD1D2": "원격 blind_watermark의 D1/D2 강도입니다. 값이 클수록 압축에 강하지만 화질 손실이 커질 수 있습니다.",
+          "remoteProfile": "적응형은 일반 이미지를 18/8부터 시작하고, 보호 이미지는 압축 저항을 위해 24/12부터 시작합니다.",
+          "protectionMaxDimension": "기본값 2048, 0은 원본 크기를 유지합니다.",
+          "protectionAllowedFailurePercent": "전체 이미지 수 기준으로 내림 계산합니다. 예: 10장에 20%면 최대 2장을 건너뛸 수 있습니다. 건너뛴 이미지는 ZIP에 쓰지 않으며 최소 1장은 성공해야 합니다.",
+          "protectionOutputMode": "무손실 WebP는 화질 우선, 고품질 WebP는 용량을 줄입니다.",
+          "protectionQuality": "고품질 WebP 모드에서만 사용합니다.",
+          "remoteTimeout": "Go 백엔드가 원격 워터마크 서비스를 기다리는 최대 시간입니다. 변경 후 다음 작업부터 적용됩니다.",
+          "remoteOperationTimeout": "FastAPI 워터마크 워커에 전달하는 단일 작업 시간 제한입니다. 원격 요청 시간 제한보다 약간 짧게 두세요.",
+          "remoteEngine": "자동 모드는 먼저 blind_watermark를 사용하고 실패하면 DWT-DCT-SVD 짧은 코드로 전환합니다."
+        },
+        "options": {
+          "coefficientMode": {
+            "d1d2": "WithD1D2 (더 견고)",
+            "d1": "WithD1 (더 빠름)"
+          },
+          "eccMode": {
+            "golay": "WithGolay (강력 권장)",
+            "none": "WithoutECC (실험)"
+          },
+          "engine": {
+            "auto": "자동(원격 우선)",
+            "local": "로컬",
+            "remote": "원격"
+          },
+          "remoteProfile": {
+            "adaptive": "적응형 균형 (18/8 시작)",
+            "fidelity": "고화질 (18/8)",
+            "balanced": "균형 (24/12)",
+            "strong": "강한 압축 저항 (30/15)",
+            "official": "공식 강도 (36/20)",
+            "custom": "사용자 설정"
+          },
+          "protectionOutputMode": {
+            "lossless_webp": "무손실 WebP",
+            "quality_webp": "고품질 WebP"
+          },
+          "remoteEngine": {
+            "dwt_dct_svd": "DWT-DCT-SVD 짧은 코드",
+            "blind_watermark": "기존 blind_watermark",
+            "auto": "자동"
+          }
+        },
+        "presets": {
+          "current": {
+            "title": "현재 균형",
+            "description": "8x6 / D1=21 / D2=9 / Golay를 사용해 스크린샷과 재압축 이미지의 복원력을 높입니다."
+          },
+          "author_recommended": {
+            "title": "작성자 강력 권장",
+            "description": "공식 기본 8x8 / D1=21 / D2=9 / WithGolay로 안정적인 추출을 우선합니다."
+          },
+          "fidelity": {
+            "title": "원본 최대 보존",
+            "description": "더 큰 블록과 낮은 D1/D2로 노이즈와 화질 손실을 줄입니다."
+          },
+          "robust": {
+            "title": "공격 저항 우선",
+            "description": "더 작은 블록과 높은 D1/D2로 압축 후 추출 능력을 강화합니다."
+          }
+        },
+        "stablePreset": {
+          "action": "안정 설정 적용",
+          "saved": "보호 패키지 안정 설정을 저장했습니다"
+        },
+        "remoteReference": "원격 모드는 guofei9987/blind_watermark 0.4.4, 공식 4x4 블록, 동일한 password와 D1/D2를 사용합니다.",
+        "remoteOfficial": {
+          "title": "권장 원격 보호 설정",
+          "description": "안정 설정은 원격 우선, 자동 알고리즘 폴백, 적응형 강도, 50초 원격 제한, 보호 이미지 무손실 WebP 출력을 사용합니다."
+        }
+      },
+      "extract": {
+        "title": "숨김 워터마크 추출",
+        "fileLabel": "검사할 이미지 선택",
+        "referenceFileLabel": "스크린샷 복구 참조 이미지(선택)",
+        "referenceDescription": "자르거나 크기를 변경한 스크린샷은 전체 워터마크 이미지를 선택하세요. 업스트림 공식 절차로 복구한 뒤 추출합니다.",
+        "description": "관리자 전용입니다. 추출한 짧은 코드를 추적 데이터베이스에서 해석해 검증합니다.",
+        "action": "워터마크 추출",
+        "extracting": "추출 중",
+        "completed": "숨김 워터마크 검사가 완료되었습니다",
+        "recoveryFailed": "스크린샷 복구에 실패했습니다. 참조 이미지가 해당 전체 워터마크 이미지인지 확인하세요.",
+        "remoteTimeout": "원격 워터마크 서비스 또는 게이트웨이 시간이 초과되었습니다. 워터마크가 없다는 뜻은 아닙니다.",
+        "remoteDisconnected": "원격 워터마크 진행 연결이 끊어졌습니다. 잠시 후 다시 시도하세요.",
+        "progress": {
+          "uploading": "이미지 업로드 중",
+          "queued": "서버가 수신했으며 처리 대기 중",
+          "decoding": "이미지 디코딩 및 검사 중",
+          "recovering": "스크린샷 자르기와 배율 복구 중",
+          "waiting": "원격 엔진 대기 중",
+          "aligning": "스크린샷과 참조 이미지 정렬 중",
+          "extracting": "숨겨진 토큰 추출 중",
+          "verifying": "추적 데이터베이스 확인 중",
+          "complete": "처리 완료",
+          "elapsed": "{seconds}초 경과",
+          "estimated": "경과 시간 기반 예상 단계입니다. 다시 제출하지 마세요.",
+          "live": "진행률은 서버의 실제 처리 단계에서 보고됩니다.",
+          "heartbeat": "서버 하트비트가 정상이며 작업이 계속 실행 중입니다.",
+          "heartbeatEngine": "FastAPI 엔진 하트비트가 정상이며 알고리즘이 계속 실행 중입니다.",
+          "heartbeatGateway": "Go 게이트웨이가 연결되어 있으며 FastAPI 엔진 응답을 기다리는 중입니다.",
+          "units": "후보 {completed}/{total}개 처리됨"
+        },
+        "empty": "이미지를 선택하면 추출 결과를 볼 수 있습니다",
+        "fields": {
+          "found": "워터마크 발견",
+          "valid": "토큰 유효",
+          "version": "Payload 버전",
+          "traceToken": "추적 토큰",
+          "traceType": "추적 유형",
+          "traceResolved": "데이터베이스 추적 일치",
+          "payloadBytes": "페이로드 바이트",
+          "payloadBits": "페이로드 비트",
+          "payloadFormat": "페이로드 형식",
+          "watermarkEngine": "워터마크 엔진",
+          "uid": "내부 UID",
+          "userId": "공개 사용자 ID",
+          "username": "사용자명 또는 닉네임",
+          "uploadedAt": "업로드 시간",
+          "sourceHash": "원본 파일 해시",
+          "customText": "사용자 지정 식별자",
+          "postId": "게시물 ID",
+          "imageId": "이미지 ID",
+          "jobId": "보호 작업 ID",
+          "includedFields": "포함 필드"
+        }
+      },
+      "global": {
+        "title": "공개 정책",
+        "description": "기본적으로 관리자와 허용 목록 사용자만 사용할 수 있습니다. 켜면 로그인한 모든 사용자가 프런트엔드 검사 도구를 사용할 수 있습니다.",
+        "on": "전체 사용자에게 공개",
+        "off": "승인된 사용자만"
+      },
+      "picker": {
+        "title": "사용자 추가",
+        "description": "사용자를 검색해 허용 목록에 추가합니다. 내부 ID와 공개 계정을 함께 기록합니다.",
+        "pickerLabel": "사용자 검색",
+        "pickerPlaceholder": "닉네임, 계정 또는 이메일 검색",
+        "pickerEmpty": "일치하는 사용자가 없습니다",
+        "addEmpty": "승인할 사용자를 검색하고 선택하세요.",
+        "clear": "비우기",
+        "loading": "검색 중",
+        "removeSelected": "선택한 사용자 제거",
+        "search": "검색",
+        "addSelected": "허용 목록에 추가",
+        "noSelected": "먼저 사용자를 선택하세요",
+        "added": "사용자 {count}명을 추가했습니다"
+      },
+      "manual": {
+        "title": "수동 추가",
+        "description": "내부 ID, 공개 사용자 ID, Xise ID, 사용자명 또는 닉네임을 직접 추가할 수 있습니다.",
+        "manualPlaceholder": "사용자 ID, 계정 또는 닉네임 입력",
+        "manualTypeId": "ID / 계정",
+        "manualTypeUsername": "사용자명 / 닉네임",
+        "addManual": "추가",
+        "duplicate": "이미 목록에 있는 값입니다",
+        "emptyManual": "추가할 값을 입력하세요"
+      },
+      "lists": {
+        "title": "허용 목록",
+        "description": "ID 또는 사용자명 항목 중 하나라도 일치하면 프런트엔드 검사를 사용할 수 있습니다.",
+        "count": "{count}개",
+        "userIdsTitle": "ID 및 계정",
+        "usernamesTitle": "사용자명 및 닉네임",
+        "userIdsHint": "내부 숫자 ID, 공개 user_id, Xise ID를 지원합니다.",
+        "usernamesHint": "닉네임, username 또는 공개 계정 텍스트를 지원합니다.",
+        "emptyUserIds": "ID 허용 항목이 없습니다",
+        "emptyUsernames": "사용자명 허용 항목이 없습니다",
+        "remove": "제거"
+      },
+      "usage": {
+        "title": "최근 100회 사용 기록",
+        "loading": "검사 기록 불러오는 중",
+        "loadFailed": "숨김 워터마크 검사 기록을 불러오지 못했습니다",
+        "empty": "숨김 워터마크 검사 기록이 없습니다",
+        "time": "시간",
+        "actor": "사용자",
+        "result": "결과",
+        "file": "업로드 파일",
+        "watermark": "워터마크",
+        "reason": "실패 사유",
+        "ip": "IP",
+        "path": "사용 경로",
+        "success": "성공",
+        "failed": "실패",
+        "valid": "발견 및 유효",
+        "invalid": "발견했지만 무효",
+        "notFound": "미발견"
+      }
+    },
+    "queuesPanel": {
+      "title": "큐 및 Redis",
+      "description": "Asynq 큐, Redis 메모리, 작업 시간 및 자동 정리 정책을 확인합니다",
+      "loading": "큐 상태 불러오는 중",
+      "queues": "큐",
+      "tasks": "작업",
+      "taskTitle": "작업: {queue}",
+      "emptyJobs": "작업 없음",
+      "serviceDisabled": "큐 서비스가 비활성화되어 빈 상태만 표시됩니다.",
+      "recentEvents": "최근 이벤트",
+      "eventTiming": "{time} · 대기 {wait} · 실행 {duration}",
+      "status": {
+        "all": "전체",
+        "waiting": "대기",
+        "active": "실행 중",
+        "completed": "완료",
+        "failed": "실패",
+        "retry": "재시도",
+        "scheduled": "예약"
+      },
+      "stats": {
+        "waiting": "대기",
+        "active": "실행 중",
+        "completed": "완료",
+        "failed": "실패",
+        "delayed": "지연 / 재시도",
+        "latency": "평균 지연"
+      },
+      "danger": {
+        "title": "위험 작업: 전체 큐 삭제",
+        "description": "대기, 예약, 재시도 및 기록 작업을 삭제합니다. 안전한 정리는 위의 Redis 유지 관리를 사용하세요.",
+        "placeholder": "확인을 위해 큐 이름 {queue} 입력",
+        "clear": "전체 큐 삭제",
+        "cleared": "큐가 삭제되었습니다"
+      },
+      "job": {
+        "id": "작업 ID {id}",
+        "inspect": "상세",
+        "retry": "작업 재시도",
+        "enqueued": "등록",
+        "started": "시작",
+        "wait": "대기",
+        "duration": "실행 시간",
+        "retryConfirm": "작업 {id}을(를) 재시도할까요?",
+        "retrySuccess": "작업이 큐에 다시 등록되었습니다",
+        "close": "작업 상세 닫기",
+        "details": "작업 상세",
+        "idLabel": "작업 ID",
+        "name": "이름",
+        "attempts": "시도 횟수"
+      },
+      "maintenance": {
+        "title": "Redis 메모리 관리",
+        "loading": "Redis 메모리 및 정리 정책 불러오는 중",
+        "description": "삭제 가능한 기록, 텔레메트리, 캐시 및 오래된 인덱스만 정리합니다.",
+        "saved": "Redis 정리 정책이 저장되었습니다",
+        "runComplete": "안전한 Redis 정리가 완료되었습니다",
+        "cacheConfirm": "애플리케이션 캐시를 지울까요? 세션과 대기 작업은 삭제되지 않습니다.",
+        "policyTitle": "자동 정리 정책",
+        "safeBoundary": "대기, 실행 중, 예약 및 재시도 작업은 자동 삭제되지 않습니다.",
+        "save": "정책 저장",
+        "runSafe": "안전 정리 실행",
+        "runCache": "앱 캐시 지우기"
+      },
+      "memory": {
+        "title": "메모리 압력",
+        "used": "사용 중",
+        "max": "최대 메모리",
+        "unbounded": "제한 없음",
+        "policy": "제거 정책",
+        "fragmentation": "조각화",
+        "noLimitHint": "현재 Redis maxmemory=0입니다. 관리자 화면은 모니터링과 경고만 제공하며 서버 메모리 제한을 변경하지 않습니다.",
+        "level": {
+          "normal": "정상",
+          "warning": "경고",
+          "critical": "심각",
+          "unbounded": "무제한"
+        }
+      },
+      "schedule": {
+        "title": "실행 상태",
+        "next": "다음 실행",
+        "last": "최근 실행",
+        "freed": "최근 해제"
+      },
+      "inventory": {
+        "title": "키 공간 분류",
+        "summary": "총 {total}개 키, {scanned}개 검사",
+        "sampled": "키 공간이 커서 제한된 샘플을 표시합니다",
+        "noTtlSummary": "샘플 중 {count}개 키에 TTL이 없고 영구 키로 표시되지 않았습니다",
+        "expectedPermanentSummary": "샘플 중 {count}개 키는 예상된 영구 메타데이터입니다",
+        "keys": "{count}개 키",
+        "noTtlKeys": "{count}개 TTL 없음",
+        "expectedPermanentKeys": "{count}개 예상 영구",
+        "empty": "분류 데이터 없음",
+        "categories": {
+          "queues": "큐",
+          "logs": "단기 로그",
+          "metrics": "메트릭",
+          "sessions": "세션",
+          "cache": "애플리케이션 캐시",
+          "settings": "시스템 설정",
+          "security": "보안 제한",
+          "other": "기타"
+        }
+      },
+      "fields": {
+        "enabled": "자동 정리 사용",
+        "interval": "실행 간격(분)",
+        "accessLogs": "액세스 로그 보존(시간)",
+        "accessLogMax": "액세스 로그 최대 항목",
+        "systemLogs": "시스템 로그 보존(시간)",
+        "systemLogMax": "시스템 로그 최대 항목",
+        "metrics": "메트릭 보존(시간)",
+        "metricsMax": "메트릭 키당 최대 항목",
+        "queueEvents": "큐 이벤트 보존(시간)",
+        "queueEventMax": "큐 이벤트 최대 항목",
+        "completed": "완료 작업 보존(시간)",
+        "archived": "실패 작업 보존(시간)",
+        "archivedMax": "큐당 실패 작업 상한",
+        "warning": "메모리 경고 임계값(%)",
+        "critical": "메모리 심각 임계값(%)",
+        "accessTokenTTLSeconds": "액세스 토큰 유효 시간(초)",
+        "refreshTokenActiveTTLSeconds": "리프레시 토큰 활성 유효 시간(초)",
+        "refreshTokenRenewalIntervalSeconds": "리프레시 갱신 활성 창(초)",
+        "refreshTokenMode": "리프레시 토큰 모드",
+        "refreshTokenModeRedisOpaque": "Redis opaque",
+        "refreshTokenModeJWTLegacy": "JWT legacy",
+        "refreshTokenAutoRenewEnabled": "활성 자동 갱신 사용",
+        "sessionInactiveTTLSeconds": "비활성 세션 삭제 기준(초)",
+        "userActiveSessionLimit": "사용자별 활성 세션 한도"
+      },
+      "overrides": {
+        "title": "큐별 재정의",
+        "description": "기본적으로 전역 정책을 사용하며 비디오 또는 감사 큐는 더 오래 보존할 수 있습니다.",
+        "custom": "개별 정책 사용",
+        "default": "전역 기본값 사용"
+      }
+    },
+    "settingsPanel": {
+      "title": "시스템 설정",
+      "description": "불리언, 숫자, 날짜, 텍스트 설정을 한곳에서 관리합니다",
+      "configTitle": "설정 항목",
+      "authTitle": "로그인 / OAuth",
+      "appDownloadTitle": "App 다운로드 설정",
+      "fileRecycleTitle": "파일 휴지통",
+      "imageTitle": "이미지 처리",
+      "emptyImageSettings": "이미지 처리 설정이 없습니다",
+      "save": "저장",
+      "saved": "시스템 설정이 저장되었습니다",
+      "loadingSettings": "시스템 설정을 불러오는 중",
+      "emptySettings": "시스템 설정이 없습니다",
+      "rawTitle": "호환 설정 스냅샷",
+      "loadingRaw": "호환 설정을 불러오는 중",
+      "emptyRaw": "호환 설정이 없습니다",
+      "on": "켜짐",
+      "off": "꺼짐",
+      "systemSettings": {
+        "site_title": {
+          "label": "홈 제목",
+          "hint": "홈, 브라우저 제목, 공유 미리보기에 표시됩니다."
+        },
+        "site_description": {
+          "label": "홈 소개",
+          "hint": "홈 제목 아래와 검색/공유 요약에 표시됩니다."
+        },
+        "site_avatar_url": {
+          "label": "웹사이트 아바타 URL",
+          "hint": "미디어 라이브러리 /api/file/... 경로나 전체 http/https 이미지 URL을 사용하세요."
+        },
+        "post_content_max_length": {
+          "label": "게시물 본문 최대 글자 수",
+          "hint": "게시, 임시 저장, 편집 및 관리자 작성에 적용됩니다. 기본값은 100000입니다."
+        },
+        "post_resource_section_position": {
+          "label": "게시물 리소스 영역 위치",
+          "hint": "첨부 파일, 유료 잠금 해제 및 이미지 패키지를 본문 앞이나 뒤에 배치합니다.",
+          "before": "본문 앞",
+          "after": "본문 뒤"
+        },
+        "onboarding_interest_options": {
+          "label": "Onboarding interest options",
+          "hint": "Provide one localized list for each supported language."
+        },
+        "onboarding_points_intro_title": {
+          "label": "Points introduction title"
+        },
+        "onboarding_points_intro_summary": {
+          "label": "Points introduction summary"
+        },
+        "onboarding_points_intro_detail": {
+          "label": "Points introduction details",
+          "hint": "Shown when users view details after completing onboarding."
+        },
+        "onboarding_result_title": {
+          "label": "Onboarding completion title"
+        },
+        "onboarding_result_saved_text": {
+          "label": "Profile saved message"
+        },
+        "onboarding_points_wallet_label": {
+          "label": "Points entry label"
+        },
+        "maintenance_message": {
+          "label": "Maintenance message"
+        },
+        "oauth2_app_callback_urls": {
+          "label": "App OAuth 콜백 허용 목록",
+          "hint": "한 줄에 하나의 전체 callback을 입력하세요. 예: xsewebfast://auth-return, yuempro://auth-return. 각 App은 자신의 app_callback을 전달하고, 백엔드는 scheme, host, path를 정확히 일치시킨 뒤 되돌려 보냅니다."
+        },
+        "app_download_android_enabled": {
+          "label": "Enable Android download"
+        },
+        "app_download_android_name": {
+          "label": "Android app name"
+        },
+        "app_download_android_version_name": {
+          "label": "Android version name"
+        },
+        "app_download_android_version_code": {
+          "label": "Android version code",
+          "hint": "Numeric version used for display and client comparisons."
+        },
+        "app_download_android_download_url": {
+          "label": "Android download URL",
+          "hint": "Use a media-library /api/file/attachments/... URL or a full URL."
+        },
+        "app_download_android_size_label": {
+          "label": "Android size label",
+          "hint": "Shown before automatic size formatting, for example 18 MB."
+        },
+        "app_download_android_size_bytes": {
+          "label": "Android package size (MB)",
+          "hint": "Enter MB in admin; it is stored as bytes. Use 0 to hide."
+        },
+        "app_download_android_package_name": {
+          "label": "Android package name"
+        },
+        "app_download_android_release_notes": {
+          "label": "Android release notes"
+        },
+        "app_download_android_fast_enabled": {
+          "label": "Enable Android Fast download"
+        },
+        "app_download_android_fast_name": {
+          "label": "Android Fast app name"
+        },
+        "app_download_android_fast_version_name": {
+          "label": "Android Fast version name"
+        },
+        "app_download_android_fast_version_code": {
+          "label": "Android Fast version code",
+          "hint": "Numeric version used for display and client comparisons."
+        },
+        "app_download_android_fast_download_url": {
+          "label": "Android Fast download URL",
+          "hint": "Use a media-library /api/file/attachments/... URL or a full URL."
+        },
+        "app_download_android_fast_size_label": {
+          "label": "Android Fast size label",
+          "hint": "Shown before automatic size formatting, for example ≤ 1 MB."
+        },
+        "app_download_android_fast_size_bytes": {
+          "label": "Android Fast package size (MB)",
+          "hint": "Enter MB in admin; it is stored as bytes. Use 0 to hide."
+        },
+        "app_download_android_fast_package_name": {
+          "label": "Android Fast package name"
+        },
+        "app_download_android_fast_release_notes": {
+          "label": "Android Fast release notes"
+        },
+        "app_download_ios_enabled": {
+          "label": "Enable iOS download"
+        },
+        "app_download_ios_name": {
+          "label": "iOS app name"
+        },
+        "app_download_ios_version_name": {
+          "label": "iOS version name"
+        },
+        "app_download_ios_version_code": {
+          "label": "iOS version code",
+          "hint": "Numeric version used for display and client comparisons."
+        },
+        "app_download_ios_download_url": {
+          "label": "iOS download URL",
+          "hint": "Use an App Store, TestFlight, enterprise, or profile URL."
+        },
+        "app_download_ios_size_label": {
+          "label": "iOS size label",
+          "hint": "Shown before automatic size formatting."
+        },
+        "app_download_ios_size_bytes": {
+          "label": "iOS package size (MB)",
+          "hint": "Enter MB in admin; it is stored as bytes. Use 0 to hide."
+        },
+        "app_download_ios_bundle_id": {
+          "label": "iOS Bundle ID"
+        },
+        "app_download_ios_release_notes": {
+          "label": "iOS release notes"
+        },
+        "file_recycle_retention_days": {
+          "label": "파일 휴지통 보관 기간(일)",
+          "hint": "휴지통으로 이동한 파일을 자동 정리 전까지 보관하는 일수입니다. 기본값은 30일입니다."
+        },
+        "file_recycle_cleanup_interval_hours": {
+          "label": "정리 간격(시간)",
+          "hint": "만료된 휴지통 파일을 백그라운드에서 스캔하는 간격입니다. 기본값은 24시간마다 한 번입니다."
+        },
+        "notification_interaction_suppression_enabled": {
+          "label": "상호작용 알림 억제",
+          "hint": "활성화하면 같은 사용자가 같은 작성자에게 보낸 같은 유형의 좋아요, 댓글 좋아요, 저장 알림이 임계값을 넘을 때 조용히 억제됩니다."
+        },
+        "notification_interaction_suppression_window_seconds": {
+          "label": "알림 억제 창(초)",
+          "hint": "롤링 집계 창입니다. 기본값은 600초이며 허용 범위는 60부터 86400초입니다."
+        },
+        "notification_interaction_suppression_threshold": {
+          "label": "알림 억제 임계값",
+          "hint": "창 안에서 보낼 수 있는 같은 유형의 상호작용 알림 수입니다. 기본값은 3이며 허용 범위는 1부터 100입니다."
+        }
+      },
+      "fields": {
+        "videoCenterEnabled": "비디오 센터 스위치",
+        "videoCenterHomepageEnabled": "홈 비디오 센터 추천",
+        "videoCenterRecommendLimit": "비디오 센터 추천 수",
+        "videoCenterAccountCutoff": "비디오 센터 가입 시간 기준",
+        "imageWebpEnabled": "WebP로 변환",
+        "imageWebpQuality": "일반 이미지 품질",
+        "imageAvatarWebpQuality": "아바타 이미지 품질",
+        "imageWebpMethod": "WebP 인코딩 Method",
+        "imageWebpAlphaQuality": "알파 채널 품질",
+        "imageWebpLossless": "무손실 WebP 사용",
+        "imageLibvipsEnabled": "libvips 색상 관리 사용",
+        "imageMaxWidth": "최대 너비",
+        "imageMaxHeight": "최대 높이",
+        "imageProcessingConcurrency": "이미지 처리 동시 실행 수",
+        "imagePostMaxCount": "게시물당 이미지 상한",
+        "imageArchiveEnabled": "전체 이미지 ZIP 자동 생성",
+        "imageArchiveThreshold": "자동 ZIP 이미지 임계값",
+        "imageProtectionEnabled": "강화 워터마크 보호",
+        "imageProtectionNoticeEnabled": "보호 안내 표시",
+        "imageSelectAllEnabled": "이미지 전체 선택 허용",
+        "paidContentBalanceEnabled": "월코인 결제 허용",
+        "paidContentPointsEnabled": "포인트 결제 허용",
+        "paidContentBalanceMaxPrice": "월코인 가격 상한",
+        "paidContentPointsMaxPrice": "포인트 가격 상한",
+        "hiddenWatermarkEnabled": "숨은 워터마크 사용",
+        "hiddenWatermarkIncludeUid": "내부 UID 포함",
+        "hiddenWatermarkIncludeUserId": "공개 사용자 ID 포함",
+        "hiddenWatermarkIncludeUsername": "사용자 이름 또는 닉네임 포함",
+        "hiddenWatermarkIncludeTime": "UTC 업로드 시간 포함",
+        "hiddenWatermarkIncludeFileHash": "원본 파일 해시 포함",
+        "hiddenWatermarkIncludeCustom": "사용자 지정 식별자 포함",
+        "hiddenWatermarkCustomText": "숨은 워터마크 사용자 지정 식별자"
+      },
+      "hints": {
+        "videoCenterAccountCutoff": "이 시간 이후에 가입한 사용자는 비디오 센터를 볼 수 없습니다. 비워 두면 가입 시간 기준 숨김을 사용하지 않습니다.",
+        "imageMaxDimension": "0은 제한 없음을 뜻합니다. 이미지 비율을 유지하여 축소합니다.",
+        "imageProcessingConcurrency": "숨은 워터마크 처리는 메모리를 많이 사용하므로 1을 권장합니다.",
+        "imagePostMaxCount": "게시물과 일괄 업로드의 이미지 상한입니다. 기본 100, 최대 500.",
+        "imageArchiveEnabled": "활성화하면 임계값에 도달한 게시물의 전체 이미지 ZIP을 백그라운드 대기열에서 생성합니다.",
+        "imageArchiveThreshold": "이미지 수가 이 값을 초과하면 ZIP을 자동 생성합니다. 기본값은 25입니다.",
+        "imageLibvipsEnabled": "이미지를 자동 회전하고 원본 ICC를 sRGB로 변환하며 안전한 EXIF만 유지합니다. 끄면 기존 처리 방식을 유지합니다.",
+        "imageProtectionEnabled": "표지가 아닌 이미지를 보호하여 추적 가능한 워터마크 ZIP으로만 다운로드하게 합니다.",
+        "imageProtectionNoticeEnabled": "게시 화면에 보호 설명 또는 전역 비활성화 안내를 표시할지 설정합니다.",
+        "imageSelectAllEnabled": "끄면 전체 선택을 숨기고 선택이 없을 때 일괄 작업이 모든 이미지에 적용되지 않습니다.",
+        "paidContentPaymentMethod": "유료 이미지에 이 결제 수단을 사용할 수 있는지 설정합니다. 월코인과 포인트를 함께 켤 수 있습니다.",
+        "paidContentPriceLimit": "유료 이미지에서 작성자가 입력할 수 있는 최대 잠금 해제 가격을 제어합니다.",
+        "hiddenWatermarkCustomText": "사용자 지정 식별자를 켜면 추적 레코드에 저장되며 이미지 토큰에는 삽입되지 않습니다."
+      },
+      "extract": {
+        "title": "숨은 워터마크 추출",
+        "fileLabel": "검사할 이미지 선택",
+        "description": "관리자 전용입니다. 추출한 짧은 코드를 추적 데이터베이스에서 해석해 검증합니다.",
+        "action": "워터마크 추출",
+        "extracting": "추출 중",
+        "completed": "숨은 워터마크 검사가 완료되었습니다",
+        "empty": "이미지를 선택하면 추출 결과가 표시됩니다",
+        "fields": {
+          "found": "워터마크 발견",
+          "valid": "토큰 유효",
+          "version": "페이로드 버전",
+          "traceToken": "추적 토큰",
+          "traceType": "추적 유형",
+          "traceResolved": "데이터베이스 추적 일치",
+          "payloadBytes": "페이로드 바이트",
+          "payloadBits": "페이로드 비트",
+          "payloadFormat": "페이로드 형식",
+          "watermarkEngine": "워터마크 엔진",
+          "uid": "내부 UID",
+          "userId": "공개 사용자 ID",
+          "username": "사용자 이름 또는 닉네임",
+          "uploadedAt": "업로드 시간",
+          "sourceHash": "원본 파일 해시",
+          "customText": "사용자 지정 식별자",
+          "postId": "게시물 ID",
+          "imageId": "이미지 ID",
+          "jobId": "보호 작업 ID",
+          "includedFields": "포함된 필드"
+        }
+      }
+    },
+    "fileRecycleBin": {
+      "columns": {
+        "remaining": "남은 시간"
+      },
+      "countdown": {
+        "remaining": "{value} 남음",
+        "separator": " ",
+        "day": "{count}일",
+        "hour": "{count}시간",
+        "minute": "{count}분",
+        "due": "정리 시간 도달",
+        "purged": "정리됨"
+      },
+      "actions": {
+        "inspect": "존재 확인",
+        "preview": "미리보기",
+        "download": "다운로드",
+        "close": "닫기"
+      },
+      "toasts": {
+        "recycledExists": "휴지통 사본이 존재합니다",
+        "recycledMissing": "휴지통 사본이 없습니다",
+        "directoryUnsupported": "디렉터리 미리보기는 지원하지 않습니다",
+        "previewUnsupported": "이 파일은 미리볼 수 없습니다",
+        "downloadReady": "다운로드를 시작했습니다"
+      },
+      "preview": {
+        "title": "휴지통 파일 미리보기",
+        "original": "원본 위치",
+        "recycled": "휴지통 사본",
+        "files": "파일 목록",
+        "noInspection": "미리보기 전에 존재 상태를 확인하세요.",
+        "imageAlt": "휴지통 파일 미리보기",
+        "empty": "불러온 미리보기가 없습니다"
+      },
+      "status": {
+        "unsafe": "안전하지 않음",
+        "exists": "존재",
+        "missing": "없음",
+        "notConfigured": "미설정",
+        "directory": "디렉터리",
+        "file": "파일"
+      },
+      "errors": {
+        "invalidID": "휴지통 항목 ID가 올바르지 않습니다",
+        "idsRequired": "먼저 휴지통 항목을 선택하세요",
+        "notFound": "휴지통 항목을 찾을 수 없습니다",
+        "unsafePath": "휴지통 경로가 안전 검사에 실패했습니다",
+        "fileMissing": "휴지통 사본이 없습니다",
+        "directoryPreviewUnsupported": "현재 버전은 디렉터리 미리보기와 다운로드를 지원하지 않습니다",
+        "previewUnsupported": "이 파일 형식은 미리볼 수 없습니다",
+        "inspectFailed": "휴지통 항목 검사에 실패했습니다"
+      }
+    },
+    "aiAgentPanel": {
+      "title": "AI 에이전트",
+      "description": "OpenAI 호환 서비스, 프롬프트 탭, 스트리밍 문안 생성, 대기 동시 실행 수, 감사 로그를 설정합니다.",
+      "loading": "AI 설정 불러오는 중",
+      "save": "저장",
+      "saving": "저장 중",
+      "saved": "AI 설정이 저장되었습니다",
+      "tabs": {
+        "base": "기본 설정",
+        "markdown": "노트 서식",
+        "polish": "노트 다듬기",
+        "review": "자동 평가",
+        "comments": "AI 댓글",
+        "commentReply": "댓글 답글",
+        "vision": "이미지 분석",
+        "copy": "운영 문안",
+        "logs": "감사 로그",
+        "moderation": "콘텐츠 검수",
+        "publishGeneration": "상세 생성",
+        "contentFormat": "편집기 AI"
+      },
+      "base": {
+        "title": "연결 및 제한",
+        "enabled": "AI 켜짐",
+        "disabled": "AI 꺼짐",
+        "baseUrl": "Base URL",
+        "model": "모델",
+        "apiKey": "API Key",
+        "apiKeyPlaceholder": "새 키를 붙여넣어 교체",
+        "timeout": "업스트림 무응답 자동 중지(초)",
+        "maxRun": "백그라운드 최대 실행 시간(초)",
+        "chunkSize": "청크 최대 문자 수",
+        "concurrency": "전역 최대 동시 실행(기본 5)",
+        "temperature": "기본 temperature",
+        "maxOutput": "기본 최대 출력 Token",
+        "showReasoningOn": "추론 표시",
+        "showReasoningOff": "추론 숨김",
+        "thinkingParameterOn": "thinking 파라미터 전송",
+        "thinkingParameterOff": "thinking 파라미터 전송 안 함",
+        "thinkingOn": "모델 thinking 켜기",
+        "thinkingOff": "모델 thinking 끄기",
+        "logHttpDetailsOn": "원격 HTTP 상세 기록",
+        "logHttpDetailsOff": "원격 HTTP 상세 기록 안 함",
+        "extraHeaders": "사용자 지정 Headers JSON",
+        "extraHeadersPlaceholder": "{\n  \"X-Provider\": \"openai-compatible\"\n}",
+        "extraHeadersInvalid": "사용자 지정 Headers는 JSON 객체여야 합니다.",
+        "reasoningEffort": "추론 강도",
+        "reasoningEfforts": {
+          "default": "제공자 기본값",
+          "minimal": "최소",
+          "low": "낮음",
+          "medium": "보통",
+          "high": "높음"
+        },
+        "modelParameters": "모델 추가 매개변수 JSON",
+        "modelParametersPlaceholder": "{\n  \"top_p\": 0.9\n}",
+        "modelParametersInvalid": "모델 추가 매개변수는 JSON 객체여야 합니다."
+      },
+      "autoComment": {
+        "enabled": "게시 후 AI 자동 댓글 켜짐",
+        "disabled": "게시 후 AI 자동 댓글 꺼짐",
+        "botUserId": "대체 봇 UID",
+        "template": "자동 댓글 템플릿",
+        "delaySeconds": "지연 초",
+        "maxImages": "Vision에 보낼 최대 이미지",
+        "botUserIdMin": "랜덤 UID 범위 시작",
+        "botUserIdMax": "랜덤 UID 범위 끝",
+        "style": "프롬프트 스타일",
+        "styles": {
+          "normal": "일반",
+          "humorous": "유머",
+          "bold": "강한 톤"
+        },
+        "imageSelectionMode": "이미지 선택 모드"
+      },
+      "commentReply": {
+        "title": "AI 댓글 답글",
+        "enabled": "AI 댓글 답글 켜짐",
+        "disabled": "AI 댓글 답글 꺼짐",
+        "template": "답글 템플릿",
+        "delaySeconds": "지연 초",
+        "maxImages": "Vision에 보낼 최대 이미지",
+        "maxReplies": "AI 댓글당 최대 답글 수",
+        "mentionEnabled": "멘션 답글 켜짐",
+        "mentionDisabled": "멘션 답글 꺼짐",
+        "mentionName": "멘션 이름",
+        "mentionTemplate": "멘션 답글 템플릿",
+        "mentionBotUserIdMin": "랜덤 멘션 봇 UID 시작",
+        "mentionBotUserIdMax": "랜덤 멘션 봇 UID 끝",
+        "maxMentionReplies": "게시물당 최대 멘션 답글 수",
+        "style": "프롬프트 스타일",
+        "imageSelectionMode": "이미지 선택 모드"
+      },
+      "templatesTitle": "프롬프트 템플릿",
+      "templates": {
+        "markdown_format": "Markdown 서식",
+        "post_polish": "노트 다듬기",
+        "post_review_reply": "AI 평가 답글",
+        "post_auto_comment": "게시물 자동 댓글",
+        "comment_reply": "댓글 답글",
+        "comment_mention_reply": "멘션 답글",
+        "image_analysis": "이미지 분석",
+        "announcement": "공지",
+        "system_notification": "시스템 알림",
+        "popup": "팝업",
+        "activity_description": "활동 설명",
+        "post_title": "게시물 제목",
+        "post_summary": "게시물 요약",
+        "tag_suggestions": "태그 제안",
+        "post_custom_generate": "사용자 지정 게시물 생성",
+        "comment_moderation": "댓글 검수",
+        "post_moderation": "게시글 검수",
+        "publish_title_generate": "게시 제목 요약",
+        "publish_detail_generate": "게시 상세 생성",
+        "publish_title_detail_generate": "기존 제목 및 상세 생성"
+      },
+      "template": {
+        "enabled": "사용",
+        "disabled": "중지",
+        "temperature": "Temperature",
+        "maxOutput": "최대 출력 Token",
+        "concurrency": "프로젝트 동시 실행",
+        "concurrencyHint": "0은 전역 제한을 상속하고, 1-50은 이 템플릿만 제한합니다.",
+        "jsonOn": "JSON 켜기",
+        "jsonOff": "JSON 끄기",
+        "prompt": "프롬프트",
+        "systemPrompt": "시스템 프롬프트",
+        "userPrompt": "사용자 프롬프트",
+        "resetDefault": "기본값 복원",
+        "style": "스타일",
+        "styles": {
+          "normal": "일반",
+          "humorous": "유머",
+          "bold": "강한 톤"
+        },
+        "model": "개별 모델",
+        "modelPlaceholder": "비워 두면 기본 모델 사용",
+        "runtimeOverrides": "런타임 재정의",
+        "runtimeOverridesHint": "이 템플릿에만 추론 설정과 모델 추가 파라미터를 재정의합니다.",
+        "runtimeOn": "재정의 켬",
+        "runtimeOff": "전역 상속",
+        "runtimeModelParameters": "템플릿 모델 파라미터 JSON"
+      },
+      "generator": {
+        "title": "문안 생성 작업대",
+        "template": "템플릿",
+        "input": "입력",
+        "inputPlaceholder": "운영 목표, 대상, 톤, 사실, 제한 사항을 입력하세요.",
+        "output": "출력",
+        "reasoning": "추론",
+        "emptyOutput": "생성 결과가 여기에 표시됩니다.",
+        "emptyInput": "먼저 내용을 입력하세요.",
+        "run": "생성",
+        "generating": "생성 중",
+        "progress": "진행률 {percent}%",
+        "queue": "대기 {position}/{total}, 예상 {eta}"
+      },
+      "logs": {
+        "title": "AI 감사 로그",
+        "refresh": "새로고침",
+        "loading": "AI 로그 불러오는 중",
+        "empty": "AI 로그가 없습니다",
+        "durationMs": "{value} ms",
+        "columns": {
+          "type": "유형",
+          "status": "상태",
+          "actor": "작업자",
+          "model": "모델",
+          "tokens": "Token",
+          "duration": "소요 시간",
+          "created": "생성 시간",
+          "imagesSent": "전송 성공 이미지",
+          "tokenSpeed": "Token/s",
+          "error": "API 오류",
+          "details": "상세"
+        },
+        "types": {
+          "format_markdown": "Markdown 서식 지정",
+          "admin_copy": "관리자 문안 생성",
+          "post_review_reply": "AI 평가 답글",
+          "post_auto_comment": "게시물 자동 댓글",
+          "comment_reply": "댓글 답글",
+          "comment_mention_reply": "멘션 답글",
+          "image_analysis": "이미지 분석",
+          "post_polish": "게시물 다듬기",
+          "post_custom_generate": "사용자 지정 게시물 생성",
+          "publish_title_generate": "게시 제목 요약",
+          "publish_detail_generate": "게시 상세 생성",
+          "publish_title_detail_generate": "기존 제목 및 상세 생성",
+          "comment_moderation": "댓글 검수",
+          "post_moderation": "게시글 검수"
+        },
+        "statuses": {
+          "running": "실행 중",
+          "completed": "완료됨",
+          "failed": "실패",
+          "canceled": "취소됨"
+        },
+        "actors": {
+          "user": "사용자",
+          "admin": "관리자",
+          "system": "시스템"
+        },
+        "details": {
+          "show": "보기",
+          "hide": "접기",
+          "httpStatus": "HTTP 상태",
+          "contentType": "콘텐츠 유형",
+          "usage": "Token 사용량",
+          "usageValue": "프롬프트 {prompt} / 생성 {completion} / 합계 {total}",
+          "attempts": "시도 횟수",
+          "outputSummary": "생성 내용",
+          "responseSummary": "상위 응답",
+          "upstreamAttempts": "HTTP 요청 상세",
+          "rawMetadata": "원시 메타데이터"
+        }
+      },
+      "eta": {
+        "lessThanMinute": "1분 미만",
+        "minutes": "{count}분"
+      },
+      "moderation": {
+        "title": "AI 댓글 및 게시글 검수",
+        "enabled": "검수 켜짐",
+        "disabled": "검수 꺼짐",
+        "templateKey": "템플릿 키",
+        "prompt": "프롬프트 덮어쓰기",
+        "promptPlaceholder": "선택 사항: 이 검수 대상의 템플릿 프롬프트를 덮어씁니다.",
+        "ruleEnabled": "검수",
+        "ruleDisabled": "건너뛰기",
+        "targets": {
+          "comment": {
+            "title": "댓글 검수",
+            "description": "새 댓글은 먼저 표시되며, AI가 탐지하면 설정된 동작을 나중에 적용합니다."
+          },
+          "post": {
+            "title": "게시글 검수",
+            "description": "새 게시글은 먼저 표시되며, AI가 탐지하면 설정된 동작을 나중에 적용합니다."
+          }
+        },
+        "rules": {
+          "spam": "스팸",
+          "porn": "성적 콘텐츠",
+          "political_sensitive": "정치 민감"
+        },
+        "actions": {
+          "observe": "관찰",
+          "delete": "삭제",
+          "private": "비공개 전환"
+        },
+        "sensitivity": "민감도",
+        "debugTitle": "검수 디버그 테스트",
+        "debugRun": "테스트 실행",
+        "debugRunning": "테스트 중",
+        "debugTarget": "대상",
+        "debugInput": "테스트 내용",
+        "debugPlaceholder": "댓글 또는 게시글 본문을 붙여 넣어 모델 원본 출력과 파싱된 판정을 확인합니다.",
+        "debugEmpty": "테스트할 내용을 입력하세요.",
+        "debugEmptyOutput": "테스트를 실행하면 파싱된 판정과 원본 출력이 표시됩니다.",
+        "debugStatus": "상태:",
+        "debugAction": "동작:",
+        "debugTemplate": "템플릿:",
+        "debugDecision": "파싱된 판정",
+        "debugRaw": "모델 원본 출력"
+      },
+      "publishGeneration": {
+        "title": "게시 상세 생성",
+        "enabled": "상세 생성 켜짐",
+        "disabled": "상세 생성 꺼짐",
+        "maxImages": "분석할 이미지 수",
+        "template": "템플릿",
+        "titleMaxChars": "제목 글자 수 제한",
+        "imageSelectionMode": "이미지 선택 모드",
+        "detailTemplate": "상세 생성 템플릿",
+        "titleTemplate": "제목 요약 템플릿"
+      },
+      "imageSelectionModes": {
+        "ordered": "순서대로",
+        "random": "무작위"
+      },
+      "contentFormat": {
+        "title": "편집기 AI 서식",
+        "enabled": "편집기 AI 활성화됨",
+        "disabled": "편집기 AI 비활성화됨",
+        "template": "템플릿",
+        "modes": {
+          "format": {
+            "enabled": "스마트 서식 활성화됨",
+            "disabled": "스마트 서식 비활성화됨"
+          },
+          "polish": {
+            "enabled": "노트 다듬기 활성화됨",
+            "disabled": "노트 다듬기 비활성화됨"
+          },
+          "custom": {
+            "enabled": "콘텐츠 생성 활성화됨",
+            "disabled": "콘텐츠 생성 비활성화됨"
+          }
+        },
+        "continuation": {
+          "enabled": "긴 생성 압축 이어쓰기가 활성화됨",
+          "disabled": "긴 생성 압축 이어쓰기가 비활성화됨",
+          "triggerChars": "트리거 글자 수",
+          "maxRounds": "이어쓰기 횟수",
+          "contextChars": "압축 컨텍스트 글자 수"
+        }
+      },
+      "jobs": {
+        "title": "AI 작업 대기열",
+        "refresh": "새로고침",
+        "loading": "AI 작업을 불러오는 중",
+        "empty": "대기 중이거나 생성 중인 AI 작업이 없습니다",
+        "cancel": "포기",
+        "cancelSuccess": "AI 작업을 포기했습니다",
+        "metrics": {
+          "active": "대기+생성 합계",
+          "queued": "대기 중",
+          "running": "생성 중"
+        },
+        "statuses": {
+          "queued": "대기 중",
+          "running": "생성 중",
+          "completed": "완료",
+          "failed": "실패",
+          "canceled": "포기됨"
+        },
+        "userLine": "사용자 ID {user} · 숫자 ID {id}",
+        "queuePosition": "대기열 {position}/{total}",
+        "lastToken": "마지막 token",
+        "tokenRate": "10초 평균 속도",
+        "tokenRateValue": "{value} tokens/s",
+        "tokenRatePending": "출력 대기 중",
+        "notAvailable": "N/A",
+        "waiting": "대기 중",
+        "generatedTokens": "생성된 token 총수",
+        "estimatedTokens": "예상 tokens",
+        "upstream": {
+          "show": "업스트림 출력",
+          "hide": "출력 접기",
+          "title": "업스트림 실시간 출력",
+          "live": "실시간",
+          "history": "기록",
+          "empty": "아직 업스트림 출력이 없습니다",
+          "streaming": "수신 중",
+          "stopped": "중지됨"
+        },
+        "time": {
+          "unknown": "업데이트 없음",
+          "secondsAgo": "{count}초 전",
+          "minutesAgo": "{count}분 전",
+          "hoursAgo": "{count}시간 전",
+          "daysAgo": "{count}일 전"
+        }
+      }
+    },
+    "accessBlockPanel": {
+      "title": "IP / UA 접근 차단",
+      "description": "정확한 IP, CIDR, User-Agent 포함 문자열 또는 정규식으로 요청을 차단합니다. 애플리케이션 라우트 실행 전에 메모리 snapshot으로 빠르게 매칭합니다.",
+      "refresh": "새로고침",
+      "viewLogs": "트리거 로그",
+      "disabledHint": "ACCESS_BLOCK_DISABLED로 접근 차단이 꺼져 있습니다.",
+      "loading": "접근 차단 규칙 불러오는 중",
+      "rulesTitle": "규칙",
+      "rulesSummary": "{active}/{total}개 규칙 사용 중",
+      "newRule": "새 규칙",
+      "empty": "접근 차단 규칙이 없습니다",
+      "editTitle": "규칙 편집",
+      "createTitle": "규칙 생성",
+      "formHint": "여러 IP, CIDR 또는 UA pattern을 붙여넣어 일괄 추가할 수 있습니다. 강제 저장은 자기 잠금 보호를 건너뜁니다.",
+      "kind": "종류",
+      "matchType": "매칭 방식",
+      "pattern": "패턴",
+      "batch": "일괄 패턴",
+      "batchPlaceholder": "한 줄에 pattern 하나. 빈 줄과 #로 시작하는 줄은 무시됩니다.",
+      "action": "동작",
+      "statusCode": "상태",
+      "redirectUrl": "리디렉션 URL",
+      "priority": "우선순위",
+      "note": "메모",
+      "enabled": "사용",
+      "disabled": "중지",
+      "enable": "사용",
+      "disable": "중지",
+      "delete": "삭제",
+      "deleteConfirm": "이 접근 차단 규칙을 삭제할까요?",
+      "force": "이 규칙이 현재 관리자 요청과 일치해도 강제로 저장합니다.",
+      "cancel": "취소",
+      "save": "저장",
+      "batchSave": "일괄 추가",
+      "actionStatus": "{code} 반환",
+      "actionRedirect": "{url}(으)로 리디렉션",
+      "columns": {
+        "rule": "규칙",
+        "action": "동작",
+        "priority": "우선순위",
+        "note": "메모",
+        "state": "상태",
+        "operations": "작업"
+      },
+      "kinds": {
+        "ip": "IP",
+        "ua": "User-Agent"
+      },
+      "matchTypes": {
+        "ip": "정확한 IP",
+        "cidr": "CIDR",
+        "ua_contains": "UA 포함",
+        "ua_regex": "UA 정규식"
+      },
+      "actions": {
+        "status": "상태 코드",
+        "redirect": "리디렉션"
+      },
+      "toasts": {
+        "loadFailed": "접근 차단 규칙을 불러오지 못했습니다",
+        "saved": "접근 차단 규칙을 저장했습니다",
+        "batchSaved": "일괄 완료: 생성 {created}개, 실패 {failed}개",
+        "saveFailed": "접근 차단 규칙을 저장하지 못했습니다",
+        "deleted": "접근 차단 규칙을 삭제했습니다",
+        "deleteFailed": "접근 차단 규칙을 삭제하지 못했습니다",
+        "importSaved": "URL 가져오기 소스를 저장했습니다",
+        "importSaveFailed": "URL 가져오기 소스 저장 실패",
+        "importSynced": "URL 가져오기 동기화 완료: {count}개 규칙",
+        "importSyncFailed": "URL 가져오기 소스 동기화 실패",
+        "importDeleted": "URL 가져오기 소스를 삭제했습니다",
+        "importDeleteFailed": "URL 가져오기 소스 삭제 실패"
+      },
+      "importedRule": "URL 가져오기",
+      "importsTitle": "IP URL 가져오기",
+      "importsSummary": "{active}/{total}개 소스 활성화",
+      "newImport": "새 가져오기",
+      "importsEmpty": "URL 가져오기 소스가 없습니다",
+      "editImportTitle": "URL 가져오기 편집",
+      "createImportTitle": "URL 가져오기 생성",
+      "importFormHint": "일반 텍스트 IP 목록을 가져옵니다. 한 줄에 IP 또는 CIDR 하나를 입력합니다. 빈 줄과 # 주석은 무시됩니다.",
+      "importUrl": "가져오기 URL",
+      "updateIntervalMinutes": "업데이트 간격(분)",
+      "saveImport": "소스 저장",
+      "syncNow": "지금 동기화",
+      "importForce": "가져온 목록이 현재 관리자 요청과 일치해도 수동 동기화를 강제합니다.",
+      "importDeleteConfirm": "이 URL 가져오기 소스와 가져온 규칙을 삭제할까요?",
+      "importCount": "{count}개 규칙",
+      "intervalMinutes": "{minutes}분",
+      "importColumns": {
+        "url": "URL",
+        "interval": "간격",
+        "lastSync": "마지막 동기화",
+        "nextSync": "다음 동기화"
+      },
+      "importStatuses": {
+        "pending": "대기 중",
+        "success": "성공",
+        "failed": "실패"
+      },
+      "errors": {
+        "selfLock": "이 규칙은 현재 관리자 요청을 차단합니다. 복구 경로가 있을 때만 강제 저장하세요.",
+        "importDisabled": "서버에서 URL 가져오기가 비활성화되어 있습니다.",
+        "importFetchFailed": "원격 IP 목록을 가져오거나 파싱할 수 없습니다.",
+        "invalidRule": "접근 차단 규칙이 올바르지 않습니다.",
+        "saveFailed": "접근 차단 규칙을 저장할 수 없습니다.",
+        "unavailable": "접근 차단 서비스를 사용할 수 없습니다."
+      }
+    }
+  }
+}

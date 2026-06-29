@@ -1,0 +1,1461 @@
+{
+  "adminMaintenance": {
+    "loadFailed": "维护配置加载失败",
+    "saved": "维护配置已保存",
+    "saveFailed": "维护配置保存失败",
+    "rotated": "维护入口已更新",
+    "rotateFailed": "维护入口更新失败",
+    "copied": "维护入口已复制",
+    "loading": "正在加载维护配置",
+    "title": "维护模式",
+    "description": "开启后普通入口会显示倒计时维护弹窗，专属入口可绕过并自动登录指定 UID。",
+    "refresh": "刷新",
+    "enabled": "开启维护模式",
+    "enabledHint": "公开 API 将返回维护状态，管理端与服务入口保持可用。",
+    "message": "维护提示",
+    "autoLoginUid": "自动登录 UID",
+    "estimatedEnd": "预计结束时间",
+    "serviceEntry": "随机服务入口",
+    "copyEntry": "复制入口",
+    "rotateEntry": "重新生成入口",
+    "save": "保存配置",
+    "borderSettings": "维护边框",
+    "borderSettingsHint": "专属入口进入后在页面四周显示提示边框。",
+    "borderVisible": "显示边框",
+    "borderDismissible": "允许点击关闭",
+    "borderColor": "边框颜色",
+    "borderOpacity": "透明度 {value}%"
+  },
+  "adminDatabase": {
+    "loadFailed": "数据库信息加载失败",
+    "repairConfirm": "确认执行非破坏性修复？错误索引仅在临时唯一索引验证成功后安全替换，绝不删除或合并业务数据。",
+    "repairDone": "数据库修复已完成",
+    "repairBlocked": "已完成可安全修复项，仍有 {count} 个重复数据阻塞项。",
+    "duplicateSummary": "发现 {groups} 组重复键，共有 {rows} 条额外记录；请人工处理数据后重试。",
+    "repairFailed": "数据库修复失败",
+    "loading": "正在加载数据库信息",
+    "title": "数据库管理",
+    "description": "检查表体积、字段估算大小、索引缺口，并执行非破坏性一键纠正。",
+    "refresh": "刷新",
+    "driver": "驱动",
+    "database": "数据库",
+    "tables": "表数量",
+    "size": "总大小",
+    "tableSizes": "表大小",
+    "searchTables": "搜索表名",
+    "rows": "行",
+    "columnsFor": "{table} 字段",
+    "columns": "字段",
+    "estimatedColumnSize": "估算字段体积：{size}",
+    "indexAudit": "索引 / 结构审计",
+    "indexAuditDescription": "对照 GORM 模型和期望索引注册表检查缺失项。",
+    "repair": "一键纠正",
+    "noIssues": "未发现缺失字段或索引",
+    "nullable": "可空",
+    "notNullable": "非空",
+    "vacuumSaved": "自动优化配置已保存",
+    "vacuumSaveFailed": "自动优化配置保存失败",
+    "vacuumRunConfirm": "确认执行 VACUUM ANALYZE {table}？",
+    "vacuumRunDone": "VACUUM ANALYZE 已完成",
+    "vacuumRunFailed": "VACUUM ANALYZE 执行失败",
+    "vacuumTitle": "VACUUM ANALYZE 自动优化",
+    "vacuumDescription": "对指定 PostgreSQL 表执行普通 VACUUM ANALYZE，更新统计信息并回收可复用空间。",
+    "vacuumRunSelected": "优化当前表",
+    "vacuumUnsupported": "当前数据库不支持 VACUUM ANALYZE 配置",
+    "vacuumEnabled": "开启自动优化",
+    "vacuumInterval": "自动间隔（小时）",
+    "vacuumSave": "保存自动配置",
+    "vacuumLastResult": "最近执行",
+    "vacuumNextRun": "下次执行",
+    "vacuumLastRun": "上次执行",
+    "vacuumLastDuration": "上次耗时",
+    "vacuumNoResult": "暂无执行结果"
+  },
+  "adminPortal": {
+    "brand": {
+      "name": "月梦社区",
+      "subtitle": "运营后台"
+    },
+    "loading": "正在进入后台",
+    "mediaLibrary": {
+      "unrestrictedUploadHint": "支持任意文件类型和后缀"
+    },
+    "login": {
+      "title": "管理员登录",
+      "subtitle": "月梦社区运营后台",
+      "username": "账号",
+      "usernamePlaceholder": "admin",
+      "password": "密码",
+      "submit": "登录后台",
+      "success": "管理员已登录",
+      "errors": {
+        "failed": "登录失败，请稍后重试。",
+        "forbidden": "当前登录信息没有管理员权限。",
+        "invalidCredentials": "账号或密码错误。",
+        "locked": "当前 IP 密码错误次数过多，请在 {minutes} 分钟后重试。",
+        "missingParams": "请输入账号和密码。"
+      }
+    },
+    "layout": {
+      "adminRole": "管理员",
+      "backHome": "返回首页",
+      "backToSite": "返回前台",
+      "breadcrumb": "首页 / {title}",
+      "closeMenu": "关闭菜单",
+      "closeMenuOverlay": "关闭菜单遮罩",
+      "logout": "退出",
+      "openMenu": "打开菜单",
+      "refresh": "刷新",
+      "searchPlaceholder": "搜索用户、内容、模块..."
+    },
+    "userManagement": {
+      "title": "管理用户积分",
+      "fields": {
+        "uid": "UID",
+        "oauth2Id": "OAuth2 ID",
+        "points": "积分"
+      },
+      "actions": {
+        "managePoints": "管理积分",
+        "close": "关闭",
+        "cancel": "取消",
+        "save": "保存调整",
+        "saving": "保存中"
+      },
+      "operation": {
+        "label": "调整方式",
+        "add": "增加",
+        "deduct": "扣减",
+        "set": "设为指定值"
+      },
+      "amount": {
+        "change": "变更积分",
+        "target": "目标积分",
+        "placeholder": "输入积分数量"
+      },
+      "reason": {
+        "label": "原因（可选）",
+        "placeholder": "填写操作备注，便于在积分流水中追溯"
+      },
+      "validation": {
+        "invalidAmount": "请输入有效的积分数量。"
+      },
+      "messages": {
+        "saved": "积分已更新，当前余额：{points}"
+      },
+      "batchGenerate": "批量生成用户",
+      "batchGenerating": "生成中",
+      "batchGenerateCount": "数量",
+      "batchGenerateSuccess": "已生成 {count} 个用户。"
+    },
+    "navigation": {
+      "sections": {
+        "overview": "总览",
+        "users": "用户与权限",
+        "content": "内容运营",
+        "risk": "审核与风控",
+        "creator": "创作者与财务",
+        "growth": "推荐与增长",
+        "notice": "通知与公告",
+        "system": "应用与系统"
+      },
+      "items": {
+        "dashboard": "运营看板",
+        "queues": "队列状态",
+        "logs": "日志中心",
+        "observability": "系统观测",
+        "database": "数据库管理",
+        "maintenance": "维护模式",
+        "operations": "运营控制台",
+        "withdraw": "提现审核",
+        "invite": "邀请增长",
+        "coupon": "优惠券运营",
+        "points": "积分运营",
+        "onboardingSettings": "引导设置",
+        "backendApi": "查看后端 API",
+        "systemUpdate": "系统更新",
+        "componentCheck": "组件检查与测试",
+        "hiddenWatermarkAccess": "隐藏水印权限",
+        "settings": "系统设置",
+        "aiAgent": "AI 智能体",
+        "accessBlock": "访问屏蔽"
+      },
+      "resources": {
+        "admins": "管理员",
+        "announcements": "公告管理",
+        "app-versions": "App 版本",
+        "audit": "认证审核",
+        "banned-word-categories": "敏感词分类",
+        "banned-words": "敏感词",
+        "categories": "分类管理",
+        "collections": "收藏记录",
+        "comments": "评论管理",
+        "users": "用户管理",
+        "feedback": "用户反馈",
+        "follows": "关注关系",
+        "licenses": "授权码",
+        "likes": "点赞记录",
+        "media-library": "媒体库",
+        "file-recycle-bin": "文件回收站",
+        "notification-templates": "通知模板",
+        "open-apis": "开放 API",
+        "posts": "内容管理",
+        "posts-quality": "内容质量",
+        "post-configs": "帖子推荐规则",
+        "quality-reward-settings": "质量奖励",
+        "content-review": "内容审核",
+        "reports": "举报处理",
+        "sessions": "会话管理",
+        "system-notifications": "系统通知",
+        "tags": "标签管理",
+        "user-configs": "用户推荐规则",
+        "user-toolbar": "用户工具栏",
+        "ai-moderation-logs": "AI 审核日志"
+      }
+    },
+    "onboardingSettingsPanel": {
+      "title": "引导设置",
+      "description": "配置新用户引导开关、跳过策略、兴趣选项和积分说明",
+      "configTitle": "引导配置",
+      "save": "保存",
+      "saved": "引导设置已保存",
+      "loadingSettings": "正在加载引导设置",
+      "emptySettings": "暂无引导设置",
+      "resetTitle": "重置用户引导状态",
+      "resetDescription": "清除所有用户的引导完成标记后，未在数据库记录完成的用户会重新看到引导流程。",
+      "resetAction": "重置全部",
+      "resetting": "正在重置",
+      "resetConfirm": "确认重置所有用户的引导完成状态？",
+      "resetDone": "用户引导状态已重置",
+      "resetSingleTitle": "重置单个用户",
+      "resetSingleDescription": "输入数字 ID、用户 ID 或 XiSe ID，只让该用户重新看到引导流程。",
+      "resetSingleLabel": "用户标识",
+      "resetSinglePlaceholder": "用户 ID、数字 ID 或 XiSe ID",
+      "resetSingleAction": "重置该用户",
+      "resetSingleConfirm": "确认重置 {userId} 的引导完成状态？",
+      "resetSingleDone": "单个用户引导状态已重置",
+      "resetSingleMissing": "请先输入用户标识。",
+      "fields": {
+        "enabled": "开启引导流程",
+        "allowSkip": "允许跳过引导",
+        "interestOptions": "引导兴趣选项",
+        "customFields": "引导自定义字段",
+        "pointsIntroTitle": "积分说明标题",
+        "pointsIntroSummary": "积分说明摘要",
+        "pointsIntroDetail": "积分说明详情",
+        "avatarEnabled": "显示头像设置",
+        "avatarRequired": "头像必填",
+        "backgroundEnabled": "显示背景设置",
+        "backgroundRequired": "背景必填",
+        "nameEnabled": "显示名称设置",
+        "nameRequired": "名称必填",
+        "signatureEnabled": "显示签名设置",
+        "signatureRequired": "签名必填",
+        "interestsEnabled": "显示兴趣爱好",
+        "interestsRequired": "兴趣爱好必填",
+        "minInterests": "至少选择兴趣数",
+        "resultTitle": "完成弹窗标题",
+        "resultSavedText": "无积分保存文案",
+        "walletLabel": "积分入口按钮文案",
+        "walletUrl": "积分入口链接"
+      },
+      "hints": {
+        "enabled": "开启后，数据库未记录完成引导的登录用户会看到引导弹窗。",
+        "allowSkip": "关闭后，用户必须完成引导流程，不能直接跳过。",
+        "interestOptions": "用下面的列表添加、删除或修改兴趣选项；也可以每行一个，或粘贴 JSON 示例：[\"Bondage\", \"Handcuffs\", \"Leg irons\"]。",
+        "customFields": "支持 JSON 或多行文本，用于扩展引导表单字段。",
+        "pointsIntroDetail": "用户完成引导后点击查看详情时展示。",
+        "minInterests": "仅在显示兴趣爱好且兴趣必填时生效。",
+        "walletUrl": "完成弹窗中的积分入口跳转地址，可填写站内路径或完整 URL。"
+      },
+      "addInterest": "添加兴趣",
+      "removeInterest": "删除兴趣",
+      "interestPlaceholder": "输入兴趣名称",
+      "emptyInterestOptions": "暂无兴趣选项，点击添加兴趣创建。",
+      "addSampleInterests": "添加样本",
+      "sampleInterests": {
+        "bondage": "Bondage",
+        "handcuffs": "Handcuffs",
+        "legIrons": "Leg irons"
+      }
+    },
+    "hiddenWatermarkAccessPanel": {
+      "title": "隐藏水印权限",
+      "description": "控制普通用户是否可以使用前台隐藏水印检验工具",
+      "loading": "正在加载隐藏水印权限",
+      "save": "保存",
+      "saved": "隐藏水印权限已保存",
+      "saving": "正在保存",
+      "on": "开启",
+      "off": "关闭",
+      "watermarkConfig": {
+        "title": "隐藏水印配置",
+        "reference": "参考 watermark_zero 官方说明：作者强烈建议使用 WithGolay；D1/D2 越大越抗压缩但画质损失越明显，块越细容量越高但噪点也会增加。奇数块大小会按官方规则向上取偶数，最小为 4。",
+        "runtime": {
+          "payload": "当前载荷",
+          "payloadValue": "{bytes} 字节 / {bits} bit",
+          "format": "载荷格式",
+          "engine": "引擎模式",
+          "referenceRecovery": "截图参考图恢复"
+        },
+        "fields": {
+          "enabled": "启用隐藏水印",
+          "protectedOnly": "仅保护内容加水印",
+          "includeUid": "包含内部 UID",
+          "includeUserId": "包含公开用户 ID",
+          "includeUsername": "包含用户名或昵称",
+          "includeTime": "包含 UTC 上传时间",
+          "includeFileHash": "包含原文件哈希",
+          "includeCustom": "包含自定义标识",
+          "customText": "自定义标识",
+          "coefficientMode": "系数模式",
+          "eccMode": "纠错编码",
+          "golaySeed": "Golay Shuffle Seed",
+          "blockWidth": "块宽度",
+          "blockHeight": "块高度",
+          "d1": "D1 强度",
+          "d2": "D2 强度",
+          "engine": "水印引擎",
+          "remoteEngine": "远程算法",
+          "remotePasswordWm": "水印密码",
+          "remotePasswordImg": "图片密码",
+          "remoteProfile": "远程水印档位",
+          "remoteD1": "自定义 D1",
+          "remoteD2": "自定义 D2",
+          "protectionMaxDimension": "保护图片最长边",
+          "protectionAllowedFailurePercent": "保护包允许失败率",
+          "protectionOutputMode": "保护图片输出模式",
+          "protectionQuality": "保护图片 WebP 质量",
+          "remoteTimeout": "远程请求超时（秒）",
+          "remoteOperationTimeout": "远程计算超时（秒）"
+        },
+        "hints": {
+          "enabled": "关闭后普通上传不写入隐藏水印；保护包仍会强制写入追溯水印。",
+          "protectedOnly": "开启后所有上传均保存无水印原图，仅在受保护图片生成购买者下载压缩包时动态嵌入水印。",
+          "includeUid": "写入数据库内部 UID，追溯最稳定。",
+          "includeUserId": "写入公开用户 ID，便于人工核对。",
+          "includeUsername": "写入昵称或 username，隐私风险更高，默认关闭。",
+          "includeTime": "写入水印生成 UTC 时间。",
+          "includeFileHash": "写入原图哈希片段，便于确认来源。",
+          "includeCustom": "将下方自定义标识保存到追踪数据库，不写入图片 Token。",
+          "customText": "追踪数据库最多保存 255 个字符。",
+          "coefficientMode": "WithD1 成本更低；WithD1D2 通常更稳但计算更重。",
+          "eccMode": "作者强烈建议 WithGolay；WithoutECC 仅用于兼容或实验。",
+          "golaySeed": "WithGolay 的确定性打散种子；提取时必须一致。",
+          "blockShape": "块大小越小容量越高，但更可能增加噪点；官方要求偶数且不小于 4。",
+          "d1d2": "数值越大越抗攻击/压缩，但越可能影响原画。",
+          "engine": "选择使用 Go 本地算法或内网 FastAPI 远程服务。",
+          "remoteEngine": "自动模式会先用 blind_watermark，失败后自动切换 DWT-DCT-SVD 短码。",
+          "remotePasswordWm": "blind_watermark 的 password_wm；嵌入和提取必须一致。",
+          "remotePasswordImg": "blind_watermark 的 password_img；嵌入和提取必须一致。",
+          "remoteBlockShape": "远程 blind_watermark 的分块大小；块越小容量越高但更可能影响画质。",
+          "remoteD1D2": "远程 blind_watermark 的 D1/D2 强度；数值越大越抗压缩但画质损失越明显。",
+          "remoteProfile": "自适应普通图片从 18/8 开始；受保护图片会从 24/12 开始以提高抗压缩能力。",
+          "protectionMaxDimension": "默认 2048；设为 0 保留原始尺寸。",
+          "protectionAllowedFailurePercent": "按总张数向下取整；例如 10 张设 20% 最多允许跳过 2 张。跳过的图片不会写入 ZIP，至少需成功 1 张。",
+          "protectionOutputMode": "无损 WebP 画质最好但文件更大；高质量 WebP 可减小压缩包。",
+          "protectionQuality": "仅高质量 WebP 模式使用。",
+          "remoteTimeout": "Go 后端等待远程水印服务的最长时间；修改后下一次任务立即生效。",
+          "remoteOperationTimeout": "传给 FastAPI 水印进程的单次计算超时；应略小于远程请求超时。"
+        },
+        "options": {
+          "coefficientMode": {
+            "d1d2": "WithD1D2（更稳）",
+            "d1": "WithD1（更快）"
+          },
+          "eccMode": {
+            "golay": "WithGolay（作者强烈建议）",
+            "none": "WithoutECC（实验）"
+          },
+          "engine": {
+            "auto": "自动（远程优先）",
+            "local": "本地",
+            "remote": "远程"
+          },
+          "remoteEngine": {
+            "dwt_dct_svd": "DWT-DCT-SVD 短码",
+            "blind_watermark": "旧版 blind_watermark",
+            "auto": "自动"
+          },
+          "remoteProfile": {
+            "adaptive": "自适应均衡（18/8 起步）",
+            "fidelity": "高画质（18/8）",
+            "balanced": "均衡（24/12）",
+            "strong": "强抗压（30/15）",
+            "official": "官方强度（36/20）",
+            "custom": "自定义"
+          },
+          "protectionOutputMode": {
+            "lossless_webp": "无损 WebP",
+            "quality_webp": "高质量 WebP"
+          }
+        },
+        "presets": {
+          "current": {
+            "title": "当前平衡",
+            "description": "使用 8x6 / D1=21 / D2=9 / Golay，增强截图与二次压缩后的恢复能力。"
+          },
+          "author_recommended": {
+            "title": "作者强烈建议",
+            "description": "官方默认 8x8 / D1=21 / D2=9 / WithGolay，优先稳定提取。"
+          },
+          "fidelity": {
+            "title": "尽可能保持原画",
+            "description": "更大块和较低 D1/D2，降低噪点与画质损失。"
+          },
+          "robust": {
+            "title": "尽可能抗攻击",
+            "description": "更细块和更高 D1/D2，强化压缩后提取能力。"
+          }
+        },
+        "stablePreset": {
+          "action": "应用最稳方案",
+          "saved": "已应用并保存最稳保护包方案"
+        },
+        "remoteReference": "远程模式使用 guofei9987/blind_watermark 0.4.4，保持官方 4x4 分块，并传递一致的 password 与 D1/D2。",
+        "remoteOfficial": {
+          "title": "推荐远程保护配置",
+          "description": "最稳方案会启用远程优先、自动算法兜底、自适应档、50 秒远程超时，并强制保护图片输出无损 WebP。"
+        }
+      },
+      "extract": {
+        "title": "隐藏水印提取",
+        "fileLabel": "选择待检测图片",
+        "referenceFileLabel": "截图恢复参考图（可选）",
+        "referenceDescription": "裁剪或缩放截图需选择完整的带水印原图，系统会按上游官方流程估算裁剪和缩放参数后恢复提取。",
+        "description": "仅管理员可用。提取出的短码通过追踪数据库解析验证。",
+        "action": "提取水印",
+        "extracting": "正在提取",
+        "completed": "隐藏水印检测完成",
+        "recoveryFailed": "截图恢复失败，请确认参考图是对应的完整带水印图片。",
+        "remoteTimeout": "远程水印服务或网关超时，任务已停止；这不代表图片没有水印。",
+        "remoteDisconnected": "远程水印进度连接已中断，请稍后重试。",
+        "progress": {
+          "uploading": "正在上传图片",
+          "queued": "已到达服务器，正在等待处理",
+          "decoding": "正在解码并检查图片",
+          "recovering": "正在恢复截图位置与缩放",
+          "waiting": "正在等待远程引擎空闲",
+          "aligning": "正在对齐截图与参考图",
+          "extracting": "正在提取隐藏 Token",
+          "verifying": "正在校验追踪数据库",
+          "complete": "处理完成",
+          "elapsed": "已用时 {seconds} 秒",
+          "estimated": "阶段进度为实时耗时估算，请勿重复提交。",
+          "live": "进度来自服务器实际处理阶段。",
+          "heartbeat": "服务器心跳正常，任务仍在运行。",
+          "heartbeatEngine": "FastAPI 引擎心跳正常，算法仍在运行。",
+          "heartbeatGateway": "Go 网关连接正常，正在等待 FastAPI 引擎反馈。",
+          "units": "已处理 {completed}/{total} 个候选项"
+        },
+        "empty": "选择图片后查看提取结果",
+        "fields": {
+          "found": "发现水印",
+          "valid": "Token 有效",
+          "version": "载荷版本",
+          "traceToken": "追踪 Token",
+          "traceType": "追踪类型",
+          "traceResolved": "数据库追踪命中",
+          "payloadBytes": "载荷字节",
+          "payloadBits": "载荷位数",
+          "payloadFormat": "载荷格式",
+          "watermarkEngine": "水印引擎",
+          "uid": "内部 UID",
+          "userId": "公开用户 ID",
+          "username": "用户名或昵称",
+          "uploadedAt": "上传时间",
+          "sourceHash": "原文件哈希",
+          "customText": "自定义标识",
+          "postId": "帖子 ID",
+          "imageId": "图片 ID",
+          "jobId": "保护任务 ID",
+          "includedFields": "包含字段"
+        }
+      },
+      "global": {
+        "title": "开放策略",
+        "description": "默认仅管理员和白名单用户可使用；开启后所有登录用户都可使用前台检验工具。",
+        "on": "已开放全部用户",
+        "off": "仅授权用户"
+      },
+      "picker": {
+        "title": "添加用户",
+        "description": "搜索用户后加入权限名单，系统会同时记录内部 ID 和公开账号。",
+        "pickerLabel": "用户搜索",
+        "pickerPlaceholder": "搜索昵称、账号或邮箱",
+        "pickerEmpty": "没有找到匹配用户",
+        "addEmpty": "请先搜索并选择要授权的用户。",
+        "clear": "清空",
+        "loading": "正在搜索",
+        "removeSelected": "移除已选择用户",
+        "search": "搜索",
+        "addSelected": "加入权限名单",
+        "noSelected": "请先选择用户",
+        "added": "已加入 {count} 个用户"
+      },
+      "manual": {
+        "title": "手动添加",
+        "description": "可直接添加内部 ID、公开用户 ID、夕色 ID、用户名或昵称。",
+        "manualPlaceholder": "输入用户 ID、账号或昵称",
+        "manualTypeId": "ID / 账号",
+        "manualTypeUsername": "用户名 / 昵称",
+        "addManual": "添加",
+        "duplicate": "该值已在名单中",
+        "emptyManual": "请输入要添加的值"
+      },
+      "lists": {
+        "title": "授权名单",
+        "description": "命中任一 ID 或用户名记录即可使用前台隐藏水印检验。",
+        "count": "{count} 项",
+        "userIdsTitle": "ID 与账号",
+        "usernamesTitle": "用户名与昵称",
+        "userIdsHint": "支持内部数字 ID、公开 user_id、夕色 ID。",
+        "usernamesHint": "支持昵称、username 或公开账号文本。",
+        "emptyUserIds": "暂无 ID 授权项",
+        "emptyUsernames": "暂无用户名授权项",
+        "remove": "移除"
+      },
+      "usage": {
+        "title": "最近 100 次使用记录",
+        "loading": "正在加载检验记录",
+        "loadFailed": "隐藏水印检验记录加载失败",
+        "empty": "暂无隐藏水印检验记录",
+        "time": "时间",
+        "actor": "使用者",
+        "result": "结果",
+        "file": "上传文件",
+        "watermark": "水印状态",
+        "reason": "失败原因",
+        "ip": "IP",
+        "path": "使用入口",
+        "success": "成功",
+        "failed": "失败",
+        "valid": "发现且有效",
+        "invalid": "发现但无效",
+        "notFound": "未发现"
+      }
+    },
+    "queuesPanel": {
+      "title": "队列与 Redis",
+      "description": "查看 Asynq 队列、Redis 内存、任务耗时与自动清理策略",
+      "loading": "正在加载队列状态",
+      "queues": "队列",
+      "tasks": "任务",
+      "taskTitle": "任务：{queue}",
+      "emptyJobs": "暂无任务",
+      "serviceDisabled": "队列服务未启用，当前只显示空状态。",
+      "recentEvents": "最近事件",
+      "eventTiming": "{time} · 等待 {wait} · 耗时 {duration}",
+      "status": {
+        "all": "全部",
+        "waiting": "等待",
+        "active": "执行中",
+        "completed": "完成",
+        "failed": "失败",
+        "retry": "重试",
+        "scheduled": "计划"
+      },
+      "stats": {
+        "waiting": "等待",
+        "active": "执行中",
+        "completed": "已完成",
+        "failed": "失败",
+        "delayed": "延迟 / 重试",
+        "latency": "平均延迟"
+      },
+      "danger": {
+        "title": "危险操作：删除整个队列",
+        "description": "这会删除等待、计划、重试和历史任务。安全清理请使用上方 Redis 自动维护。",
+        "placeholder": "输入队列名 {queue} 以确认",
+        "clear": "删除整个队列",
+        "cleared": "队列已删除"
+      },
+      "job": {
+        "id": "任务 ID {id}",
+        "inspect": "详情",
+        "retry": "重试任务",
+        "enqueued": "入队",
+        "started": "开始",
+        "wait": "等待",
+        "duration": "执行",
+        "retryConfirm": "确认重试任务 {id}？",
+        "retrySuccess": "任务已重新加入队列",
+        "close": "关闭任务详情",
+        "details": "任务详情",
+        "idLabel": "任务 ID",
+        "name": "名称",
+        "attempts": "尝试"
+      },
+      "maintenance": {
+        "title": "Redis 内存治理",
+        "loading": "正在读取 Redis 内存与清理策略",
+        "description": "仅清理可安全丢弃的历史、监控、缓存和陈旧索引。",
+        "saved": "Redis 自动清理策略已保存",
+        "runComplete": "Redis 安全清理已完成",
+        "cacheConfirm": "确认清除应用缓存？不会删除会话或待处理任务。",
+        "policyTitle": "自动清理策略",
+        "safeBoundary": "等待、执行中、计划和重试任务永不自动删除。",
+        "save": "保存策略",
+        "runSafe": "立即安全清理",
+        "runCache": "清除应用缓存"
+      },
+      "memory": {
+        "title": "内存压力",
+        "used": "已使用",
+        "max": "最大内存",
+        "unbounded": "未设置上限",
+        "policy": "淘汰策略",
+        "fragmentation": "碎片率",
+        "noLimitHint": "Redis 当前 maxmemory=0。后台只监控和告警，不会修改服务器内存上限。",
+        "level": {
+          "normal": "正常",
+          "warning": "警告",
+          "critical": "严重",
+          "unbounded": "无上限"
+        }
+      },
+      "schedule": {
+        "title": "执行状态",
+        "next": "下次执行",
+        "last": "上次执行",
+        "freed": "上次释放"
+      },
+      "inventory": {
+        "title": "键空间分类",
+        "summary": "共 {total} 个键，本次检查 {scanned} 个",
+        "sampled": "数据量较大，当前为有界采样",
+        "noTtlSummary": "采样中有 {count} 个键未设置 TTL，且不属于预期永久键",
+        "expectedPermanentSummary": "采样中有 {count} 个键属于预期永久元数据",
+        "keys": "{count} 个键",
+        "noTtlKeys": "{count} 个无 TTL",
+        "expectedPermanentKeys": "{count} 个预期永久",
+        "empty": "暂无可用分类数据",
+        "categories": {
+          "queues": "队列",
+          "logs": "短期日志",
+          "metrics": "监控指标",
+          "sessions": "会话",
+          "cache": "应用缓存",
+          "settings": "系统设置",
+          "security": "安全限制",
+          "other": "其他"
+        }
+      },
+      "fields": {
+        "enabled": "启用自动清理",
+        "interval": "执行间隔（分钟）",
+        "accessLogs": "访问日志保留（小时）",
+        "accessLogMax": "访问日志条数上限",
+        "systemLogs": "系统日志保留（小时）",
+        "systemLogMax": "系统日志条数上限",
+        "metrics": "性能指标保留（小时）",
+        "metricsMax": "每指标键条数上限",
+        "queueEvents": "队列事件保留（小时）",
+        "queueEventMax": "队列事件条数上限",
+        "completed": "完成任务保留（小时）",
+        "archived": "失败任务保留（小时）",
+        "archivedMax": "每队列失败任务上限",
+        "warning": "内存警告阈值（%）",
+        "critical": "内存严重阈值（%）",
+        "accessTokenTTLSeconds": "访问令牌有效期（秒）",
+        "refreshTokenActiveTTLSeconds": "刷新令牌活跃有效期（秒）",
+        "refreshTokenRenewalIntervalSeconds": "刷新续期活跃窗口（秒）",
+        "refreshTokenMode": "刷新令牌模式",
+        "refreshTokenModeRedisOpaque": "Redis opaque",
+        "refreshTokenModeJWTLegacy": "JWT legacy",
+        "refreshTokenAutoRenewEnabled": "启用活跃自动续期",
+        "sessionInactiveTTLSeconds": "会话无活跃移除（秒）",
+        "userActiveSessionLimit": "每用户活跃会话上限"
+      },
+      "overrides": {
+        "title": "队列单独覆盖",
+        "description": "默认使用全局策略；视频、审计等高价值队列可单独保留更久。",
+        "custom": "使用单独策略",
+        "default": "使用全局默认"
+      }
+    },
+    "settingsPanel": {
+      "title": "系统设置",
+      "description": "统一配置中心，支持布尔、数字、日期与文本设置",
+      "configTitle": "配置项",
+      "authTitle": "登录 / OAuth",
+      "appDownloadTitle": "App 下载配置",
+      "fileRecycleTitle": "文件回收站",
+      "imageTitle": "图片处理",
+      "emptyImageSettings": "暂无图片处理设置",
+      "save": "保存",
+      "saved": "系统设置已保存",
+      "loadingSettings": "正在加载系统设置",
+      "emptySettings": "暂无系统设置",
+      "rawTitle": "兼容设置快照",
+      "loadingRaw": "正在加载兼容设置",
+      "emptyRaw": "暂无兼容设置",
+      "on": "开启",
+      "off": "关闭",
+      "systemSettings": {
+        "site_title": {
+          "label": "首页标题",
+          "hint": "用于首页、浏览器标题和分享预览。"
+        },
+        "site_description": {
+          "label": "首页简介",
+          "hint": "显示在首页标题下方，也用于搜索和分享摘要。"
+        },
+        "site_avatar_url": {
+          "label": "网站头像 URL",
+          "hint": "可填写媒体库 /api/file/... 路径或完整 http/https 图片地址。"
+        },
+        "post_content_max_length": {
+          "label": "笔记正文最大字数",
+          "hint": "限制发布、草稿、编辑和后台创建的正文长度；默认 100000。"
+        },
+        "post_resource_section_position": {
+          "label": "笔记资源区位置",
+          "hint": "控制附件、付费解锁和图片压缩包显示在正文之前或之后。",
+          "before": "正文前",
+          "after": "正文后"
+        },
+        "onboarding_interest_options": {
+          "label": "引导兴趣选项",
+          "hint": "为每种支持的语言提供本地化列表。"
+        },
+        "onboarding_points_intro_title": {
+          "label": "积分说明标题"
+        },
+        "onboarding_points_intro_summary": {
+          "label": "积分说明摘要"
+        },
+        "onboarding_points_intro_detail": {
+          "label": "积分说明详情",
+          "hint": "用户完成引导后查看详情时展示。"
+        },
+        "onboarding_result_title": {
+          "label": "完成引导标题"
+        },
+        "onboarding_result_saved_text": {
+          "label": "资料已保存文案"
+        },
+        "onboarding_points_wallet_label": {
+          "label": "积分入口文案"
+        },
+        "maintenance_message": {
+          "label": "维护提示文案"
+        },
+        "oauth2_app_callback_urls": {
+          "label": "App OAuth 回调白名单",
+          "hint": "每行一个完整 callback，例如 xsewebfast://auth-return、yuempro://auth-return。App 登录时传自己的 app_callback，后端按 scheme、host、path 精准匹配后回跳。"
+        },
+        "app_download_android_enabled": {
+          "label": "Android 下载启用"
+        },
+        "app_download_android_name": {
+          "label": "Android 应用名称"
+        },
+        "app_download_android_version_name": {
+          "label": "Android 版本名"
+        },
+        "app_download_android_version_code": {
+          "label": "Android 版本号",
+          "hint": "用于展示和客户端比较的数字版本号。"
+        },
+        "app_download_android_download_url": {
+          "label": "Android 下载链接",
+          "hint": "可填写媒体库上传后的 /api/file/attachments/... 或完整 URL。"
+        },
+        "app_download_android_size_label": {
+          "label": "Android 大小展示文案",
+          "hint": "填写后优先展示，例如 18 MB；留空则按安装包大小自动格式化。"
+        },
+        "app_download_android_size_bytes": {
+          "label": "Android 安装包大小（MB）",
+          "hint": "按 MB 输入，保存时自动换算；填写 0 时不展示。"
+        },
+        "app_download_android_package_name": {
+          "label": "Android 包名"
+        },
+        "app_download_android_release_notes": {
+          "label": "Android 更新说明"
+        },
+        "app_download_android_fast_enabled": {
+          "label": "Android 极速版下载启用"
+        },
+        "app_download_android_fast_name": {
+          "label": "Android 极速版应用名称"
+        },
+        "app_download_android_fast_version_name": {
+          "label": "Android 极速版版本名"
+        },
+        "app_download_android_fast_version_code": {
+          "label": "Android 极速版版本号",
+          "hint": "用于展示和客户端比较的数字版本号。"
+        },
+        "app_download_android_fast_download_url": {
+          "label": "Android 极速版下载链接",
+          "hint": "可填写媒体库上传后的 /api/file/attachments/... 或完整 URL。"
+        },
+        "app_download_android_fast_size_label": {
+          "label": "Android 极速版大小展示文案",
+          "hint": "填写后优先展示，例如 ≤ 1 MB；留空则按安装包大小自动格式化。"
+        },
+        "app_download_android_fast_size_bytes": {
+          "label": "Android 极速版安装包大小（MB）",
+          "hint": "按 MB 输入，保存时自动换算；填写 0 时不展示。"
+        },
+        "app_download_android_fast_package_name": {
+          "label": "Android 极速版包名"
+        },
+        "app_download_android_fast_release_notes": {
+          "label": "Android 极速版更新说明"
+        },
+        "app_download_ios_enabled": {
+          "label": "iOS 下载启用"
+        },
+        "app_download_ios_name": {
+          "label": "iOS 应用名称"
+        },
+        "app_download_ios_version_name": {
+          "label": "iOS 版本名"
+        },
+        "app_download_ios_version_code": {
+          "label": "iOS 版本号",
+          "hint": "用于展示和客户端比较的数字版本号。"
+        },
+        "app_download_ios_download_url": {
+          "label": "iOS 下载链接",
+          "hint": "可填写 App Store、TestFlight、企业签名或描述文件地址。"
+        },
+        "app_download_ios_size_label": {
+          "label": "iOS 大小展示文案",
+          "hint": "填写后优先展示；留空则按安装包大小自动格式化。"
+        },
+        "app_download_ios_size_bytes": {
+          "label": "iOS 安装包大小（MB）",
+          "hint": "按 MB 输入，保存时自动换算；填写 0 时不展示。"
+        },
+        "app_download_ios_bundle_id": {
+          "label": "iOS Bundle ID"
+        },
+        "app_download_ios_release_notes": {
+          "label": "iOS 更新说明"
+        },
+        "file_recycle_retention_days": {
+          "label": "文件回收站保留时间（天）",
+          "hint": "文件移入回收站后自动清理前保留的天数，默认 30 天。"
+        },
+        "file_recycle_cleanup_interval_hours": {
+          "label": "清理间隔（小时）",
+          "hint": "后台扫描过期回收文件的间隔，默认每 24 小时执行一次。"
+        },
+        "notification_interaction_suppression_enabled": {
+          "label": "互动通知抑制",
+          "hint": "开启后，同一用户在时间窗口内对同一作者的同类点赞、评论点赞或收藏通知超过阈值时将静默抑制。"
+        },
+        "notification_interaction_suppression_window_seconds": {
+          "label": "互动通知抑制窗口（秒）",
+          "hint": "滚动统计窗口，默认 600 秒，允许 60 到 86400 秒。"
+        },
+        "notification_interaction_suppression_threshold": {
+          "label": "互动通知抑制阈值",
+          "hint": "窗口内允许发送的同类互动通知数量，默认 3，允许 1 到 100。"
+        }
+      },
+      "fields": {
+        "videoCenterEnabled": "视频中心开关",
+        "videoCenterHomepageEnabled": "首页视频中心推荐",
+        "videoCenterRecommendLimit": "视频中心推荐数量",
+        "videoCenterAccountCutoff": "视频中心注册时间截止",
+        "imageWebpEnabled": "转换为 WebP",
+        "imageWebpQuality": "普通图片质量",
+        "imageAvatarWebpQuality": "头像图片质量",
+        "imageWebpMethod": "WebP 编码 Method",
+        "imageWebpAlphaQuality": "透明通道质量",
+        "imageWebpLossless": "使用无损 WebP",
+        "imageLibvipsEnabled": "启用 libvips 色彩管理",
+        "imageMaxWidth": "最大宽度",
+        "imageMaxHeight": "最大高度",
+        "imageProcessingConcurrency": "图片处理并发数",
+        "imagePostMaxCount": "单帖图片数量上限",
+        "imageArchiveEnabled": "自动生成全部图片压缩包",
+        "imageArchiveThreshold": "自动压缩包图片阈值",
+        "imageProtectionEnabled": "增强水印保护全局开关",
+        "imageProtectionNoticeEnabled": "显示增强保护提示",
+        "imageSelectAllEnabled": "允许图片全选",
+        "paidContentBalanceEnabled": "允许月币收费",
+        "paidContentPointsEnabled": "允许积分收费",
+        "paidContentBalanceMaxPrice": "月币收费上限",
+        "paidContentPointsMaxPrice": "积分收费上限",
+        "hiddenWatermarkEnabled": "启用隐藏水印",
+        "hiddenWatermarkIncludeUid": "水印包含内部 UID",
+        "hiddenWatermarkIncludeUserId": "水印包含公开用户 ID",
+        "hiddenWatermarkIncludeUsername": "水印包含用户名或昵称",
+        "hiddenWatermarkIncludeTime": "水印包含 UTC 上传时间",
+        "hiddenWatermarkIncludeFileHash": "水印包含原文件哈希",
+        "hiddenWatermarkIncludeCustom": "水印包含自定义标识",
+        "hiddenWatermarkCustomText": "隐藏水印自定义标识"
+      },
+      "hints": {
+        "videoCenterAccountCutoff": "注册时间大于等于该时间的用户将隐藏视频中心；留空表示不按注册时间隐藏。",
+        "imageMaxDimension": "填写 0 表示不限制；图片会保持比例缩放。",
+        "imageProcessingConcurrency": "隐藏水印计算占用内存较高，建议保持为 1。",
+        "imagePostMaxCount": "控制单篇笔记可发布和批量上传的图片上限，默认 100，最高 500。",
+        "imageArchiveEnabled": "开启后，图片数达到阈值的已发布笔记会在后台队列自动生成全部图片 ZIP，不阻塞发布。",
+        "imageArchiveThreshold": "图片数超过该值时自动生成压缩包，默认 25；若等于单帖上限则不会触发。",
+        "imageLibvipsEnabled": "开启后自动旋转图片、按原 ICC 转为 sRGB，并只保留安全 EXIF；关闭后维持原图片处理模式。",
+        "imageProtectionEnabled": "开启后作者可将非封面图片设为增强保护，观看者只能生成并下载带追溯水印的 ZIP。",
+        "imageProtectionNoticeEnabled": "控制发布图片区域是否显示增强保护说明或全局关闭提示。",
+        "imageSelectAllEnabled": "关闭后隐藏全选入口，未选择图片时批量操作不会自动作用于全部图片。",
+        "paidContentPaymentMethod": "控制作者发布付费图片时能否选择该收费方式；月币和积分可同时开启。",
+        "paidContentPriceLimit": "控制作者发布付费图片时可填写的最高解锁价格。",
+        "hiddenWatermarkCustomText": "启用自定义标识后保存到追踪记录，不写入图片中的 Token。"
+      },
+      "extract": {
+        "title": "隐藏水印提取",
+        "fileLabel": "选择待检测图片",
+        "description": "仅管理员可用。提取出的短码通过追踪数据库解析验证。",
+        "action": "提取水印",
+        "extracting": "正在提取",
+        "completed": "隐藏水印检测完成",
+        "empty": "选择图片后查看提取结果",
+        "fields": {
+          "found": "发现水印",
+          "valid": "Token 有效",
+          "version": "载荷版本",
+          "traceToken": "追踪 Token",
+          "traceType": "追踪类型",
+          "traceResolved": "数据库追踪命中",
+          "payloadBytes": "载荷字节",
+          "payloadBits": "载荷位数",
+          "payloadFormat": "载荷格式",
+          "watermarkEngine": "水印引擎",
+          "uid": "内部 UID",
+          "userId": "公开用户 ID",
+          "username": "用户名或昵称",
+          "uploadedAt": "上传时间",
+          "sourceHash": "原文件哈希",
+          "customText": "自定义标识",
+          "postId": "帖子 ID",
+          "imageId": "图片 ID",
+          "jobId": "保护任务 ID",
+          "includedFields": "包含字段"
+        }
+      }
+    },
+    "fileRecycleBin": {
+      "columns": {
+        "remaining": "剩余时间"
+      },
+      "countdown": {
+        "remaining": "剩余 {value}",
+        "separator": "",
+        "day": "{count}天",
+        "hour": "{count}小时",
+        "minute": "{count}分钟",
+        "due": "已到清理时间",
+        "purged": "已清理"
+      },
+      "actions": {
+        "inspect": "确认存在",
+        "preview": "预览",
+        "download": "下载",
+        "close": "关闭"
+      },
+      "toasts": {
+        "recycledExists": "回收副本存在",
+        "recycledMissing": "回收副本缺失",
+        "directoryUnsupported": "暂不支持目录预览",
+        "previewUnsupported": "该文件暂不支持预览",
+        "downloadReady": "已开始下载"
+      },
+      "preview": {
+        "title": "回收文件预览",
+        "original": "原始位置",
+        "recycled": "回收副本",
+        "files": "文件清单",
+        "noInspection": "请先确认存在状态后再预览。",
+        "imageAlt": "回收文件预览",
+        "empty": "暂无预览内容"
+      },
+      "status": {
+        "unsafe": "不安全",
+        "exists": "存在",
+        "missing": "缺失",
+        "notConfigured": "未配置",
+        "directory": "目录",
+        "file": "文件"
+      },
+      "errors": {
+        "invalidID": "无效的回收项 ID",
+        "idsRequired": "请先选择回收项",
+        "notFound": "回收项不存在",
+        "unsafePath": "回收路径未通过安全检查",
+        "fileMissing": "回收副本缺失",
+        "directoryPreviewUnsupported": "当前版本不支持目录预览和下载",
+        "previewUnsupported": "该文件类型暂不支持预览",
+        "inspectFailed": "检查回收项失败"
+      }
+    },
+    "aiAgentPanel": {
+      "title": "AI 智能体",
+      "description": "配置 OpenAI 兼容服务、提示词选项卡、流式文案生成、排队并发和审计日志。",
+      "loading": "正在加载 AI 设置",
+      "save": "保存",
+      "saving": "保存中",
+      "saved": "AI 设置已保存",
+      "tabs": {
+        "base": "基础设置",
+        "markdown": "笔记排版",
+        "polish": "笔记润色",
+        "review": "自动评价",
+        "comments": "AI 评论",
+        "commentReply": "评论回复",
+        "vision": "图片分析",
+        "copy": "运营文案",
+        "logs": "审计日志",
+        "moderation": "内容审核",
+        "publishGeneration": "发布详情生成",
+        "contentFormat": "编辑器 AI"
+      },
+      "base": {
+        "title": "连接与限流",
+        "enabled": "AI 已启用",
+        "disabled": "AI 已关闭",
+        "baseUrl": "Base URL",
+        "model": "模型",
+        "apiKey": "API Key",
+        "apiKeyPlaceholder": "粘贴新密钥以替换",
+        "timeout": "上游无响应自动停止（秒）",
+        "maxRun": "后台最大运行秒数",
+        "chunkSize": "分段最大字符数",
+        "concurrency": "全局最大并发（默认 5）",
+        "temperature": "默认温度",
+        "maxOutput": "默认最大输出 Token",
+        "showReasoningOn": "显示思考过程",
+        "showReasoningOff": "隐藏思考过程",
+        "thinkingParameterOn": "发送思考参数",
+        "thinkingParameterOff": "不发送思考参数",
+        "thinkingOn": "开启模型思考",
+        "thinkingOff": "关闭模型思考",
+        "logHttpDetailsOn": "记录远程 HTTP 明细",
+        "logHttpDetailsOff": "不记录远程 HTTP 明细",
+        "extraHeaders": "自定义 Headers JSON",
+        "extraHeadersPlaceholder": "{\n  \"X-Provider\": \"openai-compatible\"\n}",
+        "extraHeadersInvalid": "自定义 Headers 必须是 JSON 对象。",
+        "reasoningEffort": "推理深度",
+        "reasoningEfforts": {
+          "default": "服务商默认",
+          "minimal": "最小",
+          "low": "低",
+          "medium": "中",
+          "high": "高"
+        },
+        "modelParameters": "模型附加参数 JSON",
+        "modelParametersPlaceholder": "{\n  \"top_p\": 0.9\n}",
+        "modelParametersInvalid": "模型附加参数必须是 JSON 对象。"
+      },
+      "autoComment": {
+        "enabled": "发布后自动 AI 评论已开启",
+        "disabled": "发布后自动 AI 评论已关闭",
+        "botUserId": "兜底机器人 UID",
+        "template": "自动评论模板",
+        "delaySeconds": "延迟秒数",
+        "maxImages": "发送给视觉模型的图片数",
+        "botUserIdMin": "随机 UID 范围起点",
+        "botUserIdMax": "随机 UID 范围终点",
+        "style": "提示词风格",
+        "styles": {
+          "normal": "正常",
+          "humorous": "幽默",
+          "bold": "激进"
+        },
+        "imageSelectionMode": "图片取样模式"
+      },
+      "commentReply": {
+        "title": "AI 评论回复",
+        "enabled": "AI 评论回复已开启",
+        "disabled": "AI 评论回复已关闭",
+        "template": "回复模板",
+        "delaySeconds": "延迟秒数",
+        "maxImages": "发送给视觉模型的图片数",
+        "maxReplies": "每条 AI 评论最多回复次数",
+        "mentionEnabled": "@召唤回复已开启",
+        "mentionDisabled": "@召唤回复已关闭",
+        "mentionName": "召唤名称",
+        "mentionTemplate": "召唤回复模板",
+        "mentionBotUserIdMin": "召唤随机机器人 UID 起点",
+        "mentionBotUserIdMax": "召唤随机机器人 UID 终点",
+        "maxMentionReplies": "每篇帖子最多召唤回复次数",
+        "style": "提示词风格",
+        "imageSelectionMode": "图片取样模式"
+      },
+      "templatesTitle": "提示词模板",
+      "templates": {
+        "markdown_format": "Markdown 排版",
+        "post_polish": "笔记润色",
+        "post_review_reply": "AI 评价回复",
+        "post_auto_comment": "发布后自动评论",
+        "comment_reply": "评论回复",
+        "comment_mention_reply": "召唤回复",
+        "image_analysis": "图片分析",
+        "announcement": "公告",
+        "system_notification": "系统通知",
+        "popup": "弹窗",
+        "activity_description": "活动说明",
+        "post_title": "帖子标题",
+        "post_summary": "帖子摘要",
+        "tag_suggestions": "标签建议",
+        "post_custom_generate": "自定义内容生成",
+        "comment_moderation": "评论审核",
+        "post_moderation": "发帖审核",
+        "publish_title_generate": "发布标题总结",
+        "publish_detail_generate": "发布详情生成",
+        "publish_title_detail_generate": "旧版标题与详情生成"
+      },
+      "template": {
+        "enabled": "启用",
+        "disabled": "停用",
+        "temperature": "温度",
+        "maxOutput": "最大输出 Token",
+        "concurrency": "项目并发",
+        "concurrencyHint": "0 表示继承全局限制；1-50 仅限制当前模板。",
+        "jsonOn": "JSON 开",
+        "jsonOff": "JSON 关",
+        "prompt": "提示词",
+        "systemPrompt": "系统提示词",
+        "userPrompt": "用户提示词",
+        "resetDefault": "还原默认",
+        "style": "风格",
+        "styles": {
+          "normal": "正常",
+          "humorous": "幽默",
+          "bold": "激进"
+        },
+        "model": "单独模型",
+        "modelPlaceholder": "留空则使用基础模型",
+        "runtimeOverrides": "运行时覆盖",
+        "runtimeOverridesHint": "仅为当前模板覆盖思考开关和模型附加参数。",
+        "runtimeOn": "覆盖开启",
+        "runtimeOff": "继承全局",
+        "runtimeModelParameters": "模板模型参数 JSON"
+      },
+      "generator": {
+        "title": "文案生成工作台",
+        "template": "模板",
+        "input": "输入",
+        "inputPlaceholder": "描述运营目标、受众、语气、事实与限制。",
+        "output": "输出",
+        "reasoning": "思考过程",
+        "emptyOutput": "生成结果会显示在这里。",
+        "emptyInput": "请先输入内容。",
+        "run": "生成",
+        "generating": "生成中",
+        "progress": "进度 {percent}%",
+        "queue": "排队第 {position}/{total} 位，预计 {eta}"
+      },
+      "logs": {
+        "title": "AI 审计日志",
+        "refresh": "刷新",
+        "loading": "正在加载 AI 日志",
+        "empty": "暂无 AI 日志",
+        "durationMs": "{value} 毫秒",
+        "columns": {
+          "type": "类型",
+          "status": "状态",
+          "actor": "操作者",
+          "model": "模型",
+          "tokens": "Token",
+          "duration": "耗时",
+          "created": "创建时间",
+          "imagesSent": "图片发送成功数",
+          "tokenSpeed": "Token/s",
+          "error": "API 错误",
+          "details": "详情"
+        },
+        "types": {
+          "format_markdown": "Markdown 排版",
+          "admin_copy": "后台文案生成",
+          "post_review_reply": "AI 评价回复",
+          "post_auto_comment": "发布后自动评论",
+          "comment_reply": "评论回复",
+          "comment_mention_reply": "召唤回复",
+          "image_analysis": "图片分析",
+          "post_polish": "笔记润色",
+          "post_custom_generate": "自定义内容生成",
+          "publish_title_generate": "发布标题总结",
+          "publish_detail_generate": "发布详情生成",
+          "publish_title_detail_generate": "旧版标题与详情生成",
+          "comment_moderation": "评论审核",
+          "post_moderation": "发帖审核"
+        },
+        "statuses": {
+          "running": "运行中",
+          "completed": "已完成",
+          "failed": "失败",
+          "canceled": "已取消"
+        },
+        "actors": {
+          "user": "用户",
+          "admin": "管理员",
+          "system": "系统"
+        },
+        "details": {
+          "show": "查看",
+          "hide": "收起",
+          "httpStatus": "HTTP 状态",
+          "contentType": "内容类型",
+          "usage": "Token 用量",
+          "usageValue": "提示 {prompt} / 生成 {completion} / 总计 {total}",
+          "attempts": "请求次数",
+          "outputSummary": "生成内容",
+          "responseSummary": "上游响应",
+          "upstreamAttempts": "HTTP 请求详情",
+          "rawMetadata": "原始元数据"
+        }
+      },
+      "eta": {
+        "lessThanMinute": "小于 1 分钟",
+        "minutes": "{count} 分钟"
+      },
+      "moderation": {
+        "title": "AI 评论与发帖审核",
+        "enabled": "审核已开启",
+        "disabled": "审核已关闭",
+        "templateKey": "模板 Key",
+        "prompt": "提示词覆盖",
+        "promptPlaceholder": "可选：覆盖该审核目标的模板提示词。",
+        "ruleEnabled": "审核",
+        "ruleDisabled": "跳过",
+        "targets": {
+          "comment": {
+            "title": "评论审核",
+            "description": "新评论先正常展示；如果 AI 判定命中，再按配置动作处理。"
+          },
+          "post": {
+            "title": "发帖审核",
+            "description": "新帖子先正常展示；如果 AI 判定命中，再按配置动作处理。"
+          }
+        },
+        "rules": {
+          "spam": "灌水",
+          "porn": "色情",
+          "political_sensitive": "政治敏感"
+        },
+        "actions": {
+          "observe": "观察",
+          "delete": "删除",
+          "private": "设为私密"
+        },
+        "sensitivity": "敏感度",
+        "debugTitle": "审核调试测试",
+        "debugRun": "运行测试",
+        "debugRunning": "测试中",
+        "debugTarget": "目标",
+        "debugInput": "测试内容",
+        "debugPlaceholder": "粘贴评论或帖子正文，检查模型原始输出和解析后的判定。",
+        "debugEmpty": "请先输入测试内容。",
+        "debugEmptyOutput": "运行测试后查看解析判定和原始输出。",
+        "debugStatus": "状态：",
+        "debugAction": "动作：",
+        "debugTemplate": "模板：",
+        "debugDecision": "解析判定",
+        "debugRaw": "模型原始输出"
+      },
+      "publishGeneration": {
+        "title": "发布详情生成",
+        "enabled": "发布详情生成已开启",
+        "disabled": "发布详情生成已关闭",
+        "maxImages": "分析图片数量",
+        "template": "模板",
+        "titleMaxChars": "标题字数上限",
+        "imageSelectionMode": "图片取样模式",
+        "detailTemplate": "详情生成模板",
+        "titleTemplate": "标题总结模板"
+      },
+      "imageSelectionModes": {
+        "ordered": "顺序取图",
+        "random": "随机取图"
+      },
+      "contentFormat": {
+        "title": "编辑器 AI 排版",
+        "enabled": "编辑器 AI 已启用",
+        "disabled": "编辑器 AI 已禁用",
+        "template": "模板",
+        "modes": {
+          "format": {
+            "enabled": "智能排版已启用",
+            "disabled": "智能排版已禁用"
+          },
+          "polish": {
+            "enabled": "笔记润色已启用",
+            "disabled": "笔记润色已禁用"
+          },
+          "custom": {
+            "enabled": "生成内容已启用",
+            "disabled": "生成内容已禁用"
+          }
+        },
+        "continuation": {
+          "enabled": "长内容压缩续写已启用",
+          "disabled": "长内容压缩续写已禁用",
+          "triggerChars": "触发字数",
+          "maxRounds": "续写轮数",
+          "contextChars": "压缩上下文字数"
+        }
+      },
+      "jobs": {
+        "title": "AI 任务队列",
+        "refresh": "刷新",
+        "loading": "正在加载 AI 任务",
+        "empty": "暂无排队或生成中的 AI 任务",
+        "cancel": "放弃",
+        "cancelSuccess": "AI 任务已放弃",
+        "metrics": {
+          "active": "队列总计",
+          "queued": "排队中",
+          "running": "生成中"
+        },
+        "statuses": {
+          "queued": "排队中",
+          "running": "正在生成中",
+          "completed": "已完成",
+          "failed": "失败",
+          "canceled": "已放弃"
+        },
+        "userLine": "用户 ID {user} · 数字 ID {id}",
+        "queuePosition": "队列 {position}/{total}",
+        "lastToken": "最后 token",
+        "tokenRate": "10 秒平均速率",
+        "tokenRateValue": "{value} tokens/s",
+        "tokenRatePending": "等待输出",
+        "notAvailable": "N/A",
+        "waiting": "等待中",
+        "generatedTokens": "已生成 token 总数",
+        "estimatedTokens": "预估 tokens",
+        "upstream": {
+          "show": "上游输出",
+          "hide": "收起输出",
+          "title": "上游实时输出",
+          "live": "实时",
+          "history": "历史",
+          "empty": "暂无上游输出",
+          "streaming": "监听中",
+          "stopped": "已停止"
+        },
+        "time": {
+          "unknown": "暂无更新",
+          "secondsAgo": "{count} 秒前",
+          "minutesAgo": "{count} 分钟前",
+          "hoursAgo": "{count} 小时前",
+          "daysAgo": "{count} 天前"
+        }
+      }
+    },
+    "accessBlockPanel": {
+      "title": "IP / UA 访问屏蔽",
+      "description": "按精确 IP、CIDR、User-Agent 包含词或正则阻断请求。规则在应用路由前从内存快照高性能匹配。",
+      "refresh": "刷新",
+      "viewLogs": "触发日志",
+      "disabledHint": "当前已通过 ACCESS_BLOCK_DISABLED 关闭访问屏蔽。",
+      "loading": "正在加载访问屏蔽规则",
+      "rulesTitle": "规则列表",
+      "rulesSummary": "已启用 {active}/{total} 条规则",
+      "newRule": "新建规则",
+      "empty": "暂无访问屏蔽规则",
+      "editTitle": "编辑规则",
+      "createTitle": "创建规则",
+      "formHint": "批量添加可粘贴多行 IP、CIDR 或 UA pattern。强制保存会绕过当前管理员误锁保护。",
+      "kind": "类型",
+      "matchType": "匹配方式",
+      "pattern": "匹配内容",
+      "batch": "批量内容",
+      "batchPlaceholder": "每行一个 pattern。空行和 # 开头的行会被忽略。",
+      "action": "动作",
+      "statusCode": "状态码",
+      "redirectUrl": "重定向地址",
+      "priority": "优先级",
+      "note": "备注",
+      "enabled": "启用",
+      "disabled": "停用",
+      "enable": "启用",
+      "disable": "停用",
+      "delete": "删除",
+      "deleteConfirm": "确认删除这条访问屏蔽规则？",
+      "force": "即使规则会命中当前管理员请求，也强制保存。",
+      "cancel": "取消",
+      "save": "保存",
+      "batchSave": "批量添加",
+      "actionStatus": "返回 {code}",
+      "actionRedirect": "重定向到 {url}",
+      "columns": {
+        "rule": "规则",
+        "action": "动作",
+        "priority": "优先级",
+        "note": "备注",
+        "state": "状态",
+        "operations": "操作"
+      },
+      "kinds": {
+        "ip": "IP",
+        "ua": "User-Agent"
+      },
+      "matchTypes": {
+        "ip": "精确 IP",
+        "cidr": "CIDR",
+        "ua_contains": "UA 包含",
+        "ua_regex": "UA 正则"
+      },
+      "actions": {
+        "status": "状态码",
+        "redirect": "重定向"
+      },
+      "toasts": {
+        "loadFailed": "访问屏蔽规则加载失败",
+        "saved": "访问屏蔽规则已保存",
+        "batchSaved": "批量完成：创建 {created} 条，失败 {failed} 条",
+        "saveFailed": "访问屏蔽规则保存失败",
+        "deleted": "访问屏蔽规则已删除",
+        "deleteFailed": "访问屏蔽规则删除失败",
+        "importSaved": "URL 导入来源已保存",
+        "importSaveFailed": "URL 导入来源保存失败",
+        "importSynced": "URL 导入已同步：{count} 条规则",
+        "importSyncFailed": "URL 导入同步失败",
+        "importDeleted": "URL 导入来源已删除",
+        "importDeleteFailed": "URL 导入来源删除失败"
+      },
+      "importedRule": "URL 导入",
+      "importsTitle": "IP URL 导入",
+      "importsSummary": "已启用 {active}/{total} 个来源",
+      "newImport": "新增导入",
+      "importsEmpty": "暂无 URL 导入来源",
+      "editImportTitle": "编辑 URL 导入",
+      "createImportTitle": "创建 URL 导入",
+      "importFormHint": "拉取纯文本 IP 列表，每行一个 IP 或 CIDR。空行和 # 注释会被忽略。",
+      "importUrl": "导入 URL",
+      "updateIntervalMinutes": "更新间隔（分钟）",
+      "saveImport": "保存来源",
+      "syncNow": "立即同步",
+      "importForce": "即使导入列表会命中当前管理员请求，也强制手动同步。",
+      "importDeleteConfirm": "确认删除这个 URL 导入来源及其已导入规则？",
+      "importCount": "{count} 条规则",
+      "intervalMinutes": "{minutes} 分钟",
+      "importColumns": {
+        "url": "URL",
+        "interval": "间隔",
+        "lastSync": "上次同步",
+        "nextSync": "下次同步"
+      },
+      "importStatuses": {
+        "pending": "待同步",
+        "success": "成功",
+        "failed": "失败"
+      },
+      "errors": {
+        "selfLock": "这条规则会阻断当前管理员请求。确认有恢复入口后再强制保存。",
+        "importDisabled": "服务器已关闭 URL 导入功能。",
+        "importFetchFailed": "远程 IP 列表获取或解析失败。",
+        "invalidRule": "访问屏蔽规则无效。",
+        "saveFailed": "访问屏蔽规则保存失败。",
+        "unavailable": "访问屏蔽服务不可用。"
+      }
+    }
+  }
+}

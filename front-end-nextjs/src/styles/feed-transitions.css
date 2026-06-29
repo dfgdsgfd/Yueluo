@@ -1,0 +1,54 @@
+.post-detail-content[data-state="open"] {
+  animation: none !important;
+  transform: translate3d(0, 0, 0) !important;
+}
+
+::view-transition-group(.post-media) {
+  animation-duration: 360ms;
+  animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+  overflow: hidden;
+}
+
+::view-transition-image-pair(.post-media) {
+  animation-name: post-media-blur;
+}
+
+@keyframes post-media-blur {
+  35% {
+    filter: blur(2px);
+  }
+}
+
+@keyframes post-card-in {
+  from {
+    opacity: 0;
+    filter: blur(3px);
+    transform: translate3d(0, 30px, 0) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes feed-loading-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 12px, 0) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes feed-image-shimmer {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  65%,
+  100% {
+    transform: translate3d(300%, 0, 0);
+  }
+}

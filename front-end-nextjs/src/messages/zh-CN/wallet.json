@@ -1,0 +1,197 @@
+{
+  "walletPage": {
+    "balance": {
+      "defaultAccount": "月币账户",
+      "loading": "读取中...",
+      "errorTitle": "月币余额读取失败",
+      "unit": "月币",
+      "account": "账号 {account}",
+      "title": "月币余额"
+    },
+    "errors": {
+      "partial": "部分钱包数据暂不可用：",
+      "loadFailed": "钱包数据请求失败",
+      "balanceCenterNotConfigured": "用户中心月币接口尚未配置。",
+      "httpStatus": "HTTP 状态 {status}",
+      "businessCode": "业务码 {code}",
+      "requestId": "请求 ID {requestId}",
+      "sources": {
+        "balanceConfig": "月币配置",
+        "rechargeConfig": "充值配置",
+        "localPoints": "积分余额",
+        "userBalance": "月币余额",
+        "withdrawOrders": "账单",
+        "balanceOrders": "购买记录",
+        "pointsOverview": "积分中心",
+        "pointsLogs": "积分明细"
+      }
+    },
+    "title": "钱包",
+    "subtitle": "月币、积分、礼品卡与账单",
+    "loading": "正在加载钱包数据",
+    "actions": {
+      "back": "返回上一页",
+      "backHome": "返回首页",
+      "refresh": "刷新",
+      "recharge": "去充值",
+      "open": "打开"
+    },
+    "login": {
+      "title": "登录后查看钱包",
+      "description": "钱包、充值和购买记录需要使用当前账号身份。",
+      "login": "去登录"
+    },
+    "points": {
+      "title": "积分中心",
+      "todaySummary": "今日 {earned} / {cap}",
+      "available": "可用积分",
+      "todayEarned": "今日获得",
+      "dailyCap": "每日上限",
+      "withdrawBonus": "提现到账加成 {percent}%",
+      "expiresAt": "{date} 到期"
+    },
+    "tasks": {
+      "title": "每日任务",
+      "empty": "暂无每日任务",
+      "done": "已完成",
+      "inProgress": "进行中",
+      "daily": "每日任务",
+      "once": "一次性任务",
+      "progress": "进度"
+    },
+    "giftCards": {
+      "title": "礼品卡兑换",
+      "empty": "暂无可兑换礼品卡",
+      "redeemSuccess": "已兑换 {name}，卡密已发送到系统消息。",
+      "redeemFailed": "兑换失败",
+      "defaultFaceValue": "礼品卡",
+      "meta": "{value} · 库存 {stock}"
+    },
+    "redemptions": {
+      "title": "兑换查询",
+      "total": "共 {total} 条兑换记录",
+      "loading": "正在读取兑换记录",
+      "loadFailed": "兑换记录加载失败",
+      "empty": "暂无兑换记录",
+      "meta": "{value} · {points} 积分 · {status}",
+      "status": {
+        "completed": "已完成",
+        "other": "处理中"
+      },
+      "pageSummary": "第 {page}/{pages} 页 · 共 {total} 条",
+      "previous": "上一页",
+      "next": "下一页",
+      "copy": "复制卡密",
+      "copySuccess": "卡密已复制",
+      "copyFailed": "复制失败，请手动选择卡密",
+      "codeUnavailable": "卡密暂不可用"
+    },
+    "recharge": {
+      "title": "充值",
+      "customAmount": "支持自定义金额",
+      "fixedOptions": "固定档位",
+      "balanceDisabled": "余额中心暂未启用",
+      "empty": "暂无充值档位",
+      "bonus": "赠送 {amount} 月币",
+      "noBonus": "无赠送",
+      "range": "{min}-{max} 月币",
+      "min": "{amount} 月币起",
+      "max": "最高 {amount} 月币"
+    },
+    "bills": {
+      "title": "账单",
+      "empty": "暂无账单记录",
+      "defaultType": "账单",
+      "types": {
+        "moonCoin": "转入月币",
+        "cash": "现金提现"
+      }
+    },
+    "purchases": {
+      "title": "购买记录",
+      "empty": "暂无购买记录",
+      "fallbackTitle": "内容 #{id}",
+      "defaultType": "内容购买"
+    },
+    "pointsLogs": {
+      "title": "积分明细",
+      "empty": "暂无积分记录",
+      "balanceAfter": "积分余额 {points}",
+      "defaultType": "积分记录",
+      "types": {
+        "giftCardRedeem": "兑换礼品卡",
+        "achievement": "成就奖励",
+        "task": "每日任务"
+      }
+    },
+    "money": {
+      "moonCoinAmount": "{amount} 月币",
+      "points": "{amount}分",
+      "pointsPlus": "+{amount}分"
+    },
+    "time": {
+      "justNow": "刚刚"
+    }
+  },
+  "adminWithdraw": {
+    "title": "提现审核",
+    "description": "审核、驳回创作者提现订单并标记打款完成。",
+    "orders": "订单列表",
+    "searchPlaceholder": "搜索昵称、账号",
+    "search": "查询",
+    "allStatuses": "全部状态",
+    "loading": "正在加载提现订单",
+    "empty": "暂无提现订单",
+    "userFallback": "用户 {id}",
+    "amount": "金额",
+    "type": "类型",
+    "wechatCode": "微信收款码",
+    "alipayCode": "支付宝收款码",
+    "noPaymentCode": "未保存收款码",
+    "previewHint": "点击缩略图预览",
+    "confirmAction": "确认对该提现订单执行“{action}”吗？",
+    "actionCompleted": "提现订单已执行：{action}",
+    "actions": {
+      "approve": "通过",
+      "reject": "驳回",
+      "payout": "打款"
+    },
+    "types": {
+      "cash": "现金",
+      "moonCoin": "转月币"
+    },
+    "statuses": {
+      "pending": "待审核",
+      "approved": "已通过",
+      "rejected": "已驳回",
+      "paid": "已打款",
+      "unknown": "未知"
+    }
+  },
+  "adminBalanceTransactions": {
+    "title": "外部月币交易审计",
+    "description": "审查用户中心月币变更；结果不确定的交易会保持锁定，等待人工核实。",
+    "refresh": "刷新",
+    "loading": "正在加载月币交易",
+    "operation": "操作",
+    "oauth2Id": "OAuth2 数字 ID",
+    "amount": "金额",
+    "status": "状态",
+    "created": "创建时间",
+    "action": "操作",
+    "compensate": "补偿",
+    "confirmCompensation": "确认在用户中心反向补偿这笔已应用交易吗？",
+    "compensated": "交易已补偿。",
+    "empty": "暂无月币交易",
+    "statuses": {
+      "prepared": "已准备",
+      "requesting": "请求中",
+      "applied": "远端已应用",
+      "local_committed": "本地已提交",
+      "compensating": "补偿中",
+      "compensated": "已补偿",
+      "unknown": "结果不确定",
+      "failed": "失败"
+    }
+  }
+}

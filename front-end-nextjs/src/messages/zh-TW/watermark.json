@@ -1,0 +1,87 @@
+{
+  "watermarkInspector": {
+    "title": "隱藏浮水印檢驗",
+    "back": "返回",
+    "checkingAuth": "正在檢查登入狀態",
+    "completed": "檢驗完成",
+    "inspecting": "正在檢驗",
+    "inspect": "開始檢驗",
+    "yes": "是",
+    "no": "否",
+    "progress": {
+      "uploading": "正在上傳圖片",
+      "queued": "伺服器已收到，正在等待處理",
+      "decoding": "正在解碼並檢查圖片",
+      "recovering": "正在還原截圖位置與縮放",
+      "waiting": "正在等待遠端引擎空閒",
+      "aligning": "正在對齊截圖與參考圖",
+      "extracting": "正在提取隱藏 Token",
+      "verifying": "正在校驗追蹤資料庫",
+      "complete": "處理完成",
+      "elapsed": "已用時 {seconds} 秒",
+      "estimated": "這是階段估算進度；頁面仍在工作，不需要重複點擊。",
+      "live": "進度來自伺服器實際處理階段。",
+      "heartbeat": "伺服器心跳正常，工作仍在執行。",
+      "heartbeatEngine": "FastAPI 引擎心跳正常，演算法仍在執行。",
+      "heartbeatGateway": "Go 閘道連線正常，正在等待 FastAPI 引擎回應。",
+      "units": "已處理 {completed}/{total} 個候選項"
+    },
+    "loginRequired": {
+      "title": "需要登入",
+      "description": "此工具預設僅開放給已授權使用者，請登入後繼續使用。",
+      "login": "去登入",
+      "home": "返回首頁"
+    },
+    "upload": {
+      "title": "上傳待檢驗圖片",
+      "description": "支援 JPEG、PNG、WebP 圖片，系統會提取 2-4 位元組隱藏浮水印短碼，並透過追蹤資料庫校驗。",
+      "choose": "選擇圖片",
+      "accept": "JPEG / PNG / WebP",
+      "previewAlt": "待檢驗圖片預覽",
+      "referenceLabel": "截圖還原參考圖（選填）",
+      "referenceDescription": "如果待檢驗圖片是裁切、縮放或旋轉後的截圖，請上傳完整的帶浮水印原圖；Go 本地或遠端引擎會先對齊再提取 Token。",
+      "referenceSelected": "已選擇參考圖：{name}",
+      "notice": "如果沒有權限，請聯絡管理員在後台隱藏浮水印權限頁加入帳號或開啟全員開放。"
+    },
+    "result": {
+      "title": "檢驗結果",
+      "found": "已發現隱藏浮水印",
+      "notFound": "未發現可識別的隱藏浮水印",
+      "empty": "上傳圖片後查看檢驗結果",
+      "placeholder": "結果會顯示浮水印是否存在、是否有效以及可追溯欄位。"
+    },
+    "fields": {
+      "found": "發現浮水印",
+      "valid": "Token 有效",
+      "version": "載荷版本",
+      "traceToken": "追蹤 Token",
+      "traceType": "追蹤類型",
+      "traceResolved": "資料庫追蹤命中",
+      "payloadBytes": "載荷位元組",
+      "payloadBits": "載荷位元",
+      "payloadFormat": "載荷格式",
+      "watermarkEngine": "浮水印引擎",
+      "uid": "內部 UID",
+      "userId": "公開使用者 ID",
+      "username": "使用者名稱或暱稱",
+      "uploadedAt": "上傳時間",
+      "sourceHash": "原檔雜湊",
+      "customText": "自訂標識",
+      "postId": "貼文 ID",
+      "imageId": "圖片 ID",
+      "jobId": "保護任務 ID",
+      "includedFields": "包含欄位"
+    },
+    "errors": {
+      "unsupportedType": "僅支援 JPEG、PNG 或 WebP 圖片。",
+      "fileRequired": "請先選擇一張圖片。",
+      "fileTooLarge": "圖片大小超過後台設定的上傳上限。",
+      "invalidImage": "上傳的檔案不是有效的支援圖片。",
+      "recoveryFailed": "無法從參考圖還原該截圖，請確認參考圖是對應的完整帶浮水印圖片。",
+      "remoteTimeout": "遠端浮水印服務或閘道逾時，任務已停止。這不代表圖片沒有浮水印。",
+      "remoteDisconnected": "遠端浮水印進度連線已中斷，請稍後重試。",
+      "forbidden": "目前帳號尚未取得隱藏浮水印檢驗權限。",
+      "failed": "隱藏浮水印檢驗失敗，請稍後再試。"
+    }
+  }
+}

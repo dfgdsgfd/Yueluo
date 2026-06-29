@@ -1,0 +1,304 @@
+{
+  "app": {
+    "name": "Yuem",
+    "description": "XHS 風のすっきりしたプランニングとメディアフィード。"
+  },
+  "error": {
+    "access_blocked": "現在のアクセスポリシーによりアクセスがブロックされました。",
+    "api_key_rate_limited": "API キーの認証失敗が多すぎます。しばらくしてから再試行してください。",
+    "balance_center_not_configured": "ユーザーセンターの残高 API が設定されていません。",
+    "invalid_file_recycle_setting": "ファイルごみ箱の設定が無効です。",
+    "invalid_redis_maintenance_config": "Redis メンテナンス設定が無効です。",
+    "redis_unavailable": "Redis を利用できません。",
+    "redis_maintenance_busy": "Redis メンテナンスは既に実行中です。",
+    "redis_maintenance_failed": "Redis メンテナンスに失敗しました。"
+  },
+  "nav": {
+    "home": "ホーム",
+    "friends": "フォロー中",
+    "works": "作品",
+    "create": "作成",
+    "messages": "メッセージ",
+    "profile": "プロフィール",
+    "assistant": "ノート AI",
+    "red": "RED",
+    "live": "ライブ",
+    "publish": "公開",
+    "more": "その他",
+    "logout": "ログアウト",
+    "loggingOut": "ログアウト中...",
+    "logoutSuccess": "ログアウトしました。",
+    "about": "概要",
+    "watermarkInspector": "隠しウォーターマーク検査"
+  },
+  "settingsPage": {
+    "title": "システム設定",
+    "back": "戻る",
+    "language": {
+      "title": "言語",
+      "description": "画面の表示言語を変更します。"
+    },
+    "account": {
+      "title": "アカウント機能",
+      "description": "認証プロフィールとアカウント本人確認の入口です。",
+      "verificationTitle": "認証を申請",
+      "verificationDescription": "個人または公式認証情報を提出",
+      "networkDiagnosticsTitle": "ネットワーク診断",
+      "networkDiagnosticsDescription": "現在の IP、Geo、CDN、プライバシーリスクを確認"
+    },
+    "privacy": {
+      "title": "プライバシー設定",
+      "description": "誕生日、年齢、星座、MBTI の公開範囲を管理します。",
+      "summary": "{visible}/{total} 件のプロフィール項目を公開中",
+      "items": {
+        "birthday": {
+          "title": "誕生日",
+          "description": "他のユーザーに誕生日を表示するか設定します。"
+        },
+        "age": {
+          "title": "年齢",
+          "description": "誕生日から計算した年齢をプロフィールに表示するか設定します。"
+        },
+        "zodiac": {
+          "title": "星座",
+          "description": "他のユーザーに星座を表示するか設定します。"
+        },
+        "mbti": {
+          "title": "MBTI",
+          "description": "他のユーザーに MBTI を表示するか設定します。"
+        }
+      }
+    },
+    "checkingAuth": "ログイン状態を確認中",
+    "loading": "設定を読み込み中",
+    "save": "システム設定を保存",
+    "saved": "システム設定を保存しました",
+    "loginRequired": {
+      "title": "ログインして設定を更新",
+      "description": "ログインするとシステム設定を読み込み、保存できます。",
+      "login": "ログイン"
+    },
+    "errors": {
+      "load": "システム設定を読み込めませんでした",
+      "save": "システム設定を保存できませんでした"
+    },
+    "aiAutoComment": {
+      "title": "AI 自動コメント",
+      "description": "オフにすると、AI はあなたの投稿へ自動コメントしません。他のユーザーが @yueai で呼び出した返信は引き続き動作します。"
+    }
+  },
+  "moreMenu": {
+    "wallet": {
+      "title": "Moon Coin 残高",
+      "loading": "読み込み中...",
+      "error": "残高を取得できません",
+      "amount": "{amount} Moon Coin",
+      "login": "ログインして表示",
+      "account": "アカウント {username}",
+      "detail": "ウォレットで詳細を確認"
+    },
+    "invite": "招待登録",
+    "verification": "認証を申請",
+    "theme": {
+      "title": "テーマ設定",
+      "options": {
+        "system": "システムに従う",
+        "light": "ライト",
+        "dark": "ダーク"
+      }
+    },
+    "systemSettings": "システム設定",
+    "appDownload": "アプリダウンロード"
+  },
+  "tabs": {
+    "recommended": "おすすめ",
+    "latest": "最新",
+    "hot": "人気",
+    "following": "フォロー中",
+    "videoCenter": "動画センター"
+  },
+  "search": {
+    "placeholder": "投稿・作者・タグを検索",
+    "compose": "作成",
+    "idea": "アイデアを聞く",
+    "aiBadge": "AI",
+    "submit": "検索",
+    "clear": "クリア",
+    "resultFor": "{keyword} の検索結果"
+  },
+  "category": {
+    "all": "すべて",
+    "names": {
+      "beauty": "ビューティー",
+      "fashion": "ファッション",
+      "food": "グルメ",
+      "gaming": "ゲーム",
+      "interest": "趣味",
+      "knowledge": "知識",
+      "lifestyle": "ライフスタイル",
+      "music": "音楽",
+      "novel": "小説",
+      "photography": "写真",
+      "pictureSet": "画像集",
+      "ropeBondage": "縄縛り",
+      "shackles": "拘束具",
+      "sports": "スポーツ",
+      "technology": "テクノロジー",
+      "travel": "旅行",
+      "video": "動画"
+    }
+  },
+  "video": {
+    "error": "動画の再生に失敗しました。",
+    "loading": "動画を読み込み中",
+    "unavailable": "再生可能な動画 URL がありません。"
+  },
+  "login": {
+    "title": "ログインしてさらに楽しむ",
+    "description": "ログインすると閲覧、いいね、保存、コメントを続けられます。",
+    "home": "フィードに戻る",
+    "modes": {
+      "login": "ログイン",
+      "register": "登録"
+    },
+    "fields": {
+      "identifier": "メールまたはアカウント",
+      "password": "パスワード",
+      "userID": "アカウント",
+      "nickname": "ニックネーム",
+      "email": "メール",
+      "emailCode": "メールコード",
+      "captcha": "認証コード"
+    },
+    "placeholders": {
+      "identifier": "メールまたはアカウントを入力",
+      "password": "パスワードを入力",
+      "userID": "3-15文字の英数字または下線",
+      "nickname": "ニックネームを入力",
+      "email": "メールを入力",
+      "emailCode": "コードを入力",
+      "newPassword": "パスワードを設定",
+      "captcha": "画像認証コードを入力"
+    },
+    "actions": {
+      "login": "ログイン",
+      "loggingIn": "ログイン中...",
+      "register": "アカウント作成",
+      "registering": "登録中...",
+      "sendEmailCode": "コード送信",
+      "resendEmailCode": "再送信",
+      "refreshCaptcha": "認証コードを更新"
+    },
+    "success": {
+      "login": "ログインしました。",
+      "register": "登録しました。"
+    },
+    "emailCodeSent": "メールコードを送信しました。",
+    "captchaAlt": "画像認証コード",
+    "errors": {
+      "missingLogin": "メールまたはアカウントとパスワードを入力してください。",
+      "missingRegister": "アカウント、ニックネーム、メール、パスワードを入力してください。",
+      "passwordLength": "パスワードは6-20文字で入力してください。",
+      "emailInvalid": "有効なメールアドレスを入力してください。",
+      "emailCodeRequired": "メール認証コードを入力してください。",
+      "captchaRequired": "画像認証コードを入力してください。",
+      "loginFailed": "メール/アカウントまたはパスワードが正しくありません。",
+      "registerFailed": "登録に失敗しました。入力内容を確認して再試行してください。",
+      "emailCodeFailed": "メールコードを送信できませんでした。",
+      "captchaLoadFailed": "画像認証コードを読み込めませんでした。",
+      "geetestUnavailable": "GeeTest 認証が有効な間はパスワード登録を利用できません。"
+    },
+    "userCenterLogin": "ログイン",
+    "redirecting": "ユーザーセンターを開いています...",
+    "loadingConfig": "認証設定を読み込んでいます...",
+    "configLoadFailed": "認証設定を読み込めませんでした。既定の認証入口を使用します。",
+    "oauthOnly": "ログインするとさらに多くの内容を楽しめます。",
+    "oauthPrompt": "ログインしてすべての機能を続けて利用できます。",
+    "oauthSuccess": "OAuth2 ログインに成功しました",
+    "oauthStatusFailed": "OAuth2 ログイン状態を確認できませんでした。もう一度お試しください。",
+    "nativeStateFailed": "アプリのログイン要求が期限切れか一致しません。もう一度お試しください。",
+    "nativeCancelled": "ログインをキャンセルしました。",
+    "nativeCancelledWithDetail": "ログインがキャンセルされました: {detail}",
+    "nativeExchangeFailed": "アプリでログインを完了できませんでした。もう一度お試しください。",
+    "nativeExchangeFailedWithDetail": "アプリでログインを完了できませんでした: {detail}",
+    "nativeBackAgain": "もう一度戻ると終了します",
+    "nativeOffline": "オフラインです。Yuem は自動的に再接続します。",
+    "nativeCallbackTitle": "Yuem に戻る",
+    "nativeCallbackDescription": "認証が完了しました。Yuem アプリを開いて続行してください。",
+    "nativeCallbackOpen": "Yuem を開く",
+    "nativeCallbackInvalid": "この認証リンクは無効か期限切れです。",
+    "nativeStatus": {
+      "title": "アプリのログインが完了しませんでした",
+      "callbackReceived": "ブラウザーのコールバックをアプリで受信し、ログイン状態を処理しています。",
+      "stateFailed": "ログイン要求が期限切れ、または現在のアプリセッションと一致しません。もう一度ログインしてください。",
+      "oauthError": "ユーザーセンターが認証失敗を返しました。",
+      "missingCode": "ブラウザーのコールバックにログインチケットがありません。",
+      "tokenExchangeFailed": "アプリがログイントークンの交換に失敗しました。",
+      "tokenStorageFailed": "アプリはトークンを受け取りましたが、ローカルのログイン状態を書き込めませんでした。",
+      "profileFailed": "アプリはトークンを書き込みましたが、現在のユーザーを検証できませんでした。",
+      "signedIn": "アプリのログイン状態を書き込みました。",
+      "unknown": "原因不明でアプリのログインに失敗しました。",
+      "detail": "詳細: {detail}"
+    }
+  },
+  "loginUnlock": {
+    "title": "ログインしてさらに楽しむ",
+    "description": "ログインすると閲覧、いいね、保存、コメントを続けられます。",
+    "login": "ログイン",
+    "later": "あとで"
+  },
+  "status": {
+    "refresh": "更新",
+    "refreshed": "フィードを更新しました",
+    "liked": "いいねしました",
+    "unliked": "いいねを取り消しました"
+  },
+  "locale": {
+    "trigger": "言語を切り替え",
+    "label": "言語",
+    "options": {
+      "en": "English",
+      "zh-CN": "简体中文",
+      "zh-TW": "繁體中文",
+      "vi": "Tiếng Việt",
+      "ja": "日本語",
+      "ko": "한국어"
+    }
+  },
+  "maintenance": {
+    "serviceMode": "Service Mode / メンテナンス",
+    "title": "システムメンテナンス中",
+    "defaultMessage": "サービスはメンテナンス中です。しばらくしてからお戻りください。",
+    "estimatedRemaining": "推定残り時間",
+    "unknownTime": "確認中",
+    "entryHint": "入場するには管理者から提供された専用リンクを使用してください。",
+    "edgeLabel": "Service Mode / メンテナンス",
+    "entry": {
+      "eyebrow": "SERVICE ENTRY",
+      "title": "サービスモードに入っています",
+      "checking": "入口コードを確認し、セッションを準備しています...",
+      "success": "入口を確認しました。サイトを開きます。",
+      "error": "入口が無効または期限切れです。管理者に連絡してください。"
+    },
+    "closeEdge": "メンテナンス枠を閉じる"
+  },
+  "appDownload": {
+    "metadataTitle": "App ダウンロード",
+    "backHome": "ホームへ戻る",
+    "badge": "App ダウンロード",
+    "official": "公式ダウンロード",
+    "title": "Yuem App",
+    "description": "デバイスに合うパッケージを選択してください。ダウンロードリンク、バージョン、アプリ名は管理画面のシステム設定で管理されます。",
+    "version": "バージョン {version}",
+    "build": "ビルド {build}",
+    "size": "サイズ {size}",
+    "androidFastLabel": "Android 高速版",
+    "featuresTitle": "高速版の特長",
+    "featureTinySize": "極小サイズ ≤ 1 MB",
+    "featureSameWebStyle": "Web と完全に同じスタイル",
+    "featureThirdPartyLogin": "Google、Discord、Steam などの外部ログインに対応",
+    "featureNativeBridge": "ブラウザログイン後に App へ自動で戻ります",
+    "download": "ダウンロード",
+    "unavailable": "現在ダウンロードできません"
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "watermarkInspector": {
+    "title": "隠しウォーターマーク検査",
+    "back": "戻る",
+    "checkingAuth": "ログイン状態を確認中",
+    "completed": "検査が完了しました",
+    "inspecting": "検査中",
+    "inspect": "検査を開始",
+    "yes": "はい",
+    "no": "いいえ",
+    "progress": {
+      "uploading": "画像をアップロード中",
+      "queued": "サーバーで受信し、処理待ちです",
+      "decoding": "画像をデコードして検証中",
+      "recovering": "スクリーンショットの切り抜きと拡縮を復元中",
+      "waiting": "リモートエンジンを待機中",
+      "aligning": "スクリーンショットと参照画像を整合中",
+      "extracting": "隠しトークンを抽出中",
+      "verifying": "追跡データベースを検証中",
+      "complete": "処理完了",
+      "elapsed": "{seconds} 秒経過",
+      "estimated": "段階は経過時間による推定です。処理中なので再送信しないでください。",
+      "live": "進捗はサーバーの実際の処理段階から報告されます。",
+      "heartbeat": "サーバーのハートビートは正常で、処理は継続中です。",
+      "heartbeatEngine": "FastAPI エンジンのハートビートは正常で、アルゴリズムは実行中です。",
+      "heartbeatGateway": "Go ゲートウェイは接続中で、FastAPI エンジンの応答を待っています。",
+      "units": "{completed}/{total} 件の候補を処理済み"
+    },
+    "loginRequired": {
+      "title": "ログインが必要です",
+      "description": "このツールは既定では許可されたユーザーのみ利用できます。ログインして続行してください。",
+      "login": "ログイン",
+      "home": "ホームへ戻る"
+    },
+    "upload": {
+      "title": "検査する画像をアップロード",
+      "description": "JPEG、PNG、WebP 画像に対応し、2-4 バイトの隠しウォーターマーク短縮コードを抽出して追跡データベースで検証します。",
+      "choose": "画像を選択",
+      "accept": "JPEG / PNG / WebP",
+      "previewAlt": "検査対象画像のプレビュー",
+      "referenceLabel": "スクリーンショット復元用の参照画像（任意）",
+      "referenceDescription": "切り抜き、縮小、回転されたスクリーンショットでは完全な透かし入り画像を選択してください。Go ローカルまたはリモートエンジンが位置合わせ後にトークンを抽出します。",
+      "referenceSelected": "参照画像を選択済み：{name}",
+      "notice": "権限がない場合は、管理者にアカウント追加または全ユーザー開放を依頼してください。"
+    },
+    "result": {
+      "title": "検査結果",
+      "found": "隠しウォーターマークが見つかりました",
+      "notFound": "認識できる隠しウォーターマークは見つかりませんでした",
+      "empty": "画像をアップロードすると結果が表示されます",
+      "placeholder": "結果には存在有無、有効性、追跡可能なフィールドが表示されます。"
+    },
+    "fields": {
+      "found": "ウォーターマーク検出",
+      "valid": "トークン有効",
+      "version": "ペイロード版",
+      "traceToken": "追跡トークン",
+      "traceType": "追跡タイプ",
+      "traceResolved": "データベース追跡一致",
+      "payloadBytes": "ペイロードバイト",
+      "payloadBits": "ペイロードビット",
+      "payloadFormat": "ペイロード形式",
+      "watermarkEngine": "ウォーターマークエンジン",
+      "uid": "内部 UID",
+      "userId": "公開ユーザー ID",
+      "username": "ユーザー名またはニックネーム",
+      "uploadedAt": "アップロード時刻",
+      "sourceHash": "元ファイルハッシュ",
+      "customText": "カスタム識別子",
+      "postId": "投稿 ID",
+      "imageId": "画像 ID",
+      "jobId": "保護ジョブ ID",
+      "includedFields": "含まれるフィールド"
+    },
+    "errors": {
+      "unsupportedType": "JPEG、PNG、WebP 画像のみ対応しています。",
+      "fileRequired": "先に画像を選択してください。",
+      "fileTooLarge": "画像が設定済みのアップロード上限を超えています。",
+      "invalidImage": "アップロードされたファイルは有効な対応画像ではありません。",
+      "recoveryFailed": "参照画像からスクリーンショットを復元できませんでした。対応する完全な透かし入り画像か確認してください。",
+      "remoteTimeout": "リモート透かしサービスまたはゲートウェイがタイムアウトしました。透かしがないという意味ではありません。",
+      "remoteDisconnected": "リモート透かしの進捗接続が切断されました。しばらくしてから再試行してください。",
+      "forbidden": "このアカウントには隠しウォーターマーク検査権限がありません。",
+      "failed": "隠しウォーターマーク検査に失敗しました。後でもう一度お試しください。"
+    }
+  }
+}

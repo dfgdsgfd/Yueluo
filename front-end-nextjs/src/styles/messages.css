@@ -1,0 +1,102 @@
+.message-page {
+  --message-bg: #121212;
+  --message-header: rgba(18, 18, 18, 0.96);
+  --message-surface: #181818;
+  --message-surface-strong: #1e1e1e;
+  --message-control: rgba(255, 255, 255, 0.06);
+  --message-control-hover: rgba(255, 255, 255, 0.1);
+  --message-border: rgba(255, 255, 255, 0.08);
+  --message-text: #ffffff;
+  --message-muted: rgba(255, 255, 255, 0.58);
+  --message-subtle: rgba(255, 255, 255, 0.36);
+  --message-faint: rgba(255, 255, 255, 0.24);
+  --message-accent-soft: rgba(255, 36, 66, 0.12);
+  --message-accent-text: #ff7ba6;
+  --message-mine-bubble: #5d1730;
+  --message-mine-text: #ffffff;
+  --message-mine-meta: rgba(255, 255, 255, 0.7);
+  --message-other-bubble: #292929;
+  --message-other-text: #ffffff;
+  --message-input-bg: #292929;
+  --message-footer: #151515;
+  --message-focus-ring: rgba(255, 123, 166, 0.38);
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: light) {
+  html:not([data-yuem-theme]) .message-page {
+    --message-bg: #f6f6f7;
+    --message-header: rgba(255, 255, 255, 0.96);
+    --message-surface: #ffffff;
+    --message-surface-strong: #f1f1f3;
+    --message-control: rgba(28, 28, 32, 0.06);
+    --message-control-hover: rgba(28, 28, 32, 0.1);
+    --message-border: rgba(28, 28, 32, 0.1);
+    --message-text: #25252b;
+    --message-muted: #64646d;
+    --message-subtle: #8a8a91;
+    --message-faint: #a7a7ae;
+    --message-accent-soft: rgba(255, 36, 66, 0.1);
+    --message-accent-text: #c61e44;
+    --message-mine-bubble: #ff2442;
+    --message-mine-text: #ffffff;
+    --message-mine-meta: rgba(255, 255, 255, 0.78);
+    --message-other-bubble: #ffffff;
+    --message-other-text: #25252b;
+    --message-input-bg: #f1f1f3;
+    --message-footer: #ffffff;
+    --message-focus-ring: rgba(255, 36, 66, 0.22);
+    color-scheme: light;
+  }
+}
+
+html[data-yuem-theme="light"] .message-page {
+  --message-bg: #f6f6f7;
+  --message-header: rgba(255, 255, 255, 0.96);
+  --message-surface: #ffffff;
+  --message-surface-strong: #f1f1f3;
+  --message-control: rgba(28, 28, 32, 0.06);
+  --message-control-hover: rgba(28, 28, 32, 0.1);
+  --message-border: rgba(28, 28, 32, 0.1);
+  --message-text: #25252b;
+  --message-muted: #64646d;
+  --message-subtle: #8a8a91;
+  --message-faint: #a7a7ae;
+  --message-accent-soft: rgba(255, 36, 66, 0.1);
+  --message-accent-text: #c61e44;
+  --message-mine-bubble: #ff2442;
+  --message-mine-text: #ffffff;
+  --message-mine-meta: rgba(255, 255, 255, 0.78);
+  --message-other-bubble: #ffffff;
+  --message-other-text: #25252b;
+  --message-input-bg: #f1f1f3;
+  --message-footer: #ffffff;
+  --message-focus-ring: rgba(255, 36, 66, 0.22);
+  color-scheme: light;
+}
+
+.message-page :is(a, button, input, textarea):focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--message-focus-ring);
+}
+
+.message-page :where(a, button) {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (pointer: fine) {
+  a[href],
+  button:not(:disabled),
+  summary {
+    cursor: pointer;
+  }
+}
+
+img,
+video {
+  max-width: 100%;
+}
+
+::selection {
+  background: rgba(255, 36, 66, 0.18);
+}

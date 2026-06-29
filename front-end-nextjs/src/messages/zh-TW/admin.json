@@ -1,0 +1,1461 @@
+{
+  "adminMaintenance": {
+    "loadFailed": "維護設定載入失敗",
+    "saved": "維護設定已儲存",
+    "saveFailed": "維護設定儲存失敗",
+    "rotated": "維護入口已更新",
+    "rotateFailed": "維護入口更新失敗",
+    "copied": "維護入口已複製",
+    "loading": "正在載入維護設定",
+    "title": "維護模式",
+    "description": "開啟後一般入口會顯示倒數維護彈窗，專屬入口可繞過並自動登入指定 UID。",
+    "refresh": "重新整理",
+    "enabled": "開啟維護模式",
+    "enabledHint": "公開 API 將回傳維護狀態，管理端與服務入口保持可用。",
+    "message": "維護提示",
+    "autoLoginUid": "自動登入 UID",
+    "estimatedEnd": "預計結束時間",
+    "serviceEntry": "隨機服務入口",
+    "copyEntry": "複製入口",
+    "rotateEntry": "重新產生入口",
+    "save": "儲存設定",
+    "borderSettings": "維護邊框",
+    "borderSettingsHint": "專屬入口進入後在頁面四周顯示提示邊框。",
+    "borderVisible": "顯示邊框",
+    "borderDismissible": "允許點擊關閉",
+    "borderColor": "邊框顏色",
+    "borderOpacity": "透明度 {value}%"
+  },
+  "adminDatabase": {
+    "loadFailed": "資料庫資訊載入失敗",
+    "repairConfirm": "確認執行非破壞性修復？錯誤索引僅在臨時唯一索引驗證成功後安全替換，絕不刪除或合併業務資料。",
+    "repairDone": "資料庫修復已完成",
+    "repairBlocked": "已完成安全修復，仍有 {count} 個重複資料阻塞項。",
+    "duplicateSummary": "發現 {groups} 組重複鍵，共 {rows} 筆額外記錄；請人工處理後重試。",
+    "repairFailed": "資料庫修復失敗",
+    "loading": "正在載入資料庫資訊",
+    "title": "資料庫管理",
+    "description": "檢查表體積、欄位估算大小、索引缺口，並執行非破壞性一鍵修正。",
+    "refresh": "重新整理",
+    "driver": "驅動",
+    "database": "資料庫",
+    "tables": "表數量",
+    "size": "總大小",
+    "tableSizes": "表大小",
+    "searchTables": "搜尋表名",
+    "rows": "行",
+    "columnsFor": "{table} 欄位",
+    "columns": "欄位",
+    "estimatedColumnSize": "估算欄位體積：{size}",
+    "indexAudit": "索引 / 結構稽核",
+    "indexAuditDescription": "對照 GORM 模型和期望索引註冊表檢查缺失項。",
+    "repair": "一鍵修正",
+    "noIssues": "未發現缺失欄位或索引",
+    "nullable": "可空",
+    "notNullable": "非空",
+    "vacuumSaved": "自動最佳化設定已儲存",
+    "vacuumSaveFailed": "自動最佳化設定儲存失敗",
+    "vacuumRunConfirm": "確認執行 VACUUM ANALYZE {table}？",
+    "vacuumRunDone": "VACUUM ANALYZE 已完成",
+    "vacuumRunFailed": "VACUUM ANALYZE 執行失敗",
+    "vacuumTitle": "VACUUM ANALYZE 自動最佳化",
+    "vacuumDescription": "對指定 PostgreSQL 表執行普通 VACUUM ANALYZE，更新統計資訊並回收可重用空間。",
+    "vacuumRunSelected": "最佳化目前表",
+    "vacuumUnsupported": "目前資料庫不支援 VACUUM ANALYZE 設定",
+    "vacuumEnabled": "開啟自動最佳化",
+    "vacuumInterval": "自動間隔（小時）",
+    "vacuumSave": "儲存自動設定",
+    "vacuumLastResult": "最近執行",
+    "vacuumNextRun": "下次執行",
+    "vacuumLastRun": "上次執行",
+    "vacuumLastDuration": "上次耗時",
+    "vacuumNoResult": "暫無執行結果"
+  },
+  "adminPortal": {
+    "brand": {
+      "name": "月夢社群",
+      "subtitle": "營運後台"
+    },
+    "loading": "正在進入後台",
+    "mediaLibrary": {
+      "unrestrictedUploadHint": "支援任意檔案類型與副檔名"
+    },
+    "login": {
+      "title": "管理員登入",
+      "subtitle": "月夢社群營運後台",
+      "username": "帳號",
+      "usernamePlaceholder": "admin",
+      "password": "密碼",
+      "submit": "登入後台",
+      "success": "管理員已登入",
+      "errors": {
+        "failed": "登入失敗，請稍後再試。",
+        "forbidden": "目前登入資訊沒有管理員權限。",
+        "invalidCredentials": "帳號或密碼錯誤。",
+        "locked": "目前 IP 密碼錯誤次數過多，請在 {minutes} 分鐘後再試。",
+        "missingParams": "請輸入帳號和密碼。"
+      }
+    },
+    "layout": {
+      "adminRole": "管理員",
+      "backHome": "返回首頁",
+      "backToSite": "返回前台",
+      "breadcrumb": "首頁 / {title}",
+      "closeMenu": "關閉選單",
+      "closeMenuOverlay": "關閉選單遮罩",
+      "logout": "登出",
+      "openMenu": "開啟選單",
+      "refresh": "重新整理",
+      "searchPlaceholder": "搜尋使用者、內容、模組..."
+    },
+    "userManagement": {
+      "title": "管理使用者積分",
+      "fields": {
+        "uid": "UID",
+        "oauth2Id": "OAuth2 ID",
+        "points": "積分"
+      },
+      "actions": {
+        "managePoints": "管理積分",
+        "close": "關閉",
+        "cancel": "取消",
+        "save": "儲存調整",
+        "saving": "儲存中"
+      },
+      "operation": {
+        "label": "調整方式",
+        "add": "增加",
+        "deduct": "扣減",
+        "set": "設為指定值"
+      },
+      "amount": {
+        "change": "變更積分",
+        "target": "目標積分",
+        "placeholder": "輸入積分數量"
+      },
+      "reason": {
+        "label": "原因（選填）",
+        "placeholder": "填寫操作備註，方便在積分流水中追溯"
+      },
+      "validation": {
+        "invalidAmount": "請輸入有效的積分數量。"
+      },
+      "messages": {
+        "saved": "積分已更新，目前餘額：{points}"
+      },
+      "batchGenerate": "批量產生使用者",
+      "batchGenerating": "產生中",
+      "batchGenerateCount": "數量",
+      "batchGenerateSuccess": "已產生 {count} 個使用者。"
+    },
+    "navigation": {
+      "sections": {
+        "overview": "總覽",
+        "users": "使用者與權限",
+        "content": "內容營運",
+        "risk": "審核與風控",
+        "creator": "創作者與財務",
+        "growth": "推薦與成長",
+        "notice": "通知與公告",
+        "system": "應用與系統"
+      },
+      "items": {
+        "dashboard": "營運看板",
+        "queues": "佇列狀態",
+        "logs": "日誌中心",
+        "observability": "系統觀測",
+        "database": "資料庫管理",
+        "maintenance": "維護模式",
+        "operations": "營運控制台",
+        "withdraw": "提現審核",
+        "invite": "邀請成長",
+        "coupon": "優惠券營運",
+        "points": "積分營運",
+        "onboardingSettings": "引導設定",
+        "backendApi": "查看後端 API",
+        "systemUpdate": "系統更新",
+        "componentCheck": "元件檢查與測試",
+        "hiddenWatermarkAccess": "隱藏浮水印權限",
+        "settings": "系統設定",
+        "aiAgent": "AI 智慧體",
+        "accessBlock": "訪問屏蔽"
+      },
+      "resources": {
+        "admins": "管理員",
+        "announcements": "公告管理",
+        "app-versions": "App 版本",
+        "audit": "認證審核",
+        "banned-word-categories": "敏感詞分類",
+        "banned-words": "敏感詞",
+        "categories": "分類管理",
+        "collections": "收藏記錄",
+        "comments": "評論管理",
+        "users": "使用者管理",
+        "feedback": "使用者回饋",
+        "follows": "關注關係",
+        "licenses": "授權碼",
+        "likes": "按讚記錄",
+        "media-library": "媒體庫",
+        "file-recycle-bin": "檔案回收站",
+        "notification-templates": "通知範本",
+        "open-apis": "開放 API",
+        "posts": "內容管理",
+        "posts-quality": "內容品質",
+        "post-configs": "貼文推薦規則",
+        "quality-reward-settings": "品質獎勵",
+        "content-review": "內容審核",
+        "reports": "檢舉處理",
+        "sessions": "工作階段管理",
+        "system-notifications": "系統通知",
+        "tags": "標籤管理",
+        "user-configs": "使用者推薦規則",
+        "user-toolbar": "使用者工具列",
+        "ai-moderation-logs": "AI 審核日誌"
+      }
+    },
+    "onboardingSettingsPanel": {
+      "title": "引導設定",
+      "description": "配置新使用者引導開關、跳過策略、興趣選項和積分說明",
+      "configTitle": "引導配置",
+      "save": "儲存",
+      "saved": "引導設定已儲存",
+      "loadingSettings": "正在載入引導設定",
+      "emptySettings": "暫無引導設定",
+      "resetTitle": "重置使用者引導狀態",
+      "resetDescription": "清除所有使用者的引導完成標記後，未在資料庫記錄完成的使用者會重新看到引導流程。",
+      "resetAction": "全部重置",
+      "resetting": "正在重置",
+      "resetConfirm": "確認重置所有使用者的引導完成狀態？",
+      "resetDone": "使用者引導狀態已重置",
+      "resetSingleTitle": "重置單一使用者",
+      "resetSingleDescription": "輸入數字 ID、使用者 ID 或 XiSe ID，只讓該使用者重新看到引導流程。",
+      "resetSingleLabel": "使用者標識",
+      "resetSinglePlaceholder": "使用者 ID、數字 ID 或 XiSe ID",
+      "resetSingleAction": "重置該使用者",
+      "resetSingleConfirm": "確認重置 {userId} 的引導完成狀態？",
+      "resetSingleDone": "單一使用者引導狀態已重置",
+      "resetSingleMissing": "請先輸入使用者標識。",
+      "fields": {
+        "enabled": "開啟引導流程",
+        "allowSkip": "允許跳過引導",
+        "interestOptions": "引導興趣選項",
+        "customFields": "引導自訂欄位",
+        "pointsIntroTitle": "積分說明標題",
+        "pointsIntroSummary": "積分說明摘要",
+        "pointsIntroDetail": "積分說明詳情",
+        "avatarEnabled": "顯示頭像設定",
+        "avatarRequired": "頭像必填",
+        "backgroundEnabled": "顯示背景設定",
+        "backgroundRequired": "背景必填",
+        "nameEnabled": "顯示名稱設定",
+        "nameRequired": "名稱必填",
+        "signatureEnabled": "顯示簽名設定",
+        "signatureRequired": "簽名必填",
+        "interestsEnabled": "顯示興趣愛好",
+        "interestsRequired": "興趣愛好必填",
+        "minInterests": "至少選擇興趣數",
+        "resultTitle": "完成彈窗標題",
+        "resultSavedText": "無積分保存文案",
+        "walletLabel": "積分入口按鈕文案",
+        "walletUrl": "積分入口連結"
+      },
+      "hints": {
+        "enabled": "開啟後，資料庫未記錄完成引導的登入使用者會看到引導彈窗。",
+        "allowSkip": "關閉後，使用者必須完成引導流程，不能直接跳過。",
+        "interestOptions": "用下面的列表新增、刪除或修改興趣選項；也可以每行一個，或貼上 JSON 範例：[\"Bondage\", \"Handcuffs\", \"Leg irons\"]。",
+        "customFields": "支援 JSON 或多行文字，用於擴充引導表單欄位。",
+        "pointsIntroDetail": "使用者完成引導後點擊查看詳情時展示。",
+        "minInterests": "僅在顯示興趣愛好且興趣必填時生效。",
+        "walletUrl": "完成彈窗中的積分入口跳轉地址，可填寫站內路徑或完整 URL。"
+      },
+      "addInterest": "新增興趣",
+      "removeInterest": "刪除興趣",
+      "interestPlaceholder": "輸入興趣名稱",
+      "emptyInterestOptions": "暫無興趣選項，點擊新增興趣建立。",
+      "addSampleInterests": "新增範例",
+      "sampleInterests": {
+        "bondage": "Bondage",
+        "handcuffs": "Handcuffs",
+        "legIrons": "Leg irons"
+      }
+    },
+    "hiddenWatermarkAccessPanel": {
+      "title": "隱藏浮水印權限",
+      "description": "控制一般使用者是否可以使用前台隱藏浮水印檢驗工具",
+      "loading": "正在載入隱藏浮水印權限",
+      "save": "儲存",
+      "saved": "隱藏浮水印權限已儲存",
+      "saving": "正在儲存",
+      "on": "開啟",
+      "off": "關閉",
+      "watermarkConfig": {
+        "title": "隱藏浮水印設定",
+        "reference": "參考 watermark_zero 官方說明：作者強烈建議使用 WithGolay；D1/D2 越大越抗壓縮但畫質損失越明顯，區塊越細容量越高但雜訊也會增加。奇數區塊大小會依官方規則向上取偶數，最小為 4。",
+        "runtime": {
+          "payload": "目前載荷",
+          "payloadValue": "{bytes} 位元組 / {bits} bit",
+          "format": "載荷格式",
+          "engine": "引擎模式",
+          "referenceRecovery": "截圖參考圖恢復"
+        },
+        "fields": {
+          "enabled": "啟用隱藏浮水印",
+          "protectedOnly": "僅保護內容加入浮水印",
+          "includeUid": "包含內部 UID",
+          "includeUserId": "包含公開使用者 ID",
+          "includeUsername": "包含使用者名稱或暱稱",
+          "includeTime": "包含 UTC 上傳時間",
+          "includeFileHash": "包含原始檔案雜湊",
+          "includeCustom": "包含自訂識別",
+          "customText": "自訂識別",
+          "coefficientMode": "係數模式",
+          "eccMode": "錯誤修正",
+          "golaySeed": "Golay Shuffle Seed",
+          "blockWidth": "區塊寬度",
+          "blockHeight": "區塊高度",
+          "d1": "D1 強度",
+          "d2": "D2 強度",
+          "engine": "浮水印引擎",
+          "remotePasswordWm": "水印密碼",
+          "remotePasswordImg": "圖片密碼",
+          "remoteProfile": "遠端水印檔位",
+          "remoteD1": "自訂 D1",
+          "remoteD2": "自訂 D2",
+          "protectionMaxDimension": "保護圖片最長邊",
+          "protectionAllowedFailurePercent": "保護包允許失敗率",
+          "protectionOutputMode": "保護圖片輸出模式",
+          "protectionQuality": "保護圖片 WebP 品質",
+          "remoteTimeout": "遠端請求逾時（秒）",
+          "remoteOperationTimeout": "遠端計算逾時（秒）",
+          "remoteEngine": "遠端演算法"
+        },
+        "hints": {
+          "enabled": "關閉後一般上傳不寫入隱藏浮水印；保護包仍會強制寫入追溯浮水印。",
+          "protectedOnly": "開啟後所有上傳都保存無浮水印原圖，只在受保護圖片產生購買者下載壓縮包時動態嵌入浮水印。",
+          "includeUid": "寫入資料庫內部 UID，追溯最穩定。",
+          "includeUserId": "寫入公開使用者 ID，便於人工核對。",
+          "includeUsername": "寫入暱稱或 username，隱私風險較高，預設關閉。",
+          "includeTime": "寫入浮水印生成 UTC 時間。",
+          "includeFileHash": "寫入原圖雜湊片段，便於確認來源。",
+          "includeCustom": "將下方自訂識別儲存到追蹤資料庫，不寫入圖片 Token。",
+          "customText": "追蹤資料庫最多儲存 255 個字元。",
+          "coefficientMode": "WithD1 成本較低；WithD1D2 通常更穩但計算較重。",
+          "eccMode": "作者強烈建議 WithGolay；WithoutECC 僅用於相容或實驗。",
+          "golaySeed": "WithGolay 的確定性打散種子；提取時必須一致。",
+          "blockShape": "區塊越小容量越高，但更可能增加雜訊；官方要求偶數且不小於 4。",
+          "d1d2": "數值越大越抗攻擊/壓縮，但越可能影響原畫。",
+          "engine": "選擇使用 Go 本地演算法或內網 FastAPI 遠端服務。",
+          "remotePasswordWm": "blind_watermark 的 password_wm；嵌入與提取必須一致。",
+          "remotePasswordImg": "blind_watermark 的 password_img；嵌入與提取必須一致。",
+          "remoteBlockShape": "遠端 blind_watermark 的分塊大小；區塊越小容量越高，但更可能影響畫質。",
+          "remoteD1D2": "遠端 blind_watermark 的 D1/D2 強度；數值越大越抗壓縮，但畫質損失越明顯。",
+          "remoteProfile": "自適應一般圖片從 18/8 開始；受保護圖片會從 24/12 開始以提高抗壓縮能力。",
+          "protectionMaxDimension": "預設 2048；設為 0 保留原始尺寸。",
+          "protectionAllowedFailurePercent": "按總張數向下取整；例如 10 張設 20% 最多允許跳過 2 張。跳過的圖片不會寫入 ZIP，至少需成功 1 張。",
+          "protectionOutputMode": "無損 WebP 畫質最佳；高品質 WebP 可縮小壓縮包。",
+          "protectionQuality": "僅高品質 WebP 模式使用。",
+          "remoteTimeout": "Go 後端等待遠端浮水印服務的最長時間；修改後下一次任務立即生效。",
+          "remoteOperationTimeout": "傳給 FastAPI 浮水印進程的單次計算逾時；應略小於遠端請求逾時。",
+          "remoteEngine": "自動模式會先用 blind_watermark，失敗後自動切換 DWT-DCT-SVD 短碼。"
+        },
+        "options": {
+          "coefficientMode": {
+            "d1d2": "WithD1D2（更穩）",
+            "d1": "WithD1（更快）"
+          },
+          "eccMode": {
+            "golay": "WithGolay（作者強烈建議）",
+            "none": "WithoutECC（實驗）"
+          },
+          "engine": {
+            "auto": "自動（遠端優先）",
+            "local": "本地",
+            "remote": "遠端"
+          },
+          "remoteProfile": {
+            "adaptive": "自適應均衡（18/8 起步）",
+            "fidelity": "高畫質（18/8）",
+            "balanced": "均衡（24/12）",
+            "strong": "強抗壓（30/15）",
+            "official": "官方強度（36/20）",
+            "custom": "自訂"
+          },
+          "protectionOutputMode": {
+            "lossless_webp": "無損 WebP",
+            "quality_webp": "高品質 WebP"
+          },
+          "remoteEngine": {
+            "dwt_dct_svd": "DWT-DCT-SVD 短碼",
+            "blind_watermark": "舊版 blind_watermark",
+            "auto": "自動"
+          }
+        },
+        "presets": {
+          "current": {
+            "title": "目前平衡",
+            "description": "使用 8x6 / D1=21 / D2=9 / Golay，增強截圖與二次壓縮後的恢復能力。"
+          },
+          "author_recommended": {
+            "title": "作者強烈建議",
+            "description": "官方預設 8x8 / D1=21 / D2=9 / WithGolay，優先穩定提取。"
+          },
+          "fidelity": {
+            "title": "盡可能保持原畫",
+            "description": "更大區塊和較低 D1/D2，降低雜訊與畫質損失。"
+          },
+          "robust": {
+            "title": "盡可能抗攻擊",
+            "description": "更細區塊和更高 D1/D2，強化壓縮後提取能力。"
+          }
+        },
+        "stablePreset": {
+          "action": "套用最穩方案",
+          "saved": "已套用並儲存最穩保護包方案"
+        },
+        "remoteReference": "遠端模式使用 guofei9987/blind_watermark 0.4.4，維持官方 4x4 分塊並傳遞一致的 password 與 D1/D2。",
+        "remoteOfficial": {
+          "title": "建議遠端保護設定",
+          "description": "最穩方案會啟用遠端優先、自動演算法兜底、自適應檔位、50 秒遠端逾時，並強制保護圖片輸出無損 WebP。"
+        }
+      },
+      "extract": {
+        "title": "隱藏浮水印提取",
+        "fileLabel": "選擇待檢測圖片",
+        "referenceFileLabel": "截圖還原參考圖（選填）",
+        "referenceDescription": "裁切或縮放截圖需選擇完整的帶浮水印原圖，系統會依上游官方流程估算裁切與縮放參數後還原提取。",
+        "description": "僅管理員可用。提取出的短碼會透過追蹤資料庫解析驗證。",
+        "action": "提取浮水印",
+        "extracting": "正在提取",
+        "completed": "隱藏浮水印檢測完成",
+        "recoveryFailed": "截圖還原失敗，請確認參考圖是對應的完整帶浮水印圖片。",
+        "remoteTimeout": "遠端浮水印服務或閘道逾時，任務已停止；這不代表圖片沒有浮水印。",
+        "remoteDisconnected": "遠端浮水印進度連線已中斷，請稍後重試。",
+        "progress": {
+          "uploading": "正在上傳圖片",
+          "queued": "伺服器已收到，正在等待處理",
+          "decoding": "正在解碼並檢查圖片",
+          "recovering": "正在還原截圖位置與縮放",
+          "waiting": "正在等待遠端引擎空閒",
+          "aligning": "正在對齊截圖與參考圖",
+          "extracting": "正在提取隱藏 Token",
+          "verifying": "正在校驗追蹤資料庫",
+          "complete": "處理完成",
+          "elapsed": "已用時 {seconds} 秒",
+          "estimated": "階段進度為即時耗時估算，請勿重複提交。",
+          "live": "進度來自伺服器實際處理階段。",
+          "heartbeat": "伺服器心跳正常，工作仍在執行。",
+          "heartbeatEngine": "FastAPI 引擎心跳正常，演算法仍在執行。",
+          "heartbeatGateway": "Go 閘道連線正常，正在等待 FastAPI 引擎回應。",
+          "units": "已處理 {completed}/{total} 個候選項"
+        },
+        "empty": "選擇圖片後查看提取結果",
+        "fields": {
+          "found": "發現浮水印",
+          "valid": "Token 有效",
+          "version": "載荷版本",
+          "traceToken": "追蹤 Token",
+          "traceType": "追蹤類型",
+          "traceResolved": "資料庫追蹤命中",
+          "payloadBytes": "載荷位元組",
+          "payloadBits": "載荷位元",
+          "payloadFormat": "載荷格式",
+          "watermarkEngine": "浮水印引擎",
+          "uid": "內部 UID",
+          "userId": "公開使用者 ID",
+          "username": "使用者名稱或暱稱",
+          "uploadedAt": "上傳時間",
+          "sourceHash": "原始檔案雜湊",
+          "customText": "自訂識別",
+          "postId": "帖子 ID",
+          "imageId": "圖片 ID",
+          "jobId": "保護任務 ID",
+          "includedFields": "包含欄位"
+        }
+      },
+      "global": {
+        "title": "開放策略",
+        "description": "預設僅管理員和白名單使用者可使用；開啟後所有登入使用者都可使用前台檢驗工具。",
+        "on": "已開放全部使用者",
+        "off": "僅授權使用者"
+      },
+      "picker": {
+        "title": "新增使用者",
+        "description": "搜尋使用者後加入權限名單，系統會同時記錄內部 ID 和公開帳號。",
+        "pickerLabel": "使用者搜尋",
+        "pickerPlaceholder": "搜尋暱稱、帳號或信箱",
+        "pickerEmpty": "沒有找到符合的使用者",
+        "addEmpty": "請先搜尋並選擇要授權的使用者。",
+        "clear": "清空",
+        "loading": "正在搜尋",
+        "removeSelected": "移除已選使用者",
+        "search": "搜尋",
+        "addSelected": "加入權限名單",
+        "noSelected": "請先選擇使用者",
+        "added": "已加入 {count} 個使用者"
+      },
+      "manual": {
+        "title": "手動新增",
+        "description": "可直接新增內部 ID、公開使用者 ID、夕色 ID、使用者名稱或暱稱。",
+        "manualPlaceholder": "輸入使用者 ID、帳號或暱稱",
+        "manualTypeId": "ID / 帳號",
+        "manualTypeUsername": "使用者名稱 / 暱稱",
+        "addManual": "新增",
+        "duplicate": "此值已在名單中",
+        "emptyManual": "請輸入要新增的值"
+      },
+      "lists": {
+        "title": "授權名單",
+        "description": "命中任一 ID 或使用者名稱記錄即可使用前台隱藏浮水印檢驗。",
+        "count": "{count} 項",
+        "userIdsTitle": "ID 與帳號",
+        "usernamesTitle": "使用者名稱與暱稱",
+        "userIdsHint": "支援內部數字 ID、公開 user_id、夕色 ID。",
+        "usernamesHint": "支援暱稱、username 或公開帳號文字。",
+        "emptyUserIds": "暫無 ID 授權項",
+        "emptyUsernames": "暫無使用者名稱授權項",
+        "remove": "移除"
+      },
+      "usage": {
+        "title": "最近 100 次使用記錄",
+        "loading": "正在載入檢驗記錄",
+        "loadFailed": "隱藏浮水印檢驗記錄載入失敗",
+        "empty": "暫無隱藏浮水印檢驗記錄",
+        "time": "時間",
+        "actor": "使用者",
+        "result": "結果",
+        "file": "上傳檔案",
+        "watermark": "浮水印狀態",
+        "reason": "失敗原因",
+        "ip": "IP",
+        "path": "使用入口",
+        "success": "成功",
+        "failed": "失敗",
+        "valid": "已發現且有效",
+        "invalid": "已發現但無效",
+        "notFound": "未發現"
+      }
+    },
+    "queuesPanel": {
+      "title": "佇列與 Redis",
+      "description": "查看 Asynq 佇列、Redis 記憶體、任務耗時與自動清理策略",
+      "loading": "正在載入佇列狀態",
+      "queues": "佇列",
+      "tasks": "任務",
+      "taskTitle": "任務：{queue}",
+      "emptyJobs": "暫無任務",
+      "serviceDisabled": "佇列服務未啟用，目前只顯示空狀態。",
+      "recentEvents": "最近事件",
+      "eventTiming": "{time} · 等待 {wait} · 耗時 {duration}",
+      "status": {
+        "all": "全部",
+        "waiting": "等待",
+        "active": "執行中",
+        "completed": "完成",
+        "failed": "失敗",
+        "retry": "重試",
+        "scheduled": "排程"
+      },
+      "stats": {
+        "waiting": "等待",
+        "active": "執行中",
+        "completed": "已完成",
+        "failed": "失敗",
+        "delayed": "延遲 / 重試",
+        "latency": "平均延遲"
+      },
+      "danger": {
+        "title": "危險操作：刪除整個佇列",
+        "description": "這會刪除等待、排程、重試和歷史任務。安全清理請使用上方 Redis 自動維護。",
+        "placeholder": "輸入佇列名稱 {queue} 以確認",
+        "clear": "刪除整個佇列",
+        "cleared": "佇列已刪除"
+      },
+      "job": {
+        "id": "任務 ID {id}",
+        "inspect": "詳情",
+        "retry": "重試任務",
+        "enqueued": "入隊",
+        "started": "開始",
+        "wait": "等待",
+        "duration": "執行",
+        "retryConfirm": "確認重試任務 {id}？",
+        "retrySuccess": "任務已重新加入佇列",
+        "close": "關閉任務詳情",
+        "details": "任務詳情",
+        "idLabel": "任務 ID",
+        "name": "名稱",
+        "attempts": "嘗試"
+      },
+      "maintenance": {
+        "title": "Redis 記憶體治理",
+        "loading": "正在讀取 Redis 記憶體與清理策略",
+        "description": "僅清理可安全捨棄的歷史、監控、快取和陳舊索引。",
+        "saved": "Redis 自動清理策略已儲存",
+        "runComplete": "Redis 安全清理已完成",
+        "cacheConfirm": "確認清除應用程式快取？不會刪除工作階段或待處理任務。",
+        "policyTitle": "自動清理策略",
+        "safeBoundary": "等待、執行中、排程和重試任務永不自動刪除。",
+        "save": "儲存策略",
+        "runSafe": "立即安全清理",
+        "runCache": "清除應用程式快取"
+      },
+      "memory": {
+        "title": "記憶體壓力",
+        "used": "已使用",
+        "max": "最大記憶體",
+        "unbounded": "未設定上限",
+        "policy": "淘汰策略",
+        "fragmentation": "碎片率",
+        "noLimitHint": "Redis 目前 maxmemory=0。後台只監控和告警，不會修改伺服器記憶體上限。",
+        "level": {
+          "normal": "正常",
+          "warning": "警告",
+          "critical": "嚴重",
+          "unbounded": "無上限"
+        }
+      },
+      "schedule": {
+        "title": "執行狀態",
+        "next": "下次執行",
+        "last": "上次執行",
+        "freed": "上次釋放"
+      },
+      "inventory": {
+        "title": "鍵空間分類",
+        "summary": "共 {total} 個鍵，本次檢查 {scanned} 個",
+        "sampled": "資料量較大，目前為有界取樣",
+        "noTtlSummary": "取樣中有 {count} 個鍵未設定 TTL，且不屬於預期永久鍵",
+        "expectedPermanentSummary": "取樣中有 {count} 個鍵屬於預期永久中繼資料",
+        "keys": "{count} 個鍵",
+        "noTtlKeys": "{count} 個無 TTL",
+        "expectedPermanentKeys": "{count} 個預期永久",
+        "empty": "暫無可用分類資料",
+        "categories": {
+          "queues": "佇列",
+          "logs": "短期日誌",
+          "metrics": "監控指標",
+          "sessions": "工作階段",
+          "cache": "應用程式快取",
+          "settings": "系統設定",
+          "security": "安全限制",
+          "other": "其他"
+        }
+      },
+      "fields": {
+        "enabled": "啟用自動清理",
+        "interval": "執行間隔（分鐘）",
+        "accessLogs": "存取日誌保留（小時）",
+        "accessLogMax": "存取日誌筆數上限",
+        "systemLogs": "系統日誌保留（小時）",
+        "systemLogMax": "系統日誌筆數上限",
+        "metrics": "效能指標保留（小時）",
+        "metricsMax": "每指標鍵筆數上限",
+        "queueEvents": "佇列事件保留（小時）",
+        "queueEventMax": "佇列事件筆數上限",
+        "completed": "完成任務保留（小時）",
+        "archived": "失敗任務保留（小時）",
+        "archivedMax": "每佇列失敗任務上限",
+        "warning": "記憶體警告門檻（%）",
+        "critical": "記憶體嚴重門檻（%）",
+        "accessTokenTTLSeconds": "存取權杖有效期（秒）",
+        "refreshTokenActiveTTLSeconds": "刷新權杖活躍有效期（秒）",
+        "refreshTokenRenewalIntervalSeconds": "刷新續期活躍視窗（秒）",
+        "refreshTokenMode": "刷新權杖模式",
+        "refreshTokenModeRedisOpaque": "Redis opaque",
+        "refreshTokenModeJWTLegacy": "JWT legacy",
+        "refreshTokenAutoRenewEnabled": "啟用活躍自動續期",
+        "sessionInactiveTTLSeconds": "會話無活躍移除（秒）",
+        "userActiveSessionLimit": "每使用者活躍會話上限"
+      },
+      "overrides": {
+        "title": "佇列個別覆寫",
+        "description": "預設使用全域策略；影片、稽核等高價值佇列可個別保留更久。",
+        "custom": "使用個別策略",
+        "default": "使用全域預設"
+      }
+    },
+    "settingsPanel": {
+      "title": "系統設定",
+      "description": "統一配置中心，支援布林、數字、日期與文字設定",
+      "configTitle": "配置項",
+      "authTitle": "登入 / OAuth",
+      "appDownloadTitle": "App 下載設定",
+      "fileRecycleTitle": "檔案回收站",
+      "imageTitle": "圖片處理",
+      "emptyImageSettings": "暫無圖片處理設定",
+      "save": "儲存",
+      "saved": "系統設定已儲存",
+      "loadingSettings": "正在載入系統設定",
+      "emptySettings": "暫無系統設定",
+      "rawTitle": "相容設定快照",
+      "loadingRaw": "正在載入相容設定",
+      "emptyRaw": "暫無相容設定",
+      "on": "開啟",
+      "off": "關閉",
+      "systemSettings": {
+        "site_title": {
+          "label": "首頁標題",
+          "hint": "用於首頁、瀏覽器標題和分享預覽。"
+        },
+        "site_description": {
+          "label": "首頁簡介",
+          "hint": "顯示在首頁標題下方，也用於搜尋和分享摘要。"
+        },
+        "site_avatar_url": {
+          "label": "網站頭像 URL",
+          "hint": "可填寫媒體庫 /api/file/... 路徑或完整 http/https 圖片位址。"
+        },
+        "post_content_max_length": {
+          "label": "筆記正文最大字數",
+          "hint": "限制發佈、草稿、編輯和後台建立的正文長度；預設 100000。"
+        },
+        "post_resource_section_position": {
+          "label": "筆記資源區位置",
+          "hint": "控制附件、付費解鎖和圖片壓縮包顯示在正文之前或之後。",
+          "before": "正文前",
+          "after": "正文後"
+        },
+        "onboarding_interest_options": {
+          "label": "Onboarding interest options",
+          "hint": "Provide one localized list for each supported language."
+        },
+        "onboarding_points_intro_title": {
+          "label": "Points introduction title"
+        },
+        "onboarding_points_intro_summary": {
+          "label": "Points introduction summary"
+        },
+        "onboarding_points_intro_detail": {
+          "label": "Points introduction details",
+          "hint": "Shown when users view details after completing onboarding."
+        },
+        "onboarding_result_title": {
+          "label": "Onboarding completion title"
+        },
+        "onboarding_result_saved_text": {
+          "label": "Profile saved message"
+        },
+        "onboarding_points_wallet_label": {
+          "label": "Points entry label"
+        },
+        "maintenance_message": {
+          "label": "Maintenance message"
+        },
+        "oauth2_app_callback_urls": {
+          "label": "App OAuth 回調白名單",
+          "hint": "每行一個完整 callback，例如 xsewebfast://auth-return、yuempro://auth-return。App 登入時傳自己的 app_callback，後端按 scheme、host、path 精準匹配後回跳。"
+        },
+        "app_download_android_enabled": {
+          "label": "Enable Android download"
+        },
+        "app_download_android_name": {
+          "label": "Android app name"
+        },
+        "app_download_android_version_name": {
+          "label": "Android version name"
+        },
+        "app_download_android_version_code": {
+          "label": "Android version code",
+          "hint": "Numeric version used for display and client comparisons."
+        },
+        "app_download_android_download_url": {
+          "label": "Android download URL",
+          "hint": "Use a media-library /api/file/attachments/... URL or a full URL."
+        },
+        "app_download_android_size_label": {
+          "label": "Android size label",
+          "hint": "Shown before automatic size formatting, for example 18 MB."
+        },
+        "app_download_android_size_bytes": {
+          "label": "Android package size (MB)",
+          "hint": "Enter MB in admin; it is stored as bytes. Use 0 to hide."
+        },
+        "app_download_android_package_name": {
+          "label": "Android package name"
+        },
+        "app_download_android_release_notes": {
+          "label": "Android release notes"
+        },
+        "app_download_android_fast_enabled": {
+          "label": "Enable Android Fast download"
+        },
+        "app_download_android_fast_name": {
+          "label": "Android Fast app name"
+        },
+        "app_download_android_fast_version_name": {
+          "label": "Android Fast version name"
+        },
+        "app_download_android_fast_version_code": {
+          "label": "Android Fast version code",
+          "hint": "Numeric version used for display and client comparisons."
+        },
+        "app_download_android_fast_download_url": {
+          "label": "Android Fast download URL",
+          "hint": "Use a media-library /api/file/attachments/... URL or a full URL."
+        },
+        "app_download_android_fast_size_label": {
+          "label": "Android Fast size label",
+          "hint": "Shown before automatic size formatting, for example ≤ 1 MB."
+        },
+        "app_download_android_fast_size_bytes": {
+          "label": "Android Fast package size (MB)",
+          "hint": "Enter MB in admin; it is stored as bytes. Use 0 to hide."
+        },
+        "app_download_android_fast_package_name": {
+          "label": "Android Fast package name"
+        },
+        "app_download_android_fast_release_notes": {
+          "label": "Android Fast release notes"
+        },
+        "app_download_ios_enabled": {
+          "label": "Enable iOS download"
+        },
+        "app_download_ios_name": {
+          "label": "iOS app name"
+        },
+        "app_download_ios_version_name": {
+          "label": "iOS version name"
+        },
+        "app_download_ios_version_code": {
+          "label": "iOS version code",
+          "hint": "Numeric version used for display and client comparisons."
+        },
+        "app_download_ios_download_url": {
+          "label": "iOS download URL",
+          "hint": "Use an App Store, TestFlight, enterprise, or profile URL."
+        },
+        "app_download_ios_size_label": {
+          "label": "iOS size label",
+          "hint": "Shown before automatic size formatting."
+        },
+        "app_download_ios_size_bytes": {
+          "label": "iOS package size (MB)",
+          "hint": "Enter MB in admin; it is stored as bytes. Use 0 to hide."
+        },
+        "app_download_ios_bundle_id": {
+          "label": "iOS Bundle ID"
+        },
+        "app_download_ios_release_notes": {
+          "label": "iOS release notes"
+        },
+        "file_recycle_retention_days": {
+          "label": "檔案回收站保留時間（天）",
+          "hint": "檔案移入回收站後自動清理前保留的天數，預設 30 天。"
+        },
+        "file_recycle_cleanup_interval_hours": {
+          "label": "清理間隔（小時）",
+          "hint": "後台掃描過期回收檔案的間隔，預設每 24 小時執行一次。"
+        },
+        "notification_interaction_suppression_enabled": {
+          "label": "互動通知抑制",
+          "hint": "開啟後，同一使用者在時間窗口內對同一作者的同類按讚、評論按讚或收藏通知超過閾值時將靜默抑制。"
+        },
+        "notification_interaction_suppression_window_seconds": {
+          "label": "互動通知抑制窗口（秒）",
+          "hint": "滾動統計窗口，預設 600 秒，允許 60 到 86400 秒。"
+        },
+        "notification_interaction_suppression_threshold": {
+          "label": "互動通知抑制閾值",
+          "hint": "窗口內允許發送的同類互動通知數量，預設 3，允許 1 到 100。"
+        }
+      },
+      "fields": {
+        "videoCenterEnabled": "影片中心開關",
+        "videoCenterHomepageEnabled": "首頁影片中心推薦",
+        "videoCenterRecommendLimit": "影片中心推薦數量",
+        "videoCenterAccountCutoff": "影片中心註冊時間截止",
+        "imageWebpEnabled": "轉換為 WebP",
+        "imageWebpQuality": "一般圖片品質",
+        "imageAvatarWebpQuality": "頭像圖片品質",
+        "imageWebpMethod": "WebP 編碼 Method",
+        "imageWebpAlphaQuality": "透明通道品質",
+        "imageWebpLossless": "使用無損 WebP",
+        "imageLibvipsEnabled": "啟用 libvips 色彩管理",
+        "imageMaxWidth": "最大寬度",
+        "imageMaxHeight": "最大高度",
+        "imageProcessingConcurrency": "圖片處理並行數",
+        "imagePostMaxCount": "單篇圖片數量上限",
+        "imageArchiveEnabled": "自動產生全部圖片壓縮包",
+        "imageArchiveThreshold": "自動壓縮包圖片門檻",
+        "imageProtectionEnabled": "增強浮水印保護全域開關",
+        "imageProtectionNoticeEnabled": "顯示增強保護提示",
+        "imageSelectAllEnabled": "允許圖片全選",
+        "paidContentBalanceEnabled": "允許月幣收費",
+        "paidContentPointsEnabled": "允許積分收費",
+        "paidContentBalanceMaxPrice": "月幣收費上限",
+        "paidContentPointsMaxPrice": "積分收費上限",
+        "hiddenWatermarkEnabled": "啟用隱藏浮水印",
+        "hiddenWatermarkIncludeUid": "浮水印包含內部 UID",
+        "hiddenWatermarkIncludeUserId": "浮水印包含公開使用者 ID",
+        "hiddenWatermarkIncludeUsername": "浮水印包含使用者名稱或暱稱",
+        "hiddenWatermarkIncludeTime": "浮水印包含 UTC 上傳時間",
+        "hiddenWatermarkIncludeFileHash": "浮水印包含原始檔案雜湊",
+        "hiddenWatermarkIncludeCustom": "浮水印包含自訂識別",
+        "hiddenWatermarkCustomText": "隱藏浮水印自訂識別"
+      },
+      "hints": {
+        "videoCenterAccountCutoff": "註冊時間大於等於該時間的使用者將隱藏影片中心；留空表示不按註冊時間隱藏。",
+        "imageMaxDimension": "填寫 0 表示不限制；圖片會保持比例縮放。",
+        "imageProcessingConcurrency": "隱藏浮水印運算會使用較多記憶體，建議維持為 1。",
+        "imagePostMaxCount": "控制單篇筆記可發佈和批次上傳的圖片上限，預設 100，最高 500。",
+        "imageArchiveEnabled": "開啟後，圖片數達到門檻的已發佈筆記會在背景佇列自動產生全部圖片 ZIP，不阻塞發佈。",
+        "imageArchiveThreshold": "圖片數超過此值時自動產生壓縮包，預設 25；若等於單篇上限則不會觸發。",
+        "imageLibvipsEnabled": "開啟後自動旋轉圖片、依原 ICC 轉為 sRGB，並只保留安全 EXIF；關閉後維持原圖片處理模式。",
+        "imageProtectionEnabled": "開啟後作者可將非封面圖片設為增強保護，觀看者只能產生並下載帶追溯浮水印的 ZIP。",
+        "imageProtectionNoticeEnabled": "控制發布圖片區域是否顯示增強保護說明或全域關閉提示。",
+        "imageSelectAllEnabled": "關閉後隱藏全選入口，未選擇圖片時批次操作不會自動套用到全部圖片。",
+        "paidContentPaymentMethod": "控制作者發布付費圖片時能否選擇此收費方式；月幣與積分可同時開啟。",
+        "paidContentPriceLimit": "控制作者發布付費圖片時可填寫的最高解鎖價格。",
+        "hiddenWatermarkCustomText": "啟用自訂識別後儲存到追蹤記錄，不寫入圖片中的 Token。"
+      },
+      "extract": {
+        "title": "隱藏浮水印提取",
+        "fileLabel": "選擇要檢測的圖片",
+        "description": "僅限管理員使用。提取出的短碼會透過追蹤資料庫解析驗證。",
+        "action": "提取浮水印",
+        "extracting": "正在提取",
+        "completed": "隱藏浮水印檢測完成",
+        "empty": "選擇圖片後查看提取結果",
+        "fields": {
+          "found": "發現浮水印",
+          "valid": "Token 有效",
+          "version": "載荷版本",
+          "traceToken": "追蹤 Token",
+          "traceType": "追蹤類型",
+          "traceResolved": "資料庫追蹤命中",
+          "payloadBytes": "載荷位元組",
+          "payloadBits": "載荷位數",
+          "payloadFormat": "載荷格式",
+          "watermarkEngine": "浮水印引擎",
+          "uid": "內部 UID",
+          "userId": "公開使用者 ID",
+          "username": "使用者名稱或暱稱",
+          "uploadedAt": "上傳時間",
+          "sourceHash": "原始檔案雜湊",
+          "customText": "自訂識別",
+          "postId": "貼文 ID",
+          "imageId": "圖片 ID",
+          "jobId": "保護任務 ID",
+          "includedFields": "包含欄位"
+        }
+      }
+    },
+    "fileRecycleBin": {
+      "columns": {
+        "remaining": "剩餘時間"
+      },
+      "countdown": {
+        "remaining": "剩餘 {value}",
+        "separator": "",
+        "day": "{count}天",
+        "hour": "{count}小時",
+        "minute": "{count}分鐘",
+        "due": "已到清理時間",
+        "purged": "已清理"
+      },
+      "actions": {
+        "inspect": "確認存在",
+        "preview": "預覽",
+        "download": "下載",
+        "close": "關閉"
+      },
+      "toasts": {
+        "recycledExists": "回收副本存在",
+        "recycledMissing": "回收副本缺失",
+        "directoryUnsupported": "暫不支援目錄預覽",
+        "previewUnsupported": "此檔案暫不支援預覽",
+        "downloadReady": "已開始下載"
+      },
+      "preview": {
+        "title": "回收檔案預覽",
+        "original": "原始位置",
+        "recycled": "回收副本",
+        "files": "檔案清單",
+        "noInspection": "請先確認存在狀態後再預覽。",
+        "imageAlt": "回收檔案預覽",
+        "empty": "暫無預覽內容"
+      },
+      "status": {
+        "unsafe": "不安全",
+        "exists": "存在",
+        "missing": "缺失",
+        "notConfigured": "未設定",
+        "directory": "目錄",
+        "file": "檔案"
+      },
+      "errors": {
+        "invalidID": "無效的回收項 ID",
+        "idsRequired": "請先選擇回收項",
+        "notFound": "回收項不存在",
+        "unsafePath": "回收路徑未通過安全檢查",
+        "fileMissing": "回收副本缺失",
+        "directoryPreviewUnsupported": "目前版本不支援目錄預覽和下載",
+        "previewUnsupported": "此檔案類型暫不支援預覽",
+        "inspectFailed": "檢查回收項失敗"
+      }
+    },
+    "aiAgentPanel": {
+      "title": "AI 智慧體",
+      "description": "配置 OpenAI 相容服務、提示詞選項卡、串流文案生成、排隊並行和稽核日誌。",
+      "loading": "正在載入 AI 設定",
+      "save": "儲存",
+      "saving": "儲存中",
+      "saved": "AI 設定已儲存",
+      "tabs": {
+        "base": "基礎設定",
+        "markdown": "筆記排版",
+        "polish": "筆記潤飾",
+        "review": "自動評價",
+        "comments": "AI 評論",
+        "commentReply": "評論回覆",
+        "vision": "圖片分析",
+        "copy": "營運文案",
+        "logs": "稽核日誌",
+        "moderation": "內容審核",
+        "publishGeneration": "發布詳情生成",
+        "contentFormat": "編輯器 AI"
+      },
+      "base": {
+        "title": "連線與限流",
+        "enabled": "AI 已啟用",
+        "disabled": "AI 已關閉",
+        "baseUrl": "Base URL",
+        "model": "模型",
+        "apiKey": "API Key",
+        "apiKeyPlaceholder": "貼上新金鑰以替換",
+        "timeout": "上游無回應自動停止（秒）",
+        "maxRun": "後台最大執行秒數",
+        "chunkSize": "分段最大字元數",
+        "concurrency": "全域最大並行（預設 5）",
+        "temperature": "預設溫度",
+        "maxOutput": "預設最大輸出 Token",
+        "showReasoningOn": "顯示思考過程",
+        "showReasoningOff": "隱藏思考過程",
+        "thinkingParameterOn": "送出思考參數",
+        "thinkingParameterOff": "不送出思考參數",
+        "thinkingOn": "開啟模型思考",
+        "thinkingOff": "關閉模型思考",
+        "logHttpDetailsOn": "記錄遠端 HTTP 明細",
+        "logHttpDetailsOff": "不記錄遠端 HTTP 明細",
+        "extraHeaders": "自訂 Headers JSON",
+        "extraHeadersPlaceholder": "{\n  \"X-Provider\": \"openai-compatible\"\n}",
+        "extraHeadersInvalid": "自訂 Headers 必須是 JSON 物件。",
+        "reasoningEffort": "推理深度",
+        "reasoningEfforts": {
+          "default": "服務商預設",
+          "minimal": "最小",
+          "low": "低",
+          "medium": "中",
+          "high": "高"
+        },
+        "modelParameters": "模型附加參數 JSON",
+        "modelParametersPlaceholder": "{\n  \"top_p\": 0.9\n}",
+        "modelParametersInvalid": "模型附加參數必須是 JSON 物件。"
+      },
+      "autoComment": {
+        "enabled": "發布後自動 AI 評論已開啟",
+        "disabled": "發布後自動 AI 評論已關閉",
+        "botUserId": "備用機器人 UID",
+        "template": "自動評論模板",
+        "delaySeconds": "延遲秒數",
+        "maxImages": "送到視覺模型的圖片數",
+        "botUserIdMin": "隨機 UID 範圍起點",
+        "botUserIdMax": "隨機 UID 範圍終點",
+        "style": "提示詞風格",
+        "styles": {
+          "normal": "正常",
+          "humorous": "幽默",
+          "bold": "激進"
+        },
+        "imageSelectionMode": "圖片取樣模式"
+      },
+      "commentReply": {
+        "title": "AI 評論回覆",
+        "enabled": "AI 評論回覆已開啟",
+        "disabled": "AI 評論回覆已關閉",
+        "template": "回覆模板",
+        "delaySeconds": "延遲秒數",
+        "maxImages": "送到視覺模型的圖片數",
+        "maxReplies": "每條 AI 評論最多回覆次數",
+        "mentionEnabled": "@召喚回覆已開啟",
+        "mentionDisabled": "@召喚回覆已關閉",
+        "mentionName": "召喚名稱",
+        "mentionTemplate": "召喚回覆模板",
+        "mentionBotUserIdMin": "召喚隨機機器人 UID 起點",
+        "mentionBotUserIdMax": "召喚隨機機器人 UID 終點",
+        "maxMentionReplies": "每篇貼文最多召喚回覆次數",
+        "style": "提示詞風格",
+        "imageSelectionMode": "圖片取樣模式"
+      },
+      "templatesTitle": "提示詞模板",
+      "templates": {
+        "markdown_format": "Markdown 排版",
+        "post_polish": "筆記潤飾",
+        "post_review_reply": "AI 評價回覆",
+        "post_auto_comment": "發布後自動評論",
+        "comment_reply": "評論回覆",
+        "comment_mention_reply": "召喚回覆",
+        "image_analysis": "圖片分析",
+        "announcement": "公告",
+        "system_notification": "系統通知",
+        "popup": "彈窗",
+        "activity_description": "活動說明",
+        "post_title": "貼文標題",
+        "post_summary": "貼文摘要",
+        "tag_suggestions": "標籤建議",
+        "post_custom_generate": "自訂內容產生",
+        "comment_moderation": "評論審核",
+        "post_moderation": "發帖審核",
+        "publish_title_generate": "發布標題總結",
+        "publish_detail_generate": "發布詳情生成",
+        "publish_title_detail_generate": "舊版標題與詳情生成"
+      },
+      "template": {
+        "enabled": "啟用",
+        "disabled": "停用",
+        "temperature": "溫度",
+        "maxOutput": "最大輸出 Token",
+        "concurrency": "專案並發",
+        "concurrencyHint": "0 表示繼承全域限制；1-50 僅限制目前範本。",
+        "jsonOn": "JSON 開",
+        "jsonOff": "JSON 關",
+        "prompt": "提示詞",
+        "systemPrompt": "系統提示詞",
+        "userPrompt": "使用者提示詞",
+        "resetDefault": "還原預設",
+        "style": "風格",
+        "styles": {
+          "normal": "正常",
+          "humorous": "幽默",
+          "bold": "激進"
+        },
+        "model": "單獨模型",
+        "modelPlaceholder": "留空則使用基礎模型",
+        "runtimeOverrides": "執行時覆蓋",
+        "runtimeOverridesHint": "僅為目前模板覆蓋思考開關與模型附加參數。",
+        "runtimeOn": "覆蓋開啟",
+        "runtimeOff": "繼承全域",
+        "runtimeModelParameters": "模板模型參數 JSON"
+      },
+      "generator": {
+        "title": "文案生成工作台",
+        "template": "模板",
+        "input": "輸入",
+        "inputPlaceholder": "描述營運目標、受眾、語氣、事實與限制。",
+        "output": "輸出",
+        "reasoning": "思考過程",
+        "emptyOutput": "生成結果會顯示在這裡。",
+        "emptyInput": "請先輸入內容。",
+        "run": "生成",
+        "generating": "生成中",
+        "progress": "進度 {percent}%",
+        "queue": "排隊第 {position}/{total} 位，預計 {eta}"
+      },
+      "logs": {
+        "title": "AI 稽核日誌",
+        "refresh": "重新整理",
+        "loading": "正在載入 AI 日誌",
+        "empty": "暫無 AI 日誌",
+        "durationMs": "{value} 毫秒",
+        "columns": {
+          "type": "類型",
+          "status": "狀態",
+          "actor": "操作者",
+          "model": "模型",
+          "tokens": "Token",
+          "duration": "耗時",
+          "created": "建立時間",
+          "imagesSent": "圖片發送成功數",
+          "tokenSpeed": "Token/s",
+          "error": "API 錯誤",
+          "details": "詳情"
+        },
+        "types": {
+          "format_markdown": "Markdown 排版",
+          "admin_copy": "後台文案生成",
+          "post_review_reply": "AI 評價回覆",
+          "post_auto_comment": "發布後自動評論",
+          "comment_reply": "評論回覆",
+          "comment_mention_reply": "召喚回覆",
+          "image_analysis": "圖片分析",
+          "post_polish": "筆記潤色",
+          "post_custom_generate": "自訂內容產生",
+          "publish_title_generate": "發布標題總結",
+          "publish_detail_generate": "發布詳情生成",
+          "publish_title_detail_generate": "舊版標題與詳情生成",
+          "comment_moderation": "評論審核",
+          "post_moderation": "發帖審核"
+        },
+        "statuses": {
+          "running": "執行中",
+          "completed": "已完成",
+          "failed": "失敗",
+          "canceled": "已取消"
+        },
+        "actors": {
+          "user": "使用者",
+          "admin": "管理員",
+          "system": "系統"
+        },
+        "details": {
+          "show": "查看",
+          "hide": "收起",
+          "httpStatus": "HTTP 狀態",
+          "contentType": "內容類型",
+          "usage": "Token 用量",
+          "usageValue": "提示 {prompt} / 生成 {completion} / 總計 {total}",
+          "attempts": "請求次數",
+          "outputSummary": "生成內容",
+          "responseSummary": "上游回應",
+          "upstreamAttempts": "HTTP 請求詳情",
+          "rawMetadata": "原始中繼資料"
+        }
+      },
+      "eta": {
+        "lessThanMinute": "小於 1 分鐘",
+        "minutes": "{count} 分鐘"
+      },
+      "moderation": {
+        "title": "AI 評論與發帖審核",
+        "enabled": "審核已開啟",
+        "disabled": "審核已關閉",
+        "templateKey": "模板 Key",
+        "prompt": "提示詞覆寫",
+        "promptPlaceholder": "可選：覆寫此審核目標的模板提示詞。",
+        "ruleEnabled": "審核",
+        "ruleDisabled": "略過",
+        "targets": {
+          "comment": {
+            "title": "評論審核",
+            "description": "新評論會先正常展示；若 AI 判定命中，再依設定動作處理。"
+          },
+          "post": {
+            "title": "發帖審核",
+            "description": "新帖子會先正常展示；若 AI 判定命中，再依設定動作處理。"
+          }
+        },
+        "rules": {
+          "spam": "灌水",
+          "porn": "色情",
+          "political_sensitive": "政治敏感"
+        },
+        "actions": {
+          "observe": "觀察",
+          "delete": "刪除",
+          "private": "設為私密"
+        },
+        "sensitivity": "敏感度",
+        "debugTitle": "審核調試測試",
+        "debugRun": "執行測試",
+        "debugRunning": "測試中",
+        "debugTarget": "目標",
+        "debugInput": "測試內容",
+        "debugPlaceholder": "貼上評論或帖子正文，檢查模型原始輸出和解析後判定。",
+        "debugEmpty": "請先輸入測試內容。",
+        "debugEmptyOutput": "執行測試後查看解析判定和原始輸出。",
+        "debugStatus": "狀態：",
+        "debugAction": "動作：",
+        "debugTemplate": "模板：",
+        "debugDecision": "解析判定",
+        "debugRaw": "模型原始輸出"
+      },
+      "publishGeneration": {
+        "title": "發布詳情生成",
+        "enabled": "發布詳情生成已開啟",
+        "disabled": "發布詳情生成已關閉",
+        "maxImages": "分析圖片數量",
+        "template": "模板",
+        "titleMaxChars": "標題字數上限",
+        "imageSelectionMode": "圖片取樣模式",
+        "detailTemplate": "詳情生成模板",
+        "titleTemplate": "標題總結模板"
+      },
+      "imageSelectionModes": {
+        "ordered": "順序取圖",
+        "random": "隨機取圖"
+      },
+      "contentFormat": {
+        "title": "編輯器 AI 排版",
+        "enabled": "編輯器 AI 已啟用",
+        "disabled": "編輯器 AI 已停用",
+        "template": "模板",
+        "modes": {
+          "format": {
+            "enabled": "智慧排版已啟用",
+            "disabled": "智慧排版已停用"
+          },
+          "polish": {
+            "enabled": "筆記潤飾已啟用",
+            "disabled": "筆記潤飾已停用"
+          },
+          "custom": {
+            "enabled": "內容產生已啟用",
+            "disabled": "內容產生已停用"
+          }
+        },
+        "continuation": {
+          "enabled": "長內容壓縮續寫已啟用",
+          "disabled": "長內容壓縮續寫已停用",
+          "triggerChars": "觸發字數",
+          "maxRounds": "續寫輪數",
+          "contextChars": "壓縮上下文字數"
+        }
+      },
+      "jobs": {
+        "title": "AI 任務佇列",
+        "refresh": "重新整理",
+        "loading": "正在載入 AI 任務",
+        "empty": "暫無排隊或生成中的 AI 任務",
+        "cancel": "放棄",
+        "cancelSuccess": "AI 任務已放棄",
+        "metrics": {
+          "active": "佇列總計",
+          "queued": "排隊中",
+          "running": "生成中"
+        },
+        "statuses": {
+          "queued": "排隊中",
+          "running": "正在生成中",
+          "completed": "已完成",
+          "failed": "失敗",
+          "canceled": "已放棄"
+        },
+        "userLine": "使用者 ID {user} · 數字 ID {id}",
+        "queuePosition": "佇列 {position}/{total}",
+        "lastToken": "最後 token",
+        "tokenRate": "10 秒平均速率",
+        "tokenRateValue": "{value} tokens/s",
+        "tokenRatePending": "等待輸出",
+        "notAvailable": "N/A",
+        "waiting": "等待中",
+        "generatedTokens": "已生成 token 總數",
+        "estimatedTokens": "預估 tokens",
+        "upstream": {
+          "show": "上游輸出",
+          "hide": "收起輸出",
+          "title": "上游即時輸出",
+          "live": "即時",
+          "history": "歷史",
+          "empty": "暫無上游輸出",
+          "streaming": "監聽中",
+          "stopped": "已停止"
+        },
+        "time": {
+          "unknown": "暫無更新",
+          "secondsAgo": "{count} 秒前",
+          "minutesAgo": "{count} 分鐘前",
+          "hoursAgo": "{count} 小時前",
+          "daysAgo": "{count} 天前"
+        }
+      }
+    },
+    "accessBlockPanel": {
+      "title": "IP / UA 訪問屏蔽",
+      "description": "依精確 IP、CIDR、User-Agent 包含詞或正則阻擋請求。規則會在應用路由前由記憶體快照高速匹配。",
+      "refresh": "重新整理",
+      "viewLogs": "觸發日誌",
+      "disabledHint": "目前已透過 ACCESS_BLOCK_DISABLED 關閉訪問屏蔽。",
+      "loading": "正在載入訪問屏蔽規則",
+      "rulesTitle": "規則列表",
+      "rulesSummary": "已啟用 {active}/{total} 條規則",
+      "newRule": "新增規則",
+      "empty": "尚無訪問屏蔽規則",
+      "editTitle": "編輯規則",
+      "createTitle": "建立規則",
+      "formHint": "批次新增可貼上多行 IP、CIDR 或 UA pattern。強制儲存會略過目前管理員誤鎖保護。",
+      "kind": "類型",
+      "matchType": "匹配方式",
+      "pattern": "匹配內容",
+      "batch": "批次內容",
+      "batchPlaceholder": "每行一個 pattern。空行與 # 開頭的行會被忽略。",
+      "action": "動作",
+      "statusCode": "狀態碼",
+      "redirectUrl": "重新導向地址",
+      "priority": "優先級",
+      "note": "備註",
+      "enabled": "啟用",
+      "disabled": "停用",
+      "enable": "啟用",
+      "disable": "停用",
+      "delete": "刪除",
+      "deleteConfirm": "確認刪除此訪問屏蔽規則？",
+      "force": "即使規則會命中目前管理員請求，也強制儲存。",
+      "cancel": "取消",
+      "save": "儲存",
+      "batchSave": "批次新增",
+      "actionStatus": "返回 {code}",
+      "actionRedirect": "重新導向至 {url}",
+      "columns": {
+        "rule": "規則",
+        "action": "動作",
+        "priority": "優先級",
+        "note": "備註",
+        "state": "狀態",
+        "operations": "操作"
+      },
+      "kinds": {
+        "ip": "IP",
+        "ua": "User-Agent"
+      },
+      "matchTypes": {
+        "ip": "精確 IP",
+        "cidr": "CIDR",
+        "ua_contains": "UA 包含",
+        "ua_regex": "UA 正則"
+      },
+      "actions": {
+        "status": "狀態碼",
+        "redirect": "重新導向"
+      },
+      "toasts": {
+        "loadFailed": "訪問屏蔽規則載入失敗",
+        "saved": "訪問屏蔽規則已儲存",
+        "batchSaved": "批次完成：建立 {created} 條，失敗 {failed} 條",
+        "saveFailed": "訪問屏蔽規則儲存失敗",
+        "deleted": "訪問屏蔽規則已刪除",
+        "deleteFailed": "訪問屏蔽規則刪除失敗",
+        "importSaved": "URL 匯入來源已儲存",
+        "importSaveFailed": "URL 匯入來源儲存失敗",
+        "importSynced": "URL 匯入已同步：{count} 條規則",
+        "importSyncFailed": "URL 匯入同步失敗",
+        "importDeleted": "URL 匯入來源已刪除",
+        "importDeleteFailed": "URL 匯入來源刪除失敗"
+      },
+      "importedRule": "URL 匯入",
+      "importsTitle": "IP URL 匯入",
+      "importsSummary": "已啟用 {active}/{total} 個來源",
+      "newImport": "新增匯入",
+      "importsEmpty": "尚無 URL 匯入來源",
+      "editImportTitle": "編輯 URL 匯入",
+      "createImportTitle": "建立 URL 匯入",
+      "importFormHint": "拉取純文字 IP 清單，每行一個 IP 或 CIDR。空行和 # 註解會被忽略。",
+      "importUrl": "匯入 URL",
+      "updateIntervalMinutes": "更新間隔（分鐘）",
+      "saveImport": "儲存來源",
+      "syncNow": "立即同步",
+      "importForce": "即使匯入清單會命中目前管理員請求，也強制手動同步。",
+      "importDeleteConfirm": "確認刪除這個 URL 匯入來源及其已匯入規則？",
+      "importCount": "{count} 條規則",
+      "intervalMinutes": "{minutes} 分鐘",
+      "importColumns": {
+        "url": "URL",
+        "interval": "間隔",
+        "lastSync": "上次同步",
+        "nextSync": "下次同步"
+      },
+      "importStatuses": {
+        "pending": "待同步",
+        "success": "成功",
+        "failed": "失敗"
+      },
+      "errors": {
+        "selfLock": "這條規則會阻斷目前管理員請求。確認有恢復入口後再強制儲存。",
+        "importDisabled": "伺服器已關閉 URL 匯入功能。",
+        "importFetchFailed": "遠端 IP 清單取得或解析失敗。",
+        "invalidRule": "存取屏蔽規則無效。",
+        "saveFailed": "存取屏蔽規則儲存失敗。",
+        "unavailable": "存取屏蔽服務不可用。"
+      }
+    }
+  }
+}

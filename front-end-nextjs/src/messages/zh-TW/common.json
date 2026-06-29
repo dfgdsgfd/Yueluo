@@ -1,0 +1,304 @@
+{
+  "app": {
+    "name": "Yuem",
+    "description": "簡潔的小紅書風格規劃與媒體資訊流。"
+  },
+  "error": {
+    "access_blocked": "目前存取已被存取策略阻斷。",
+    "api_key_rate_limited": "API 金鑰驗證失敗次數過多，請稍後再試。",
+    "balance_center_not_configured": "使用者中心月幣 API 尚未設定。",
+    "invalid_file_recycle_setting": "檔案回收站設定無效。",
+    "invalid_redis_maintenance_config": "Redis 自動清理設定無效。",
+    "redis_unavailable": "Redis 目前無法使用。",
+    "redis_maintenance_busy": "Redis 清理工作正在執行。",
+    "redis_maintenance_failed": "Redis 清理執行失敗。"
+  },
+  "nav": {
+    "home": "首頁",
+    "friends": "關注",
+    "works": "作品",
+    "create": "發布",
+    "messages": "訊息",
+    "profile": "我的",
+    "assistant": "笔记 AI",
+    "red": "RED",
+    "live": "直播",
+    "publish": "發布",
+    "more": "更多",
+    "logout": "登出",
+    "loggingOut": "正在登出...",
+    "logoutSuccess": "已登出。",
+    "about": "關於",
+    "watermarkInspector": "隱藏浮水印檢驗"
+  },
+  "settingsPage": {
+    "title": "系統設定",
+    "back": "返回",
+    "language": {
+      "title": "語言",
+      "description": "切換介面顯示語言。"
+    },
+    "account": {
+      "title": "帳號功能",
+      "description": "認證資料與帳號身分入口。",
+      "verificationTitle": "申請認證",
+      "verificationDescription": "提交個人或官方認證資料",
+      "networkDiagnosticsTitle": "網路診斷",
+      "networkDiagnosticsDescription": "查看目前 IP、Geo、CDN 和隱私風險"
+    },
+    "privacy": {
+      "title": "隱私設定",
+      "description": "管理個人資料中生日、年齡、星座與 MBTI 的公開範圍。",
+      "summary": "已公開 {visible}/{total} 項基本資料",
+      "items": {
+        "birthday": {
+          "title": "生日",
+          "description": "控制他人是否可以看到你的生日。"
+        },
+        "age": {
+          "title": "年齡",
+          "description": "控制個人主頁是否顯示依生日計算的年齡。"
+        },
+        "zodiac": {
+          "title": "星座",
+          "description": "控制他人是否可以看到你的星座。"
+        },
+        "mbti": {
+          "title": "MBTI",
+          "description": "控制他人是否可以看到你的 MBTI。"
+        }
+      }
+    },
+    "checkingAuth": "正在檢查登入狀態",
+    "loading": "正在載入設定",
+    "save": "儲存系統設定",
+    "saved": "系統設定已儲存",
+    "loginRequired": {
+      "title": "登入後才能設定系統偏好",
+      "description": "登入後可讀取並儲存你的系統設定。",
+      "login": "前往登入"
+    },
+    "errors": {
+      "load": "系統設定載入失敗",
+      "save": "系統設定儲存失敗"
+    },
+    "aiAutoComment": {
+      "title": "AI 自動評論",
+      "description": "關閉後，AI 不會自動評論你的內容；但其他使用者 @yueai 召喚時仍會回覆。"
+    }
+  },
+  "moreMenu": {
+    "wallet": {
+      "title": "月幣餘額",
+      "loading": "讀取中...",
+      "error": "餘額讀取失敗",
+      "amount": "{amount} 月幣",
+      "login": "登入後查看",
+      "account": "帳號 {username}",
+      "detail": "進入錢包查看明細"
+    },
+    "invite": "邀請註冊",
+    "verification": "申請認證",
+    "theme": {
+      "title": "主題設定",
+      "options": {
+        "system": "跟隨系統",
+        "light": "淺色",
+        "dark": "深色"
+      }
+    },
+    "systemSettings": "系統設定",
+    "appDownload": "App下載"
+  },
+  "tabs": {
+    "recommended": "推薦",
+    "latest": "最新",
+    "hot": "熱門",
+    "following": "關注",
+    "videoCenter": "影片中心"
+  },
+  "search": {
+    "placeholder": "搜尋筆記、作者或標籤",
+    "compose": "创作",
+    "idea": "问问灵感",
+    "aiBadge": "AI",
+    "submit": "搜尋",
+    "clear": "清除",
+    "resultFor": "搜尋：{keyword}"
+  },
+  "category": {
+    "all": "全部",
+    "names": {
+      "beauty": "美妝",
+      "fashion": "穿搭",
+      "food": "美食",
+      "gaming": "遊戲",
+      "interest": "興趣",
+      "knowledge": "知識",
+      "lifestyle": "生活",
+      "music": "音樂",
+      "novel": "小說",
+      "photography": "攝影",
+      "pictureSet": "圖集",
+      "ropeBondage": "繩縛",
+      "shackles": "鐐銬",
+      "sports": "運動",
+      "technology": "科技",
+      "travel": "旅行",
+      "video": "影片"
+    }
+  },
+  "video": {
+    "error": "影片播放失敗。",
+    "loading": "正在載入影片",
+    "unavailable": "暫無可播放的影片 URL。"
+  },
+  "login": {
+    "title": "登入解鎖更多精彩內容",
+    "description": "登入後即可繼續瀏覽、按讚、收藏和參與留言。",
+    "home": "返回資訊流",
+    "modes": {
+      "login": "登入",
+      "register": "註冊"
+    },
+    "fields": {
+      "identifier": "信箱或帳號",
+      "password": "密碼",
+      "userID": "帳號",
+      "nickname": "暱稱",
+      "email": "信箱",
+      "emailCode": "信箱驗證碼",
+      "captcha": "驗證碼"
+    },
+    "placeholders": {
+      "identifier": "輸入信箱或帳號",
+      "password": "輸入密碼",
+      "userID": "3-15 位字母、數字或底線",
+      "nickname": "輸入暱稱",
+      "email": "輸入信箱",
+      "emailCode": "輸入驗證碼",
+      "newPassword": "設定密碼",
+      "captcha": "輸入圖形驗證碼"
+    },
+    "actions": {
+      "login": "登入",
+      "loggingIn": "正在登入...",
+      "register": "建立帳號",
+      "registering": "正在註冊...",
+      "sendEmailCode": "傳送驗證碼",
+      "resendEmailCode": "重新傳送",
+      "refreshCaptcha": "重新整理驗證碼"
+    },
+    "success": {
+      "login": "登入成功。",
+      "register": "註冊成功。"
+    },
+    "emailCodeSent": "信箱驗證碼已傳送。",
+    "captchaAlt": "圖形驗證碼",
+    "errors": {
+      "missingLogin": "請輸入信箱或帳號和密碼。",
+      "missingRegister": "請輸入帳號、暱稱、信箱和密碼。",
+      "passwordLength": "密碼長度必須為 6-20 位。",
+      "emailInvalid": "請輸入有效信箱。",
+      "emailCodeRequired": "請輸入信箱驗證碼。",
+      "captchaRequired": "請輸入圖形驗證碼。",
+      "loginFailed": "信箱/帳號或密碼不正確。",
+      "registerFailed": "註冊失敗，請檢查資訊後重試。",
+      "emailCodeFailed": "信箱驗證碼傳送失敗。",
+      "captchaLoadFailed": "圖形驗證碼載入失敗。",
+      "geetestUnavailable": "目前啟用 GeeTest 驗證，暫不支援密碼註冊。"
+    },
+    "userCenterLogin": "去登入",
+    "redirecting": "正在前往使用者中心...",
+    "loadingConfig": "正在讀取授權設定...",
+    "configLoadFailed": "授權設定讀取失敗，將使用預設授權入口。",
+    "oauthOnly": "登入後即可解鎖更多精彩內容。",
+    "oauthPrompt": "登入後即可繼續體驗完整功能。",
+    "oauthSuccess": "OAuth2 登入成功",
+    "oauthStatusFailed": "OAuth2 登入狀態確認失敗，請重試",
+    "nativeStateFailed": "App 登入請求已過期或不相符，請重新登入。",
+    "nativeCancelled": "登入已取消。",
+    "nativeCancelledWithDetail": "登入已取消：{detail}",
+    "nativeExchangeFailed": "App 無法完成登入，請重試。",
+    "nativeExchangeFailedWithDetail": "App 無法完成登入：{detail}",
+    "nativeBackAgain": "再次返回即可退出",
+    "nativeOffline": "目前網路無法使用，Yuem 將自動重新連線。",
+    "nativeCallbackTitle": "返回 Yuem",
+    "nativeCallbackDescription": "授權已完成，請開啟 Yuem App 繼續。",
+    "nativeCallbackOpen": "開啟 Yuem",
+    "nativeCallbackInvalid": "授權連結無效或已過期。",
+    "nativeStatus": {
+      "title": "App 登入未完成",
+      "callbackReceived": "已收到瀏覽器回調，正在處理登入狀態。",
+      "stateFailed": "登入請求已過期或與目前 App 不相符，請重新發起登入。",
+      "oauthError": "使用者中心返回授權失敗。",
+      "missingCode": "瀏覽器回調缺少一次性登入 ticket。",
+      "tokenExchangeFailed": "App 換取登入權杖失敗。",
+      "tokenStorageFailed": "App 已取得權杖，但本機登入狀態寫入失敗。",
+      "profileFailed": "App 已寫入權杖，但目前使用者校驗失敗。",
+      "signedIn": "App 登入狀態已寫入。",
+      "unknown": "App 登入失敗，原因未知。",
+      "detail": "詳情：{detail}"
+    }
+  },
+  "loginUnlock": {
+    "title": "登入解鎖更多精彩內容",
+    "description": "登入後即可繼續瀏覽、按讚、收藏與參與留言。",
+    "login": "前往登入",
+    "later": "稍後再說"
+  },
+  "status": {
+    "refresh": "重新整理",
+    "refreshed": "資訊流已重新整理",
+    "liked": "已按讚",
+    "unliked": "已取消按讚"
+  },
+  "locale": {
+    "trigger": "切換語言",
+    "label": "語言",
+    "options": {
+      "en": "English",
+      "zh-CN": "简体中文",
+      "zh-TW": "繁體中文",
+      "vi": "Tiếng Việt",
+      "ja": "日本語",
+      "ko": "한국어"
+    }
+  },
+  "maintenance": {
+    "serviceMode": "Service Mode / 維護模式",
+    "title": "系統維護中",
+    "defaultMessage": "服務正在維護，請稍後再回來。",
+    "estimatedRemaining": "預計剩餘時間",
+    "unknownTime": "待確認",
+    "entryHint": "如需進入維護入口，請使用管理員提供的專屬連結。",
+    "edgeLabel": "Service Mode / 維護模式",
+    "entry": {
+      "eyebrow": "SERVICE ENTRY",
+      "title": "正在進入維護模式",
+      "checking": "正在校驗入口並準備工作階段...",
+      "success": "入口校驗成功，正在進入站點。",
+      "error": "入口無效或已過期，請聯絡管理員。"
+    },
+    "closeEdge": "關閉維護邊框"
+  },
+  "appDownload": {
+    "metadataTitle": "App 下載",
+    "backHome": "返回首頁",
+    "badge": "App 下載",
+    "official": "官方下載",
+    "title": "Yuem App",
+    "description": "選擇適合你裝置的安裝包。下載連結、版本號和應用名稱由後台系統設定統一維護。",
+    "version": "版本 {version}",
+    "build": "建置號 {build}",
+    "size": "大小 {size}",
+    "androidFastLabel": "Android 極速版",
+    "featuresTitle": "極速版特性",
+    "featureTinySize": "極小體積 ≤ 1 MB",
+    "featureSameWebStyle": "網頁樣式完全相同",
+    "featureThirdPartyLogin": "支援 Google、Discord、Steam 等第三方登入",
+    "featureNativeBridge": "瀏覽器登入成功後自動回到 App",
+    "download": "下載",
+    "unavailable": "暫未開放下載"
+  }
+}

@@ -1,0 +1,197 @@
+{
+  "walletPage": {
+    "balance": {
+      "defaultAccount": "Tài khoản Moon Coin",
+      "loading": "Đang đọc...",
+      "errorTitle": "Không thể đọc số dư Moon Coin",
+      "unit": "Moon Coin",
+      "account": "Tài khoản {account}",
+      "title": "Số dư Moon Coin"
+    },
+    "errors": {
+      "partial": "Một số dữ liệu ví hiện không khả dụng:",
+      "loadFailed": "Yêu cầu dữ liệu ví thất bại",
+      "balanceCenterNotConfigured": "API số dư của Trung tâm người dùng chưa được cấu hình.",
+      "httpStatus": "HTTP {status}",
+      "businessCode": "Mã nghiệp vụ {code}",
+      "requestId": "ID yêu cầu {requestId}",
+      "sources": {
+        "balanceConfig": "Cấu hình Moon Coin",
+        "rechargeConfig": "Cấu hình nạp tiền",
+        "localPoints": "Số dư điểm",
+        "userBalance": "Số dư Moon Coin",
+        "withdrawOrders": "Hóa đơn",
+        "balanceOrders": "Lịch sử mua",
+        "pointsOverview": "Trung tâm điểm",
+        "pointsLogs": "Lịch sử điểm"
+      }
+    },
+    "title": "Ví",
+    "subtitle": "Moon Coin, điểm, thẻ quà tặng và hóa đơn",
+    "loading": "Đang tải dữ liệu ví",
+    "actions": {
+      "back": "Quay lại",
+      "backHome": "Về trang chủ",
+      "refresh": "Làm mới",
+      "recharge": "Nạp tiền",
+      "open": "Mở"
+    },
+    "login": {
+      "title": "Đăng nhập để xem ví",
+      "description": "Ví, nạp tiền và lịch sử mua cần dùng tài khoản hiện tại.",
+      "login": "Đăng nhập"
+    },
+    "points": {
+      "title": "Trung tâm điểm",
+      "todaySummary": "Hôm nay {earned} / {cap}",
+      "available": "Điểm khả dụng",
+      "todayEarned": "Nhận hôm nay",
+      "dailyCap": "Giới hạn ngày",
+      "withdrawBonus": "Thưởng khi rút về {percent}%",
+      "expiresAt": "Hết hạn {date}"
+    },
+    "tasks": {
+      "title": "Nhiệm vụ hằng ngày",
+      "empty": "Chưa có nhiệm vụ hằng ngày",
+      "done": "Hoàn thành",
+      "inProgress": "Đang thực hiện",
+      "daily": "Nhiệm vụ hằng ngày",
+      "once": "Nhiệm vụ một lần",
+      "progress": "Tiến độ"
+    },
+    "giftCards": {
+      "title": "Đổi thẻ quà tặng",
+      "empty": "Chưa có thẻ quà tặng để đổi",
+      "redeemSuccess": "Đã đổi {name}. Mã thẻ đã được gửi tới tin nhắn hệ thống.",
+      "redeemFailed": "Đổi thất bại",
+      "defaultFaceValue": "Thẻ quà tặng",
+      "meta": "{value} · Tồn kho {stock}"
+    },
+    "redemptions": {
+      "title": "Lịch sử đổi quà",
+      "total": "Tổng cộng {total} lượt đổi",
+      "loading": "Đang tải lịch sử đổi quà",
+      "loadFailed": "Không thể tải lịch sử đổi quà",
+      "empty": "Chưa có lịch sử đổi quà",
+      "meta": "{value} · {points} điểm · {status}",
+      "status": {
+        "completed": "Hoàn tất",
+        "other": "Đang xử lý"
+      },
+      "pageSummary": "Trang {page}/{pages} · Tổng {total}",
+      "previous": "Trang trước",
+      "next": "Trang sau",
+      "copy": "Sao chép mã thẻ",
+      "copySuccess": "Đã sao chép mã thẻ",
+      "copyFailed": "Sao chép thất bại. Hãy chọn mã thủ công.",
+      "codeUnavailable": "Mã thẻ chưa khả dụng"
+    },
+    "recharge": {
+      "title": "Nạp tiền",
+      "customAmount": "Hỗ trợ số tiền tùy chỉnh",
+      "fixedOptions": "Gói cố định",
+      "balanceDisabled": "Trung tâm số dư đang tắt",
+      "empty": "Chưa có gói nạp",
+      "bonus": "Tặng {amount} Moon Coin",
+      "noBonus": "Không tặng thêm",
+      "range": "{min}-{max} Moon Coin",
+      "min": "Từ {amount} Moon Coin",
+      "max": "Tối đa {amount} Moon Coin"
+    },
+    "bills": {
+      "title": "Hóa đơn",
+      "empty": "Chưa có hóa đơn",
+      "defaultType": "Hóa đơn",
+      "types": {
+        "moonCoin": "Chuyển sang Moon Coin",
+        "cash": "Rút tiền mặt"
+      }
+    },
+    "purchases": {
+      "title": "Lịch sử mua",
+      "empty": "Chưa có lịch sử mua",
+      "fallbackTitle": "Nội dung #{id}",
+      "defaultType": "Mua nội dung"
+    },
+    "pointsLogs": {
+      "title": "Lịch sử điểm",
+      "empty": "Chưa có lịch sử điểm",
+      "balanceAfter": "Số dư điểm {points}",
+      "defaultType": "Bản ghi điểm",
+      "types": {
+        "giftCardRedeem": "Đổi thẻ quà tặng",
+        "achievement": "Thưởng thành tựu",
+        "task": "Nhiệm vụ hằng ngày"
+      }
+    },
+    "money": {
+      "moonCoinAmount": "{amount} Moon Coin",
+      "points": "{amount} điểm",
+      "pointsPlus": "+{amount} điểm"
+    },
+    "time": {
+      "justNow": "Vừa xong"
+    }
+  },
+  "adminWithdraw": {
+    "title": "Duyệt rút tiền",
+    "description": "Duyệt, từ chối và đánh dấu đã thanh toán các yêu cầu rút tiền của nhà sáng tạo.",
+    "orders": "Danh sách yêu cầu",
+    "searchPlaceholder": "Tìm biệt danh hoặc tài khoản",
+    "search": "Tìm kiếm",
+    "allStatuses": "Tất cả trạng thái",
+    "loading": "Đang tải yêu cầu rút tiền",
+    "empty": "Không có yêu cầu rút tiền",
+    "userFallback": "Người dùng {id}",
+    "amount": "Số tiền",
+    "type": "Loại",
+    "wechatCode": "Mã nhận tiền WeChat",
+    "alipayCode": "Mã nhận tiền Alipay",
+    "noPaymentCode": "Chưa lưu mã nhận tiền",
+    "previewHint": "Nhấp ảnh thu nhỏ để xem",
+    "confirmAction": "Xác nhận {action} yêu cầu rút tiền này?",
+    "actionCompleted": "Đã xử lý yêu cầu: {action}",
+    "actions": {
+      "approve": "Duyệt",
+      "reject": "Từ chối",
+      "payout": "Đánh dấu đã trả"
+    },
+    "types": {
+      "cash": "Tiền mặt",
+      "moonCoin": "Moon Coin"
+    },
+    "statuses": {
+      "pending": "Chờ duyệt",
+      "approved": "Đã duyệt",
+      "rejected": "Đã từ chối",
+      "paid": "Đã thanh toán",
+      "unknown": "Không xác định"
+    }
+  },
+  "adminBalanceTransactions": {
+    "title": "Kiểm tra giao dịch Moon Coin bên ngoài",
+    "description": "Kiểm tra thay đổi Moon Coin tại trung tâm người dùng; giao dịch chưa rõ kết quả sẽ tiếp tục bị khóa để xác minh thủ công.",
+    "refresh": "Làm mới",
+    "loading": "Đang tải giao dịch Moon Coin",
+    "operation": "Thao tác",
+    "oauth2Id": "ID OAuth2",
+    "amount": "Số tiền",
+    "status": "Trạng thái",
+    "created": "Thời gian tạo",
+    "action": "Hành động",
+    "compensate": "Hoàn tác",
+    "confirmCompensation": "Hoàn tác giao dịch đã áp dụng này tại trung tâm người dùng?",
+    "compensated": "Đã hoàn tác giao dịch.",
+    "empty": "Không có giao dịch Moon Coin",
+    "statuses": {
+      "prepared": "Đã chuẩn bị",
+      "requesting": "Đang yêu cầu",
+      "applied": "Đã áp dụng từ xa",
+      "local_committed": "Đã ghi cục bộ",
+      "compensating": "Đang hoàn tác",
+      "compensated": "Đã hoàn tác",
+      "unknown": "Chưa rõ kết quả",
+      "failed": "Thất bại"
+    }
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "watermarkInspector": {
+    "title": "Kiểm tra watermark ẩn",
+    "back": "Quay lại",
+    "checkingAuth": "Đang kiểm tra trạng thái đăng nhập",
+    "completed": "Đã kiểm tra xong",
+    "inspecting": "Đang kiểm tra",
+    "inspect": "Bắt đầu kiểm tra",
+    "yes": "Có",
+    "no": "Không",
+    "progress": {
+      "uploading": "Đang tải ảnh lên",
+      "queued": "Máy chủ đã nhận và đang chờ xử lý",
+      "decoding": "Đang giải mã và kiểm tra ảnh",
+      "recovering": "Đang khôi phục vùng cắt và tỷ lệ ảnh chụp",
+      "waiting": "Đang chờ bộ máy từ xa",
+      "aligning": "Đang căn chỉnh ảnh chụp và ảnh tham chiếu",
+      "extracting": "Đang trích xuất token ẩn",
+      "verifying": "Đang xác minh cơ sở dữ liệu truy vết",
+      "complete": "Xử lý hoàn tất",
+      "elapsed": "Đã qua {seconds} giây",
+      "estimated": "Đây là giai đoạn ước tính theo thời gian. Yêu cầu vẫn đang chạy, không gửi lại.",
+      "live": "Tiến độ được báo từ giai đoạn xử lý thực tế của máy chủ.",
+      "heartbeat": "Nhịp tim máy chủ bình thường; tác vụ vẫn đang chạy.",
+      "heartbeatEngine": "Nhịp tim của FastAPI bình thường và thuật toán vẫn đang chạy.",
+      "heartbeatGateway": "Gateway Go vẫn kết nối và đang chờ phản hồi từ FastAPI.",
+      "units": "Đã xử lý {completed}/{total} ứng viên"
+    },
+    "loginRequired": {
+      "title": "Cần đăng nhập",
+      "description": "Công cụ này mặc định chỉ mở cho người dùng được cấp quyền. Vui lòng đăng nhập để tiếp tục.",
+      "login": "Đăng nhập",
+      "home": "Về trang chủ"
+    },
+    "upload": {
+      "title": "Tải ảnh cần kiểm tra",
+      "description": "Hỗ trợ ảnh JPEG, PNG và WebP. Hệ thống trích xuất mã ngắn watermark ẩn 2-4 byte và xác thực qua cơ sở dữ liệu truy vết.",
+      "choose": "Chọn ảnh",
+      "accept": "JPEG / PNG / WebP",
+      "previewAlt": "Xem trước ảnh cần kiểm tra",
+      "referenceLabel": "Ảnh tham chiếu để khôi phục ảnh chụp màn hình (không bắt buộc)",
+      "referenceDescription": "Nếu ảnh chụp đã bị cắt, đổi kích thước hoặc xoay, hãy chọn ảnh đầy đủ có watermark. Bộ máy Go cục bộ hoặc từ xa sẽ căn chỉnh trước khi trích xuất token.",
+      "referenceSelected": "Đã chọn ảnh tham chiếu: {name}",
+      "notice": "Nếu chưa có quyền, hãy nhờ quản trị viên thêm tài khoản hoặc bật quyền cho tất cả người dùng."
+    },
+    "result": {
+      "title": "Kết quả kiểm tra",
+      "found": "Đã tìm thấy watermark ẩn",
+      "notFound": "Không tìm thấy watermark ẩn có thể nhận diện",
+      "empty": "Tải ảnh lên để xem kết quả",
+      "placeholder": "Kết quả sẽ hiển thị watermark có tồn tại, có hợp lệ và các trường truy vết hay không."
+    },
+    "fields": {
+      "found": "Tìm thấy watermark",
+      "valid": "Token hợp lệ",
+      "version": "Phiên bản payload",
+      "traceToken": "Token truy vết",
+      "traceType": "Loại truy vết",
+      "traceResolved": "Khớp truy vết cơ sở dữ liệu",
+      "payloadBytes": "Số byte payload",
+      "payloadBits": "Số bit payload",
+      "payloadFormat": "Định dạng payload",
+      "watermarkEngine": "Bộ máy watermark",
+      "uid": "UID nội bộ",
+      "userId": "ID người dùng công khai",
+      "username": "Tên người dùng hoặc biệt danh",
+      "uploadedAt": "Thời gian tải lên",
+      "sourceHash": "Hash tệp gốc",
+      "customText": "Dấu hiệu tùy chỉnh",
+      "postId": "ID bài đăng",
+      "imageId": "ID ảnh",
+      "jobId": "ID tác vụ bảo vệ",
+      "includedFields": "Trường bao gồm"
+    },
+    "errors": {
+      "unsupportedType": "Chỉ hỗ trợ ảnh JPEG, PNG hoặc WebP.",
+      "fileRequired": "Vui lòng chọn một ảnh trước.",
+      "fileTooLarge": "Ảnh vượt quá giới hạn tải lên đã cấu hình.",
+      "invalidImage": "Tệp tải lên không phải là ảnh hợp lệ được hỗ trợ.",
+      "recoveryFailed": "Không thể khôi phục ảnh chụp từ ảnh tham chiếu. Hãy kiểm tra đó là ảnh đầy đủ có watermark tương ứng.",
+      "remoteTimeout": "Dịch vụ watermark từ xa hoặc gateway đã hết thời gian. Điều này không có nghĩa là ảnh không có watermark.",
+      "remoteDisconnected": "Kết nối tiến độ watermark từ xa đã bị gián đoạn. Hãy thử lại sau.",
+      "forbidden": "Tài khoản hiện tại chưa được cấp quyền kiểm tra watermark ẩn.",
+      "failed": "Kiểm tra watermark ẩn thất bại. Vui lòng thử lại sau."
+    }
+  }
+}

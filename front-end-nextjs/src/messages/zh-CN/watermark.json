@@ -1,0 +1,87 @@
+{
+  "watermarkInspector": {
+    "title": "隐藏水印检验",
+    "back": "返回",
+    "checkingAuth": "正在检查登录状态",
+    "completed": "检验完成",
+    "inspecting": "正在检验",
+    "inspect": "开始检验",
+    "yes": "是",
+    "no": "否",
+    "progress": {
+      "uploading": "正在上传图片",
+      "queued": "已到达服务器，正在等待处理",
+      "decoding": "正在解码并检查图片",
+      "recovering": "正在恢复截图位置与缩放",
+      "waiting": "正在等待远程引擎空闲",
+      "aligning": "正在对齐截图与参考图",
+      "extracting": "正在提取隐藏 Token",
+      "verifying": "正在校验追踪数据库",
+      "complete": "处理完成",
+      "elapsed": "已用时 {seconds} 秒",
+      "estimated": "这是阶段估算进度；页面仍在工作，不需要重复点击。",
+      "live": "进度来自服务器实际处理阶段。",
+      "heartbeat": "服务器心跳正常，任务仍在运行。",
+      "heartbeatEngine": "FastAPI 引擎心跳正常，算法仍在运行。",
+      "heartbeatGateway": "Go 网关连接正常，正在等待 FastAPI 引擎反馈。",
+      "units": "已处理 {completed}/{total} 个候选项"
+    },
+    "loginRequired": {
+      "title": "需要登录",
+      "description": "该工具默认仅向已授权用户开放，请登录后继续使用。",
+      "login": "去登录",
+      "home": "返回首页"
+    },
+    "upload": {
+      "title": "上传待检验图片",
+      "description": "支持 JPEG、PNG、WebP 图片，系统会提取 2-4 字节隐藏水印短码，并通过追踪数据库校验。",
+      "choose": "选择图片",
+      "accept": "JPEG / PNG / WebP",
+      "previewAlt": "待检验图片预览",
+      "referenceLabel": "截图恢复参考图（可选）",
+      "referenceDescription": "如果待检验图是裁剪、缩放或旋转后的截图，请上传完整的带水印原图；Go 本地或远程引擎会先对齐再提取 Token。",
+      "referenceSelected": "已选择参考图：{name}",
+      "notice": "如果没有权限，请联系管理员在后台隐藏水印权限页添加账号或开启全员开放。"
+    },
+    "result": {
+      "title": "检验结果",
+      "found": "已发现隐藏水印",
+      "notFound": "未发现可识别的隐藏水印",
+      "empty": "上传图片后查看检验结果",
+      "placeholder": "结果会显示水印是否存在、是否有效以及可追溯字段。"
+    },
+    "fields": {
+      "found": "发现水印",
+      "valid": "Token 有效",
+      "version": "载荷版本",
+      "traceToken": "追踪 Token",
+      "traceType": "追踪类型",
+      "traceResolved": "数据库追踪命中",
+      "payloadBytes": "载荷字节",
+      "payloadBits": "载荷位数",
+      "payloadFormat": "载荷格式",
+      "watermarkEngine": "水印引擎",
+      "uid": "内部 UID",
+      "userId": "公开用户 ID",
+      "username": "用户名或昵称",
+      "uploadedAt": "上传时间",
+      "sourceHash": "原文件哈希",
+      "customText": "自定义标识",
+      "postId": "帖子 ID",
+      "imageId": "图片 ID",
+      "jobId": "保护任务 ID",
+      "includedFields": "包含字段"
+    },
+    "errors": {
+      "unsupportedType": "仅支持 JPEG、PNG 或 WebP 图片。",
+      "fileRequired": "请先选择一张图片。",
+      "fileTooLarge": "图片大小超过后台配置的上传上限。",
+      "invalidImage": "上传的文件不是有效的受支持图片。",
+      "recoveryFailed": "无法从参考图恢复该截图，请确认参考图是对应的完整带水印图片。",
+      "remoteTimeout": "远程水印服务或网关超时，任务已停止。这不代表图片没有水印。",
+      "remoteDisconnected": "远程水印进度连接已中断，请稍后重试。",
+      "forbidden": "当前账号未获得隐藏水印检验权限。",
+      "failed": "隐藏水印检验失败，请稍后重试。"
+    }
+  }
+}

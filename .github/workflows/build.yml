@@ -1,0 +1,172 @@
+name: Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        include: ${{ fromJSON(github.event_name == 'workflow_dispatch'
+          && '[{"os":"ubuntu-latest","goos":"linux","goarch":"amd64","suffix":""},{"os":"windows-latest","goos":"windows","goarch":"amd64","suffix":".exe"}]'
+          || '[{"os":"ubuntu-latest","goos":"linux","goarch":"amd64","suffix":""}]') }}
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.26'
+          cache-dependency-path: backend-gin/go.sum
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: front-end-nextjs/package-lock.json
+
+      - name: Install frontend dependencies
+        working-directory: front-end-nextjs
+        run: npm install
+
+      - name: Write version.json
+        working-directory: front-end-nextjs
+        env:
+          GITHUB_REF_NAME: ${{ github.ref_name }}
+          GITHUB_SHA: ${{ github.sha }}
+          GITHUB_RUN_ID: ${{ github.run_id }}
+        run: node scripts/write-version.mjs
+
+      - name: Type-check frontend
+        working-directory: front-end-nextjs
+        env:
+          GITHUB_REF_NAME: ${{ github.ref_name }}
+          GITHUB_SHA: ${{ github.sha }}
+          GITHUB_RUN_ID: ${{ github.run_id }}
+        run: |
+          npx tsc --noEmit
+          npm run check:contracts
+          npm run check:messages
+          npm run test:api-core
+          node scripts/write-version.mjs
+
+      - name: Check source size budgets
+        run: node scripts/check-source-size-budgets.mjs
+
+      - name: Download dependencies
+        working-directory: backend-gin
+        run: go mod download
+
+      - name: Generate Swagger API docs
+        working-directory: backend-gin
+        run: node ./scripts/generate-swagger.mjs
+
+      - name: Prepare build directory
+        run: |
+          node -e "const fs = require('fs'); const path = require('path'); const frontend = ['.env.example', 'components.json', 'eslint.config.mjs', 'next.config.ts', 'package-lock.json', 'package.json', 'postcss.config.mjs', 'public', 'scripts', 'src', 'tsconfig.json']; fs.mkdirSync('build/frontend', { recursive: true }); for (const name of frontend) { const source = path.join('front-end-nextjs', name); if (!fs.existsSync(source)) continue; const target = path.join('build', 'frontend', name); fs.rmSync(target, { recursive: true, force: true }); fs.cpSync(source, target, { recursive: true }); } fs.copyFileSync(path.join('backend-gin', 'internal', 'http', 'swagger', 'swagger.json'), path.join('build', 'swagger.json'));"
+
+      - name: Build
+        working-directory: backend-gin
+        env:
+          GOOS: ${{ matrix.goos }}
+          GOARCH: ${{ matrix.goarch }}
+          CGO_ENABLED: '0'
+        run: go build -trimpath -ldflags="-s -w" -o ../build/yuem-go-${{ matrix.goos }}-${{ matrix.goarch }}${{ matrix.suffix }} ./cmd/api
+
+      - name: Package release artifacts
+        shell: pwsh
+        run: |
+          $frontendZip = "build/frontend-${{ matrix.goos }}-${{ matrix.goarch }}.zip"
+          $frontendRoot = (Resolve-Path "build/frontend").Path
+          $frontendZipPath = Join-Path (Get-Location) $frontendZip
+          if (Test-Path -LiteralPath $frontendZipPath) {
+            Remove-Item -LiteralPath $frontendZipPath -Force
+          }
+          Add-Type -AssemblyName System.IO.Compression.FileSystem
+          $zip = [System.IO.Compression.ZipFile]::Open($frontendZipPath, [System.IO.Compression.ZipArchiveMode]::Create)
+          try {
+            Get-ChildItem -LiteralPath $frontendRoot -Recurse -File -Force | ForEach-Object {
+              $relativePath = [System.IO.Path]::GetRelativePath($frontendRoot, $_.FullName) -replace '\\', '/'
+              [System.IO.Compression.ZipFileExtensions]::CreateEntryFromFile($zip, $_.FullName, $relativePath, [System.IO.Compression.CompressionLevel]::Optimal) | Out-Null
+            }
+          } finally {
+            $zip.Dispose()
+          }
+          $files = @(
+            $frontendZip,
+            "build/yuem-go-${{ matrix.goos }}-${{ matrix.goarch }}${{ matrix.suffix }}",
+            "build/swagger.json"
+          )
+          $hashFile = "build/SHA256SUMS-${{ matrix.goos }}-${{ matrix.goarch }}.txt"
+          $files | ForEach-Object {
+            $hash = (Get-FileHash -Algorithm SHA256 $_).Hash.ToLowerInvariant()
+            "$hash  $(Split-Path $_ -Leaf)"
+          } | Set-Content -Path $hashFile -Encoding utf8
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: yuem-go-${{ matrix.goos }}-${{ matrix.goarch }}
+          path: |
+            build/frontend-${{ matrix.goos }}-${{ matrix.goarch }}.zip
+            build/yuem-go-${{ matrix.goos }}-${{ matrix.goarch }}${{ matrix.suffix }}
+            build/swagger.json
+            build/SHA256SUMS-${{ matrix.goos }}-${{ matrix.goarch }}.txt
+
+  release:
+    needs: build
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+
+      - name: Prepare release metadata
+        id: release_meta
+        shell: bash
+        run: |
+          short_sha="${GITHUB_SHA::7}"
+          if [[ "${GITHUB_REF}" == refs/tags/* ]]; then
+            tag_name="${GITHUB_REF_NAME}"
+            release_name="Yuem ${GITHUB_REF_NAME}"
+            release_body="Tagged release ${GITHUB_REF_NAME} for commit ${GITHUB_SHA}."
+          else
+            stamp="$(date -u +'%Y%m%d-%H%M%S')"
+            tag_name="auto-${stamp}-${short_sha}"
+            release_name="Auto build ${stamp} (${short_sha})"
+            release_body="Automatic release built from ${GITHUB_REF_NAME} at ${stamp} UTC for commit ${GITHUB_SHA}."
+          fi
+          {
+            echo "tag_name=${tag_name}"
+            echo "release_name=${release_name}"
+            echo "release_body<<EOF"
+            echo "${release_body}"
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.release_meta.outputs.tag_name }}
+          name: ${{ steps.release_meta.outputs.release_name }}
+          target_commitish: ${{ github.sha }}
+          files: 'artifacts/**/*'
+          body: ${{ steps.release_meta.outputs.release_body }}
+          generate_release_notes: true

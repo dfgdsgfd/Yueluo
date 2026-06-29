@@ -1,0 +1,1461 @@
+{
+  "adminMaintenance": {
+    "loadFailed": "Failed to load maintenance settings",
+    "saved": "Maintenance settings saved",
+    "saveFailed": "Failed to save maintenance settings",
+    "rotated": "Maintenance entry updated",
+    "rotateFailed": "Failed to update maintenance entry",
+    "copied": "Maintenance entry copied",
+    "loading": "Loading maintenance settings",
+    "title": "Maintenance mode",
+    "description": "When enabled, normal entry shows a countdown modal while the dedicated entry bypasses it and can auto-login a UID.",
+    "refresh": "Refresh",
+    "enabled": "Enable maintenance mode",
+    "enabledHint": "Public APIs return maintenance status while admin and service entry remain available.",
+    "message": "Maintenance message",
+    "autoLoginUid": "Auto-login UID",
+    "estimatedEnd": "Estimated end time",
+    "serviceEntry": "Random service entry",
+    "copyEntry": "Copy entry",
+    "rotateEntry": "Rotate entry",
+    "save": "Save settings",
+    "borderSettings": "Maintenance border",
+    "borderSettingsHint": "Show an edge border after entering through the service-mode link.",
+    "borderVisible": "Show border",
+    "borderDismissible": "Allow close",
+    "borderColor": "Border color",
+    "borderOpacity": "Opacity {value}%"
+  },
+  "adminDatabase": {
+    "loadFailed": "Failed to load database information",
+    "repairConfirm": "Run non-destructive repair? Invalid indexes are replaced only after a temporary unique index succeeds; business rows are never deleted or merged.",
+    "repairDone": "Database repair completed",
+    "repairBlocked": "Safe repairs completed; {count} duplicate-data blockers remain.",
+    "duplicateSummary": "{groups} duplicate key groups with {rows} extra rows; resolve them manually and retry.",
+    "repairFailed": "Database repair failed",
+    "loading": "Loading database information",
+    "title": "Database manager",
+    "description": "Inspect table size, estimated column size, missing indexes, and run safe one-click correction.",
+    "refresh": "Refresh",
+    "driver": "Driver",
+    "database": "Database",
+    "tables": "Tables",
+    "size": "Total size",
+    "tableSizes": "Table sizes",
+    "searchTables": "Search tables",
+    "rows": "rows",
+    "columnsFor": "{table} columns",
+    "columns": "Columns",
+    "estimatedColumnSize": "Estimated column size: {size}",
+    "indexAudit": "Index / schema audit",
+    "indexAuditDescription": "Checks missing items against GORM models and the desired index registry.",
+    "repair": "Repair",
+    "noIssues": "No missing fields or indexes found",
+    "nullable": "Nullable",
+    "notNullable": "Not null",
+    "vacuumSaved": "Auto optimize settings saved",
+    "vacuumSaveFailed": "Failed to save auto optimize settings",
+    "vacuumRunConfirm": "Run VACUUM ANALYZE {table}?",
+    "vacuumRunDone": "VACUUM ANALYZE completed",
+    "vacuumRunFailed": "VACUUM ANALYZE failed",
+    "vacuumTitle": "VACUUM ANALYZE auto optimize",
+    "vacuumDescription": "Run plain VACUUM ANALYZE on selected PostgreSQL tables to refresh planner stats and reclaim reusable space.",
+    "vacuumRunSelected": "Optimize selected table",
+    "vacuumUnsupported": "VACUUM ANALYZE settings are unsupported for this database",
+    "vacuumEnabled": "Enable auto optimize",
+    "vacuumInterval": "Interval (hours)",
+    "vacuumSave": "Save auto config",
+    "vacuumLastResult": "Latest run",
+    "vacuumNextRun": "Next run",
+    "vacuumLastRun": "Last run",
+    "vacuumLastDuration": "Last duration",
+    "vacuumNoResult": "No run result yet"
+  },
+  "adminPortal": {
+    "brand": {
+      "name": "Yuem Community",
+      "subtitle": "Operations Admin"
+    },
+    "loading": "Opening admin console",
+    "mediaLibrary": {
+      "unrestrictedUploadHint": "Any file type or extension is supported."
+    },
+    "login": {
+      "title": "Administrator sign in",
+      "subtitle": "Yuem Community operations console",
+      "username": "Username",
+      "usernamePlaceholder": "admin",
+      "password": "Password",
+      "submit": "Sign in to admin",
+      "success": "Administrator signed in",
+      "errors": {
+        "failed": "Sign-in failed. Please try again.",
+        "forbidden": "This session does not have administrator access.",
+        "invalidCredentials": "The username or password is incorrect.",
+        "locked": "Too many failed attempts from this IP. Try again in {minutes} minutes.",
+        "missingParams": "Enter both username and password."
+      }
+    },
+    "layout": {
+      "adminRole": "Admin",
+      "backHome": "Back to home",
+      "backToSite": "Return to site",
+      "breadcrumb": "Home / {title}",
+      "closeMenu": "Close menu",
+      "closeMenuOverlay": "Close menu overlay",
+      "logout": "Sign out",
+      "openMenu": "Open menu",
+      "refresh": "Refresh",
+      "searchPlaceholder": "Search users, content, or modules..."
+    },
+    "userManagement": {
+      "title": "Manage user points",
+      "fields": {
+        "uid": "UID",
+        "oauth2Id": "OAuth2 ID",
+        "points": "Points"
+      },
+      "actions": {
+        "managePoints": "Manage points",
+        "close": "Close",
+        "cancel": "Cancel",
+        "save": "Save adjustment",
+        "saving": "Saving"
+      },
+      "operation": {
+        "label": "Adjustment type",
+        "add": "Add",
+        "deduct": "Deduct",
+        "set": "Set balance"
+      },
+      "amount": {
+        "change": "Change amount",
+        "target": "Target balance",
+        "placeholder": "Enter points"
+      },
+      "reason": {
+        "label": "Reason (optional)",
+        "placeholder": "Add an operator note for the points ledger"
+      },
+      "validation": {
+        "invalidAmount": "Enter a valid points amount."
+      },
+      "messages": {
+        "saved": "Points updated. New balance: {points}"
+      },
+      "batchGenerate": "Batch generate",
+      "batchGenerating": "Generating",
+      "batchGenerateCount": "Quantity",
+      "batchGenerateSuccess": "Generated {count} users."
+    },
+    "navigation": {
+      "sections": {
+        "overview": "Overview",
+        "users": "Users & Access",
+        "content": "Content Operations",
+        "risk": "Review & Safety",
+        "creator": "Creators & Finance",
+        "growth": "Recommendation & Growth",
+        "notice": "Notifications",
+        "system": "Apps & System"
+      },
+      "items": {
+        "dashboard": "Operations Dashboard",
+        "queues": "Queue Status",
+        "logs": "Log Center",
+        "observability": "Observability",
+        "database": "Database",
+        "maintenance": "Maintenance Mode",
+        "operations": "Operations Console",
+        "withdraw": "Withdrawal Review",
+        "invite": "Invite Growth",
+        "coupon": "Coupon Operations",
+        "points": "Points Operations",
+        "onboardingSettings": "Onboarding Settings",
+        "backendApi": "View Backend API",
+        "systemUpdate": "System Update",
+        "componentCheck": "Component Checks",
+        "hiddenWatermarkAccess": "Hidden Watermark Access",
+        "settings": "System Settings",
+        "aiAgent": "AI Agent",
+        "accessBlock": "Access Block"
+      },
+      "resources": {
+        "admins": "Administrators",
+        "announcements": "Announcements",
+        "app-versions": "App Versions",
+        "audit": "Verification Review",
+        "banned-word-categories": "Blocked-word Categories",
+        "banned-words": "Blocked Words",
+        "categories": "Categories",
+        "collections": "Collections",
+        "comments": "Comments",
+        "users": "Users",
+        "feedback": "User Feedback",
+        "follows": "Follow Relationships",
+        "licenses": "License Codes",
+        "likes": "Likes",
+        "media-library": "Media Library",
+        "file-recycle-bin": "File Recycle Bin",
+        "notification-templates": "Notification Templates",
+        "open-apis": "Open APIs",
+        "posts": "Content",
+        "posts-quality": "Content Quality",
+        "post-configs": "Post Recommendation Rules",
+        "quality-reward-settings": "Quality Rewards",
+        "content-review": "Content Review",
+        "reports": "Reports",
+        "sessions": "Sessions",
+        "system-notifications": "System Notifications",
+        "tags": "Tags",
+        "user-configs": "User Recommendation Rules",
+        "user-toolbar": "User Toolbar",
+        "ai-moderation-logs": "AI Moderation Logs"
+      }
+    },
+    "onboardingSettingsPanel": {
+      "title": "Onboarding Settings",
+      "description": "Configure onboarding availability, skip behavior, interest choices, and points copy",
+      "configTitle": "Onboarding Configuration",
+      "save": "Save",
+      "saved": "Onboarding settings saved",
+      "loadingSettings": "Loading onboarding settings",
+      "emptySettings": "No onboarding settings",
+      "resetTitle": "Reset User Onboarding State",
+      "resetDescription": "Clears every user's onboarding completion flag so users without a completed database record will see onboarding again.",
+      "resetAction": "Reset all",
+      "resetting": "Resetting",
+      "resetConfirm": "Reset onboarding completion for all users?",
+      "resetDone": "User onboarding state reset",
+      "resetSingleTitle": "Reset One User",
+      "resetSingleDescription": "Enter a numeric ID, user ID, or XiSe ID to make only that user see onboarding again.",
+      "resetSingleLabel": "User identifier",
+      "resetSinglePlaceholder": "User ID, numeric ID, or XiSe ID",
+      "resetSingleAction": "Reset user",
+      "resetSingleConfirm": "Reset onboarding completion for {userId}?",
+      "resetSingleDone": "Single user onboarding state reset",
+      "resetSingleMissing": "Enter a user identifier first.",
+      "fields": {
+        "enabled": "Enable onboarding",
+        "allowSkip": "Allow skipping onboarding",
+        "interestOptions": "Onboarding interest options",
+        "customFields": "Onboarding custom fields",
+        "pointsIntroTitle": "Points intro title",
+        "pointsIntroSummary": "Points intro summary",
+        "pointsIntroDetail": "Points intro details",
+        "avatarEnabled": "Show avatar setup",
+        "avatarRequired": "Avatar required",
+        "backgroundEnabled": "Show cover setup",
+        "backgroundRequired": "Cover required",
+        "nameEnabled": "Show name setup",
+        "nameRequired": "Name required",
+        "signatureEnabled": "Show signature setup",
+        "signatureRequired": "Signature required",
+        "interestsEnabled": "Show interests",
+        "interestsRequired": "Interests required",
+        "minInterests": "Minimum interests",
+        "resultTitle": "Completion dialog title",
+        "resultSavedText": "No-points saved text",
+        "walletLabel": "Points entry button text",
+        "walletUrl": "Points entry link"
+      },
+      "hints": {
+        "enabled": "When enabled, signed-in users without a completed onboarding record in the database will see the onboarding dialog.",
+        "allowSkip": "When disabled, users must complete onboarding and cannot skip it.",
+        "interestOptions": "Use the list below to add, remove, or edit interest choices. You can also paste one per line or JSON such as [\"Bondage\", \"Handcuffs\", \"Leg irons\"].",
+        "customFields": "Supports JSON or multiline text for extending onboarding form fields.",
+        "pointsIntroDetail": "Shown when users view details after completing onboarding.",
+        "minInterests": "Only applies when interests are shown and required.",
+        "walletUrl": "Destination for the points entry in the completion dialog. Use an internal path or a full URL."
+      },
+      "addInterest": "Add interest",
+      "removeInterest": "Remove interest",
+      "interestPlaceholder": "Enter interest name",
+      "emptyInterestOptions": "No interest options yet. Add one to create the list.",
+      "addSampleInterests": "Add sample",
+      "sampleInterests": {
+        "bondage": "Bondage",
+        "handcuffs": "Handcuffs",
+        "legIrons": "Leg irons"
+      }
+    },
+    "hiddenWatermarkAccessPanel": {
+      "title": "Hidden Watermark Access",
+      "description": "Control whether regular users can use the frontend hidden watermark inspector",
+      "loading": "Loading hidden watermark access",
+      "save": "Save",
+      "saved": "Hidden watermark access saved",
+      "saving": "Saving",
+      "on": "On",
+      "off": "Off",
+      "watermarkConfig": {
+        "title": "Hidden Watermark Configuration",
+        "reference": "Based on watermark_zero: the author strongly recommends WithGolay. Higher D1/D2 improves compression resistance but degrades image quality; smaller blocks increase capacity but can add noise. Odd block sizes are rounded up to even values, with a minimum of 4.",
+        "runtime": {
+          "payload": "Current payload",
+          "payloadValue": "{bytes} bytes / {bits} bits",
+          "format": "Payload format",
+          "engine": "Engine mode",
+          "referenceRecovery": "Screenshot reference recovery"
+        },
+        "fields": {
+          "enabled": "Enable hidden watermark",
+          "protectedOnly": "Watermark protected content only",
+          "includeUid": "Include internal UID",
+          "includeUserId": "Include public user ID",
+          "includeUsername": "Include username or nickname",
+          "includeTime": "Include UTC upload time",
+          "includeFileHash": "Include source file hash",
+          "includeCustom": "Include custom marker",
+          "customText": "Custom marker",
+          "coefficientMode": "Coefficient mode",
+          "eccMode": "Error correction",
+          "golaySeed": "Golay Shuffle Seed",
+          "blockWidth": "Block width",
+          "blockHeight": "Block height",
+          "d1": "D1 strength",
+          "d2": "D2 strength",
+          "engine": "Watermark engine",
+          "remoteEngine": "Remote algorithm",
+          "remotePasswordWm": "Watermark password",
+          "remotePasswordImg": "Image password",
+          "remoteProfile": "Remote watermark profile",
+          "remoteD1": "Custom D1",
+          "remoteD2": "Custom D2",
+          "protectionMaxDimension": "Protected image max dimension",
+          "protectionAllowedFailurePercent": "Protected package failure tolerance",
+          "protectionOutputMode": "Protected image output",
+          "protectionQuality": "Protected WebP quality",
+          "remoteTimeout": "Remote request timeout (seconds)",
+          "remoteOperationTimeout": "Remote operation timeout (seconds)"
+        },
+        "hints": {
+          "enabled": "When off, normal uploads skip hidden watermarking; protected packages still force trace watermarks.",
+          "protectedOnly": "When on, uploads keep clean originals and watermarks are embedded only while generating a buyer's protected download package.",
+          "includeUid": "Stores the internal database UID for the strongest traceability.",
+          "includeUserId": "Stores the public user ID for manual review.",
+          "includeUsername": "Stores nickname or username. This has higher privacy exposure and is off by default.",
+          "includeTime": "Stores the UTC time when the watermark is generated.",
+          "includeFileHash": "Stores a source-hash fragment for origin checks.",
+          "includeCustom": "Stores the custom marker below in the trace database; it is not embedded in the image token.",
+          "customText": "Up to 255 characters in the trace database.",
+          "coefficientMode": "WithD1 is cheaper; WithD1D2 is usually more robust but heavier.",
+          "eccMode": "The author strongly recommends WithGolay; WithoutECC is for compatibility or experiments.",
+          "golaySeed": "Deterministic shuffle seed for WithGolay; extraction must use the same seed.",
+          "blockShape": "Smaller blocks increase capacity but can add noise. The library requires even values of at least 4.",
+          "d1d2": "Higher values resist attacks/compression better, but may affect image fidelity.",
+          "engine": "Choose the Go local algorithm or the internal FastAPI remote service.",
+          "remoteEngine": "Auto tries blind_watermark first, then switches to DWT-DCT-SVD short codes after a failure.",
+          "remotePasswordWm": "blind_watermark password_wm. Embed and extract must use the same value.",
+          "remotePasswordImg": "blind_watermark password_img. Embed and extract must use the same value.",
+          "remoteBlockShape": "Block size for the remote blind_watermark algorithm. Smaller blocks increase capacity but may affect fidelity.",
+          "remoteD1D2": "D1/D2 strength for the remote blind_watermark algorithm. Higher values resist compression better but can degrade image quality.",
+          "remoteProfile": "Adaptive starts normal images at 18/8; protected images start at 24/12 for stronger compression resistance.",
+          "protectionMaxDimension": "Defaults to 2048; use 0 to preserve original dimensions.",
+          "protectionAllowedFailurePercent": "Floored by total image count. For example, 20% on 10 images allows up to 2 skipped images. Skipped images are not written to the ZIP, and at least 1 image must succeed.",
+          "protectionOutputMode": "Lossless WebP maximizes fidelity; quality WebP reduces package size.",
+          "protectionQuality": "Used only for quality WebP output.",
+          "remoteTimeout": "Maximum time the Go backend waits for the remote watermark service; changes apply to the next task.",
+          "remoteOperationTimeout": "Per-operation timeout sent to the FastAPI watermark worker; keep it slightly below the remote request timeout."
+        },
+        "options": {
+          "coefficientMode": {
+            "d1d2": "WithD1D2 (more robust)",
+            "d1": "WithD1 (faster)"
+          },
+          "eccMode": {
+            "golay": "WithGolay (strongly recommended)",
+            "none": "WithoutECC (experimental)"
+          },
+          "engine": {
+            "auto": "Auto (remote first)",
+            "local": "Local",
+            "remote": "Remote"
+          },
+          "remoteEngine": {
+            "dwt_dct_svd": "DWT-DCT-SVD short code",
+            "blind_watermark": "Legacy blind_watermark",
+            "auto": "Auto"
+          },
+          "remoteProfile": {
+            "adaptive": "Adaptive balanced (starts 18/8)",
+            "fidelity": "High fidelity (18/8)",
+            "balanced": "Balanced (24/12)",
+            "strong": "Strong compression resistance (30/15)",
+            "official": "Official strength (36/20)",
+            "custom": "Custom"
+          },
+          "protectionOutputMode": {
+            "lossless_webp": "Lossless WebP",
+            "quality_webp": "Quality WebP"
+          }
+        },
+        "presets": {
+          "current": {
+            "title": "Current Balance",
+            "description": "Uses 8x6 / D1=21 / D2=9 / Golay so screenshots and recompressed images remain recoverable."
+          },
+          "author_recommended": {
+            "title": "Author Recommended",
+            "description": "Official default 8x8 / D1=21 / D2=9 / WithGolay, prioritizing stable extraction."
+          },
+          "fidelity": {
+            "title": "Preserve Original",
+            "description": "Larger blocks and lower D1/D2 reduce noise and image-quality loss."
+          },
+          "robust": {
+            "title": "Attack Resistant",
+            "description": "Smaller blocks and higher D1/D2 improve extraction after compression."
+          }
+        },
+        "stablePreset": {
+          "action": "Apply stable preset",
+          "saved": "Stable protected-package preset saved"
+        },
+        "remoteReference": "Remote mode uses guofei9987/blind_watermark 0.4.4, keeps the official 4x4 blocks, and sends matching password and D1/D2 values.",
+        "remoteOfficial": {
+          "title": "Recommended remote protection",
+          "description": "The stable preset enables remote-first, automatic algorithm fallback, adaptive strength, a 50-second remote timeout, and lossless WebP for protected images."
+        }
+      },
+      "extract": {
+        "title": "Hidden Watermark Extraction",
+        "fileLabel": "Choose image to inspect",
+        "referenceFileLabel": "Screenshot reference (optional)",
+        "referenceDescription": "For a cropped or resized screenshot, choose the complete watermarked image. The service recovers crop and scale with the official upstream flow before extraction.",
+        "description": "Admin only. The extracted short code is resolved through the trace database.",
+        "action": "Extract watermark",
+        "extracting": "Extracting",
+        "completed": "Hidden watermark inspection completed",
+        "recoveryFailed": "Screenshot recovery failed. Verify that the reference is its complete watermarked image.",
+        "remoteTimeout": "The remote watermark service or gateway timed out. This does not mean the image has no watermark.",
+        "remoteDisconnected": "The remote watermark progress connection was interrupted. Try again later.",
+        "progress": {
+          "uploading": "Uploading image",
+          "queued": "Received by server and waiting for processing",
+          "decoding": "Decoding and validating image",
+          "recovering": "Recovering screenshot crop and scale",
+          "waiting": "Waiting for the remote engine",
+          "aligning": "Aligning screenshot and reference",
+          "extracting": "Extracting hidden token",
+          "verifying": "Verifying the trace database",
+          "complete": "Processing complete",
+          "elapsed": "{seconds}s elapsed",
+          "estimated": "The live stage is estimated from elapsed time. Do not submit the request again.",
+          "live": "Progress is reported by the server's actual processing stage.",
+          "heartbeat": "Server heartbeat is healthy; the task is still running.",
+          "heartbeatEngine": "The FastAPI engine heartbeat is healthy and the algorithm is still running.",
+          "heartbeatGateway": "The Go gateway is connected and waiting for the FastAPI engine.",
+          "units": "Processed {completed}/{total} candidates"
+        },
+        "empty": "Choose an image to view extraction results",
+        "fields": {
+          "found": "Watermark found",
+          "valid": "Token valid",
+          "version": "Payload version",
+          "traceToken": "Trace token",
+          "traceType": "Trace type",
+          "traceResolved": "Database trace resolved",
+          "payloadBytes": "Payload bytes",
+          "payloadBits": "Payload bits",
+          "payloadFormat": "Payload format",
+          "watermarkEngine": "Watermark engine",
+          "uid": "Internal UID",
+          "userId": "Public user ID",
+          "username": "Username or nickname",
+          "uploadedAt": "Upload time",
+          "sourceHash": "Source file hash",
+          "customText": "Custom marker",
+          "postId": "Post ID",
+          "imageId": "Image ID",
+          "jobId": "Protection job ID",
+          "includedFields": "Included fields"
+        }
+      },
+      "global": {
+        "title": "Access Policy",
+        "description": "By default, only administrators and allowlisted users can use it. Turn this on to allow every signed-in user to inspect from the frontend.",
+        "on": "Open to all users",
+        "off": "Authorized users only"
+      },
+      "picker": {
+        "title": "Add Users",
+        "description": "Search for users and add them to the allowlist. Internal IDs and public account IDs are recorded together.",
+        "pickerLabel": "User search",
+        "pickerPlaceholder": "Search nickname, account, or email",
+        "pickerEmpty": "No matching users found",
+        "addEmpty": "Search and select users to authorize.",
+        "clear": "Clear",
+        "loading": "Searching",
+        "removeSelected": "Remove selected user",
+        "search": "Search",
+        "addSelected": "Add to allowlist",
+        "noSelected": "Select users first",
+        "added": "Added {count} user(s)"
+      },
+      "manual": {
+        "title": "Manual Add",
+        "description": "Add an internal ID, public user ID, Xise ID, username, or nickname directly.",
+        "manualPlaceholder": "Enter user ID, account, or nickname",
+        "manualTypeId": "ID / Account",
+        "manualTypeUsername": "Username / Nickname",
+        "addManual": "Add",
+        "duplicate": "This value is already in the list",
+        "emptyManual": "Enter a value to add"
+      },
+      "lists": {
+        "title": "Allowlist",
+        "description": "A match on any ID or username entry grants access to the frontend inspector.",
+        "count": "{count} items",
+        "userIdsTitle": "IDs and accounts",
+        "usernamesTitle": "Usernames and nicknames",
+        "userIdsHint": "Supports internal numeric ID, public user_id, and Xise ID.",
+        "usernamesHint": "Supports nickname, username, or public account text.",
+        "emptyUserIds": "No ID allowlist entries",
+        "emptyUsernames": "No username allowlist entries",
+        "remove": "Remove"
+      },
+      "usage": {
+        "title": "Recent 100 inspections",
+        "loading": "Loading inspection history",
+        "loadFailed": "Could not load hidden watermark inspection history",
+        "empty": "No hidden watermark inspection records yet",
+        "time": "Time",
+        "actor": "User",
+        "result": "Result",
+        "file": "Uploaded file",
+        "watermark": "Watermark",
+        "reason": "Failure reason",
+        "ip": "IP",
+        "path": "Entry point",
+        "success": "Success",
+        "failed": "Failed",
+        "valid": "Found and valid",
+        "invalid": "Found but invalid",
+        "notFound": "Not found"
+      }
+    },
+    "queuesPanel": {
+      "title": "Queues and Redis",
+      "description": "Inspect Asynq queues, Redis memory, task timing, and automatic cleanup policies",
+      "loading": "Loading queue status",
+      "queues": "Queues",
+      "tasks": "Tasks",
+      "taskTitle": "Tasks: {queue}",
+      "emptyJobs": "No tasks",
+      "serviceDisabled": "The queue service is disabled; only empty state is available.",
+      "recentEvents": "Recent events",
+      "eventTiming": "{time} · wait {wait} · duration {duration}",
+      "status": {
+        "all": "All",
+        "waiting": "Waiting",
+        "active": "Active",
+        "completed": "Completed",
+        "failed": "Failed",
+        "retry": "Retry",
+        "scheduled": "Scheduled"
+      },
+      "stats": {
+        "waiting": "Waiting",
+        "active": "Active",
+        "completed": "Completed",
+        "failed": "Failed",
+        "delayed": "Delayed / retry",
+        "latency": "Average latency"
+      },
+      "danger": {
+        "title": "Danger zone: delete the entire queue",
+        "description": "This deletes waiting, scheduled, retry, and historical tasks. Use Redis maintenance above for safe cleanup.",
+        "placeholder": "Type queue name {queue} to confirm",
+        "clear": "Delete entire queue",
+        "cleared": "Queue deleted"
+      },
+      "job": {
+        "id": "Task ID {id}",
+        "inspect": "Details",
+        "retry": "Retry task",
+        "enqueued": "Enqueued",
+        "started": "Started",
+        "wait": "Wait",
+        "duration": "Run time",
+        "retryConfirm": "Retry task {id}?",
+        "retrySuccess": "Task returned to the queue",
+        "close": "Close task details",
+        "details": "Task details",
+        "idLabel": "Task ID",
+        "name": "Name",
+        "attempts": "Attempts"
+      },
+      "maintenance": {
+        "title": "Redis memory management",
+        "loading": "Loading Redis memory and cleanup policy",
+        "description": "Only disposable history, telemetry, cache, and stale indexes are cleaned.",
+        "saved": "Redis cleanup policy saved",
+        "runComplete": "Safe Redis cleanup completed",
+        "cacheConfirm": "Clear application cache? Sessions and pending tasks will not be deleted.",
+        "policyTitle": "Automatic cleanup policy",
+        "safeBoundary": "Waiting, active, scheduled, and retry tasks are never deleted automatically.",
+        "save": "Save policy",
+        "runSafe": "Run safe cleanup",
+        "runCache": "Clear app cache"
+      },
+      "memory": {
+        "title": "Memory pressure",
+        "used": "Used",
+        "max": "Maximum memory",
+        "unbounded": "No limit configured",
+        "policy": "Eviction policy",
+        "fragmentation": "Fragmentation",
+        "noLimitHint": "Redis currently has maxmemory=0. The admin panel monitors and alerts but never changes the server memory limit.",
+        "level": {
+          "normal": "Normal",
+          "warning": "Warning",
+          "critical": "Critical",
+          "unbounded": "Unbounded"
+        }
+      },
+      "schedule": {
+        "title": "Run status",
+        "next": "Next run",
+        "last": "Last run",
+        "freed": "Last freed"
+      },
+      "inventory": {
+        "title": "Keyspace categories",
+        "summary": "{total} keys total; {scanned} inspected",
+        "sampled": "Large keyspace; showing a bounded sample",
+        "noTtlSummary": "{count} sampled keys have no TTL and are not marked permanent",
+        "expectedPermanentSummary": "{count} sampled keys are expected permanent metadata",
+        "keys": "{count} keys",
+        "noTtlKeys": "{count} without TTL",
+        "expectedPermanentKeys": "{count} expected permanent",
+        "empty": "No category data available",
+        "categories": {
+          "queues": "Queues",
+          "logs": "Short-term logs",
+          "metrics": "Metrics",
+          "sessions": "Sessions",
+          "cache": "Application cache",
+          "settings": "System settings",
+          "security": "Security limits",
+          "other": "Other"
+        }
+      },
+      "fields": {
+        "enabled": "Enable automatic cleanup",
+        "interval": "Run interval (minutes)",
+        "accessLogs": "Access log retention (hours)",
+        "accessLogMax": "Access log max entries",
+        "systemLogs": "System log retention (hours)",
+        "systemLogMax": "System log max entries",
+        "metrics": "Metric retention (hours)",
+        "metricsMax": "Metric max entries per key",
+        "queueEvents": "Queue event retention (hours)",
+        "queueEventMax": "Queue event max entries",
+        "completed": "Completed task retention (hours)",
+        "archived": "Failed task retention (hours)",
+        "archivedMax": "Failed tasks per queue",
+        "warning": "Memory warning threshold (%)",
+        "critical": "Memory critical threshold (%)",
+        "accessTokenTTLSeconds": "Access token TTL (seconds)",
+        "refreshTokenActiveTTLSeconds": "Refresh token active TTL (seconds)",
+        "refreshTokenRenewalIntervalSeconds": "Refresh renewal activity window (seconds)",
+        "refreshTokenMode": "Refresh token mode",
+        "refreshTokenModeRedisOpaque": "Redis opaque",
+        "refreshTokenModeJWTLegacy": "JWT legacy",
+        "refreshTokenAutoRenewEnabled": "Enable active auto-renewal",
+        "sessionInactiveTTLSeconds": "Remove inactive sessions after (seconds)",
+        "userActiveSessionLimit": "Active sessions per user"
+      },
+      "overrides": {
+        "title": "Per-queue overrides",
+        "description": "Queues use the global policy by default; high-value video or audit queues can be retained longer.",
+        "custom": "Use custom policy",
+        "default": "Use global default"
+      }
+    },
+    "settingsPanel": {
+      "title": "System Settings",
+      "description": "Unified configuration for booleans, numbers, dates, and text values",
+      "configTitle": "Configuration",
+      "authTitle": "Sign-in / OAuth",
+      "appDownloadTitle": "App Download",
+      "fileRecycleTitle": "File Recycle Bin",
+      "imageTitle": "Image Processing",
+      "emptyImageSettings": "No image processing settings",
+      "save": "Save",
+      "saved": "System settings saved",
+      "loadingSettings": "Loading system settings",
+      "emptySettings": "No system settings",
+      "rawTitle": "Compatibility Snapshot",
+      "loadingRaw": "Loading compatibility settings",
+      "emptyRaw": "No compatibility settings",
+      "on": "On",
+      "off": "Off",
+      "systemSettings": {
+        "site_title": {
+          "label": "Homepage title",
+          "hint": "Shown on the homepage, browser title, and share previews."
+        },
+        "site_description": {
+          "label": "Homepage description",
+          "hint": "Shown under the homepage title and in search/share summaries."
+        },
+        "site_avatar_url": {
+          "label": "Website avatar URL",
+          "hint": "Use a media-library /api/file/... path or a full http/https image URL."
+        },
+        "post_content_max_length": {
+          "label": "Maximum post content length",
+          "hint": "Limits content for publishing, drafts, editing, and admin creation. Default: 100000."
+        },
+        "post_resource_section_position": {
+          "label": "Post resource section position",
+          "hint": "Places attachments, paid unlocks, and image packages before or after the content.",
+          "before": "Before content",
+          "after": "After content"
+        },
+        "onboarding_interest_options": {
+          "label": "Onboarding interest options",
+          "hint": "Provide one localized list for each supported language."
+        },
+        "onboarding_points_intro_title": {
+          "label": "Points introduction title"
+        },
+        "onboarding_points_intro_summary": {
+          "label": "Points introduction summary"
+        },
+        "onboarding_points_intro_detail": {
+          "label": "Points introduction details",
+          "hint": "Shown when users view details after completing onboarding."
+        },
+        "onboarding_result_title": {
+          "label": "Onboarding completion title"
+        },
+        "onboarding_result_saved_text": {
+          "label": "Profile saved message"
+        },
+        "onboarding_points_wallet_label": {
+          "label": "Points entry label"
+        },
+        "maintenance_message": {
+          "label": "Maintenance message"
+        },
+        "oauth2_app_callback_urls": {
+          "label": "App OAuth callback allowlist",
+          "hint": "Enter one full callback per line, for example xsewebfast://auth-return or yuempro://auth-return. Each app sends its own app_callback; the backend matches scheme, host, and path exactly before redirecting back."
+        },
+        "app_download_android_enabled": {
+          "label": "Enable Android download"
+        },
+        "app_download_android_name": {
+          "label": "Android app name"
+        },
+        "app_download_android_version_name": {
+          "label": "Android version name"
+        },
+        "app_download_android_version_code": {
+          "label": "Android version code",
+          "hint": "Numeric version used for display and client comparisons."
+        },
+        "app_download_android_download_url": {
+          "label": "Android download URL",
+          "hint": "Use a media-library /api/file/attachments/... URL or a full URL."
+        },
+        "app_download_android_size_label": {
+          "label": "Android size label",
+          "hint": "Shown before automatic size formatting, for example 18 MB."
+        },
+        "app_download_android_size_bytes": {
+          "label": "Android package size (MB)",
+          "hint": "Enter MB in admin; it is stored as bytes. Use 0 to hide."
+        },
+        "app_download_android_package_name": {
+          "label": "Android package name"
+        },
+        "app_download_android_release_notes": {
+          "label": "Android release notes"
+        },
+        "app_download_android_fast_enabled": {
+          "label": "Enable Android Fast download"
+        },
+        "app_download_android_fast_name": {
+          "label": "Android Fast app name"
+        },
+        "app_download_android_fast_version_name": {
+          "label": "Android Fast version name"
+        },
+        "app_download_android_fast_version_code": {
+          "label": "Android Fast version code",
+          "hint": "Numeric version used for display and client comparisons."
+        },
+        "app_download_android_fast_download_url": {
+          "label": "Android Fast download URL",
+          "hint": "Use a media-library /api/file/attachments/... URL or a full URL."
+        },
+        "app_download_android_fast_size_label": {
+          "label": "Android Fast size label",
+          "hint": "Shown before automatic size formatting, for example ≤ 1 MB."
+        },
+        "app_download_android_fast_size_bytes": {
+          "label": "Android Fast package size (MB)",
+          "hint": "Enter MB in admin; it is stored as bytes. Use 0 to hide."
+        },
+        "app_download_android_fast_package_name": {
+          "label": "Android Fast package name"
+        },
+        "app_download_android_fast_release_notes": {
+          "label": "Android Fast release notes"
+        },
+        "app_download_ios_enabled": {
+          "label": "Enable iOS download"
+        },
+        "app_download_ios_name": {
+          "label": "iOS app name"
+        },
+        "app_download_ios_version_name": {
+          "label": "iOS version name"
+        },
+        "app_download_ios_version_code": {
+          "label": "iOS version code",
+          "hint": "Numeric version used for display and client comparisons."
+        },
+        "app_download_ios_download_url": {
+          "label": "iOS download URL",
+          "hint": "Use an App Store, TestFlight, enterprise, or profile URL."
+        },
+        "app_download_ios_size_label": {
+          "label": "iOS size label",
+          "hint": "Shown before automatic size formatting."
+        },
+        "app_download_ios_size_bytes": {
+          "label": "iOS package size (MB)",
+          "hint": "Enter MB in admin; it is stored as bytes. Use 0 to hide."
+        },
+        "app_download_ios_bundle_id": {
+          "label": "iOS Bundle ID"
+        },
+        "app_download_ios_release_notes": {
+          "label": "iOS release notes"
+        },
+        "file_recycle_retention_days": {
+          "label": "Recycle bin retention (days)",
+          "hint": "Number of days a recycled file is kept before automatic cleanup. Default: 30 days."
+        },
+        "file_recycle_cleanup_interval_hours": {
+          "label": "Cleanup interval (hours)",
+          "hint": "How often the background task scans expired recycled files. Default: once every 24 hours."
+        },
+        "notification_interaction_suppression_enabled": {
+          "label": "Interaction notification suppression",
+          "hint": "When enabled, extra like, comment-like, or save notifications from the same user to the same author are silently suppressed after the threshold."
+        },
+        "notification_interaction_suppression_window_seconds": {
+          "label": "Suppression window (seconds)",
+          "hint": "Rolling counting window. Default 600 seconds, allowed range 60 to 86400."
+        },
+        "notification_interaction_suppression_threshold": {
+          "label": "Suppression threshold",
+          "hint": "Number of same-type interaction notifications allowed in the window. Default 3, allowed range 1 to 100."
+        }
+      },
+      "fields": {
+        "videoCenterEnabled": "Video Center switch",
+        "videoCenterHomepageEnabled": "Homepage Video Center recommendations",
+        "videoCenterRecommendLimit": "Video Center recommendation count",
+        "videoCenterAccountCutoff": "Video Center registration cutoff",
+        "imageWebpEnabled": "Convert to WebP",
+        "imageWebpQuality": "Content image quality",
+        "imageAvatarWebpQuality": "Avatar image quality",
+        "imageWebpMethod": "WebP encoding method",
+        "imageWebpAlphaQuality": "Alpha channel quality",
+        "imageWebpLossless": "Use lossless WebP",
+        "imageLibvipsEnabled": "Enable libvips color management",
+        "imageMaxWidth": "Maximum width",
+        "imageMaxHeight": "Maximum height",
+        "imageProcessingConcurrency": "Image processing concurrency",
+        "imagePostMaxCount": "Images per post limit",
+        "imageArchiveEnabled": "Auto-generate all-images ZIP",
+        "imageArchiveThreshold": "Automatic ZIP image threshold",
+        "imageProtectionEnabled": "Enhanced watermark protection",
+        "imageProtectionNoticeEnabled": "Show protection notice",
+        "imageSelectAllEnabled": "Allow image select all",
+        "paidContentBalanceEnabled": "Allow Moon Coin payments",
+        "paidContentPointsEnabled": "Allow points payments",
+        "paidContentBalanceMaxPrice": "Moon Coin price limit",
+        "paidContentPointsMaxPrice": "Points price limit",
+        "hiddenWatermarkEnabled": "Enable hidden watermark",
+        "hiddenWatermarkIncludeUid": "Include internal UID",
+        "hiddenWatermarkIncludeUserId": "Include public user ID",
+        "hiddenWatermarkIncludeUsername": "Include username or nickname",
+        "hiddenWatermarkIncludeTime": "Include UTC upload time",
+        "hiddenWatermarkIncludeFileHash": "Include original file hash",
+        "hiddenWatermarkIncludeCustom": "Include custom marker",
+        "hiddenWatermarkCustomText": "Hidden watermark custom marker"
+      },
+      "hints": {
+        "videoCenterAccountCutoff": "Users registered at or after this time will not see the Video Center. Leave blank to disable registration-time hiding.",
+        "imageMaxDimension": "Use 0 for no limit. Images keep their aspect ratio when resized.",
+        "imageProcessingConcurrency": "Hidden watermark processing is memory intensive; keeping this at 1 is recommended.",
+        "imagePostMaxCount": "Controls the image limit for one post and batch upload. Default 100, maximum 500.",
+        "imageArchiveEnabled": "When enabled, published posts reaching the threshold queue an all-images ZIP without blocking publication.",
+        "imageArchiveThreshold": "Automatically queues a ZIP when the image count exceeds this value. Default 25.",
+        "imageLibvipsEnabled": "Automatically rotates images, converts the source ICC profile to sRGB, and keeps only safe EXIF. Disable it to retain the original processing pipeline.",
+        "imageProtectionEnabled": "Lets authors protect non-cover images so viewers can only download a traceable watermarked ZIP.",
+        "imageProtectionNoticeEnabled": "Controls whether the publisher shows the protection explanation or globally-disabled notice.",
+        "imageSelectAllEnabled": "Hides Select All when disabled and prevents batch actions from targeting every image when none are selected.",
+        "paidContentPaymentMethod": "Controls whether authors can select this method for paid images. Moon Coin and points may both be enabled.",
+        "paidContentPriceLimit": "Controls the highest unlock price authors can enter for paid images.",
+        "hiddenWatermarkCustomText": "Stored in the trace record when the custom marker option is enabled; it is not embedded in the image token."
+      },
+      "extract": {
+        "title": "Hidden Watermark Extraction",
+        "fileLabel": "Choose an image to inspect",
+        "description": "Administrator only. The extracted short code is resolved through the trace database.",
+        "action": "Extract watermark",
+        "extracting": "Extracting",
+        "completed": "Hidden watermark inspection completed",
+        "empty": "Choose an image to view extraction results",
+        "fields": {
+          "found": "Watermark found",
+          "valid": "Token valid",
+          "version": "Payload version",
+          "traceToken": "Trace token",
+          "traceType": "Trace type",
+          "traceResolved": "Database trace resolved",
+          "payloadBytes": "Payload bytes",
+          "payloadBits": "Payload bits",
+          "payloadFormat": "Payload format",
+          "watermarkEngine": "Watermark engine",
+          "uid": "Internal UID",
+          "userId": "Public user ID",
+          "username": "Username or nickname",
+          "uploadedAt": "Upload time",
+          "sourceHash": "Original file hash",
+          "customText": "Custom marker",
+          "postId": "Post ID",
+          "imageId": "Image ID",
+          "jobId": "Protection job ID",
+          "includedFields": "Included fields"
+        }
+      }
+    },
+    "fileRecycleBin": {
+      "columns": {
+        "remaining": "Remaining"
+      },
+      "countdown": {
+        "remaining": "Remaining {value}",
+        "separator": " ",
+        "day": "{count}d",
+        "hour": "{count}h",
+        "minute": "{count}m",
+        "due": "Due now",
+        "purged": "Purged"
+      },
+      "actions": {
+        "inspect": "Confirm exists",
+        "preview": "Preview",
+        "download": "Download",
+        "close": "Close"
+      },
+      "toasts": {
+        "recycledExists": "Recycle copy exists",
+        "recycledMissing": "Recycle copy is missing",
+        "directoryUnsupported": "Directory preview is not supported",
+        "previewUnsupported": "This file cannot be previewed",
+        "downloadReady": "Download started"
+      },
+      "preview": {
+        "title": "Recycle file preview",
+        "original": "Original",
+        "recycled": "Recycle copy",
+        "files": "Files",
+        "noInspection": "Confirm existence before previewing.",
+        "imageAlt": "Recycled file preview",
+        "empty": "No preview loaded"
+      },
+      "status": {
+        "unsafe": "Unsafe",
+        "exists": "Exists",
+        "missing": "Missing",
+        "notConfigured": "Not configured",
+        "directory": "Directory",
+        "file": "File"
+      },
+      "errors": {
+        "invalidID": "Invalid recycle item ID",
+        "idsRequired": "Select recycle items first",
+        "notFound": "Recycle item was not found",
+        "unsafePath": "Recycle path failed the safety check",
+        "fileMissing": "Recycle copy is missing",
+        "directoryPreviewUnsupported": "Directory preview and download are not supported in this version",
+        "previewUnsupported": "This file type cannot be previewed",
+        "inspectFailed": "Failed to inspect the recycle item"
+      }
+    },
+    "aiAgentPanel": {
+      "title": "AI Agent",
+      "description": "Configure OpenAI-compatible providers, prompt tabs, streaming copy generation, queue limits, and audit logs.",
+      "loading": "Loading AI settings",
+      "save": "Save",
+      "saving": "Saving",
+      "saved": "AI settings saved",
+      "tabs": {
+        "base": "Base",
+        "markdown": "Note formatting",
+        "polish": "Note polish",
+        "review": "Auto review",
+        "comments": "AI comments",
+        "commentReply": "Comment replies",
+        "vision": "Image analysis",
+        "copy": "Copywriting",
+        "logs": "Audit logs",
+        "moderation": "Content moderation",
+        "publishGeneration": "Detail generation",
+        "contentFormat": "Editor AI"
+      },
+      "base": {
+        "title": "Connection and limits",
+        "enabled": "AI enabled",
+        "disabled": "AI disabled",
+        "baseUrl": "Base URL",
+        "model": "Model",
+        "apiKey": "API key",
+        "apiKeyPlaceholder": "Paste a new key to replace",
+        "timeout": "Stop when provider is idle (seconds)",
+        "maxRun": "Max background run seconds",
+        "chunkSize": "Chunk max characters",
+        "concurrency": "Global max concurrency (default 5)",
+        "temperature": "Default temperature",
+        "maxOutput": "Default max output tokens",
+        "showReasoningOn": "Show reasoning",
+        "showReasoningOff": "Hide reasoning",
+        "thinkingParameterOn": "Send thinking parameter",
+        "thinkingParameterOff": "Do not send thinking parameter",
+        "thinkingOn": "Provider thinking on",
+        "thinkingOff": "Provider thinking off",
+        "logHttpDetailsOn": "Record remote HTTP details",
+        "logHttpDetailsOff": "Do not record remote HTTP details",
+        "extraHeaders": "Extra headers JSON",
+        "extraHeadersPlaceholder": "{\n  \"X-Provider\": \"openai-compatible\"\n}",
+        "extraHeadersInvalid": "Extra headers must be a JSON object.",
+        "reasoningEffort": "Reasoning effort",
+        "reasoningEfforts": {
+          "default": "Provider default",
+          "minimal": "Minimal",
+          "low": "Low",
+          "medium": "Medium",
+          "high": "High"
+        },
+        "modelParameters": "Model parameters JSON",
+        "modelParametersPlaceholder": "{\n  \"top_p\": 0.9\n}",
+        "modelParametersInvalid": "Model parameters must be a JSON object."
+      },
+      "autoComment": {
+        "enabled": "Auto AI comment enabled",
+        "disabled": "Auto AI comment disabled",
+        "botUserId": "Fallback bot UID",
+        "template": "Auto comment template",
+        "delaySeconds": "Delay seconds",
+        "maxImages": "Max images sent to vision",
+        "botUserIdMin": "Random UID range start",
+        "botUserIdMax": "Random UID range end",
+        "style": "Prompt style",
+        "styles": {
+          "normal": "Normal",
+          "humorous": "Humorous",
+          "bold": "Bold"
+        },
+        "imageSelectionMode": "Image selection mode"
+      },
+      "commentReply": {
+        "title": "AI comment replies",
+        "enabled": "AI comment replies enabled",
+        "disabled": "AI comment replies disabled",
+        "template": "Reply template",
+        "delaySeconds": "Delay seconds",
+        "maxImages": "Max images sent to vision",
+        "maxReplies": "Max replies per AI comment",
+        "mentionEnabled": "Mention replies enabled",
+        "mentionDisabled": "Mention replies disabled",
+        "mentionName": "Mention name",
+        "mentionTemplate": "Mention reply template",
+        "mentionBotUserIdMin": "Random mention bot UID start",
+        "mentionBotUserIdMax": "Random mention bot UID end",
+        "maxMentionReplies": "Max mention replies per post",
+        "style": "Prompt style",
+        "imageSelectionMode": "Image selection mode"
+      },
+      "templatesTitle": "Prompt templates",
+      "templates": {
+        "markdown_format": "Markdown formatting",
+        "post_polish": "Note polish",
+        "post_review_reply": "AI review reply",
+        "post_auto_comment": "Post auto comment",
+        "comment_reply": "Comment reply",
+        "comment_mention_reply": "Mention reply",
+        "image_analysis": "Image analysis",
+        "announcement": "Announcement",
+        "system_notification": "System notification",
+        "popup": "Popup",
+        "activity_description": "Activity description",
+        "post_title": "Post titles",
+        "post_summary": "Post summary",
+        "tag_suggestions": "Tag suggestions",
+        "post_custom_generate": "Custom post generation",
+        "comment_moderation": "Comment moderation",
+        "post_moderation": "Post moderation",
+        "publish_title_generate": "Publish title summary",
+        "publish_detail_generate": "Publish detail generation",
+        "publish_title_detail_generate": "Legacy title and detail generation"
+      },
+      "template": {
+        "enabled": "Enabled",
+        "disabled": "Disabled",
+        "temperature": "Temperature",
+        "maxOutput": "Max output tokens",
+        "concurrency": "Project concurrency",
+        "concurrencyHint": "0 inherits the global limit; 1-50 limits this template only.",
+        "jsonOn": "JSON on",
+        "jsonOff": "JSON off",
+        "prompt": "Prompt",
+        "systemPrompt": "System prompt",
+        "userPrompt": "User prompt",
+        "resetDefault": "Restore default",
+        "style": "Style",
+        "styles": {
+          "normal": "Normal",
+          "humorous": "Humorous",
+          "bold": "Bold"
+        },
+        "model": "Model override",
+        "modelPlaceholder": "Leave empty to use base model",
+        "runtimeOverrides": "Runtime overrides",
+        "runtimeOverridesHint": "Override reasoning and provider parameters only for this template.",
+        "runtimeOn": "Overrides on",
+        "runtimeOff": "Inherit global",
+        "runtimeModelParameters": "Template model parameters JSON"
+      },
+      "generator": {
+        "title": "Copy generation workspace",
+        "template": "Template",
+        "input": "Input",
+        "inputPlaceholder": "Describe the operating goal, audience, tone, facts, and constraints.",
+        "output": "Output",
+        "reasoning": "Reasoning",
+        "emptyOutput": "Generated copy appears here.",
+        "emptyInput": "Enter input before generating.",
+        "run": "Generate",
+        "generating": "Generating",
+        "progress": "Progress {percent}%",
+        "queue": "Queued #{position}/{total}, ETA {eta}"
+      },
+      "logs": {
+        "title": "AI audit logs",
+        "refresh": "Refresh",
+        "loading": "Loading AI logs",
+        "empty": "No AI logs yet",
+        "durationMs": "{value} ms",
+        "columns": {
+          "type": "Type",
+          "status": "Status",
+          "actor": "Actor",
+          "model": "Model",
+          "tokens": "Tokens",
+          "duration": "Duration",
+          "created": "Created",
+          "imagesSent": "Images sent",
+          "tokenSpeed": "Tokens/s",
+          "error": "API error",
+          "details": "Details"
+        },
+        "types": {
+          "format_markdown": "Markdown formatting",
+          "admin_copy": "Admin copywriting",
+          "post_review_reply": "AI review reply",
+          "post_auto_comment": "Post auto comment",
+          "comment_reply": "Comment reply",
+          "comment_mention_reply": "Mention reply",
+          "image_analysis": "Image analysis",
+          "post_polish": "Post polish",
+          "post_custom_generate": "Custom post generation",
+          "publish_title_generate": "Publish title summary",
+          "publish_detail_generate": "Publish detail generation",
+          "publish_title_detail_generate": "Legacy title and detail generation",
+          "comment_moderation": "Comment moderation",
+          "post_moderation": "Post moderation"
+        },
+        "statuses": {
+          "running": "Running",
+          "completed": "Completed",
+          "failed": "Failed",
+          "canceled": "Canceled"
+        },
+        "actors": {
+          "user": "User",
+          "admin": "Admin",
+          "system": "System"
+        },
+        "details": {
+          "show": "Show",
+          "hide": "Hide",
+          "httpStatus": "HTTP status",
+          "contentType": "Content type",
+          "usage": "Usage",
+          "usageValue": "Prompt {prompt} / Completion {completion} / Total {total}",
+          "attempts": "Attempts",
+          "outputSummary": "Generated output",
+          "responseSummary": "Upstream response",
+          "upstreamAttempts": "HTTP attempts",
+          "rawMetadata": "Raw metadata"
+        }
+      },
+      "eta": {
+        "lessThanMinute": "less than 1 min",
+        "minutes": "{count} min"
+      },
+      "moderation": {
+        "title": "AI comment and post moderation",
+        "enabled": "Moderation enabled",
+        "disabled": "Moderation disabled",
+        "templateKey": "Template key",
+        "prompt": "Prompt override",
+        "promptPlaceholder": "Optional: override the template prompt for this moderation target.",
+        "ruleEnabled": "Review",
+        "ruleDisabled": "Skip",
+        "targets": {
+          "comment": {
+            "title": "Comment moderation",
+            "description": "New comments appear immediately; if AI flags them, the configured action is applied afterward."
+          },
+          "post": {
+            "title": "Post moderation",
+            "description": "New posts appear immediately; if AI flags them, the configured action is applied afterward."
+          }
+        },
+        "rules": {
+          "spam": "Spam",
+          "porn": "Pornographic",
+          "political_sensitive": "Political sensitive"
+        },
+        "actions": {
+          "observe": "Observe",
+          "delete": "Delete",
+          "private": "Set private"
+        },
+        "sensitivity": "Sensitivity",
+        "debugTitle": "Moderation debug test",
+        "debugRun": "Run test",
+        "debugRunning": "Testing",
+        "debugTarget": "Target",
+        "debugInput": "Test content",
+        "debugPlaceholder": "Paste a comment or post body to inspect the raw model output and parsed decision.",
+        "debugEmpty": "Enter content before testing.",
+        "debugEmptyOutput": "Run a test to see the parsed decision and raw output.",
+        "debugStatus": "Status:",
+        "debugAction": "Action:",
+        "debugTemplate": "Template:",
+        "debugDecision": "Parsed decision",
+        "debugRaw": "Raw model output"
+      },
+      "publishGeneration": {
+        "title": "Generate post details",
+        "enabled": "Detail generation enabled",
+        "disabled": "Detail generation disabled",
+        "maxImages": "Images to analyze",
+        "template": "Template",
+        "titleMaxChars": "Title character limit",
+        "imageSelectionMode": "Image selection mode",
+        "detailTemplate": "Detail template",
+        "titleTemplate": "Title template"
+      },
+      "imageSelectionModes": {
+        "ordered": "In order",
+        "random": "Random"
+      },
+      "contentFormat": {
+        "title": "Editor AI formatting",
+        "enabled": "Editor AI enabled",
+        "disabled": "Editor AI disabled",
+        "template": "Template",
+        "modes": {
+          "format": {
+            "enabled": "Formatting enabled",
+            "disabled": "Formatting disabled"
+          },
+          "polish": {
+            "enabled": "Polish enabled",
+            "disabled": "Polish disabled"
+          },
+          "custom": {
+            "enabled": "Content generation enabled",
+            "disabled": "Content generation disabled"
+          }
+        },
+        "continuation": {
+          "enabled": "Long generation continuation enabled",
+          "disabled": "Long generation continuation disabled",
+          "triggerChars": "Trigger characters",
+          "maxRounds": "Continuation rounds",
+          "contextChars": "Compressed context characters"
+        }
+      },
+      "jobs": {
+        "title": "AI task queue",
+        "refresh": "Refresh",
+        "loading": "Loading AI tasks",
+        "empty": "No queued or running AI tasks",
+        "cancel": "Abandon",
+        "cancelSuccess": "AI task abandoned",
+        "metrics": {
+          "active": "Queued + running",
+          "queued": "Queued",
+          "running": "Generating"
+        },
+        "statuses": {
+          "queued": "Queued",
+          "running": "Generating",
+          "completed": "Completed",
+          "failed": "Failed",
+          "canceled": "Abandoned"
+        },
+        "userLine": "User ID {user} · numeric ID {id}",
+        "queuePosition": "Queue {position}/{total}",
+        "lastToken": "Last token",
+        "tokenRate": "10s avg rate",
+        "tokenRateValue": "{value} tokens/s",
+        "tokenRatePending": "Waiting for output",
+        "notAvailable": "N/A",
+        "waiting": "Waiting",
+        "generatedTokens": "Generated tokens",
+        "estimatedTokens": "Estimated tokens",
+        "upstream": {
+          "show": "Upstream output",
+          "hide": "Hide output",
+          "title": "Live upstream output",
+          "live": "Live",
+          "history": "History",
+          "empty": "No upstream output yet",
+          "streaming": "Listening",
+          "stopped": "Stopped"
+        },
+        "time": {
+          "unknown": "No update yet",
+          "secondsAgo": "{count}s ago",
+          "minutesAgo": "{count}m ago",
+          "hoursAgo": "{count}h ago",
+          "daysAgo": "{count}d ago"
+        }
+      }
+    },
+    "accessBlockPanel": {
+      "title": "IP / UA Access Block",
+      "description": "Block requests by exact IP, CIDR, User-Agent substring, or regex. Rules are matched from an in-memory snapshot before application routes run.",
+      "refresh": "Refresh",
+      "viewLogs": "Trigger logs",
+      "disabledHint": "Access blocking is currently disabled by ACCESS_BLOCK_DISABLED.",
+      "loading": "Loading access block rules",
+      "rulesTitle": "Rules",
+      "rulesSummary": "{active}/{total} rules enabled",
+      "newRule": "New rule",
+      "empty": "No access block rules yet",
+      "editTitle": "Edit rule",
+      "createTitle": "Create rule",
+      "formHint": "Use batch paste for multiple IP, CIDR, or UA patterns. Force bypasses the self-lock guard.",
+      "kind": "Kind",
+      "matchType": "Match type",
+      "pattern": "Pattern",
+      "batch": "Batch patterns",
+      "batchPlaceholder": "One pattern per line. Empty lines and lines starting with # are ignored.",
+      "action": "Action",
+      "statusCode": "Status",
+      "redirectUrl": "Redirect URL",
+      "priority": "Priority",
+      "note": "Note",
+      "enabled": "Enabled",
+      "disabled": "Disabled",
+      "enable": "Enable",
+      "disable": "Disable",
+      "delete": "Delete",
+      "deleteConfirm": "Delete this access block rule?",
+      "force": "Force save even if this rule matches the current admin request.",
+      "cancel": "Cancel",
+      "save": "Save",
+      "batchSave": "Batch add",
+      "actionStatus": "Return {code}",
+      "actionRedirect": "Redirect to {url}",
+      "columns": {
+        "rule": "Rule",
+        "action": "Action",
+        "priority": "Priority",
+        "note": "Note",
+        "state": "State",
+        "operations": "Operations"
+      },
+      "kinds": {
+        "ip": "IP",
+        "ua": "User-Agent"
+      },
+      "matchTypes": {
+        "ip": "Exact IP",
+        "cidr": "CIDR",
+        "ua_contains": "UA contains",
+        "ua_regex": "UA regex"
+      },
+      "actions": {
+        "status": "Status code",
+        "redirect": "Redirect"
+      },
+      "toasts": {
+        "loadFailed": "Failed to load access block rules",
+        "saved": "Access block rule saved",
+        "batchSaved": "Batch completed: {created} created, {failed} failed",
+        "saveFailed": "Failed to save access block rule",
+        "deleted": "Access block rule deleted",
+        "deleteFailed": "Failed to delete access block rule",
+        "importSaved": "URL import source saved",
+        "importSaveFailed": "Failed to save URL import source",
+        "importSynced": "URL import synced: {count} rules",
+        "importSyncFailed": "Failed to sync URL import source",
+        "importDeleted": "URL import source deleted",
+        "importDeleteFailed": "Failed to delete URL import source"
+      },
+      "importedRule": "URL import",
+      "importsTitle": "IP URL imports",
+      "importsSummary": "{active}/{total} sources enabled",
+      "newImport": "New import",
+      "importsEmpty": "No URL import sources yet",
+      "editImportTitle": "Edit URL import",
+      "createImportTitle": "Create URL import",
+      "importFormHint": "Fetch a plain text IP list where each line is one IP or CIDR. Empty lines and # comments are ignored.",
+      "importUrl": "Import URL",
+      "updateIntervalMinutes": "Update interval (min)",
+      "saveImport": "Save source",
+      "syncNow": "Sync now",
+      "importForce": "Force manual sync even if the imported list matches the current admin request.",
+      "importDeleteConfirm": "Delete this URL import source and its imported rules?",
+      "importCount": "{count} rules",
+      "intervalMinutes": "{minutes} min",
+      "importColumns": {
+        "url": "URL",
+        "interval": "Interval",
+        "lastSync": "Last sync",
+        "nextSync": "Next sync"
+      },
+      "importStatuses": {
+        "pending": "Pending",
+        "success": "Success",
+        "failed": "Failed"
+      },
+      "errors": {
+        "selfLock": "This rule would block the current admin request. Enable force only if you have a recovery path.",
+        "importDisabled": "URL imports are disabled on the server.",
+        "importFetchFailed": "Unable to fetch or parse the remote IP list.",
+        "invalidRule": "The access block rule is invalid.",
+        "saveFailed": "The access block rule could not be saved.",
+        "unavailable": "Access block service is unavailable."
+      }
+    }
+  }
+}

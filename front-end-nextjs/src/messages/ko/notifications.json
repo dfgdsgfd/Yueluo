@@ -1,0 +1,43 @@
+{
+  "notification": {
+    "imageProtectionReady": {
+      "title": "Protected image package is ready"
+    },
+    "actions": {
+      "closeOverlay": "알림 상세 오버레이 닫기",
+      "closeDetail": "알림 상세 닫기"
+    },
+    "giftCardRedeemed": {
+      "title": "기프트 카드 교환 완료: {name}",
+      "fallbackTitle": "기프트 카드 교환 완료",
+      "sender": "시스템 메시지",
+      "action": "카드 코드가 발급되었습니다. 눌러서 확인하세요.",
+      "summary": "{name} · {value}",
+      "legacySummary": "눌러서 발급된 카드 코드 확인",
+      "description": "교환한 {name}이(가) 발급되었습니다.",
+      "product": "상품",
+      "faceValue": "액면가",
+      "pointsSpent": "사용 포인트",
+      "redeemedAt": "교환 시간",
+      "code": "카드 코드",
+      "copy": "카드 코드 복사",
+      "copySuccess": "카드 코드를 복사했습니다",
+      "copyFailed": "복사하지 못했습니다. 코드를 직접 선택하세요."
+    }
+  },
+  "systemNotificationPopup": {
+    "activityBadge": "활동 팝업",
+    "systemBadge": "시스템 팝업",
+    "activityFallbackTitle": "활동 알림",
+    "systemFallbackTitle": "시스템 알림",
+    "activityImageAlt": "활동 이미지",
+    "systemImageAlt": "알림 이미지",
+    "acknowledge": "확인했습니다",
+    "viewActivity": "활동 보기",
+    "viewSystem": "보기",
+    "activityDismissed": "활동을 닫았습니다",
+    "activityConfirmed": "활동을 확인했습니다",
+    "systemConfirmed": "시스템 알림을 확인했습니다",
+    "confirmFailed": "확인에 실패했습니다"
+  }
+}

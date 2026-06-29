@@ -1,0 +1,43 @@
+{
+  "notification": {
+    "imageProtectionReady": {
+      "title": "Protected image package is ready"
+    },
+    "actions": {
+      "closeOverlay": "Close notification details overlay",
+      "closeDetail": "Close notification details"
+    },
+    "giftCardRedeemed": {
+      "title": "Gift card redeemed: {name}",
+      "fallbackTitle": "Gift card redeemed",
+      "sender": "System message",
+      "action": "Your card code is ready. Open to view it.",
+      "summary": "{name} · {value}",
+      "legacySummary": "Open to view the issued card code",
+      "description": "Your {name} has been issued.",
+      "product": "Product",
+      "faceValue": "Face value",
+      "pointsSpent": "Points spent",
+      "redeemedAt": "Redeemed at",
+      "code": "Card code",
+      "copy": "Copy card code",
+      "copySuccess": "Card code copied",
+      "copyFailed": "Copy failed. Select the card code manually."
+    }
+  },
+  "systemNotificationPopup": {
+    "activityBadge": "Activity popup",
+    "systemBadge": "System popup",
+    "activityFallbackTitle": "Activity notification",
+    "systemFallbackTitle": "System notification",
+    "activityImageAlt": "Activity image",
+    "systemImageAlt": "Notification image",
+    "acknowledge": "Got it",
+    "viewActivity": "View activity",
+    "viewSystem": "View",
+    "activityDismissed": "Activity dismissed",
+    "activityConfirmed": "Activity confirmed",
+    "systemConfirmed": "System notification confirmed",
+    "confirmFailed": "Confirmation failed"
+  }
+}

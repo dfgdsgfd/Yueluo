@@ -1,0 +1,43 @@
+{
+  "notification": {
+    "imageProtectionReady": {
+      "title": "Protected image package is ready"
+    },
+    "actions": {
+      "closeOverlay": "通知詳細のオーバーレイを閉じる",
+      "closeDetail": "通知詳細を閉じる"
+    },
+    "giftCardRedeemed": {
+      "title": "ギフトカード交換完了：{name}",
+      "fallbackTitle": "ギフトカード交換完了",
+      "sender": "システムメッセージ",
+      "action": "カードコードを送信しました。クリックして確認してください。",
+      "summary": "{name} · {value}",
+      "legacySummary": "クリックして発行済みコードを確認",
+      "description": "交換した {name} が発行されました。",
+      "product": "商品",
+      "faceValue": "額面",
+      "pointsSpent": "使用ポイント",
+      "redeemedAt": "交換日時",
+      "code": "カードコード",
+      "copy": "コードをコピー",
+      "copySuccess": "カードコードをコピーしました",
+      "copyFailed": "コピーに失敗しました。手動で選択してください。"
+    }
+  },
+  "systemNotificationPopup": {
+    "activityBadge": "アクティビティ通知",
+    "systemBadge": "システム通知",
+    "activityFallbackTitle": "アクティビティ通知",
+    "systemFallbackTitle": "システム通知",
+    "activityImageAlt": "アクティビティ画像",
+    "systemImageAlt": "通知画像",
+    "acknowledge": "了解しました",
+    "viewActivity": "アクティビティを見る",
+    "viewSystem": "見る",
+    "activityDismissed": "アクティビティを閉じました",
+    "activityConfirmed": "アクティビティを確認しました",
+    "systemConfirmed": "システム通知を確認しました",
+    "confirmFailed": "確認に失敗しました"
+  }
+}

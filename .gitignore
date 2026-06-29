@@ -1,0 +1,38 @@
+# Local version check records
+.tool-version-check
+
+# Local agent rules can include private service notes.
+/AGENTS.md
+
+# Environment files may contain deployment credentials.
+.env
+.env.*
+**/.env
+**/.env.*
+*.env
+**/*.env
+!**/.env.example
+!**/*.env.example
+testdata/# backend-gin local environment.litcoffee
+
+# Local runtime output.
+.DS_Store
+**/.DS_Store
+backend-gin/.tmp-run/
+backend-gin/tmp/
+backend-gin/uploads/
+backend/uploads/
+/backend
+*.log
+*.log
+*.log
+backend-gin/internal/.DS_Store
+*.pyc
+__pycache__/
+front-end-nextjs/test-results/
+/blind-watermark-fastapi/.venv
+/blind-watermark-fastapi/.tmp-watermark-batch/
+*.log
+
+# Local release signing material.
+App/Android/.release-secrets/

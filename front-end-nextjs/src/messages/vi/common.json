@@ -1,0 +1,304 @@
+{
+  "app": {
+    "name": "Yuem",
+    "description": "Dòng nội dung media và lập kế hoạch gọn gàng theo phong cách XHS."
+  },
+  "error": {
+    "access_blocked": "Quyền truy cập đã bị chặn bởi chính sách hiện tại.",
+    "api_key_rate_limited": "Có quá nhiều lần xác thực khóa API thất bại. Vui lòng thử lại sau.",
+    "balance_center_not_configured": "API số dư của Trung tâm người dùng chưa được cấu hình.",
+    "invalid_file_recycle_setting": "Cài đặt thùng rác tệp không hợp lệ.",
+    "invalid_redis_maintenance_config": "Cấu hình bảo trì Redis không hợp lệ.",
+    "redis_unavailable": "Redis hiện không khả dụng.",
+    "redis_maintenance_busy": "Bảo trì Redis đang chạy.",
+    "redis_maintenance_failed": "Bảo trì Redis thất bại."
+  },
+  "nav": {
+    "home": "Trang chủ",
+    "friends": "Đang theo dõi",
+    "works": "Tác phẩm",
+    "create": "Tạo",
+    "messages": "Tin nhắn",
+    "profile": "Hồ sơ",
+    "assistant": "AI ghi chú",
+    "red": "RED",
+    "live": "Trực tiếp",
+    "publish": "Đăng",
+    "more": "Thêm",
+    "logout": "Đăng xuất",
+    "loggingOut": "Đang đăng xuất...",
+    "logoutSuccess": "Đã đăng xuất.",
+    "about": "Giới thiệu",
+    "watermarkInspector": "Kiểm tra watermark ẩn"
+  },
+  "settingsPage": {
+    "title": "Cài đặt hệ thống",
+    "back": "Quay lại",
+    "language": {
+      "title": "Ngôn ngữ",
+      "description": "Thay đổi ngôn ngữ giao diện."
+    },
+    "account": {
+      "title": "Tính năng tài khoản",
+      "description": "Hồ sơ xác minh và công cụ danh tính tài khoản.",
+      "verificationTitle": "Đăng ký xác minh",
+      "verificationDescription": "Gửi thông tin xác minh cá nhân hoặc chính thức",
+      "networkDiagnosticsTitle": "Chẩn đoán mạng",
+      "networkDiagnosticsDescription": "Xem IP, Geo, CDN và rủi ro riêng tư hiện tại"
+    },
+    "privacy": {
+      "title": "Cài đặt quyền riêng tư",
+      "description": "Kiểm soát việc hiển thị ngày sinh, tuổi, cung hoàng đạo và MBTI.",
+      "summary": "Đã công khai {visible}/{total} mục hồ sơ",
+      "items": {
+        "birthday": {
+          "title": "Ngày sinh",
+          "description": "Kiểm soát người khác có thể xem ngày sinh của bạn hay không."
+        },
+        "age": {
+          "title": "Tuổi",
+          "description": "Kiểm soát hồ sơ có hiển thị tuổi tính từ ngày sinh hay không."
+        },
+        "zodiac": {
+          "title": "Cung hoàng đạo",
+          "description": "Kiểm soát người khác có thể xem cung hoàng đạo của bạn hay không."
+        },
+        "mbti": {
+          "title": "MBTI",
+          "description": "Kiểm soát người khác có thể xem MBTI của bạn hay không."
+        }
+      }
+    },
+    "checkingAuth": "Đang kiểm tra trạng thái đăng nhập",
+    "loading": "Đang tải cài đặt",
+    "save": "Lưu cài đặt hệ thống",
+    "saved": "Đã lưu cài đặt hệ thống",
+    "loginRequired": {
+      "title": "Đăng nhập để cập nhật cài đặt",
+      "description": "Đăng nhập để đọc và lưu cài đặt hệ thống của bạn.",
+      "login": "Đăng nhập"
+    },
+    "errors": {
+      "load": "Không thể tải cài đặt hệ thống",
+      "save": "Không thể lưu cài đặt hệ thống"
+    },
+    "aiAutoComment": {
+      "title": "Bình luận AI tự động",
+      "description": "Khi tắt, AI sẽ không tự động bình luận vào nội dung của bạn. Lời gọi @yueai từ người dùng khác vẫn được trả lời."
+    }
+  },
+  "moreMenu": {
+    "wallet": {
+      "title": "Số dư Moon Coin",
+      "loading": "Đang đọc...",
+      "error": "Không đọc được số dư",
+      "amount": "{amount} Moon Coin",
+      "login": "Đăng nhập để xem",
+      "account": "Tài khoản {username}",
+      "detail": "Mở ví để xem chi tiết"
+    },
+    "invite": "Mời đăng ký",
+    "verification": "Đăng ký xác minh",
+    "theme": {
+      "title": "Giao diện",
+      "options": {
+        "system": "Theo hệ thống",
+        "light": "Sáng",
+        "dark": "Tối"
+      }
+    },
+    "systemSettings": "Cài đặt hệ thống",
+    "appDownload": "Tải App"
+  },
+  "tabs": {
+    "recommended": "Đề xuất",
+    "latest": "Mới nhất",
+    "hot": "Nổi bật",
+    "following": "Đang theo dõi",
+    "videoCenter": "Trung tâm video"
+  },
+  "search": {
+    "placeholder": "Tìm bài viết, tác giả hoặc thẻ",
+    "compose": "Tạo",
+    "idea": "Hỏi ý tưởng",
+    "aiBadge": "AI",
+    "submit": "Tìm kiếm",
+    "clear": "Xóa",
+    "resultFor": "Kết quả cho {keyword}"
+  },
+  "category": {
+    "all": "Tất cả",
+    "names": {
+      "beauty": "Làm đẹp",
+      "fashion": "Thời trang",
+      "food": "Ẩm thực",
+      "gaming": "Trò chơi",
+      "interest": "Sở thích",
+      "knowledge": "Kiến thức",
+      "lifestyle": "Phong cách sống",
+      "music": "Âm nhạc",
+      "novel": "Tiểu thuyết",
+      "photography": "Nhiếp ảnh",
+      "pictureSet": "Bộ ảnh",
+      "ropeBondage": "Trói bằng dây",
+      "shackles": "Xiềng xích",
+      "sports": "Thể thao",
+      "technology": "Công nghệ",
+      "travel": "Du lịch",
+      "video": "Video"
+    }
+  },
+  "video": {
+    "error": "Phát video thất bại.",
+    "loading": "Đang tải video",
+    "unavailable": "Không có URL video có thể phát."
+  },
+  "login": {
+    "title": "Đăng nhập để mở thêm nội dung",
+    "description": "Đăng nhập để tiếp tục xem, thích, lưu và bình luận.",
+    "home": "Quay lại bảng tin",
+    "modes": {
+      "login": "Đăng nhập",
+      "register": "Đăng ký"
+    },
+    "fields": {
+      "identifier": "Email hoặc tài khoản",
+      "password": "Mật khẩu",
+      "userID": "Tài khoản",
+      "nickname": "Biệt danh",
+      "email": "Email",
+      "emailCode": "Mã email",
+      "captcha": "Captcha"
+    },
+    "placeholders": {
+      "identifier": "Nhập email hoặc tài khoản",
+      "password": "Nhập mật khẩu",
+      "userID": "3-15 chữ, số hoặc dấu gạch dưới",
+      "nickname": "Nhập biệt danh",
+      "email": "Nhập email",
+      "emailCode": "Nhập mã",
+      "newPassword": "Tạo mật khẩu",
+      "captcha": "Nhập captcha"
+    },
+    "actions": {
+      "login": "Đăng nhập",
+      "loggingIn": "Đang đăng nhập...",
+      "register": "Tạo tài khoản",
+      "registering": "Đang đăng ký...",
+      "sendEmailCode": "Gửi mã",
+      "resendEmailCode": "Gửi lại",
+      "refreshCaptcha": "Làm mới captcha"
+    },
+    "success": {
+      "login": "Đăng nhập thành công.",
+      "register": "Đã tạo tài khoản."
+    },
+    "emailCodeSent": "Đã gửi mã email.",
+    "captchaAlt": "Ảnh captcha",
+    "errors": {
+      "missingLogin": "Nhập email hoặc tài khoản và mật khẩu.",
+      "missingRegister": "Nhập tài khoản, biệt danh, email và mật khẩu.",
+      "passwordLength": "Mật khẩu phải dài 6-20 ký tự.",
+      "emailInvalid": "Nhập địa chỉ email hợp lệ.",
+      "emailCodeRequired": "Nhập mã xác minh email.",
+      "captchaRequired": "Nhập captcha.",
+      "loginFailed": "Email/tài khoản hoặc mật khẩu không đúng.",
+      "registerFailed": "Đăng ký thất bại. Kiểm tra thông tin và thử lại.",
+      "emailCodeFailed": "Không thể gửi mã email.",
+      "captchaLoadFailed": "Không thể tải captcha.",
+      "geetestUnavailable": "Không thể đăng ký bằng mật khẩu khi GeeTest đang bật."
+    },
+    "userCenterLogin": "Đăng nhập",
+    "redirecting": "Đang mở Trung tâm người dùng...",
+    "loadingConfig": "Đang tải cấu hình xác thực...",
+    "configLoadFailed": "Không thể tải cấu hình xác thực. Hệ thống sẽ dùng cổng đăng nhập mặc định.",
+    "oauthOnly": "Đăng nhập để mở thêm nội dung hấp dẫn.",
+    "oauthPrompt": "Đăng nhập để tiếp tục trải nghiệm đầy đủ.",
+    "oauthSuccess": "Đăng nhập OAuth2 thành công",
+    "oauthStatusFailed": "Không thể xác nhận trạng thái đăng nhập OAuth2. Vui lòng thử lại.",
+    "nativeStateFailed": "Yêu cầu đăng nhập ứng dụng đã hết hạn hoặc không khớp. Vui lòng thử lại.",
+    "nativeCancelled": "Đăng nhập đã bị hủy.",
+    "nativeCancelledWithDetail": "Đăng nhập đã bị hủy: {detail}",
+    "nativeExchangeFailed": "Ứng dụng không thể hoàn tất đăng nhập. Vui lòng thử lại.",
+    "nativeExchangeFailedWithDetail": "Ứng dụng không thể hoàn tất đăng nhập: {detail}",
+    "nativeBackAgain": "Nhấn Quay lại lần nữa để thoát",
+    "nativeOffline": "Bạn đang ngoại tuyến. Yuem sẽ tự động kết nối lại.",
+    "nativeCallbackTitle": "Quay lại Yuem",
+    "nativeCallbackDescription": "Ủy quyền đã hoàn tất. Hãy mở ứng dụng Yuem để tiếp tục.",
+    "nativeCallbackOpen": "Mở Yuem",
+    "nativeCallbackInvalid": "Liên kết ủy quyền không hợp lệ hoặc đã hết hạn.",
+    "nativeStatus": {
+      "title": "Đăng nhập trong ứng dụng chưa hoàn tất",
+      "callbackReceived": "Ứng dụng đã nhận callback từ trình duyệt và đang xử lý trạng thái đăng nhập.",
+      "stateFailed": "Yêu cầu đăng nhập đã hết hạn hoặc không khớp với phiên ứng dụng hiện tại. Vui lòng đăng nhập lại.",
+      "oauthError": "Trung tâm người dùng trả về lỗi ủy quyền.",
+      "missingCode": "Callback từ trình duyệt thiếu ticket đăng nhập.",
+      "tokenExchangeFailed": "Ứng dụng không thể đổi token đăng nhập.",
+      "tokenStorageFailed": "Ứng dụng đã nhận token nhưng không thể lưu trạng thái đăng nhập cục bộ.",
+      "profileFailed": "Ứng dụng đã lưu token nhưng không thể xác minh người dùng hiện tại.",
+      "signedIn": "Trạng thái đăng nhập trong ứng dụng đã được lưu.",
+      "unknown": "Đăng nhập trong ứng dụng thất bại vì lý do không xác định.",
+      "detail": "Chi tiết: {detail}"
+    }
+  },
+  "loginUnlock": {
+    "title": "Đăng nhập để mở thêm nội dung",
+    "description": "Đăng nhập để tiếp tục xem, thích, lưu và tham gia bình luận.",
+    "login": "Đăng nhập",
+    "later": "Để sau"
+  },
+  "status": {
+    "refresh": "Làm mới",
+    "refreshed": "Đã làm mới bảng tin",
+    "liked": "Đã thích",
+    "unliked": "Đã bỏ thích"
+  },
+  "locale": {
+    "trigger": "Đổi ngôn ngữ",
+    "label": "Ngôn ngữ",
+    "options": {
+      "en": "English",
+      "zh-CN": "简体中文",
+      "zh-TW": "繁體中文",
+      "vi": "Tiếng Việt",
+      "ja": "日本語",
+      "ko": "한국어"
+    }
+  },
+  "maintenance": {
+    "serviceMode": "Service Mode / Chế độ bảo trì",
+    "title": "Hệ thống đang bảo trì",
+    "defaultMessage": "Dịch vụ đang được bảo trì. Vui lòng quay lại sau.",
+    "estimatedRemaining": "Thời gian còn lại dự kiến",
+    "unknownTime": "Đang xác nhận",
+    "entryHint": "Hãy dùng liên kết chuyên dụng do quản trị viên cung cấp để vào chế độ dịch vụ.",
+    "edgeLabel": "Service Mode / Chế độ bảo trì",
+    "entry": {
+      "eyebrow": "SERVICE ENTRY",
+      "title": "Đang vào chế độ dịch vụ",
+      "checking": "Đang kiểm tra mã vào và chuẩn bị phiên...",
+      "success": "Đã xác minh lối vào. Đang mở trang.",
+      "error": "Lối vào không hợp lệ hoặc đã hết hạn. Vui lòng liên hệ quản trị viên."
+    },
+    "closeEdge": "Đóng viền bảo trì"
+  },
+  "appDownload": {
+    "metadataTitle": "Tải App",
+    "backHome": "Về trang chủ",
+    "badge": "Tải App",
+    "official": "Tải chính thức",
+    "title": "Yuem App",
+    "description": "Chọn gói cài đặt phù hợp với thiết bị của bạn. Liên kết tải, phiên bản và tên ứng dụng được quản lý trong cài đặt hệ thống.",
+    "version": "Phiên bản {version}",
+    "build": "Bản dựng {build}",
+    "size": "Dung lượng {size}",
+    "androidFastLabel": "Android bản siêu nhẹ",
+    "featuresTitle": "Tính năng bản siêu nhẹ",
+    "featureTinySize": "Dung lượng cực nhỏ ≤ 1 MB",
+    "featureSameWebStyle": "Giao diện giống hệt bản web",
+    "featureThirdPartyLogin": "Hỗ trợ đăng nhập Google, Discord, Steam và bên thứ ba khác",
+    "featureNativeBridge": "Tự động quay lại App sau khi đăng nhập bằng trình duyệt",
+    "download": "Tải xuống",
+    "unavailable": "Chưa mở tải xuống"
+  }
+}

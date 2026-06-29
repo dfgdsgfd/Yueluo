@@ -1,0 +1,197 @@
+{
+  "walletPage": {
+    "balance": {
+      "defaultAccount": "Moon Coin account",
+      "loading": "Loading...",
+      "errorTitle": "Could not read Moon Coin balance",
+      "unit": "Moon Coins",
+      "account": "Account {account}",
+      "title": "Moon Coin balance"
+    },
+    "errors": {
+      "partial": "Some wallet data is unavailable:",
+      "loadFailed": "Wallet data request failed",
+      "balanceCenterNotConfigured": "The User Center balance API is not configured.",
+      "httpStatus": "HTTP {status}",
+      "businessCode": "Business code {code}",
+      "requestId": "Request ID {requestId}",
+      "sources": {
+        "balanceConfig": "Moon Coin configuration",
+        "rechargeConfig": "Recharge configuration",
+        "localPoints": "Points balance",
+        "userBalance": "Moon Coin balance",
+        "withdrawOrders": "Bills",
+        "balanceOrders": "Purchase history",
+        "pointsOverview": "Points center",
+        "pointsLogs": "Points history"
+      }
+    },
+    "title": "Wallet",
+    "subtitle": "Moon Coins, points, gift cards, and bills",
+    "loading": "Loading wallet data",
+    "actions": {
+      "back": "Go back",
+      "backHome": "Back home",
+      "refresh": "Refresh",
+      "recharge": "Recharge",
+      "open": "Open"
+    },
+    "login": {
+      "title": "Sign in to view wallet",
+      "description": "Wallet, recharge, and purchase records require your current account.",
+      "login": "Sign in"
+    },
+    "points": {
+      "title": "Points center",
+      "todaySummary": "Today {earned} / {cap}",
+      "available": "Available",
+      "todayEarned": "Earned today",
+      "dailyCap": "Daily cap",
+      "withdrawBonus": "Withdrawal arrival bonus {percent}%",
+      "expiresAt": "Expires {date}"
+    },
+    "tasks": {
+      "title": "Daily tasks",
+      "empty": "No daily tasks",
+      "done": "Completed",
+      "inProgress": "In progress",
+      "daily": "Daily task",
+      "once": "One-time task",
+      "progress": "Progress"
+    },
+    "giftCards": {
+      "title": "Gift card redemption",
+      "empty": "No gift cards available",
+      "redeemSuccess": "{name} redeemed. The card code was sent to system messages.",
+      "redeemFailed": "Redemption failed",
+      "defaultFaceValue": "Gift card",
+      "meta": "{value} · Stock {stock}"
+    },
+    "redemptions": {
+      "title": "Redemption history",
+      "total": "{total} redemptions",
+      "loading": "Loading redemption history",
+      "loadFailed": "Failed to load redemption history",
+      "empty": "No redemption history",
+      "meta": "{value} · {points} points · {status}",
+      "status": {
+        "completed": "Completed",
+        "other": "Processing"
+      },
+      "pageSummary": "Page {page}/{pages} · {total} total",
+      "previous": "Previous page",
+      "next": "Next page",
+      "copy": "Copy card code",
+      "copySuccess": "Card code copied",
+      "copyFailed": "Copy failed. Select the card code manually.",
+      "codeUnavailable": "Card code unavailable"
+    },
+    "recharge": {
+      "title": "Recharge",
+      "customAmount": "Custom amounts supported",
+      "fixedOptions": "Fixed options",
+      "balanceDisabled": "Balance center is disabled",
+      "empty": "No recharge options",
+      "bonus": "Bonus {amount} Moon Coins",
+      "noBonus": "No bonus",
+      "range": "{min}-{max} Moon Coins",
+      "min": "From {amount} Moon Coins",
+      "max": "Up to {amount} Moon Coins"
+    },
+    "bills": {
+      "title": "Bills",
+      "empty": "No bill records",
+      "defaultType": "Bill",
+      "types": {
+        "moonCoin": "Transfer to Moon Coins",
+        "cash": "Cash withdrawal"
+      }
+    },
+    "purchases": {
+      "title": "Purchase history",
+      "empty": "No purchase records",
+      "fallbackTitle": "Content #{id}",
+      "defaultType": "Content purchase"
+    },
+    "pointsLogs": {
+      "title": "Points history",
+      "empty": "No points records",
+      "balanceAfter": "Points balance {points}",
+      "defaultType": "Points record",
+      "types": {
+        "giftCardRedeem": "Gift card redemption",
+        "achievement": "Achievement reward",
+        "task": "Daily task"
+      }
+    },
+    "money": {
+      "moonCoinAmount": "{amount} Moon Coins",
+      "points": "{amount} pts",
+      "pointsPlus": "+{amount} pts"
+    },
+    "time": {
+      "justNow": "Just now"
+    }
+  },
+  "adminWithdraw": {
+    "title": "Withdrawal review",
+    "description": "Review, reject, and mark creator withdrawal orders as paid.",
+    "orders": "Orders",
+    "searchPlaceholder": "Search nickname or account",
+    "search": "Search",
+    "allStatuses": "All statuses",
+    "loading": "Loading withdrawal orders",
+    "empty": "No withdrawal orders",
+    "userFallback": "User {id}",
+    "amount": "Amount",
+    "type": "Type",
+    "wechatCode": "WeChat payment code",
+    "alipayCode": "Alipay payment code",
+    "noPaymentCode": "No payment code saved",
+    "previewHint": "Click the thumbnail to preview",
+    "confirmAction": "Confirm {action} for this withdrawal order?",
+    "actionCompleted": "Withdrawal order: {action}",
+    "actions": {
+      "approve": "Approve",
+      "reject": "Reject",
+      "payout": "Mark paid"
+    },
+    "types": {
+      "cash": "Cash",
+      "moonCoin": "Moon Coin"
+    },
+    "statuses": {
+      "pending": "Pending",
+      "approved": "Approved",
+      "rejected": "Rejected",
+      "paid": "Paid",
+      "unknown": "Unknown"
+    }
+  },
+  "adminBalanceTransactions": {
+    "title": "External balance transaction audit",
+    "description": "Review remote Moon Coin mutations. Unknown results remain locked for manual investigation.",
+    "refresh": "Refresh",
+    "loading": "Loading balance transactions",
+    "operation": "Operation",
+    "oauth2Id": "OAuth2 ID",
+    "amount": "Amount",
+    "status": "Status",
+    "created": "Created",
+    "action": "Action",
+    "compensate": "Compensate",
+    "confirmCompensation": "Reverse this applied transaction at the user center?",
+    "compensated": "Transaction compensated.",
+    "empty": "No balance transactions",
+    "statuses": {
+      "prepared": "Prepared",
+      "requesting": "Requesting",
+      "applied": "Applied remotely",
+      "local_committed": "Committed locally",
+      "compensating": "Compensating",
+      "compensated": "Compensated",
+      "unknown": "Unknown",
+      "failed": "Failed"
+    }
+  }
+}

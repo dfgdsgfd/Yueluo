@@ -1,0 +1,1461 @@
+{
+  "adminMaintenance": {
+    "loadFailed": "Không tải được cấu hình bảo trì",
+    "saved": "Đã lưu cấu hình bảo trì",
+    "saveFailed": "Không lưu được cấu hình bảo trì",
+    "rotated": "Đã cập nhật lối vào bảo trì",
+    "rotateFailed": "Không cập nhật được lối vào bảo trì",
+    "copied": "Đã sao chép lối vào bảo trì",
+    "loading": "Đang tải cấu hình bảo trì",
+    "title": "Chế độ bảo trì",
+    "description": "Khi bật, lối vào thường sẽ hiển thị hộp thoại đếm ngược; lối vào chuyên dụng có thể bỏ qua và tự đăng nhập UID đã đặt.",
+    "refresh": "Làm mới",
+    "enabled": "Bật chế độ bảo trì",
+    "enabledHint": "API công khai trả về trạng thái bảo trì, còn trang quản trị và lối vào dịch vụ vẫn khả dụng.",
+    "message": "Thông báo bảo trì",
+    "autoLoginUid": "UID tự đăng nhập",
+    "estimatedEnd": "Thời gian kết thúc dự kiến",
+    "serviceEntry": "Lối vào dịch vụ ngẫu nhiên",
+    "copyEntry": "Sao chép lối vào",
+    "rotateEntry": "Tạo lại lối vào",
+    "save": "Lưu cấu hình",
+    "borderSettings": "Viền bảo trì",
+    "borderSettingsHint": "Hiển thị viền cảnh báo sau khi vào bằng liên kết chế độ dịch vụ.",
+    "borderVisible": "Hiển thị viền",
+    "borderDismissible": "Cho phép đóng",
+    "borderColor": "Màu viền",
+    "borderOpacity": "Độ trong suốt {value}%"
+  },
+  "adminDatabase": {
+    "loadFailed": "Không tải được thông tin cơ sở dữ liệu",
+    "repairConfirm": "Chạy sửa chữa không phá hủy? Chỉ thay chỉ mục sau khi chỉ mục duy nhất tạm thời được xác minh; không xóa hoặc gộp dữ liệu nghiệp vụ.",
+    "repairDone": "Đã hoàn tất sửa chữa cơ sở dữ liệu",
+    "repairBlocked": "Đã sửa các mục an toàn; còn {count} mục bị chặn do dữ liệu trùng.",
+    "duplicateSummary": "Có {groups} nhóm khóa trùng với {rows} hàng dư; hãy xử lý thủ công rồi thử lại.",
+    "repairFailed": "Sửa chữa cơ sở dữ liệu thất bại",
+    "loading": "Đang tải thông tin cơ sở dữ liệu",
+    "title": "Quản lý cơ sở dữ liệu",
+    "description": "Kiểm tra kích thước bảng, kích thước cột ước tính, chỉ mục còn thiếu và chạy sửa chữa an toàn một lần nhấp.",
+    "refresh": "Làm mới",
+    "driver": "Driver",
+    "database": "Cơ sở dữ liệu",
+    "tables": "Số bảng",
+    "size": "Tổng dung lượng",
+    "tableSizes": "Kích thước bảng",
+    "searchTables": "Tìm bảng",
+    "rows": "hàng",
+    "columnsFor": "Cột của {table}",
+    "columns": "Cột",
+    "estimatedColumnSize": "Dung lượng cột ước tính: {size}",
+    "indexAudit": "Kiểm tra chỉ mục / schema",
+    "indexAuditDescription": "Kiểm tra mục còn thiếu theo GORM model và registry chỉ mục mong muốn.",
+    "repair": "Sửa một lần nhấp",
+    "noIssues": "Không thấy trường hoặc chỉ mục còn thiếu",
+    "nullable": "Cho phép NULL",
+    "notNullable": "NOT NULL",
+    "vacuumSaved": "Đã lưu cấu hình tối ưu tự động",
+    "vacuumSaveFailed": "Lưu cấu hình tối ưu tự động thất bại",
+    "vacuumRunConfirm": "Chạy VACUUM ANALYZE {table}?",
+    "vacuumRunDone": "VACUUM ANALYZE đã hoàn tất",
+    "vacuumRunFailed": "VACUUM ANALYZE thất bại",
+    "vacuumTitle": "Tối ưu tự động VACUUM ANALYZE",
+    "vacuumDescription": "Chạy VACUUM ANALYZE thường trên các bảng PostgreSQL đã chọn để cập nhật thống kê.",
+    "vacuumRunSelected": "Tối ưu bảng hiện tại",
+    "vacuumUnsupported": "Cơ sở dữ liệu này không hỗ trợ cấu hình VACUUM ANALYZE",
+    "vacuumEnabled": "Bật tối ưu tự động",
+    "vacuumInterval": "Khoảng cách (giờ)",
+    "vacuumSave": "Lưu cấu hình tự động",
+    "vacuumLastResult": "Lần chạy gần nhất",
+    "vacuumNextRun": "Lần chạy tiếp theo",
+    "vacuumLastRun": "Lần chạy trước",
+    "vacuumLastDuration": "Thời lượng trước",
+    "vacuumNoResult": "Chưa có kết quả chạy"
+  },
+  "adminPortal": {
+    "brand": {
+      "name": "Cộng đồng Yuem",
+      "subtitle": "Quản trị vận hành"
+    },
+    "loading": "Đang mở trang quản trị",
+    "mediaLibrary": {
+      "unrestrictedUploadHint": "Hỗ trợ mọi loại tệp và phần mở rộng."
+    },
+    "login": {
+      "title": "Đăng nhập quản trị",
+      "subtitle": "Trang vận hành Cộng đồng Yuem",
+      "username": "Tài khoản",
+      "usernamePlaceholder": "admin",
+      "password": "Mật khẩu",
+      "submit": "Đăng nhập quản trị",
+      "success": "Đã đăng nhập quản trị",
+      "errors": {
+        "failed": "Đăng nhập thất bại. Vui lòng thử lại.",
+        "forbidden": "Phiên hiện tại không có quyền quản trị.",
+        "invalidCredentials": "Tài khoản hoặc mật khẩu không đúng.",
+        "locked": "IP này đăng nhập sai quá nhiều lần. Hãy thử lại sau {minutes} phút.",
+        "missingParams": "Vui lòng nhập tài khoản và mật khẩu."
+      }
+    },
+    "layout": {
+      "adminRole": "Quản trị viên",
+      "backHome": "Về trang chủ",
+      "backToSite": "Trở lại trang chính",
+      "breadcrumb": "Trang chủ / {title}",
+      "closeMenu": "Đóng menu",
+      "closeMenuOverlay": "Đóng lớp phủ menu",
+      "logout": "Đăng xuất",
+      "openMenu": "Mở menu",
+      "refresh": "Làm mới",
+      "searchPlaceholder": "Tìm người dùng, nội dung hoặc mô-đun..."
+    },
+    "userManagement": {
+      "title": "Quản lý điểm người dùng",
+      "fields": {
+        "uid": "UID",
+        "oauth2Id": "OAuth2 ID",
+        "points": "Điểm"
+      },
+      "actions": {
+        "managePoints": "Quản lý điểm",
+        "close": "Đóng",
+        "cancel": "Hủy",
+        "save": "Lưu điều chỉnh",
+        "saving": "Đang lưu"
+      },
+      "operation": {
+        "label": "Kiểu điều chỉnh",
+        "add": "Cộng",
+        "deduct": "Trừ",
+        "set": "Đặt số dư"
+      },
+      "amount": {
+        "change": "Số điểm thay đổi",
+        "target": "Số dư mục tiêu",
+        "placeholder": "Nhập số điểm"
+      },
+      "reason": {
+        "label": "Lý do (không bắt buộc)",
+        "placeholder": "Thêm ghi chú vận hành cho sổ điểm"
+      },
+      "validation": {
+        "invalidAmount": "Vui lòng nhập số điểm hợp lệ."
+      },
+      "messages": {
+        "saved": "Đã cập nhật điểm. Số dư mới: {points}"
+      },
+      "batchGenerate": "Tạo hàng loạt",
+      "batchGenerating": "Đang tạo",
+      "batchGenerateCount": "Số lượng",
+      "batchGenerateSuccess": "Đã tạo {count} người dùng."
+    },
+    "navigation": {
+      "sections": {
+        "overview": "Tổng quan",
+        "users": "Người dùng & Quyền",
+        "content": "Vận hành nội dung",
+        "risk": "Kiểm duyệt & An toàn",
+        "creator": "Nhà sáng tạo & Tài chính",
+        "growth": "Đề xuất & Tăng trưởng",
+        "notice": "Thông báo",
+        "system": "Ứng dụng & Hệ thống"
+      },
+      "items": {
+        "dashboard": "Bảng vận hành",
+        "queues": "Trạng thái hàng đợi",
+        "logs": "Trung tâm nhật ký",
+        "observability": "Giám sát hệ thống",
+        "database": "Quản lý cơ sở dữ liệu",
+        "maintenance": "Chế độ bảo trì",
+        "operations": "Bảng điều khiển vận hành",
+        "withdraw": "Duyệt rút tiền",
+        "invite": "Tăng trưởng lời mời",
+        "coupon": "Vận hành phiếu giảm giá",
+        "points": "Vận hành điểm",
+        "onboardingSettings": "Cài đặt hướng dẫn",
+        "backendApi": "Xem Backend API",
+        "systemUpdate": "Cập nhật hệ thống",
+        "componentCheck": "Kiểm tra thành phần",
+        "hiddenWatermarkAccess": "Quyền watermark ẩn",
+        "settings": "Cài đặt hệ thống",
+        "aiAgent": "AI Agent",
+        "accessBlock": "Chặn truy cập"
+      },
+      "resources": {
+        "admins": "Quản trị viên",
+        "announcements": "Quản lý thông báo",
+        "app-versions": "Phiên bản ứng dụng",
+        "audit": "Duyệt xác minh",
+        "banned-word-categories": "Nhóm từ cấm",
+        "banned-words": "Từ cấm",
+        "categories": "Quản lý danh mục",
+        "collections": "Lịch sử lưu",
+        "comments": "Quản lý bình luận",
+        "users": "Quản lý người dùng",
+        "feedback": "Phản hồi người dùng",
+        "follows": "Quan hệ theo dõi",
+        "licenses": "Mã giấy phép",
+        "likes": "Lịch sử thích",
+        "media-library": "Thư viện phương tiện",
+        "file-recycle-bin": "Thùng rác tệp",
+        "notification-templates": "Mẫu thông báo",
+        "open-apis": "API mở",
+        "posts": "Quản lý nội dung",
+        "posts-quality": "Chất lượng nội dung",
+        "post-configs": "Quy tắc đề xuất bài viết",
+        "quality-reward-settings": "Phần thưởng chất lượng",
+        "content-review": "Kiểm duyệt nội dung",
+        "reports": "Xử lý báo cáo",
+        "sessions": "Quản lý phiên",
+        "system-notifications": "Thông báo hệ thống",
+        "tags": "Quản lý thẻ",
+        "user-configs": "Quy tắc đề xuất người dùng",
+        "user-toolbar": "Thanh công cụ người dùng",
+        "ai-moderation-logs": "Nhật ký kiểm duyệt AI"
+      }
+    },
+    "onboardingSettingsPanel": {
+      "title": "Cài đặt hướng dẫn",
+      "description": "Cấu hình bật hướng dẫn, cho phép bỏ qua, lựa chọn sở thích và nội dung giới thiệu điểm",
+      "configTitle": "Cấu hình hướng dẫn",
+      "save": "Lưu",
+      "saved": "Đã lưu cài đặt hướng dẫn",
+      "loadingSettings": "Đang tải cài đặt hướng dẫn",
+      "emptySettings": "Chưa có cài đặt hướng dẫn",
+      "resetTitle": "Đặt lại trạng thái hướng dẫn của người dùng",
+      "resetDescription": "Xóa cờ hoàn thành hướng dẫn của mọi người dùng để người chưa có bản ghi hoàn thành trong cơ sở dữ liệu sẽ thấy lại quy trình hướng dẫn.",
+      "resetAction": "Đặt lại tất cả",
+      "resetting": "Đang đặt lại",
+      "resetConfirm": "Đặt lại trạng thái hoàn thành hướng dẫn cho tất cả người dùng?",
+      "resetDone": "Đã đặt lại trạng thái hướng dẫn của người dùng",
+      "resetSingleTitle": "Đặt lại một người dùng",
+      "resetSingleDescription": "Nhập ID số, user ID hoặc XiSe ID để chỉ người dùng đó thấy lại hướng dẫn.",
+      "resetSingleLabel": "Định danh người dùng",
+      "resetSinglePlaceholder": "User ID, ID số hoặc XiSe ID",
+      "resetSingleAction": "Đặt lại người dùng",
+      "resetSingleConfirm": "Đặt lại trạng thái hoàn thành hướng dẫn cho {userId}?",
+      "resetSingleDone": "Đã đặt lại trạng thái hướng dẫn của một người dùng",
+      "resetSingleMissing": "Hãy nhập định danh người dùng trước.",
+      "fields": {
+        "enabled": "Bật quy trình hướng dẫn",
+        "allowSkip": "Cho phép bỏ qua hướng dẫn",
+        "interestOptions": "Lựa chọn sở thích trong hướng dẫn",
+        "customFields": "Trường tùy chỉnh của hướng dẫn",
+        "pointsIntroTitle": "Tiêu đề giới thiệu điểm",
+        "pointsIntroSummary": "Tóm tắt giới thiệu điểm",
+        "pointsIntroDetail": "Chi tiết giới thiệu điểm",
+        "avatarEnabled": "Hiển thị thiết lập avatar",
+        "avatarRequired": "Bắt buộc avatar",
+        "backgroundEnabled": "Hiển thị thiết lập ảnh nền",
+        "backgroundRequired": "Bắt buộc ảnh nền",
+        "nameEnabled": "Hiển thị thiết lập tên",
+        "nameRequired": "Bắt buộc tên",
+        "signatureEnabled": "Hiển thị thiết lập chữ ký",
+        "signatureRequired": "Bắt buộc chữ ký",
+        "interestsEnabled": "Hiển thị sở thích",
+        "interestsRequired": "Bắt buộc sở thích",
+        "minInterests": "Số sở thích tối thiểu",
+        "resultTitle": "Tiêu đề hộp hoàn tất",
+        "resultSavedText": "Nội dung lưu khi không có điểm",
+        "walletLabel": "Nhãn nút trung tâm điểm",
+        "walletUrl": "Liên kết trung tâm điểm"
+      },
+      "hints": {
+        "enabled": "Khi bật, người dùng đã đăng nhập chưa có bản ghi hoàn thành hướng dẫn trong cơ sở dữ liệu sẽ thấy hộp thoại hướng dẫn.",
+        "allowSkip": "Khi tắt, người dùng phải hoàn thành hướng dẫn và không thể bỏ qua.",
+        "interestOptions": "Dùng danh sách bên dưới để thêm, xóa hoặc sửa sở thích. Bạn cũng có thể dán mỗi dòng một mục hoặc JSON như [\"Bondage\", \"Handcuffs\", \"Leg irons\"].",
+        "customFields": "Hỗ trợ JSON hoặc văn bản nhiều dòng để mở rộng biểu mẫu hướng dẫn.",
+        "pointsIntroDetail": "Hiển thị khi người dùng xem chi tiết sau khi hoàn thành hướng dẫn.",
+        "minInterests": "Chỉ áp dụng khi hiển thị sở thích và đặt là bắt buộc.",
+        "walletUrl": "Đích chuyển tới của nút điểm trong hộp hoàn tất. Có thể dùng đường dẫn nội bộ hoặc URL đầy đủ."
+      },
+      "addInterest": "Thêm sở thích",
+      "removeInterest": "Xóa sở thích",
+      "interestPlaceholder": "Nhập tên sở thích",
+      "emptyInterestOptions": "Chưa có tùy chọn sở thích. Hãy thêm một mục.",
+      "addSampleInterests": "Thêm mẫu",
+      "sampleInterests": {
+        "bondage": "Bondage",
+        "handcuffs": "Handcuffs",
+        "legIrons": "Leg irons"
+      }
+    },
+    "hiddenWatermarkAccessPanel": {
+      "title": "Quyền watermark ẩn",
+      "description": "Kiểm soát người dùng thường có thể dùng công cụ kiểm tra watermark ẩn ở giao diện trước hay không",
+      "loading": "Đang tải quyền watermark ẩn",
+      "save": "Lưu",
+      "saved": "Đã lưu quyền watermark ẩn",
+      "saving": "Đang lưu",
+      "on": "Bật",
+      "off": "Tắt",
+      "watermarkConfig": {
+        "title": "Cấu hình watermark ẩn",
+        "reference": "Theo watermark_zero: tác giả khuyến nghị mạnh WithGolay. D1/D2 cao hơn giúp chống nén tốt hơn nhưng giảm chất lượng ảnh; block nhỏ hơn tăng dung lượng nhưng có thể thêm nhiễu. Kích thước block lẻ được làm tròn lên số chẵn, tối thiểu 4.",
+        "runtime": {
+          "payload": "Payload hiện tại",
+          "payloadValue": "{bytes} byte / {bits} bit",
+          "format": "Định dạng payload",
+          "engine": "Chế độ bộ máy",
+          "referenceRecovery": "Khôi phục ảnh chụp bằng ảnh tham chiếu"
+        },
+        "fields": {
+          "enabled": "Bật watermark ẩn",
+          "protectedOnly": "Chỉ đóng watermark cho nội dung bảo vệ",
+          "includeUid": "Ghi UID nội bộ",
+          "includeUserId": "Ghi ID người dùng công khai",
+          "includeUsername": "Ghi username hoặc biệt danh",
+          "includeTime": "Ghi thời gian tải lên UTC",
+          "includeFileHash": "Ghi hash tệp gốc",
+          "includeCustom": "Ghi dấu tùy chỉnh",
+          "customText": "Dấu tùy chỉnh",
+          "coefficientMode": "Chế độ hệ số",
+          "eccMode": "Sửa lỗi",
+          "golaySeed": "Golay Shuffle Seed",
+          "blockWidth": "Độ rộng block",
+          "blockHeight": "Độ cao block",
+          "d1": "Cường độ D1",
+          "d2": "Cường độ D2",
+          "engine": "Bộ xử lý watermark",
+          "remotePasswordWm": "Mật khẩu watermark",
+          "remotePasswordImg": "Mật khẩu ảnh",
+          "remoteProfile": "Cấu hình watermark từ xa",
+          "remoteD1": "D1 tùy chỉnh",
+          "remoteD2": "D2 tùy chỉnh",
+          "protectionMaxDimension": "Cạnh tối đa của ảnh bảo vệ",
+          "protectionAllowedFailurePercent": "Tỷ lệ lỗi cho phép của gói bảo vệ",
+          "protectionOutputMode": "Đầu ra ảnh bảo vệ",
+          "protectionQuality": "Chất lượng WebP bảo vệ",
+          "remoteTimeout": "Thời gian chờ yêu cầu từ xa (giây)",
+          "remoteOperationTimeout": "Thời gian chờ xử lý từ xa (giây)",
+          "remoteEngine": "Thuật toán từ xa"
+        },
+        "hints": {
+          "enabled": "Khi tắt, tải lên thường không ghi watermark ẩn; gói bảo vệ vẫn bắt buộc ghi watermark truy vết.",
+          "protectedOnly": "Khi bật, ảnh tải lên được lưu sạch và watermark chỉ được nhúng lúc tạo gói tải xuống bảo vệ cho người mua.",
+          "includeUid": "Ghi UID nội bộ để truy vết ổn định nhất.",
+          "includeUserId": "Ghi ID công khai để đối chiếu thủ công.",
+          "includeUsername": "Ghi nickname hoặc username, rủi ro riêng tư cao hơn nên mặc định tắt.",
+          "includeTime": "Ghi thời điểm tạo watermark theo UTC.",
+          "includeFileHash": "Ghi một phần hash ảnh gốc để kiểm tra nguồn.",
+          "includeCustom": "Lưu dấu tùy chỉnh bên dưới vào cơ sở dữ liệu truy vết, không nhúng vào token trong ảnh.",
+          "customText": "Tối đa 255 ký tự trong cơ sở dữ liệu truy vết.",
+          "coefficientMode": "WithD1 nhẹ hơn; WithD1D2 thường ổn định hơn nhưng nặng hơn.",
+          "eccMode": "Tác giả khuyến nghị mạnh WithGolay; WithoutECC chỉ dành cho tương thích hoặc thử nghiệm.",
+          "golaySeed": "Seed xáo trộn xác định cho WithGolay; khi trích xuất phải dùng cùng seed.",
+          "blockShape": "Block nhỏ tăng dung lượng nhưng có thể tăng nhiễu. Thư viện yêu cầu số chẵn và tối thiểu 4.",
+          "d1d2": "Giá trị cao chống tấn công/nén tốt hơn nhưng có thể ảnh hưởng chất lượng ảnh.",
+          "engine": "Chọn thuật toán Go cục bộ hoặc dịch vụ FastAPI nội bộ.",
+          "remotePasswordWm": "password_wm của blind_watermark. Nhúng và trích xuất phải dùng cùng giá trị.",
+          "remotePasswordImg": "password_img của blind_watermark. Nhúng và trích xuất phải dùng cùng giá trị.",
+          "remoteBlockShape": "Kích thước block cho blind_watermark từ xa. Block nhỏ tăng dung lượng nhưng có thể ảnh hưởng chất lượng ảnh.",
+          "remoteD1D2": "Độ mạnh D1/D2 cho blind_watermark từ xa. Giá trị cao chống nén tốt hơn nhưng có thể giảm chất lượng ảnh.",
+          "remoteProfile": "Thích ứng bắt đầu ảnh thường ở 18/8; ảnh bảo vệ bắt đầu ở 24/12 để chống nén tốt hơn.",
+          "protectionMaxDimension": "Mặc định 2048; đặt 0 để giữ kích thước gốc.",
+          "protectionAllowedFailurePercent": "Làm tròn xuống theo tổng số ảnh. Ví dụ 20% trên 10 ảnh cho phép bỏ qua tối đa 2 ảnh. Ảnh bị bỏ qua không được ghi vào ZIP và phải có ít nhất 1 ảnh thành công.",
+          "protectionOutputMode": "WebP không mất dữ liệu ưu tiên chất lượng; WebP chất lượng cao giảm dung lượng.",
+          "protectionQuality": "Chỉ dùng cho chế độ WebP chất lượng cao.",
+          "remoteTimeout": "Thời gian tối đa backend Go chờ dịch vụ watermark từ xa; thay đổi có hiệu lực ở tác vụ tiếp theo.",
+          "remoteOperationTimeout": "Thời gian chờ cho mỗi lần xử lý gửi tới worker FastAPI; nên thấp hơn thời gian chờ yêu cầu từ xa một chút.",
+          "remoteEngine": "Chế độ tự động thử blind_watermark trước, rồi chuyển sang mã ngắn DWT-DCT-SVD khi thất bại."
+        },
+        "options": {
+          "coefficientMode": {
+            "d1d2": "WithD1D2 (ổn định hơn)",
+            "d1": "WithD1 (nhanh hơn)"
+          },
+          "eccMode": {
+            "golay": "WithGolay (khuyến nghị mạnh)",
+            "none": "WithoutECC (thử nghiệm)"
+          },
+          "engine": {
+            "auto": "Tự động (ưu tiên từ xa)",
+            "local": "Cục bộ",
+            "remote": "Từ xa"
+          },
+          "remoteProfile": {
+            "adaptive": "Thích ứng cân bằng (bắt đầu 18/8)",
+            "fidelity": "Chất lượng cao (18/8)",
+            "balanced": "Cân bằng (24/12)",
+            "strong": "Kháng nén mạnh (30/15)",
+            "official": "Cường độ chính thức (36/20)",
+            "custom": "Tùy chỉnh"
+          },
+          "protectionOutputMode": {
+            "lossless_webp": "WebP không mất dữ liệu",
+            "quality_webp": "WebP chất lượng cao"
+          },
+          "remoteEngine": {
+            "dwt_dct_svd": "Mã ngắn DWT-DCT-SVD",
+            "blind_watermark": "blind_watermark cũ",
+            "auto": "Tự động"
+          }
+        },
+        "presets": {
+          "current": {
+            "title": "Cân bằng hiện tại",
+            "description": "Dùng 8x6 / D1=21 / D2=9 / Golay để tăng khả năng khôi phục sau khi chụp màn hình hoặc nén lại."
+          },
+          "author_recommended": {
+            "title": "Tác giả khuyến nghị",
+            "description": "Mặc định chính thức 8x8 / D1=21 / D2=9 / WithGolay, ưu tiên trích xuất ổn định."
+          },
+          "fidelity": {
+            "title": "Giữ ảnh gốc",
+            "description": "Block lớn hơn và D1/D2 thấp hơn để giảm nhiễu và giảm mất chất lượng."
+          },
+          "robust": {
+            "title": "Chống tấn công",
+            "description": "Block nhỏ hơn và D1/D2 cao hơn giúp trích xuất sau nén tốt hơn."
+          }
+        },
+        "stablePreset": {
+          "action": "Áp dụng cấu hình ổn định",
+          "saved": "Đã lưu cấu hình ổn định cho gói bảo vệ"
+        },
+        "remoteReference": "Chế độ từ xa dùng guofei9987/blind_watermark 0.4.4, khối 4x4 chính thức và password cùng D1/D2 khớp nhau.",
+        "remoteOfficial": {
+          "title": "Cấu hình bảo vệ từ xa khuyến nghị",
+          "description": "Cấu hình ổn định bật ưu tiên từ xa, dự phòng thuật toán tự động, mức thích ứng, chờ từ xa 50 giây và xuất ảnh bảo vệ bằng WebP không mất dữ liệu."
+        }
+      },
+      "extract": {
+        "title": "Trích xuất watermark ẩn",
+        "fileLabel": "Chọn ảnh cần kiểm tra",
+        "referenceFileLabel": "Ảnh tham chiếu để khôi phục ảnh chụp màn hình (không bắt buộc)",
+        "referenceDescription": "Với ảnh chụp đã cắt hoặc đổi kích thước, hãy chọn ảnh đầy đủ có watermark. Dịch vụ sẽ khôi phục theo quy trình chính thức trước khi trích xuất.",
+        "description": "Chỉ dành cho quản trị viên. Mã ngắn trích xuất sẽ được phân giải và xác thực qua cơ sở dữ liệu truy vết.",
+        "action": "Trích xuất watermark",
+        "extracting": "Đang trích xuất",
+        "completed": "Đã kiểm tra watermark ẩn",
+        "recoveryFailed": "Khôi phục ảnh chụp màn hình thất bại. Hãy kiểm tra ảnh tham chiếu là ảnh đầy đủ có watermark tương ứng.",
+        "remoteTimeout": "Dịch vụ watermark từ xa hoặc gateway đã hết thời gian. Điều này không có nghĩa là ảnh không có watermark.",
+        "remoteDisconnected": "Kết nối tiến độ watermark từ xa đã bị gián đoạn. Hãy thử lại sau.",
+        "progress": {
+          "uploading": "Đang tải ảnh lên",
+          "queued": "Máy chủ đã nhận và đang chờ xử lý",
+          "decoding": "Đang giải mã và kiểm tra ảnh",
+          "recovering": "Đang khôi phục vùng cắt và tỷ lệ ảnh chụp",
+          "waiting": "Đang chờ bộ máy từ xa",
+          "aligning": "Đang căn chỉnh ảnh chụp và ảnh tham chiếu",
+          "extracting": "Đang trích xuất token ẩn",
+          "verifying": "Đang xác minh cơ sở dữ liệu truy vết",
+          "complete": "Xử lý hoàn tất",
+          "elapsed": "Đã qua {seconds} giây",
+          "estimated": "Giai đoạn được ước tính theo thời gian. Không gửi lại yêu cầu.",
+          "live": "Tiến độ được báo từ giai đoạn xử lý thực tế của máy chủ.",
+          "heartbeat": "Nhịp tim máy chủ bình thường; tác vụ vẫn đang chạy.",
+          "heartbeatEngine": "Nhịp tim của FastAPI bình thường và thuật toán vẫn đang chạy.",
+          "heartbeatGateway": "Gateway Go vẫn kết nối và đang chờ phản hồi từ FastAPI.",
+          "units": "Đã xử lý {completed}/{total} ứng viên"
+        },
+        "empty": "Chọn ảnh để xem kết quả trích xuất",
+        "fields": {
+          "found": "Tìm thấy watermark",
+          "valid": "Token hợp lệ",
+          "version": "Phiên bản payload",
+          "traceToken": "Token truy vết",
+          "traceType": "Loại truy vết",
+          "traceResolved": "Khớp truy vết cơ sở dữ liệu",
+          "payloadBytes": "Số byte payload",
+          "payloadBits": "Số bit payload",
+          "payloadFormat": "Định dạng payload",
+          "watermarkEngine": "Bộ máy watermark",
+          "uid": "UID nội bộ",
+          "userId": "ID người dùng công khai",
+          "username": "Username hoặc biệt danh",
+          "uploadedAt": "Thời gian tải lên",
+          "sourceHash": "Hash tệp gốc",
+          "customText": "Dấu tùy chỉnh",
+          "postId": "ID bài viết",
+          "imageId": "ID ảnh",
+          "jobId": "ID tác vụ bảo vệ",
+          "includedFields": "Trường đã ghi"
+        }
+      },
+      "global": {
+        "title": "Chính sách mở quyền",
+        "description": "Mặc định chỉ quản trị viên và người dùng trong danh sách cho phép có thể dùng. Bật tùy chọn này để mở cho mọi người dùng đã đăng nhập.",
+        "on": "Mở cho tất cả người dùng",
+        "off": "Chỉ người dùng được cấp quyền"
+      },
+      "picker": {
+        "title": "Thêm người dùng",
+        "description": "Tìm kiếm người dùng và thêm vào danh sách cho phép. Hệ thống ghi cả ID nội bộ và tài khoản công khai.",
+        "pickerLabel": "Tìm người dùng",
+        "pickerPlaceholder": "Tìm biệt danh, tài khoản hoặc email",
+        "pickerEmpty": "Không tìm thấy người dùng phù hợp",
+        "addEmpty": "Hãy tìm và chọn người dùng cần cấp quyền.",
+        "clear": "Xóa",
+        "loading": "Đang tìm",
+        "removeSelected": "Gỡ người dùng đã chọn",
+        "search": "Tìm",
+        "addSelected": "Thêm vào danh sách",
+        "noSelected": "Hãy chọn người dùng trước",
+        "added": "Đã thêm {count} người dùng"
+      },
+      "manual": {
+        "title": "Thêm thủ công",
+        "description": "Có thể thêm trực tiếp ID nội bộ, ID người dùng công khai, Xise ID, tên người dùng hoặc biệt danh.",
+        "manualPlaceholder": "Nhập ID người dùng, tài khoản hoặc biệt danh",
+        "manualTypeId": "ID / Tài khoản",
+        "manualTypeUsername": "Tên người dùng / Biệt danh",
+        "addManual": "Thêm",
+        "duplicate": "Giá trị này đã có trong danh sách",
+        "emptyManual": "Vui lòng nhập giá trị cần thêm"
+      },
+      "lists": {
+        "title": "Danh sách cho phép",
+        "description": "Chỉ cần khớp một ID hoặc tên người dùng là có thể dùng công cụ kiểm tra ở giao diện trước.",
+        "count": "{count} mục",
+        "userIdsTitle": "ID và tài khoản",
+        "usernamesTitle": "Tên người dùng và biệt danh",
+        "userIdsHint": "Hỗ trợ ID số nội bộ, user_id công khai và Xise ID.",
+        "usernamesHint": "Hỗ trợ biệt danh, username hoặc văn bản tài khoản công khai.",
+        "emptyUserIds": "Chưa có mục ID được cấp quyền",
+        "emptyUsernames": "Chưa có mục tên người dùng được cấp quyền",
+        "remove": "Gỡ"
+      },
+      "usage": {
+        "title": "100 lần kiểm tra gần nhất",
+        "loading": "Đang tải lịch sử kiểm tra",
+        "loadFailed": "Không thể tải lịch sử kiểm tra watermark ẩn",
+        "empty": "Chưa có lịch sử kiểm tra watermark ẩn",
+        "time": "Thời gian",
+        "actor": "Người dùng",
+        "result": "Kết quả",
+        "file": "Tệp tải lên",
+        "watermark": "Watermark",
+        "reason": "Lý do thất bại",
+        "ip": "IP",
+        "path": "Điểm truy cập",
+        "success": "Thành công",
+        "failed": "Thất bại",
+        "valid": "Tìm thấy và hợp lệ",
+        "invalid": "Tìm thấy nhưng không hợp lệ",
+        "notFound": "Không tìm thấy"
+      }
+    },
+    "queuesPanel": {
+      "title": "Hàng đợi và Redis",
+      "description": "Theo dõi hàng đợi Asynq, bộ nhớ Redis, thời gian tác vụ và chính sách tự động dọn dẹp",
+      "loading": "Đang tải trạng thái hàng đợi",
+      "queues": "Hàng đợi",
+      "tasks": "Tác vụ",
+      "taskTitle": "Tác vụ: {queue}",
+      "emptyJobs": "Không có tác vụ",
+      "serviceDisabled": "Dịch vụ hàng đợi đang tắt; chỉ hiển thị trạng thái trống.",
+      "recentEvents": "Sự kiện gần đây",
+      "eventTiming": "{time} · chờ {wait} · chạy {duration}",
+      "status": {
+        "all": "Tất cả",
+        "waiting": "Đang chờ",
+        "active": "Đang chạy",
+        "completed": "Hoàn tất",
+        "failed": "Thất bại",
+        "retry": "Thử lại",
+        "scheduled": "Đã lên lịch"
+      },
+      "stats": {
+        "waiting": "Đang chờ",
+        "active": "Đang chạy",
+        "completed": "Hoàn tất",
+        "failed": "Thất bại",
+        "delayed": "Trì hoãn / thử lại",
+        "latency": "Độ trễ trung bình"
+      },
+      "danger": {
+        "title": "Thao tác nguy hiểm: xóa toàn bộ hàng đợi",
+        "description": "Thao tác này xóa tác vụ đang chờ, đã lên lịch, thử lại và lịch sử. Hãy dùng bảo trì Redis ở trên để dọn dẹp an toàn.",
+        "placeholder": "Nhập tên hàng đợi {queue} để xác nhận",
+        "clear": "Xóa toàn bộ hàng đợi",
+        "cleared": "Đã xóa hàng đợi"
+      },
+      "job": {
+        "id": "ID tác vụ {id}",
+        "inspect": "Chi tiết",
+        "retry": "Thử lại tác vụ",
+        "enqueued": "Đã xếp hàng",
+        "started": "Bắt đầu",
+        "wait": "Chờ",
+        "duration": "Thời gian chạy",
+        "retryConfirm": "Thử lại tác vụ {id}?",
+        "retrySuccess": "Tác vụ đã quay lại hàng đợi",
+        "close": "Đóng chi tiết tác vụ",
+        "details": "Chi tiết tác vụ",
+        "idLabel": "ID tác vụ",
+        "name": "Tên",
+        "attempts": "Số lần thử"
+      },
+      "maintenance": {
+        "title": "Quản lý bộ nhớ Redis",
+        "loading": "Đang tải bộ nhớ Redis và chính sách dọn dẹp",
+        "description": "Chỉ dọn lịch sử có thể loại bỏ, dữ liệu giám sát, bộ nhớ đệm và chỉ mục cũ.",
+        "saved": "Đã lưu chính sách dọn Redis",
+        "runComplete": "Đã hoàn tất dọn Redis an toàn",
+        "cacheConfirm": "Xóa bộ nhớ đệm ứng dụng? Phiên và tác vụ đang chờ sẽ không bị xóa.",
+        "policyTitle": "Chính sách tự động dọn dẹp",
+        "safeBoundary": "Tác vụ đang chờ, đang chạy, đã lên lịch và thử lại không bao giờ bị tự động xóa.",
+        "save": "Lưu chính sách",
+        "runSafe": "Dọn dẹp an toàn",
+        "runCache": "Xóa bộ nhớ đệm"
+      },
+      "memory": {
+        "title": "Áp lực bộ nhớ",
+        "used": "Đã dùng",
+        "max": "Bộ nhớ tối đa",
+        "unbounded": "Chưa đặt giới hạn",
+        "policy": "Chính sách loại bỏ",
+        "fragmentation": "Phân mảnh",
+        "noLimitHint": "Redis hiện có maxmemory=0. Trang quản trị chỉ giám sát và cảnh báo, không thay đổi giới hạn bộ nhớ máy chủ.",
+        "level": {
+          "normal": "Bình thường",
+          "warning": "Cảnh báo",
+          "critical": "Nghiêm trọng",
+          "unbounded": "Không giới hạn"
+        }
+      },
+      "schedule": {
+        "title": "Trạng thái chạy",
+        "next": "Lần chạy tiếp",
+        "last": "Lần chạy trước",
+        "freed": "Đã giải phóng lần trước"
+      },
+      "inventory": {
+        "title": "Phân loại không gian khóa",
+        "summary": "Tổng {total} khóa; đã kiểm tra {scanned}",
+        "sampled": "Không gian khóa lớn; đang hiển thị mẫu có giới hạn",
+        "noTtlSummary": "{count} khóa trong mẫu không có TTL và không được đánh dấu là vĩnh viễn",
+        "expectedPermanentSummary": "{count} khóa trong mẫu là metadata vĩnh viễn dự kiến",
+        "keys": "{count} khóa",
+        "noTtlKeys": "{count} không có TTL",
+        "expectedPermanentKeys": "{count} vĩnh viễn dự kiến",
+        "empty": "Không có dữ liệu phân loại",
+        "categories": {
+          "queues": "Hàng đợi",
+          "logs": "Nhật ký ngắn hạn",
+          "metrics": "Chỉ số",
+          "sessions": "Phiên",
+          "cache": "Bộ nhớ đệm ứng dụng",
+          "settings": "Cài đặt hệ thống",
+          "security": "Giới hạn bảo mật",
+          "other": "Khác"
+        }
+      },
+      "fields": {
+        "enabled": "Bật tự động dọn dẹp",
+        "interval": "Khoảng chạy (phút)",
+        "accessLogs": "Giữ nhật ký truy cập (giờ)",
+        "accessLogMax": "Giới hạn nhật ký truy cập",
+        "systemLogs": "Giữ nhật ký hệ thống (giờ)",
+        "systemLogMax": "Giới hạn nhật ký hệ thống",
+        "metrics": "Giữ chỉ số (giờ)",
+        "metricsMax": "Giới hạn chỉ số mỗi khóa",
+        "queueEvents": "Giữ sự kiện hàng đợi (giờ)",
+        "queueEventMax": "Giới hạn sự kiện hàng đợi",
+        "completed": "Giữ tác vụ hoàn tất (giờ)",
+        "archived": "Giữ tác vụ thất bại (giờ)",
+        "archivedMax": "Giới hạn tác vụ thất bại mỗi hàng đợi",
+        "warning": "Ngưỡng cảnh báo bộ nhớ (%)",
+        "critical": "Ngưỡng bộ nhớ nghiêm trọng (%)",
+        "accessTokenTTLSeconds": "Thời hạn access token (giây)",
+        "refreshTokenActiveTTLSeconds": "Thời hạn refresh token khi hoạt động (giây)",
+        "refreshTokenRenewalIntervalSeconds": "Cửa sổ hoạt động để gia hạn refresh (giây)",
+        "refreshTokenMode": "Chế độ refresh token",
+        "refreshTokenModeRedisOpaque": "Redis opaque",
+        "refreshTokenModeJWTLegacy": "JWT legacy",
+        "refreshTokenAutoRenewEnabled": "Bật tự gia hạn khi hoạt động",
+        "sessionInactiveTTLSeconds": "Xóa phiên không hoạt động sau (giây)",
+        "userActiveSessionLimit": "Giới hạn phiên hoạt động mỗi người dùng"
+      },
+      "overrides": {
+        "title": "Ghi đè theo hàng đợi",
+        "description": "Mặc định dùng chính sách toàn cục; hàng đợi video hoặc kiểm toán có thể được giữ lâu hơn.",
+        "custom": "Dùng chính sách riêng",
+        "default": "Dùng mặc định toàn cục"
+      }
+    },
+    "settingsPanel": {
+      "title": "Cài đặt hệ thống",
+      "description": "Trung tâm cấu hình cho giá trị bật/tắt, số, ngày giờ và văn bản",
+      "configTitle": "Mục cấu hình",
+      "authTitle": "Đăng nhập / OAuth",
+      "appDownloadTitle": "Cài đặt tải App",
+      "fileRecycleTitle": "Thùng rác tệp",
+      "imageTitle": "Xử lý hình ảnh",
+      "emptyImageSettings": "Không có cài đặt xử lý hình ảnh",
+      "save": "Lưu",
+      "saved": "Đã lưu cài đặt hệ thống",
+      "loadingSettings": "Đang tải cài đặt hệ thống",
+      "emptySettings": "Chưa có cài đặt hệ thống",
+      "rawTitle": "Ảnh chụp cài đặt tương thích",
+      "loadingRaw": "Đang tải cài đặt tương thích",
+      "emptyRaw": "Chưa có cài đặt tương thích",
+      "on": "Bật",
+      "off": "Tắt",
+      "systemSettings": {
+        "site_title": {
+          "label": "Tiêu đề trang chủ",
+          "hint": "Hiển thị trên trang chủ, tiêu đề trình duyệt và bản xem trước chia sẻ."
+        },
+        "site_description": {
+          "label": "Mô tả trang chủ",
+          "hint": "Hiển thị dưới tiêu đề trang chủ và trong tóm tắt tìm kiếm/chia sẻ."
+        },
+        "site_avatar_url": {
+          "label": "URL avatar website",
+          "hint": "Dùng đường dẫn thư viện media /api/file/... hoặc URL ảnh http/https đầy đủ."
+        },
+        "post_content_max_length": {
+          "label": "Độ dài tối đa của nội dung bài viết",
+          "hint": "Áp dụng cho đăng bài, bản nháp, chỉnh sửa và tạo từ trang quản trị. Mặc định: 100000."
+        },
+        "post_resource_section_position": {
+          "label": "Vị trí khu vực tài nguyên bài viết",
+          "hint": "Đặt tệp đính kèm, mở khóa trả phí và gói ảnh trước hoặc sau nội dung.",
+          "before": "Trước nội dung",
+          "after": "Sau nội dung"
+        },
+        "onboarding_interest_options": {
+          "label": "Onboarding interest options",
+          "hint": "Provide one localized list for each supported language."
+        },
+        "onboarding_points_intro_title": {
+          "label": "Points introduction title"
+        },
+        "onboarding_points_intro_summary": {
+          "label": "Points introduction summary"
+        },
+        "onboarding_points_intro_detail": {
+          "label": "Points introduction details",
+          "hint": "Shown when users view details after completing onboarding."
+        },
+        "onboarding_result_title": {
+          "label": "Onboarding completion title"
+        },
+        "onboarding_result_saved_text": {
+          "label": "Profile saved message"
+        },
+        "onboarding_points_wallet_label": {
+          "label": "Points entry label"
+        },
+        "maintenance_message": {
+          "label": "Maintenance message"
+        },
+        "oauth2_app_callback_urls": {
+          "label": "Danh sách cho phép callback OAuth của App",
+          "hint": "Nhập mỗi callback đầy đủ trên một dòng, ví dụ xsewebfast://auth-return hoặc yuempro://auth-return. Mỗi app gửi app_callback riêng; backend khớp chính xác scheme, host và path trước khi chuyển hướng trở lại."
+        },
+        "app_download_android_enabled": {
+          "label": "Enable Android download"
+        },
+        "app_download_android_name": {
+          "label": "Android app name"
+        },
+        "app_download_android_version_name": {
+          "label": "Android version name"
+        },
+        "app_download_android_version_code": {
+          "label": "Android version code",
+          "hint": "Numeric version used for display and client comparisons."
+        },
+        "app_download_android_download_url": {
+          "label": "Android download URL",
+          "hint": "Use a media-library /api/file/attachments/... URL or a full URL."
+        },
+        "app_download_android_size_label": {
+          "label": "Android size label",
+          "hint": "Shown before automatic size formatting, for example 18 MB."
+        },
+        "app_download_android_size_bytes": {
+          "label": "Android package size (MB)",
+          "hint": "Enter MB in admin; it is stored as bytes. Use 0 to hide."
+        },
+        "app_download_android_package_name": {
+          "label": "Android package name"
+        },
+        "app_download_android_release_notes": {
+          "label": "Android release notes"
+        },
+        "app_download_android_fast_enabled": {
+          "label": "Enable Android Fast download"
+        },
+        "app_download_android_fast_name": {
+          "label": "Android Fast app name"
+        },
+        "app_download_android_fast_version_name": {
+          "label": "Android Fast version name"
+        },
+        "app_download_android_fast_version_code": {
+          "label": "Android Fast version code",
+          "hint": "Numeric version used for display and client comparisons."
+        },
+        "app_download_android_fast_download_url": {
+          "label": "Android Fast download URL",
+          "hint": "Use a media-library /api/file/attachments/... URL or a full URL."
+        },
+        "app_download_android_fast_size_label": {
+          "label": "Android Fast size label",
+          "hint": "Shown before automatic size formatting, for example ≤ 1 MB."
+        },
+        "app_download_android_fast_size_bytes": {
+          "label": "Android Fast package size (MB)",
+          "hint": "Enter MB in admin; it is stored as bytes. Use 0 to hide."
+        },
+        "app_download_android_fast_package_name": {
+          "label": "Android Fast package name"
+        },
+        "app_download_android_fast_release_notes": {
+          "label": "Android Fast release notes"
+        },
+        "app_download_ios_enabled": {
+          "label": "Enable iOS download"
+        },
+        "app_download_ios_name": {
+          "label": "iOS app name"
+        },
+        "app_download_ios_version_name": {
+          "label": "iOS version name"
+        },
+        "app_download_ios_version_code": {
+          "label": "iOS version code",
+          "hint": "Numeric version used for display and client comparisons."
+        },
+        "app_download_ios_download_url": {
+          "label": "iOS download URL",
+          "hint": "Use an App Store, TestFlight, enterprise, or profile URL."
+        },
+        "app_download_ios_size_label": {
+          "label": "iOS size label",
+          "hint": "Shown before automatic size formatting."
+        },
+        "app_download_ios_size_bytes": {
+          "label": "iOS package size (MB)",
+          "hint": "Enter MB in admin; it is stored as bytes. Use 0 to hide."
+        },
+        "app_download_ios_bundle_id": {
+          "label": "iOS Bundle ID"
+        },
+        "app_download_ios_release_notes": {
+          "label": "iOS release notes"
+        },
+        "file_recycle_retention_days": {
+          "label": "Thời gian lưu thùng rác (ngày)",
+          "hint": "Số ngày giữ tệp trong thùng rác trước khi tự động dọn dẹp. Mặc định: 30 ngày."
+        },
+        "file_recycle_cleanup_interval_hours": {
+          "label": "Khoảng dọn dẹp (giờ)",
+          "hint": "Tần suất tác vụ nền quét các tệp đã hết hạn trong thùng rác. Mặc định: mỗi 24 giờ."
+        },
+        "notification_interaction_suppression_enabled": {
+          "label": "Giảm thông báo tương tác",
+          "hint": "Khi bật, các thông báo thích, thích bình luận hoặc lưu cùng loại từ cùng một người dùng tới cùng một tác giả sẽ bị âm thầm bỏ qua sau ngưỡng."
+        },
+        "notification_interaction_suppression_window_seconds": {
+          "label": "Cửa sổ giảm thông báo (giây)",
+          "hint": "Cửa sổ đếm dạng trượt. Mặc định 600 giây, cho phép từ 60 đến 86400."
+        },
+        "notification_interaction_suppression_threshold": {
+          "label": "Ngưỡng giảm thông báo",
+          "hint": "Số thông báo tương tác cùng loại được gửi trong cửa sổ. Mặc định 3, cho phép từ 1 đến 100."
+        }
+      },
+      "fields": {
+        "videoCenterEnabled": "Công tắc Trung tâm video",
+        "videoCenterHomepageEnabled": "Đề xuất Trung tâm video ở trang chủ",
+        "videoCenterRecommendLimit": "Số đề xuất Trung tâm video",
+        "videoCenterAccountCutoff": "Mốc thời gian đăng ký cho Trung tâm video",
+        "imageWebpEnabled": "Chuyển đổi sang WebP",
+        "imageWebpQuality": "Chất lượng ảnh nội dung",
+        "imageAvatarWebpQuality": "Chất lượng ảnh đại diện",
+        "imageWebpMethod": "Method mã hóa WebP",
+        "imageWebpAlphaQuality": "Chất lượng kênh alpha",
+        "imageWebpLossless": "Dùng WebP không mất dữ liệu",
+        "imageLibvipsEnabled": "Bật quản lý màu libvips",
+        "imageMaxWidth": "Chiều rộng tối đa",
+        "imageMaxHeight": "Chiều cao tối đa",
+        "imageProcessingConcurrency": "Số tác vụ xử lý ảnh đồng thời",
+        "imagePostMaxCount": "Giới hạn ảnh mỗi bài",
+        "imageArchiveEnabled": "Tự động tạo ZIP toàn bộ ảnh",
+        "imageArchiveThreshold": "Ngưỡng ảnh để tự động tạo ZIP",
+        "imageProtectionEnabled": "Bảo vệ hình mờ nâng cao",
+        "imageProtectionNoticeEnabled": "Hiện thông báo bảo vệ",
+        "imageSelectAllEnabled": "Cho phép chọn tất cả ảnh",
+        "paidContentBalanceEnabled": "Cho phép thanh toán bằng Moon Coin",
+        "paidContentPointsEnabled": "Cho phép thanh toán bằng điểm",
+        "paidContentBalanceMaxPrice": "Giới hạn giá Moon Coin",
+        "paidContentPointsMaxPrice": "Giới hạn giá điểm",
+        "hiddenWatermarkEnabled": "Bật hình mờ ẩn",
+        "hiddenWatermarkIncludeUid": "Bao gồm UID nội bộ",
+        "hiddenWatermarkIncludeUserId": "Bao gồm ID người dùng công khai",
+        "hiddenWatermarkIncludeUsername": "Bao gồm tên người dùng hoặc biệt danh",
+        "hiddenWatermarkIncludeTime": "Bao gồm thời gian tải lên UTC",
+        "hiddenWatermarkIncludeFileHash": "Bao gồm mã băm tệp gốc",
+        "hiddenWatermarkIncludeCustom": "Bao gồm dấu nhận dạng tùy chỉnh",
+        "hiddenWatermarkCustomText": "Dấu nhận dạng hình mờ ẩn"
+      },
+      "hints": {
+        "videoCenterAccountCutoff": "Người dùng đăng ký vào hoặc sau thời điểm này sẽ không thấy Trung tâm video. Để trống để tắt ẩn theo thời gian đăng ký.",
+        "imageMaxDimension": "Dùng 0 để không giới hạn. Ảnh được thu nhỏ theo đúng tỷ lệ.",
+        "imageProcessingConcurrency": "Xử lý hình mờ ẩn dùng nhiều bộ nhớ; nên giữ giá trị 1.",
+        "imagePostMaxCount": "Giới hạn ảnh cho một bài và tải lên hàng loạt. Mặc định 100, tối đa 500.",
+        "imageArchiveEnabled": "Khi bật, bài đã đăng đạt ngưỡng sẽ xếp hàng tạo ZIP toàn bộ ảnh mà không chặn việc đăng.",
+        "imageArchiveThreshold": "Tự động tạo ZIP khi số ảnh vượt giá trị này. Mặc định 25.",
+        "imageLibvipsEnabled": "Tự động xoay ảnh, chuyển ICC gốc sang sRGB và chỉ giữ EXIF an toàn. Tắt để duy trì quy trình xử lý cũ.",
+        "imageProtectionEnabled": "Cho phép bảo vệ ảnh không phải ảnh bìa để người xem chỉ tải ZIP có hình mờ truy vết.",
+        "imageProtectionNoticeEnabled": "Kiểm soát việc hiển thị giải thích bảo vệ hoặc thông báo bị tắt toàn cục trong trang đăng bài.",
+        "imageSelectAllEnabled": "Khi tắt sẽ ẩn chọn tất cả và không áp dụng thao tác hàng loạt cho mọi ảnh nếu chưa chọn ảnh nào.",
+        "paidContentPaymentMethod": "Kiểm soát việc tác giả có thể chọn phương thức này cho ảnh trả phí. Có thể bật cả Moon Coin và điểm.",
+        "paidContentPriceLimit": "Kiểm soát giá mở khóa cao nhất mà tác giả có thể nhập cho ảnh trả phí.",
+        "hiddenWatermarkCustomText": "Được lưu trong bản ghi truy vết khi bật dấu tùy chỉnh và không được nhúng vào token trong ảnh."
+      },
+      "extract": {
+        "title": "Trích xuất hình mờ ẩn",
+        "fileLabel": "Chọn ảnh cần kiểm tra",
+        "description": "Chỉ dành cho quản trị viên. Mã ngắn trích xuất sẽ được phân giải và xác thực qua cơ sở dữ liệu truy vết.",
+        "action": "Trích xuất hình mờ",
+        "extracting": "Đang trích xuất",
+        "completed": "Đã kiểm tra hình mờ ẩn",
+        "empty": "Chọn một ảnh để xem kết quả trích xuất",
+        "fields": {
+          "found": "Tìm thấy hình mờ",
+          "valid": "Token hợp lệ",
+          "version": "Phiên bản dữ liệu",
+          "traceToken": "Token truy vết",
+          "traceType": "Loại truy vết",
+          "traceResolved": "Đã truy vết trong cơ sở dữ liệu",
+          "payloadBytes": "Số byte dữ liệu",
+          "payloadBits": "Số bit dữ liệu",
+          "payloadFormat": "Định dạng dữ liệu",
+          "watermarkEngine": "Công cụ hình mờ",
+          "uid": "UID nội bộ",
+          "userId": "ID người dùng công khai",
+          "username": "Tên người dùng hoặc biệt danh",
+          "uploadedAt": "Thời gian tải lên",
+          "sourceHash": "Mã băm tệp gốc",
+          "customText": "Dấu nhận dạng tùy chỉnh",
+          "postId": "ID bài viết",
+          "imageId": "ID ảnh",
+          "jobId": "ID tác vụ bảo vệ",
+          "includedFields": "Các trường được bao gồm"
+        }
+      }
+    },
+    "fileRecycleBin": {
+      "columns": {
+        "remaining": "Thời gian còn lại"
+      },
+      "countdown": {
+        "remaining": "Còn {value}",
+        "separator": " ",
+        "day": "{count} ngày",
+        "hour": "{count} giờ",
+        "minute": "{count} phút",
+        "due": "Đến hạn dọn dẹp",
+        "purged": "Đã dọn"
+      },
+      "actions": {
+        "inspect": "Kiểm tra tồn tại",
+        "preview": "Xem trước",
+        "download": "Tải xuống",
+        "close": "Đóng"
+      },
+      "toasts": {
+        "recycledExists": "Bản sao thùng rác tồn tại",
+        "recycledMissing": "Thiếu bản sao thùng rác",
+        "directoryUnsupported": "Chưa hỗ trợ xem trước thư mục",
+        "previewUnsupported": "Không thể xem trước tệp này",
+        "downloadReady": "Đã bắt đầu tải xuống"
+      },
+      "preview": {
+        "title": "Xem trước tệp đã thu hồi",
+        "original": "Vị trí gốc",
+        "recycled": "Bản sao thùng rác",
+        "files": "Danh sách tệp",
+        "noInspection": "Hãy kiểm tra trạng thái tồn tại trước khi xem trước.",
+        "imageAlt": "Xem trước tệp đã thu hồi",
+        "empty": "Chưa tải nội dung xem trước"
+      },
+      "status": {
+        "unsafe": "Không an toàn",
+        "exists": "Tồn tại",
+        "missing": "Thiếu",
+        "notConfigured": "Chưa cấu hình",
+        "directory": "Thư mục",
+        "file": "Tệp"
+      },
+      "errors": {
+        "invalidID": "ID mục thùng rác không hợp lệ",
+        "idsRequired": "Hãy chọn mục thùng rác trước",
+        "notFound": "Không tìm thấy mục thùng rác",
+        "unsafePath": "Đường dẫn thùng rác không vượt qua kiểm tra an toàn",
+        "fileMissing": "Thiếu bản sao thùng rác",
+        "directoryPreviewUnsupported": "Phiên bản này chưa hỗ trợ xem trước và tải thư mục",
+        "previewUnsupported": "Loại tệp này chưa hỗ trợ xem trước",
+        "inspectFailed": "Không thể kiểm tra mục thùng rác"
+      }
+    },
+    "aiAgentPanel": {
+      "title": "AI Agent",
+      "description": "Cấu hình dịch vụ tương thích OpenAI, tab prompt, tạo nội dung streaming, giới hạn hàng đợi và nhật ký kiểm toán.",
+      "loading": "Đang tải cài đặt AI",
+      "save": "Lưu",
+      "saving": "Đang lưu",
+      "saved": "Đã lưu cài đặt AI",
+      "tabs": {
+        "base": "Cơ bản",
+        "markdown": "Định dạng ghi chú",
+        "polish": "Làm mượt ghi chú",
+        "review": "Đánh giá tự động",
+        "comments": "Bình luận AI",
+        "commentReply": "Trả lời bình luận",
+        "vision": "Phân tích ảnh",
+        "copy": "Nội dung vận hành",
+        "logs": "Nhật ký kiểm toán",
+        "moderation": "Kiểm duyệt nội dung",
+        "publishGeneration": "Tạo chi tiết",
+        "contentFormat": "AI trình soạn thảo"
+      },
+      "base": {
+        "title": "Kết nối và giới hạn",
+        "enabled": "AI đã bật",
+        "disabled": "AI đã tắt",
+        "baseUrl": "Base URL",
+        "model": "Model",
+        "apiKey": "API Key",
+        "apiKeyPlaceholder": "Dán khóa mới để thay thế",
+        "timeout": "Tu dong dung khi nha cung cap khong phan hoi (giay)",
+        "maxRun": "Thời gian chạy nền tối đa (giây)",
+        "chunkSize": "Số ký tự tối đa mỗi đoạn",
+        "concurrency": "Đồng thời tối đa toàn cục (mặc định 5)",
+        "temperature": "Temperature mặc định",
+        "maxOutput": "Token đầu ra tối đa mặc định",
+        "showReasoningOn": "Hiện suy luận",
+        "showReasoningOff": "Ẩn suy luận",
+        "thinkingParameterOn": "Gửi tham số thinking",
+        "thinkingParameterOff": "Không gửi tham số thinking",
+        "thinkingOn": "Bật thinking của model",
+        "thinkingOff": "Tắt thinking của model",
+        "logHttpDetailsOn": "Ghi chi tiết HTTP từ xa",
+        "logHttpDetailsOff": "Không ghi chi tiết HTTP từ xa",
+        "extraHeaders": "JSON header tùy chỉnh",
+        "extraHeadersPlaceholder": "{\n  \"X-Provider\": \"openai-compatible\"\n}",
+        "extraHeadersInvalid": "Header tùy chỉnh phải là một đối tượng JSON.",
+        "reasoningEffort": "Mức suy luận",
+        "reasoningEfforts": {
+          "default": "Mặc định nhà cung cấp",
+          "minimal": "Tối thiểu",
+          "low": "Thấp",
+          "medium": "Trung bình",
+          "high": "Cao"
+        },
+        "modelParameters": "JSON tham số bổ sung",
+        "modelParametersPlaceholder": "{\n  \"top_p\": 0.9\n}",
+        "modelParametersInvalid": "Tham số bổ sung phải là một đối tượng JSON."
+      },
+      "autoComment": {
+        "enabled": "Tự động bình luận AI đã bật",
+        "disabled": "Tự động bình luận AI đã tắt",
+        "botUserId": "UID bot dự phòng",
+        "template": "Mẫu bình luận tự động",
+        "delaySeconds": "Độ trễ giây",
+        "maxImages": "Số ảnh gửi cho vision",
+        "botUserIdMin": "Bắt đầu dải UID ngẫu nhiên",
+        "botUserIdMax": "Kết thúc dải UID ngẫu nhiên",
+        "style": "Kiểu prompt",
+        "styles": {
+          "normal": "Bình thường",
+          "humorous": "Hài hước",
+          "bold": "Táo bạo"
+        },
+        "imageSelectionMode": "Chế độ chọn ảnh"
+      },
+      "commentReply": {
+        "title": "Trả lời bình luận bằng AI",
+        "enabled": "Đã bật trả lời bình luận bằng AI",
+        "disabled": "Đã tắt trả lời bình luận bằng AI",
+        "template": "Mẫu trả lời",
+        "delaySeconds": "Độ trễ giây",
+        "maxImages": "Số ảnh tối đa gửi cho vision",
+        "maxReplies": "Số trả lời tối đa mỗi bình luận AI",
+        "mentionEnabled": "Đã bật trả lời khi được nhắc",
+        "mentionDisabled": "Đã tắt trả lời khi được nhắc",
+        "mentionName": "Tên nhắc",
+        "mentionTemplate": "Mẫu trả lời khi được nhắc",
+        "mentionBotUserIdMin": "UID bot ngẫu nhiên bắt đầu",
+        "mentionBotUserIdMax": "UID bot ngẫu nhiên kết thúc",
+        "maxMentionReplies": "Số trả lời nhắc tối đa mỗi bài",
+        "style": "Kiểu prompt",
+        "imageSelectionMode": "Chế độ chọn ảnh"
+      },
+      "templatesTitle": "Mẫu prompt",
+      "templates": {
+        "markdown_format": "Định dạng Markdown",
+        "post_polish": "Làm mượt ghi chú",
+        "post_review_reply": "Trả lời đánh giá AI",
+        "post_auto_comment": "Bình luận tự động bài viết",
+        "comment_reply": "Trả lời bình luận",
+        "comment_mention_reply": "Trả lời khi được nhắc",
+        "image_analysis": "Phân tích ảnh",
+        "announcement": "Thông báo",
+        "system_notification": "Thông báo hệ thống",
+        "popup": "Popup",
+        "activity_description": "Mô tả hoạt động",
+        "post_title": "Tiêu đề bài viết",
+        "post_summary": "Tóm tắt bài viết",
+        "tag_suggestions": "Gợi ý thẻ",
+        "post_custom_generate": "Tạo bài tùy chỉnh",
+        "comment_moderation": "Kiểm duyệt bình luận",
+        "post_moderation": "Kiểm duyệt bài viết",
+        "publish_title_generate": "Tóm tắt tiêu đề đăng",
+        "publish_detail_generate": "Tạo chi tiết đăng",
+        "publish_title_detail_generate": "Tạo tiêu đề và chi tiết cũ"
+      },
+      "template": {
+        "enabled": "Bật",
+        "disabled": "Tắt",
+        "temperature": "Temperature",
+        "maxOutput": "Token đầu ra tối đa",
+        "concurrency": "Đồng thời theo dự án",
+        "concurrencyHint": "0 kế thừa giới hạn toàn cục; 1-50 chỉ giới hạn mẫu này.",
+        "jsonOn": "JSON bật",
+        "jsonOff": "JSON tắt",
+        "prompt": "Prompt",
+        "systemPrompt": "System prompt",
+        "userPrompt": "User prompt",
+        "resetDefault": "Khôi phục mặc định",
+        "style": "Phong cách",
+        "styles": {
+          "normal": "Bình thường",
+          "humorous": "Hài hước",
+          "bold": "Táo bạo"
+        },
+        "model": "Mô hình riêng",
+        "modelPlaceholder": "Để trống để dùng mô hình cơ bản",
+        "runtimeOverrides": "Ghi đè khi chạy",
+        "runtimeOverridesHint": "Chỉ ghi đè suy luận và tham số nhà cung cấp cho mẫu này.",
+        "runtimeOn": "Bật ghi đè",
+        "runtimeOff": "Theo global",
+        "runtimeModelParameters": "JSON tham số mô hình của mẫu"
+      },
+      "generator": {
+        "title": "Không gian tạo nội dung",
+        "template": "Mẫu",
+        "input": "Đầu vào",
+        "inputPlaceholder": "Mô tả mục tiêu vận hành, đối tượng, giọng điệu, sự kiện và ràng buộc.",
+        "output": "Đầu ra",
+        "reasoning": "Suy luận",
+        "emptyOutput": "Nội dung tạo ra sẽ hiển thị ở đây.",
+        "emptyInput": "Hãy nhập nội dung trước.",
+        "run": "Tạo",
+        "generating": "Đang tạo",
+        "progress": "Tiến độ {percent}%",
+        "queue": "Đang chờ {position}/{total}, ETA {eta}"
+      },
+      "logs": {
+        "title": "Nhật ký kiểm toán AI",
+        "refresh": "Làm mới",
+        "loading": "Đang tải nhật ký AI",
+        "empty": "Chưa có nhật ký AI",
+        "durationMs": "{value} ms",
+        "columns": {
+          "type": "Loại",
+          "status": "Trạng thái",
+          "actor": "Người thao tác",
+          "model": "Model",
+          "tokens": "Token",
+          "duration": "Thời lượng",
+          "created": "Tạo lúc",
+          "imagesSent": "Ảnh đã gửi",
+          "tokenSpeed": "Token/giây",
+          "error": "Lỗi API",
+          "details": "Chi tiết"
+        },
+        "types": {
+          "format_markdown": "Định dạng Markdown",
+          "admin_copy": "Tạo nội dung quản trị",
+          "post_review_reply": "Phản hồi đánh giá AI",
+          "post_auto_comment": "Bình luận tự động bài viết",
+          "comment_reply": "Trả lời bình luận",
+          "comment_mention_reply": "Trả lời khi được nhắc",
+          "image_analysis": "Phân tích hình ảnh",
+          "post_polish": "Trau chuốt bài viết",
+          "post_custom_generate": "Tạo bài tùy chỉnh",
+          "publish_title_generate": "Tóm tắt tiêu đề đăng",
+          "publish_detail_generate": "Tạo chi tiết đăng",
+          "publish_title_detail_generate": "Tạo tiêu đề và chi tiết cũ",
+          "comment_moderation": "Kiểm duyệt bình luận",
+          "post_moderation": "Kiểm duyệt bài viết"
+        },
+        "statuses": {
+          "running": "Đang chạy",
+          "completed": "Hoàn tất",
+          "failed": "Thất bại",
+          "canceled": "Đã hủy"
+        },
+        "actors": {
+          "user": "Người dùng",
+          "admin": "Quản trị viên",
+          "system": "Hệ thống"
+        },
+        "details": {
+          "show": "Xem",
+          "hide": "Thu gọn",
+          "httpStatus": "Trạng thái HTTP",
+          "contentType": "Loại nội dung",
+          "usage": "Token sử dụng",
+          "usageValue": "Prompt {prompt} / Completion {completion} / Total {total}",
+          "attempts": "Số lần thử",
+          "outputSummary": "Nội dung đã tạo",
+          "responseSummary": "Phản hồi upstream",
+          "upstreamAttempts": "Chi tiết yêu cầu HTTP",
+          "rawMetadata": "Metadata thô"
+        }
+      },
+      "eta": {
+        "lessThanMinute": "dưới 1 phút",
+        "minutes": "{count} phút"
+      },
+      "moderation": {
+        "title": "AI kiểm duyệt bình luận và bài viết",
+        "enabled": "Đã bật kiểm duyệt",
+        "disabled": "Đã tắt kiểm duyệt",
+        "templateKey": "Khóa mẫu",
+        "prompt": "Ghi đè prompt",
+        "promptPlaceholder": "Tùy chọn: ghi đè prompt mẫu cho mục kiểm duyệt này.",
+        "ruleEnabled": "Kiểm duyệt",
+        "ruleDisabled": "Bỏ qua",
+        "targets": {
+          "comment": {
+            "title": "Kiểm duyệt bình luận",
+            "description": "Bình luận mới hiển thị ngay; nếu AI đánh dấu, hệ thống sẽ áp dụng hành động đã cấu hình."
+          },
+          "post": {
+            "title": "Kiểm duyệt bài viết",
+            "description": "Bài viết mới hiển thị ngay; nếu AI đánh dấu, hệ thống sẽ áp dụng hành động đã cấu hình."
+          }
+        },
+        "rules": {
+          "spam": "Spam",
+          "porn": "Khiêu dâm",
+          "political_sensitive": "Nhạy cảm chính trị"
+        },
+        "actions": {
+          "observe": "Theo dõi",
+          "delete": "Xóa",
+          "private": "Đặt riêng tư"
+        },
+        "sensitivity": "Độ nhạy",
+        "debugTitle": "Kiểm thử kiểm duyệt",
+        "debugRun": "Chạy thử",
+        "debugRunning": "Đang thử",
+        "debugTarget": "Mục tiêu",
+        "debugInput": "Nội dung thử",
+        "debugPlaceholder": "Dán bình luận hoặc nội dung bài đăng để kiểm tra đầu ra thô và quyết định đã phân tích.",
+        "debugEmpty": "Nhập nội dung trước khi thử.",
+        "debugEmptyOutput": "Chạy thử để xem quyết định đã phân tích và đầu ra thô.",
+        "debugStatus": "Trạng thái:",
+        "debugAction": "Hành động:",
+        "debugTemplate": "Mẫu:",
+        "debugDecision": "Quyết định đã phân tích",
+        "debugRaw": "Đầu ra thô của mô hình"
+      },
+      "publishGeneration": {
+        "title": "Tạo chi tiết bài đăng",
+        "enabled": "Đã bật tạo chi tiết",
+        "disabled": "Đã tắt tạo chi tiết",
+        "maxImages": "Số ảnh phân tích",
+        "template": "Mẫu",
+        "titleMaxChars": "Giới hạn ký tự tiêu đề",
+        "imageSelectionMode": "Chế độ chọn ảnh",
+        "detailTemplate": "Mẫu tạo chi tiết",
+        "titleTemplate": "Mẫu tóm tắt tiêu đề"
+      },
+      "imageSelectionModes": {
+        "ordered": "Theo thứ tự",
+        "random": "Ngẫu nhiên"
+      },
+      "contentFormat": {
+        "title": "Định dạng AI trình soạn thảo",
+        "enabled": "AI trình soạn thảo đã bật",
+        "disabled": "AI trình soạn thảo đã tắt",
+        "template": "Mẫu",
+        "modes": {
+          "format": {
+            "enabled": "Định dạng đã bật",
+            "disabled": "Định dạng đã tắt"
+          },
+          "polish": {
+            "enabled": "Trau chuốt đã bật",
+            "disabled": "Trau chuốt đã tắt"
+          },
+          "custom": {
+            "enabled": "Tạo nội dung đã bật",
+            "disabled": "Tạo nội dung đã tắt"
+          }
+        },
+        "continuation": {
+          "enabled": "Đã bật nén ngữ cảnh và viết tiếp dài",
+          "disabled": "Đã tắt nén ngữ cảnh và viết tiếp dài",
+          "triggerChars": "Ký tự kích hoạt",
+          "maxRounds": "Số vòng viết tiếp",
+          "contextChars": "Ký tự ngữ cảnh nén"
+        }
+      },
+      "jobs": {
+        "title": "Hang doi tac vu AI",
+        "refresh": "Lam moi",
+        "loading": "Dang tai tac vu AI",
+        "empty": "Khong co tac vu AI dang doi hoac dang tao",
+        "cancel": "Huy bo",
+        "cancelSuccess": "Da huy bo tac vu AI",
+        "metrics": {
+          "active": "Tong dang doi + dang tao",
+          "queued": "Dang doi",
+          "running": "Dang tao"
+        },
+        "statuses": {
+          "queued": "Dang doi",
+          "running": "Dang tao",
+          "completed": "Hoan tat",
+          "failed": "That bai",
+          "canceled": "Da huy bo"
+        },
+        "userLine": "User ID {user} · numeric ID {id}",
+        "queuePosition": "Hang doi {position}/{total}",
+        "lastToken": "Token cuoi",
+        "tokenRate": "Toc do TB 10s",
+        "tokenRateValue": "{value} tokens/s",
+        "tokenRatePending": "Dang cho dau ra",
+        "notAvailable": "N/A",
+        "waiting": "Dang doi",
+        "generatedTokens": "Tong token da tao",
+        "estimatedTokens": "Tokens uoc tinh",
+        "upstream": {
+          "show": "Dau ra upstream",
+          "hide": "An dau ra",
+          "title": "Dau ra upstream truc tiep",
+          "live": "Truc tiep",
+          "history": "Lich su",
+          "empty": "Chua co dau ra upstream",
+          "streaming": "Dang lang nghe",
+          "stopped": "Da dung"
+        },
+        "time": {
+          "unknown": "Chua co cap nhat",
+          "secondsAgo": "{count} giay truoc",
+          "minutesAgo": "{count} phut truoc",
+          "hoursAgo": "{count} gio truoc",
+          "daysAgo": "{count} ngay truoc"
+        }
+      }
+    },
+    "accessBlockPanel": {
+      "title": "Chặn IP / UA",
+      "description": "Chặn yêu cầu theo IP chính xác, CIDR, chuỗi User-Agent hoặc regex. Quy tắc được khớp bằng snapshot trong bộ nhớ trước các route ứng dụng.",
+      "refresh": "Làm mới",
+      "viewLogs": "Nhật ký kích hoạt",
+      "disabledHint": "Chặn truy cập hiện bị tắt bởi ACCESS_BLOCK_DISABLED.",
+      "loading": "Đang tải quy tắc chặn truy cập",
+      "rulesTitle": "Quy tắc",
+      "rulesSummary": "{active}/{total} quy tắc đang bật",
+      "newRule": "Quy tắc mới",
+      "empty": "Chưa có quy tắc chặn truy cập",
+      "editTitle": "Sửa quy tắc",
+      "createTitle": "Tạo quy tắc",
+      "formHint": "Dán nhiều dòng IP, CIDR hoặc UA pattern để thêm hàng loạt. Bắt buộc lưu sẽ bỏ qua bảo vệ tự khóa.",
+      "kind": "Loại",
+      "matchType": "Kiểu khớp",
+      "pattern": "Mẫu",
+      "batch": "Mẫu hàng loạt",
+      "batchPlaceholder": "Mỗi dòng một pattern. Dòng trống và dòng bắt đầu bằng # sẽ bị bỏ qua.",
+      "action": "Hành động",
+      "statusCode": "Trạng thái",
+      "redirectUrl": "URL chuyển hướng",
+      "priority": "Ưu tiên",
+      "note": "Ghi chú",
+      "enabled": "Bật",
+      "disabled": "Tắt",
+      "enable": "Bật",
+      "disable": "Tắt",
+      "delete": "Xóa",
+      "deleteConfirm": "Xóa quy tắc chặn truy cập này?",
+      "force": "Bắt buộc lưu ngay cả khi quy tắc khớp yêu cầu quản trị hiện tại.",
+      "cancel": "Hủy",
+      "save": "Lưu",
+      "batchSave": "Thêm hàng loạt",
+      "actionStatus": "Trả về {code}",
+      "actionRedirect": "Chuyển hướng tới {url}",
+      "columns": {
+        "rule": "Quy tắc",
+        "action": "Hành động",
+        "priority": "Ưu tiên",
+        "note": "Ghi chú",
+        "state": "Trạng thái",
+        "operations": "Thao tác"
+      },
+      "kinds": {
+        "ip": "IP",
+        "ua": "User-Agent"
+      },
+      "matchTypes": {
+        "ip": "IP chính xác",
+        "cidr": "CIDR",
+        "ua_contains": "UA chứa",
+        "ua_regex": "UA regex"
+      },
+      "actions": {
+        "status": "Mã trạng thái",
+        "redirect": "Chuyển hướng"
+      },
+      "toasts": {
+        "loadFailed": "Không thể tải quy tắc chặn truy cập",
+        "saved": "Đã lưu quy tắc chặn truy cập",
+        "batchSaved": "Hoàn tất hàng loạt: tạo {created}, lỗi {failed}",
+        "saveFailed": "Không thể lưu quy tắc chặn truy cập",
+        "deleted": "Đã xóa quy tắc chặn truy cập",
+        "deleteFailed": "Không thể xóa quy tắc chặn truy cập",
+        "importSaved": "Đã lưu nguồn nhập URL",
+        "importSaveFailed": "Không thể lưu nguồn nhập URL",
+        "importSynced": "Đã đồng bộ URL: {count} quy tắc",
+        "importSyncFailed": "Không thể đồng bộ nguồn nhập URL",
+        "importDeleted": "Đã xóa nguồn nhập URL",
+        "importDeleteFailed": "Không thể xóa nguồn nhập URL"
+      },
+      "importedRule": "Nhập URL",
+      "importsTitle": "Nhập IP từ URL",
+      "importsSummary": "{active}/{total} nguồn đang bật",
+      "newImport": "Nguồn mới",
+      "importsEmpty": "Chưa có nguồn nhập URL",
+      "editImportTitle": "Sửa nguồn URL",
+      "createImportTitle": "Tạo nguồn URL",
+      "importFormHint": "Tải danh sách IP dạng văn bản thuần, mỗi dòng một IP hoặc CIDR. Dòng trống và chú thích # sẽ bị bỏ qua.",
+      "importUrl": "URL nhập",
+      "updateIntervalMinutes": "Khoảng cập nhật (phút)",
+      "saveImport": "Lưu nguồn",
+      "syncNow": "Đồng bộ ngay",
+      "importForce": "Buộc đồng bộ thủ công ngay cả khi danh sách nhập khớp yêu cầu quản trị hiện tại.",
+      "importDeleteConfirm": "Xóa nguồn nhập URL này và các quy tắc đã nhập?",
+      "importCount": "{count} quy tắc",
+      "intervalMinutes": "{minutes} phút",
+      "importColumns": {
+        "url": "URL",
+        "interval": "Khoảng",
+        "lastSync": "Đồng bộ trước",
+        "nextSync": "Đồng bộ sau"
+      },
+      "importStatuses": {
+        "pending": "Đang chờ",
+        "success": "Thành công",
+        "failed": "Thất bại"
+      },
+      "errors": {
+        "selfLock": "Quy tắc này sẽ chặn yêu cầu quản trị hiện tại. Chỉ bật buộc lưu khi có đường khôi phục.",
+        "importDisabled": "Tính năng nhập URL đã bị tắt trên máy chủ.",
+        "importFetchFailed": "Không thể tải hoặc phân tích danh sách IP từ xa.",
+        "invalidRule": "Quy tắc chặn truy cập không hợp lệ.",
+        "saveFailed": "Không thể lưu quy tắc chặn truy cập.",
+        "unavailable": "Dịch vụ chặn truy cập không khả dụng."
+      }
+    }
+  }
+}

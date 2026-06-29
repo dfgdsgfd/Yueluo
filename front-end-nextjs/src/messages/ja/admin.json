@@ -1,0 +1,1461 @@
+{
+  "adminMaintenance": {
+    "loadFailed": "メンテナンス設定の読み込みに失敗しました",
+    "saved": "メンテナンス設定を保存しました",
+    "saveFailed": "メンテナンス設定の保存に失敗しました",
+    "rotated": "メンテナンス入口を更新しました",
+    "rotateFailed": "メンテナンス入口の更新に失敗しました",
+    "copied": "メンテナンス入口をコピーしました",
+    "loading": "メンテナンス設定を読み込んでいます",
+    "title": "メンテナンスモード",
+    "description": "有効にすると通常入口にはカウントダウンが表示され、専用入口ではバイパスと指定 UID の自動ログインができます。",
+    "refresh": "更新",
+    "enabled": "メンテナンスモードを有効化",
+    "enabledHint": "公開 API はメンテナンス状態を返し、管理画面とサービス入口は利用できます。",
+    "message": "メンテナンスメッセージ",
+    "autoLoginUid": "自動ログイン UID",
+    "estimatedEnd": "推定終了時刻",
+    "serviceEntry": "ランダムサービス入口",
+    "copyEntry": "入口をコピー",
+    "rotateEntry": "入口を再生成",
+    "save": "設定を保存",
+    "borderSettings": "メンテナンス枠",
+    "borderSettingsHint": "専用入口から入った後、画面端に通知枠を表示します。",
+    "borderVisible": "枠を表示",
+    "borderDismissible": "閉じる操作を許可",
+    "borderColor": "枠の色",
+    "borderOpacity": "透明度 {value}%"
+  },
+  "adminDatabase": {
+    "loadFailed": "データベース情報の読み込みに失敗しました",
+    "repairConfirm": "非破壊修復を実行しますか？一時ユニークインデックスの検証成功後のみ置換し、業務データは削除・統合しません。",
+    "repairDone": "データベース修復が完了しました",
+    "repairBlocked": "安全な修復は完了しましたが、重複データの阻害項目が {count} 件残っています。",
+    "duplicateSummary": "重複キー {groups} 組、余分な行 {rows} 件。手動で解決して再試行してください。",
+    "repairFailed": "データベース修復に失敗しました",
+    "loading": "データベース情報を読み込んでいます",
+    "title": "データベース管理",
+    "description": "テーブル容量、推定カラムサイズ、インデックス不足を確認し、安全な一括修正を実行します。",
+    "refresh": "更新",
+    "driver": "ドライバー",
+    "database": "データベース",
+    "tables": "テーブル数",
+    "size": "総容量",
+    "tableSizes": "テーブル容量",
+    "searchTables": "テーブルを検索",
+    "rows": "行",
+    "columnsFor": "{table} カラム",
+    "columns": "カラム",
+    "estimatedColumnSize": "推定カラム容量: {size}",
+    "indexAudit": "インデックス / スキーマ監査",
+    "indexAuditDescription": "GORM モデルと期待インデックス登録表に対して不足項目を確認します。",
+    "repair": "一括修正",
+    "noIssues": "不足フィールドやインデックスはありません",
+    "nullable": "NULL 可",
+    "notNullable": "NOT NULL",
+    "vacuumSaved": "自動最適化設定を保存しました",
+    "vacuumSaveFailed": "自動最適化設定の保存に失敗しました",
+    "vacuumRunConfirm": "VACUUM ANALYZE {table} を実行しますか？",
+    "vacuumRunDone": "VACUUM ANALYZE が完了しました",
+    "vacuumRunFailed": "VACUUM ANALYZE に失敗しました",
+    "vacuumTitle": "VACUUM ANALYZE 自動最適化",
+    "vacuumDescription": "選択した PostgreSQL テーブルに通常の VACUUM ANALYZE を実行し、統計情報を更新します。",
+    "vacuumRunSelected": "現在の表を最適化",
+    "vacuumUnsupported": "このデータベースでは VACUUM ANALYZE 設定を利用できません",
+    "vacuumEnabled": "自動最適化を有効化",
+    "vacuumInterval": "間隔（時間）",
+    "vacuumSave": "自動設定を保存",
+    "vacuumLastResult": "最新実行",
+    "vacuumNextRun": "次回実行",
+    "vacuumLastRun": "前回実行",
+    "vacuumLastDuration": "前回所要時間",
+    "vacuumNoResult": "実行結果はまだありません"
+  },
+  "adminPortal": {
+    "brand": {
+      "name": "Yuem コミュニティ",
+      "subtitle": "運営管理"
+    },
+    "loading": "管理画面を開いています",
+    "mediaLibrary": {
+      "unrestrictedUploadHint": "すべてのファイル形式と拡張子に対応しています。"
+    },
+    "login": {
+      "title": "管理者ログイン",
+      "subtitle": "Yuem コミュニティ運営管理",
+      "username": "アカウント",
+      "usernamePlaceholder": "admin",
+      "password": "パスワード",
+      "submit": "管理画面にログイン",
+      "success": "管理者としてログインしました",
+      "errors": {
+        "failed": "ログインに失敗しました。もう一度お試しください。",
+        "forbidden": "このセッションには管理者権限がありません。",
+        "invalidCredentials": "アカウントまたはパスワードが正しくありません。",
+        "locked": "この IP からの失敗回数が多すぎます。{minutes} 分後に再試行してください。",
+        "missingParams": "アカウントとパスワードを入力してください。"
+      }
+    },
+    "layout": {
+      "adminRole": "管理者",
+      "backHome": "ホームに戻る",
+      "backToSite": "サイトに戻る",
+      "breadcrumb": "ホーム / {title}",
+      "closeMenu": "メニューを閉じる",
+      "closeMenuOverlay": "メニュー背景を閉じる",
+      "logout": "ログアウト",
+      "openMenu": "メニューを開く",
+      "refresh": "更新",
+      "searchPlaceholder": "ユーザー、コンテンツ、機能を検索..."
+    },
+    "userManagement": {
+      "title": "ユーザーポイント管理",
+      "fields": {
+        "uid": "UID",
+        "oauth2Id": "OAuth2 ID",
+        "points": "ポイント"
+      },
+      "actions": {
+        "managePoints": "ポイント管理",
+        "close": "閉じる",
+        "cancel": "キャンセル",
+        "save": "変更を保存",
+        "saving": "保存中"
+      },
+      "operation": {
+        "label": "変更方法",
+        "add": "追加",
+        "deduct": "減算",
+        "set": "残高を設定"
+      },
+      "amount": {
+        "change": "変更ポイント",
+        "target": "設定後の残高",
+        "placeholder": "ポイント数を入力"
+      },
+      "reason": {
+        "label": "理由（任意）",
+        "placeholder": "ポイント履歴用の運営メモを入力"
+      },
+      "validation": {
+        "invalidAmount": "有効なポイント数を入力してください。"
+      },
+      "messages": {
+        "saved": "ポイントを更新しました。現在の残高：{points}"
+      },
+      "batchGenerate": "一括生成",
+      "batchGenerating": "生成中",
+      "batchGenerateCount": "数量",
+      "batchGenerateSuccess": "{count} 人のユーザーを生成しました。"
+    },
+    "navigation": {
+      "sections": {
+        "overview": "概要",
+        "users": "ユーザーと権限",
+        "content": "コンテンツ運営",
+        "risk": "審査と安全管理",
+        "creator": "クリエイターと財務",
+        "growth": "推薦と成長",
+        "notice": "通知とお知らせ",
+        "system": "アプリとシステム"
+      },
+      "items": {
+        "dashboard": "運営ダッシュボード",
+        "queues": "キュー状態",
+        "logs": "ログセンター",
+        "observability": "システム監視",
+        "database": "データベース管理",
+        "maintenance": "メンテナンスモード",
+        "operations": "運営コンソール",
+        "withdraw": "出金審査",
+        "invite": "招待成長",
+        "coupon": "クーポン運営",
+        "points": "ポイント運営",
+        "onboardingSettings": "オンボーディング設定",
+        "backendApi": "バックエンド API",
+        "systemUpdate": "システム更新",
+        "componentCheck": "コンポーネント確認",
+        "hiddenWatermarkAccess": "隠しウォーターマーク権限",
+        "settings": "システム設定",
+        "aiAgent": "AI エージェント",
+        "accessBlock": "アクセスブロック"
+      },
+      "resources": {
+        "admins": "管理者",
+        "announcements": "お知らせ管理",
+        "app-versions": "アプリバージョン",
+        "audit": "認証審査",
+        "banned-word-categories": "禁止語カテゴリ",
+        "banned-words": "禁止語",
+        "categories": "カテゴリ管理",
+        "collections": "保存履歴",
+        "comments": "コメント管理",
+        "users": "ユーザー管理",
+        "feedback": "ユーザーフィードバック",
+        "follows": "フォロー関係",
+        "licenses": "ライセンスコード",
+        "likes": "いいね履歴",
+        "media-library": "メディアライブラリ",
+        "file-recycle-bin": "ファイルごみ箱",
+        "notification-templates": "通知テンプレート",
+        "open-apis": "公開 API",
+        "posts": "コンテンツ管理",
+        "posts-quality": "コンテンツ品質",
+        "post-configs": "投稿推薦ルール",
+        "quality-reward-settings": "品質報酬",
+        "content-review": "コンテンツ審査",
+        "reports": "通報処理",
+        "sessions": "セッション管理",
+        "system-notifications": "システム通知",
+        "tags": "タグ管理",
+        "user-configs": "ユーザー推薦ルール",
+        "user-toolbar": "ユーザーツールバー",
+        "ai-moderation-logs": "AI 審査ログ"
+      }
+    },
+    "onboardingSettingsPanel": {
+      "title": "オンボーディング設定",
+      "description": "オンボーディングの有効化、スキップ可否、興味項目、ポイント説明を設定します",
+      "configTitle": "オンボーディング設定",
+      "save": "保存",
+      "saved": "オンボーディング設定を保存しました",
+      "loadingSettings": "オンボーディング設定を読み込み中",
+      "emptySettings": "オンボーディング設定はありません",
+      "resetTitle": "ユーザーのオンボーディング状態をリセット",
+      "resetDescription": "すべてのユーザーの完了フラグを消去し、データベースに完了記録がないユーザーにオンボーディングを再表示します。",
+      "resetAction": "すべてリセット",
+      "resetting": "リセット中",
+      "resetConfirm": "すべてのユーザーのオンボーディング完了状態をリセットしますか？",
+      "resetDone": "ユーザーのオンボーディング状態をリセットしました",
+      "resetSingleTitle": "1人のユーザーをリセット",
+      "resetSingleDescription": "数値 ID、ユーザー ID、または XiSe ID を入力すると、そのユーザーだけにオンボーディングを再表示します。",
+      "resetSingleLabel": "ユーザー識別子",
+      "resetSinglePlaceholder": "ユーザー ID、数値 ID、または XiSe ID",
+      "resetSingleAction": "ユーザーをリセット",
+      "resetSingleConfirm": "{userId} のオンボーディング完了状態をリセットしますか？",
+      "resetSingleDone": "1人のユーザーのオンボーディング状態をリセットしました",
+      "resetSingleMissing": "先にユーザー識別子を入力してください。",
+      "fields": {
+        "enabled": "オンボーディングを有効化",
+        "allowSkip": "オンボーディングのスキップを許可",
+        "interestOptions": "興味項目",
+        "customFields": "カスタム項目",
+        "pointsIntroTitle": "ポイント説明タイトル",
+        "pointsIntroSummary": "ポイント説明サマリー",
+        "pointsIntroDetail": "ポイント説明詳細",
+        "avatarEnabled": "アバター設定を表示",
+        "avatarRequired": "アバター必須",
+        "backgroundEnabled": "カバー設定を表示",
+        "backgroundRequired": "カバー必須",
+        "nameEnabled": "名前設定を表示",
+        "nameRequired": "名前必須",
+        "signatureEnabled": "署名設定を表示",
+        "signatureRequired": "署名必須",
+        "interestsEnabled": "興味を表示",
+        "interestsRequired": "興味必須",
+        "minInterests": "最低選択数",
+        "resultTitle": "完了ダイアログタイトル",
+        "resultSavedText": "ポイントなし保存文言",
+        "walletLabel": "ポイント入口ボタン文言",
+        "walletUrl": "ポイント入口リンク"
+      },
+      "hints": {
+        "enabled": "有効にすると、データベースに完了記録がないログインユーザーにオンボーディング画面を表示します。",
+        "allowSkip": "無効にすると、ユーザーはオンボーディングを完了する必要があり、スキップできません。",
+        "interestOptions": "下のリストで興味項目を追加、削除、編集できます。1行に1件、または [\"Bondage\", \"Handcuffs\", \"Leg irons\"] のような JSON も貼り付けられます。",
+        "customFields": "オンボーディングフォーム拡張用の JSON または複数行テキストに対応します。",
+        "pointsIntroDetail": "オンボーディング完了後にユーザーが詳細を表示したときに使われます。",
+        "minInterests": "興味を表示し、必須にした場合のみ適用されます。",
+        "walletUrl": "完了ダイアログのポイント入口の遷移先です。サイト内パスまたは完全な URL を入力できます。"
+      },
+      "addInterest": "興味を追加",
+      "removeInterest": "興味を削除",
+      "interestPlaceholder": "興味名を入力",
+      "emptyInterestOptions": "興味項目はまだありません。追加してください。",
+      "addSampleInterests": "サンプル追加",
+      "sampleInterests": {
+        "bondage": "Bondage",
+        "handcuffs": "Handcuffs",
+        "legIrons": "Leg irons"
+      }
+    },
+    "hiddenWatermarkAccessPanel": {
+      "title": "隠しウォーターマーク権限",
+      "description": "一般ユーザーがフロントエンドの隠しウォーターマーク検査を使えるか制御します",
+      "loading": "隠しウォーターマーク権限を読み込み中",
+      "save": "保存",
+      "saved": "隠しウォーターマーク権限を保存しました",
+      "saving": "保存中",
+      "on": "オン",
+      "off": "オフ",
+      "watermarkConfig": {
+        "title": "隠しウォーターマーク設定",
+        "reference": "watermark_zero の公式説明に基づきます。作者は WithGolay を強く推奨しています。D1/D2 を大きくすると圧縮耐性は上がりますが画質は落ちやすくなります。ブロックを細かくすると容量は増えますがノイズも増える可能性があります。奇数のブロックサイズは偶数へ切り上げられ、最小値は 4 です。",
+        "runtime": {
+          "payload": "現在のペイロード",
+          "payloadValue": "{bytes} バイト / {bits} ビット",
+          "format": "ペイロード形式",
+          "engine": "エンジンモード",
+          "referenceRecovery": "スクリーンショット参照復元"
+        },
+        "fields": {
+          "enabled": "隠しウォーターマークを有効化",
+          "protectedOnly": "保護コンテンツのみに透かしを追加",
+          "includeUid": "内部 UID を含める",
+          "includeUserId": "公開ユーザー ID を含める",
+          "includeUsername": "ユーザー名またはニックネームを含める",
+          "includeTime": "UTC アップロード時刻を含める",
+          "includeFileHash": "元ファイルハッシュを含める",
+          "includeCustom": "カスタム識別子を含める",
+          "customText": "カスタム識別子",
+          "coefficientMode": "係数モード",
+          "eccMode": "誤り訂正",
+          "golaySeed": "Golay Shuffle Seed",
+          "blockWidth": "ブロック幅",
+          "blockHeight": "ブロック高さ",
+          "d1": "D1 強度",
+          "d2": "D2 強度",
+          "engine": "ウォーターマークエンジン",
+          "remotePasswordWm": "ウォーターマークパスワード",
+          "remotePasswordImg": "画像パスワード",
+          "remoteProfile": "リモート透かしプロファイル",
+          "remoteD1": "カスタム D1",
+          "remoteD2": "カスタム D2",
+          "protectionMaxDimension": "保護画像の最大辺",
+          "protectionAllowedFailurePercent": "保護パッケージの許容失敗率",
+          "protectionOutputMode": "保護画像の出力方式",
+          "protectionQuality": "保護 WebP 品質",
+          "remoteTimeout": "リモート要求タイムアウト（秒）",
+          "remoteOperationTimeout": "リモート処理タイムアウト（秒）",
+          "remoteEngine": "リモート方式"
+        },
+        "hints": {
+          "enabled": "オフの場合、通常アップロードには隠しウォーターマークを書き込みません。保護パッケージには追跡用ウォーターマークを強制します。",
+          "protectedOnly": "オンの場合、アップロードは透かしなしの原本を保存し、購入者向け保護ダウンロードパッケージ生成時だけ透かしを埋め込みます。",
+          "includeUid": "内部データベース UID を書き込み、最も安定した追跡に使います。",
+          "includeUserId": "公開ユーザー ID を書き込み、手動確認しやすくします。",
+          "includeUsername": "ニックネームまたは username を書き込みます。プライバシー露出が高いため既定ではオフです。",
+          "includeTime": "ウォーターマーク生成時刻を UTC で書き込みます。",
+          "includeFileHash": "元画像のハッシュ断片を書き込み、出所確認に使います。",
+          "includeCustom": "下のカスタム識別子を追跡データベースに保存し、画像トークンには埋め込みません。",
+          "customText": "追跡データベースには最大 255 文字を保存できます。",
+          "coefficientMode": "WithD1 は軽量、WithD1D2 は通常より堅牢ですが重くなります。",
+          "eccMode": "作者は WithGolay を強く推奨しています。WithoutECC は互換性または実験用です。",
+          "golaySeed": "WithGolay の決定的シャッフル seed。抽出時も同じ seed が必要です。",
+          "blockShape": "小さいブロックは容量を増やしますがノイズが増えることがあります。ライブラリは 4 以上の偶数を要求します。",
+          "d1d2": "値が大きいほど攻撃/圧縮に強くなりますが、画質に影響しやすくなります。",
+          "engine": "Go のローカル方式または内部 FastAPI リモートサービスを選択します。",
+          "remotePasswordWm": "blind_watermark の password_wm。埋め込みと抽出で同じ値が必要です。",
+          "remotePasswordImg": "blind_watermark の password_img。埋め込みと抽出で同じ値が必要です。",
+          "remoteBlockShape": "リモート blind_watermark のブロックサイズ。小さいほど容量は増えますが、画質に影響しやすくなります。",
+          "remoteD1D2": "リモート blind_watermark の D1/D2 強度。大きいほど圧縮に強くなりますが、画質低下が目立ちやすくなります。",
+          "remoteProfile": "自動は通常画像では 18/8 から開始し、保護画像では圧縮耐性のため 24/12 から開始します。",
+          "protectionMaxDimension": "既定値は 2048。0 で元サイズを維持します。",
+          "protectionAllowedFailurePercent": "総画像数に対して切り捨て計算します。例: 10 枚で 20% なら最大 2 枚までスキップ可能です。スキップ画像は ZIP に書き込まず、少なくとも 1 枚の成功が必要です。",
+          "protectionOutputMode": "可逆 WebP は高画質、高品質 WebP は容量を削減します。",
+          "protectionQuality": "高品質 WebP でのみ使用します。",
+          "remoteTimeout": "Go バックエンドがリモート透かしサービスを待つ最大時間。変更は次のタスクから有効です。",
+          "remoteOperationTimeout": "FastAPI 透かしワーカーへ渡す 1 回の処理タイムアウト。リモート要求タイムアウトより少し短くしてください。",
+          "remoteEngine": "自動モードはまず blind_watermark を使い、失敗時に DWT-DCT-SVD 短縮コードへ切り替えます。"
+        },
+        "options": {
+          "coefficientMode": {
+            "d1d2": "WithD1D2（より堅牢）",
+            "d1": "WithD1（高速）"
+          },
+          "eccMode": {
+            "golay": "WithGolay（強く推奨）",
+            "none": "WithoutECC（実験）"
+          },
+          "engine": {
+            "auto": "自動（リモート優先）",
+            "local": "ローカル",
+            "remote": "リモート"
+          },
+          "remoteProfile": {
+            "adaptive": "自動バランス（18/8開始）",
+            "fidelity": "高画質（18/8）",
+            "balanced": "バランス（24/12）",
+            "strong": "高耐圧縮（30/15）",
+            "official": "公式強度（36/20）",
+            "custom": "カスタム"
+          },
+          "protectionOutputMode": {
+            "lossless_webp": "可逆 WebP",
+            "quality_webp": "高品質 WebP"
+          },
+          "remoteEngine": {
+            "dwt_dct_svd": "DWT-DCT-SVD 短縮コード",
+            "blind_watermark": "旧 blind_watermark",
+            "auto": "自動"
+          }
+        },
+        "presets": {
+          "current": {
+            "title": "現在のバランス",
+            "description": "8x6 / D1=21 / D2=9 / Golay を使用し、スクリーンショットや再圧縮後の復元性を高めます。"
+          },
+          "author_recommended": {
+            "title": "作者の強い推奨",
+            "description": "公式既定の 8x8 / D1=21 / D2=9 / WithGolay。安定した抽出を優先します。"
+          },
+          "fidelity": {
+            "title": "原画をできるだけ保持",
+            "description": "大きめのブロックと低めの D1/D2 でノイズと画質劣化を抑えます。"
+          },
+          "robust": {
+            "title": "攻撃耐性を優先",
+            "description": "細かいブロックと高めの D1/D2 で圧縮後の抽出力を高めます。"
+          }
+        },
+        "stablePreset": {
+          "action": "安定設定を適用",
+          "saved": "保護パッケージ向け安定設定を保存しました"
+        },
+        "remoteReference": "リモートは guofei9987/blind_watermark 0.4.4、公式 4x4 ブロック、同一の password と D1/D2 を使用します。",
+        "remoteOfficial": {
+          "title": "推奨リモート保護設定",
+          "description": "安定設定はリモート優先、自動方式フォールバック、自動強度、50 秒のリモートタイムアウト、保護画像の可逆 WebP 出力を有効にします。"
+        }
+      },
+      "extract": {
+        "title": "隠しウォーターマーク抽出",
+        "fileLabel": "検査する画像を選択",
+        "referenceFileLabel": "スクリーンショット復元用の参照画像（任意）",
+        "referenceDescription": "切り抜きまたは縮小されたスクリーンショットでは、完全な透かし入り画像を選択してください。上流の公式手順で復元してから抽出します。",
+        "description": "管理者専用。抽出した短縮コードを追跡データベースで解決して検証します。",
+        "action": "ウォーターマークを抽出",
+        "extracting": "抽出中",
+        "completed": "隠しウォーターマーク検査が完了しました",
+        "recoveryFailed": "スクリーンショットの復元に失敗しました。参照画像が対応する完全な透かし入り画像か確認してください。",
+        "remoteTimeout": "リモート透かしサービスまたはゲートウェイがタイムアウトしました。透かしがないという意味ではありません。",
+        "remoteDisconnected": "リモート透かしの進捗接続が切断されました。しばらくしてから再試行してください。",
+        "progress": {
+          "uploading": "画像をアップロード中",
+          "queued": "サーバーで受信し、処理待ちです",
+          "decoding": "画像をデコードして検証中",
+          "recovering": "スクリーンショットの切り抜きと拡縮を復元中",
+          "waiting": "リモートエンジンを待機中",
+          "aligning": "スクリーンショットと参照画像を整合中",
+          "extracting": "隠しトークンを抽出中",
+          "verifying": "追跡データベースを検証中",
+          "complete": "処理完了",
+          "elapsed": "{seconds} 秒経過",
+          "estimated": "段階は経過時間による推定です。再送信しないでください。",
+          "live": "進捗はサーバーの実際の処理段階から報告されます。",
+          "heartbeat": "サーバーのハートビートは正常で、処理は継続中です。",
+          "heartbeatEngine": "FastAPI エンジンのハートビートは正常で、アルゴリズムは実行中です。",
+          "heartbeatGateway": "Go ゲートウェイは接続中で、FastAPI エンジンの応答を待っています。",
+          "units": "{completed}/{total} 件の候補を処理済み"
+        },
+        "empty": "画像を選択すると抽出結果を表示します",
+        "fields": {
+          "found": "ウォーターマーク検出",
+          "valid": "トークン有効",
+          "version": "ペイロード版",
+          "traceToken": "追跡トークン",
+          "traceType": "追跡タイプ",
+          "traceResolved": "データベース追跡一致",
+          "payloadBytes": "ペイロードバイト",
+          "payloadBits": "ペイロードビット",
+          "payloadFormat": "ペイロード形式",
+          "watermarkEngine": "ウォーターマークエンジン",
+          "uid": "内部 UID",
+          "userId": "公開ユーザー ID",
+          "username": "ユーザー名またはニックネーム",
+          "uploadedAt": "アップロード時刻",
+          "sourceHash": "元ファイルハッシュ",
+          "customText": "カスタム識別子",
+          "postId": "投稿 ID",
+          "imageId": "画像 ID",
+          "jobId": "保護ジョブ ID",
+          "includedFields": "含まれるフィールド"
+        }
+      },
+      "global": {
+        "title": "公開ポリシー",
+        "description": "既定では管理者と許可リストのユーザーのみ利用できます。オンにするとログイン済み全ユーザーに開放します。",
+        "on": "全ユーザーに開放",
+        "off": "許可ユーザーのみ"
+      },
+      "picker": {
+        "title": "ユーザーを追加",
+        "description": "ユーザーを検索して許可リストへ追加します。内部 ID と公開アカウントを同時に記録します。",
+        "pickerLabel": "ユーザー検索",
+        "pickerPlaceholder": "ニックネーム、アカウント、メールを検索",
+        "pickerEmpty": "一致するユーザーが見つかりません",
+        "addEmpty": "許可するユーザーを検索して選択してください。",
+        "clear": "クリア",
+        "loading": "検索中",
+        "removeSelected": "選択ユーザーを削除",
+        "search": "検索",
+        "addSelected": "許可リストへ追加",
+        "noSelected": "先にユーザーを選択してください",
+        "added": "{count} 人のユーザーを追加しました"
+      },
+      "manual": {
+        "title": "手動追加",
+        "description": "内部 ID、公開ユーザー ID、Xise ID、ユーザー名、ニックネームを直接追加できます。",
+        "manualPlaceholder": "ユーザー ID、アカウント、ニックネームを入力",
+        "manualTypeId": "ID / アカウント",
+        "manualTypeUsername": "ユーザー名 / ニックネーム",
+        "addManual": "追加",
+        "duplicate": "この値はすでにリストにあります",
+        "emptyManual": "追加する値を入力してください"
+      },
+      "lists": {
+        "title": "許可リスト",
+        "description": "ID またはユーザー名のいずれかに一致するとフロントエンド検査を利用できます。",
+        "count": "{count} 件",
+        "userIdsTitle": "ID とアカウント",
+        "usernamesTitle": "ユーザー名とニックネーム",
+        "userIdsHint": "内部数値 ID、公開 user_id、Xise ID に対応します。",
+        "usernamesHint": "ニックネーム、username、公開アカウント文字列に対応します。",
+        "emptyUserIds": "ID の許可項目はありません",
+        "emptyUsernames": "ユーザー名の許可項目はありません",
+        "remove": "削除"
+      },
+      "usage": {
+        "title": "直近 100 回の利用履歴",
+        "loading": "検査履歴を読み込み中",
+        "loadFailed": "隠しウォーターマーク検査履歴を読み込めませんでした",
+        "empty": "隠しウォーターマーク検査履歴はありません",
+        "time": "時刻",
+        "actor": "利用者",
+        "result": "結果",
+        "file": "アップロードファイル",
+        "watermark": "ウォーターマーク",
+        "reason": "失敗理由",
+        "ip": "IP",
+        "path": "利用入口",
+        "success": "成功",
+        "failed": "失敗",
+        "valid": "検出・有効",
+        "invalid": "検出・無効",
+        "notFound": "未検出"
+      }
+    },
+    "queuesPanel": {
+      "title": "キューと Redis",
+      "description": "Asynq キュー、Redis メモリ、タスク時間、自動クリーンアップポリシーを確認します",
+      "loading": "キュー状態を読み込み中",
+      "queues": "キュー",
+      "tasks": "タスク",
+      "taskTitle": "タスク: {queue}",
+      "emptyJobs": "タスクはありません",
+      "serviceDisabled": "キューサービスは無効です。空の状態のみ表示されます。",
+      "recentEvents": "最近のイベント",
+      "eventTiming": "{time} · 待機 {wait} · 実行 {duration}",
+      "status": {
+        "all": "すべて",
+        "waiting": "待機",
+        "active": "実行中",
+        "completed": "完了",
+        "failed": "失敗",
+        "retry": "再試行",
+        "scheduled": "予定"
+      },
+      "stats": {
+        "waiting": "待機",
+        "active": "実行中",
+        "completed": "完了",
+        "failed": "失敗",
+        "delayed": "遅延 / 再試行",
+        "latency": "平均遅延"
+      },
+      "danger": {
+        "title": "危険な操作: キュー全体を削除",
+        "description": "待機、予定、再試行、履歴タスクを削除します。安全なクリーンアップには上の Redis メンテナンスを使用してください。",
+        "placeholder": "確認のためキュー名 {queue} を入力",
+        "clear": "キュー全体を削除",
+        "cleared": "キューを削除しました"
+      },
+      "job": {
+        "id": "タスク ID {id}",
+        "inspect": "詳細",
+        "retry": "タスクを再試行",
+        "enqueued": "投入",
+        "started": "開始",
+        "wait": "待機",
+        "duration": "実行時間",
+        "retryConfirm": "タスク {id} を再試行しますか？",
+        "retrySuccess": "タスクをキューに戻しました",
+        "close": "タスク詳細を閉じる",
+        "details": "タスク詳細",
+        "idLabel": "タスク ID",
+        "name": "名前",
+        "attempts": "試行回数"
+      },
+      "maintenance": {
+        "title": "Redis メモリ管理",
+        "loading": "Redis メモリとクリーンアップポリシーを読み込み中",
+        "description": "破棄可能な履歴、テレメトリ、キャッシュ、古いインデックスのみを削除します。",
+        "saved": "Redis クリーンアップポリシーを保存しました",
+        "runComplete": "安全な Redis クリーンアップが完了しました",
+        "cacheConfirm": "アプリケーションキャッシュを削除しますか？セッションと保留タスクは削除されません。",
+        "policyTitle": "自動クリーンアップポリシー",
+        "safeBoundary": "待機、実行中、予定、再試行タスクは自動削除されません。",
+        "save": "ポリシーを保存",
+        "runSafe": "安全なクリーンアップを実行",
+        "runCache": "アプリキャッシュを削除"
+      },
+      "memory": {
+        "title": "メモリ負荷",
+        "used": "使用済み",
+        "max": "最大メモリ",
+        "unbounded": "上限未設定",
+        "policy": "削除ポリシー",
+        "fragmentation": "断片化率",
+        "noLimitHint": "Redis の maxmemory は 0 です。管理画面は監視と警告のみを行い、サーバーのメモリ上限は変更しません。",
+        "level": {
+          "normal": "正常",
+          "warning": "警告",
+          "critical": "重大",
+          "unbounded": "上限なし"
+        }
+      },
+      "schedule": {
+        "title": "実行状態",
+        "next": "次回実行",
+        "last": "前回実行",
+        "freed": "前回解放"
+      },
+      "inventory": {
+        "title": "キー空間カテゴリ",
+        "summary": "合計 {total} キー、{scanned} キーを確認",
+        "sampled": "キー数が多いため限定サンプルを表示",
+        "noTtlSummary": "サンプル内の {count} キーに TTL がなく、恒久キーとして扱われていません",
+        "expectedPermanentSummary": "サンプル内の {count} キーは想定された恒久メタデータです",
+        "keys": "{count} キー",
+        "noTtlKeys": "{count} TTL なし",
+        "expectedPermanentKeys": "{count} 想定恒久",
+        "empty": "カテゴリデータがありません",
+        "categories": {
+          "queues": "キュー",
+          "logs": "短期ログ",
+          "metrics": "メトリクス",
+          "sessions": "セッション",
+          "cache": "アプリキャッシュ",
+          "settings": "システム設定",
+          "security": "セキュリティ制限",
+          "other": "その他"
+        }
+      },
+      "fields": {
+        "enabled": "自動クリーンアップを有効化",
+        "interval": "実行間隔（分）",
+        "accessLogs": "アクセスログ保持（時間）",
+        "accessLogMax": "アクセスログ最大件数",
+        "systemLogs": "システムログ保持（時間）",
+        "systemLogMax": "システムログ最大件数",
+        "metrics": "メトリクス保持（時間）",
+        "metricsMax": "メトリクスキーごとの最大件数",
+        "queueEvents": "キューイベント保持（時間）",
+        "queueEventMax": "キューイベント最大件数",
+        "completed": "完了タスク保持（時間）",
+        "archived": "失敗タスク保持（時間）",
+        "archivedMax": "キューごとの失敗タスク上限",
+        "warning": "メモリ警告しきい値（%）",
+        "critical": "メモリ重大しきい値（%）",
+        "accessTokenTTLSeconds": "アクセストークン有効期間（秒）",
+        "refreshTokenActiveTTLSeconds": "リフレッシュトークン有効期間（秒）",
+        "refreshTokenRenewalIntervalSeconds": "リフレッシュ更新の活動ウィンドウ（秒）",
+        "refreshTokenMode": "リフレッシュ方式",
+        "refreshTokenModeRedisOpaque": "Redis opaque",
+        "refreshTokenModeJWTLegacy": "JWT legacy",
+        "refreshTokenAutoRenewEnabled": "アクティブ自動更新を有効化",
+        "sessionInactiveTTLSeconds": "非アクティブセッション削除（秒）",
+        "userActiveSessionLimit": "ユーザーごとのアクティブセッション上限"
+      },
+      "overrides": {
+        "title": "キュー別上書き",
+        "description": "既定ではグローバルポリシーを使用し、動画や監査キューは個別に長く保持できます。",
+        "custom": "個別ポリシーを使用",
+        "default": "グローバル既定を使用"
+      }
+    },
+    "settingsPanel": {
+      "title": "システム設定",
+      "description": "真偽値、数値、日時、テキストをまとめて管理します",
+      "configTitle": "設定項目",
+      "authTitle": "ログイン / OAuth",
+      "appDownloadTitle": "App ダウンロード設定",
+      "fileRecycleTitle": "ファイルごみ箱",
+      "imageTitle": "画像処理",
+      "emptyImageSettings": "画像処理設定はありません",
+      "save": "保存",
+      "saved": "システム設定を保存しました",
+      "loadingSettings": "システム設定を読み込み中",
+      "emptySettings": "システム設定はありません",
+      "rawTitle": "互換設定スナップショット",
+      "loadingRaw": "互換設定を読み込み中",
+      "emptyRaw": "互換設定はありません",
+      "on": "オン",
+      "off": "オフ",
+      "systemSettings": {
+        "site_title": {
+          "label": "ホームタイトル",
+          "hint": "ホーム、ブラウザタイトル、共有プレビューに表示されます。"
+        },
+        "site_description": {
+          "label": "ホーム説明",
+          "hint": "ホームタイトルの下と検索・共有の概要に表示されます。"
+        },
+        "site_avatar_url": {
+          "label": "サイトアバター URL",
+          "hint": "メディアライブラリの /api/file/... パス、または完全な http/https 画像 URL を使用します。"
+        },
+        "post_content_max_length": {
+          "label": "投稿本文の最大文字数",
+          "hint": "公開、下書き、編集、管理画面での作成に適用されます。既定値は 100000 です。"
+        },
+        "post_resource_section_position": {
+          "label": "投稿リソース欄の位置",
+          "hint": "添付、購入解除、画像パッケージを本文の前後に配置します。",
+          "before": "本文の前",
+          "after": "本文の後"
+        },
+        "onboarding_interest_options": {
+          "label": "Onboarding interest options",
+          "hint": "Provide one localized list for each supported language."
+        },
+        "onboarding_points_intro_title": {
+          "label": "Points introduction title"
+        },
+        "onboarding_points_intro_summary": {
+          "label": "Points introduction summary"
+        },
+        "onboarding_points_intro_detail": {
+          "label": "Points introduction details",
+          "hint": "Shown when users view details after completing onboarding."
+        },
+        "onboarding_result_title": {
+          "label": "Onboarding completion title"
+        },
+        "onboarding_result_saved_text": {
+          "label": "Profile saved message"
+        },
+        "onboarding_points_wallet_label": {
+          "label": "Points entry label"
+        },
+        "maintenance_message": {
+          "label": "Maintenance message"
+        },
+        "oauth2_app_callback_urls": {
+          "label": "App OAuth コールバック許可リスト",
+          "hint": "1 行に 1 つの完全な callback を入力してください。例: xsewebfast://auth-return または yuempro://auth-return。各 App は個別の app_callback を送信し、バックエンドは scheme、host、path を完全一致で確認してからリダイレクトします。"
+        },
+        "app_download_android_enabled": {
+          "label": "Enable Android download"
+        },
+        "app_download_android_name": {
+          "label": "Android app name"
+        },
+        "app_download_android_version_name": {
+          "label": "Android version name"
+        },
+        "app_download_android_version_code": {
+          "label": "Android version code",
+          "hint": "Numeric version used for display and client comparisons."
+        },
+        "app_download_android_download_url": {
+          "label": "Android download URL",
+          "hint": "Use a media-library /api/file/attachments/... URL or a full URL."
+        },
+        "app_download_android_size_label": {
+          "label": "Android size label",
+          "hint": "Shown before automatic size formatting, for example 18 MB."
+        },
+        "app_download_android_size_bytes": {
+          "label": "Android package size (MB)",
+          "hint": "Enter MB in admin; it is stored as bytes. Use 0 to hide."
+        },
+        "app_download_android_package_name": {
+          "label": "Android package name"
+        },
+        "app_download_android_release_notes": {
+          "label": "Android release notes"
+        },
+        "app_download_android_fast_enabled": {
+          "label": "Enable Android Fast download"
+        },
+        "app_download_android_fast_name": {
+          "label": "Android Fast app name"
+        },
+        "app_download_android_fast_version_name": {
+          "label": "Android Fast version name"
+        },
+        "app_download_android_fast_version_code": {
+          "label": "Android Fast version code",
+          "hint": "Numeric version used for display and client comparisons."
+        },
+        "app_download_android_fast_download_url": {
+          "label": "Android Fast download URL",
+          "hint": "Use a media-library /api/file/attachments/... URL or a full URL."
+        },
+        "app_download_android_fast_size_label": {
+          "label": "Android Fast size label",
+          "hint": "Shown before automatic size formatting, for example ≤ 1 MB."
+        },
+        "app_download_android_fast_size_bytes": {
+          "label": "Android Fast package size (MB)",
+          "hint": "Enter MB in admin; it is stored as bytes. Use 0 to hide."
+        },
+        "app_download_android_fast_package_name": {
+          "label": "Android Fast package name"
+        },
+        "app_download_android_fast_release_notes": {
+          "label": "Android Fast release notes"
+        },
+        "app_download_ios_enabled": {
+          "label": "Enable iOS download"
+        },
+        "app_download_ios_name": {
+          "label": "iOS app name"
+        },
+        "app_download_ios_version_name": {
+          "label": "iOS version name"
+        },
+        "app_download_ios_version_code": {
+          "label": "iOS version code",
+          "hint": "Numeric version used for display and client comparisons."
+        },
+        "app_download_ios_download_url": {
+          "label": "iOS download URL",
+          "hint": "Use an App Store, TestFlight, enterprise, or profile URL."
+        },
+        "app_download_ios_size_label": {
+          "label": "iOS size label",
+          "hint": "Shown before automatic size formatting."
+        },
+        "app_download_ios_size_bytes": {
+          "label": "iOS package size (MB)",
+          "hint": "Enter MB in admin; it is stored as bytes. Use 0 to hide."
+        },
+        "app_download_ios_bundle_id": {
+          "label": "iOS Bundle ID"
+        },
+        "app_download_ios_release_notes": {
+          "label": "iOS release notes"
+        },
+        "file_recycle_retention_days": {
+          "label": "ファイルごみ箱の保持期間（日）",
+          "hint": "ごみ箱に移動されたファイルを自動削除前に保持する日数です。既定値は 30 日です。"
+        },
+        "file_recycle_cleanup_interval_hours": {
+          "label": "クリーンアップ間隔（時間）",
+          "hint": "期限切れのごみ箱ファイルをバックグラウンドでスキャンする間隔です。既定では 24 時間に 1 回実行します。"
+        },
+        "notification_interaction_suppression_enabled": {
+          "label": "インタラクション通知の抑制",
+          "hint": "有効にすると、同じユーザーから同じ作者への同種のいいね、コメントいいね、保存通知がしきい値を超えた場合に静かに抑制されます。"
+        },
+        "notification_interaction_suppression_window_seconds": {
+          "label": "通知抑制ウィンドウ（秒）",
+          "hint": "ローリング集計ウィンドウ。既定は 600 秒、許可範囲は 60 から 86400 秒です。"
+        },
+        "notification_interaction_suppression_threshold": {
+          "label": "通知抑制しきい値",
+          "hint": "ウィンドウ内で送信できる同種のインタラクション通知数。既定は 3、許可範囲は 1 から 100 です。"
+        }
+      },
+      "fields": {
+        "videoCenterEnabled": "動画センターの切り替え",
+        "videoCenterHomepageEnabled": "ホームの動画センター推薦",
+        "videoCenterRecommendLimit": "動画センター推薦数",
+        "videoCenterAccountCutoff": "動画センター登録日時の締切",
+        "imageWebpEnabled": "WebP に変換",
+        "imageWebpQuality": "通常画像の品質",
+        "imageAvatarWebpQuality": "アバター画像の品質",
+        "imageWebpMethod": "WebP エンコード Method",
+        "imageWebpAlphaQuality": "アルファチャンネル品質",
+        "imageWebpLossless": "可逆 WebP を使用",
+        "imageLibvipsEnabled": "libvips カラーマネジメントを有効化",
+        "imageMaxWidth": "最大幅",
+        "imageMaxHeight": "最大高さ",
+        "imageProcessingConcurrency": "画像処理の同時実行数",
+        "imagePostMaxCount": "1投稿あたりの画像上限",
+        "imageArchiveEnabled": "全画像 ZIP を自動生成",
+        "imageArchiveThreshold": "自動 ZIP の画像しきい値",
+        "imageProtectionEnabled": "強化透かし保護",
+        "imageProtectionNoticeEnabled": "保護案内を表示",
+        "imageSelectAllEnabled": "画像の全選択を許可",
+        "paidContentBalanceEnabled": "月コインでの支払いを許可",
+        "paidContentPointsEnabled": "ポイントでの支払いを許可",
+        "paidContentBalanceMaxPrice": "月コイン価格上限",
+        "paidContentPointsMaxPrice": "ポイント価格上限",
+        "hiddenWatermarkEnabled": "不可視透かしを有効化",
+        "hiddenWatermarkIncludeUid": "内部 UID を含める",
+        "hiddenWatermarkIncludeUserId": "公開ユーザー ID を含める",
+        "hiddenWatermarkIncludeUsername": "ユーザー名またはニックネームを含める",
+        "hiddenWatermarkIncludeTime": "UTC アップロード時刻を含める",
+        "hiddenWatermarkIncludeFileHash": "元ファイルのハッシュを含める",
+        "hiddenWatermarkIncludeCustom": "カスタム識別子を含める",
+        "hiddenWatermarkCustomText": "不可視透かしのカスタム識別子"
+      },
+      "hints": {
+        "videoCenterAccountCutoff": "この日時以降に登録したユーザーには動画センターを表示しません。空欄にすると登録日時による非表示を無効にします。",
+        "imageMaxDimension": "0 は制限なしです。縦横比を維持して縮小します。",
+        "imageProcessingConcurrency": "不可視透かし処理はメモリを多く使うため、1 を推奨します。",
+        "imagePostMaxCount": "1投稿と一括アップロードの画像上限です。既定値 100、最大 500。",
+        "imageArchiveEnabled": "有効にすると、しきい値に達した公開済み投稿の全画像 ZIP をバックグラウンドキューで生成します。",
+        "imageArchiveThreshold": "画像数がこの値を超えると ZIP を自動生成します。既定値は 25 です。",
+        "imageLibvipsEnabled": "画像を自動回転し、元の ICC から sRGB へ変換して安全な EXIF のみ保持します。無効時は従来の処理を維持します。",
+        "imageProtectionEnabled": "カバー以外の画像を保護し、追跡可能な透かし入り ZIP のみをダウンロード可能にします。",
+        "imageProtectionNoticeEnabled": "投稿画面に保護説明または全体無効の案内を表示するかを設定します。",
+        "imageSelectAllEnabled": "無効時は全選択を隠し、未選択時の一括操作が全画像に適用されないようにします。",
+        "paidContentPaymentMethod": "有料画像でこの支払い方法を選択できるかを設定します。月コインとポイントは同時に有効化できます。",
+        "paidContentPriceLimit": "有料画像で作者が入力できる最高ロック解除価格を制御します。",
+        "hiddenWatermarkCustomText": "カスタム識別子を有効にすると追跡レコードへ保存され、画像内のトークンには埋め込まれません。"
+      },
+      "extract": {
+        "title": "不可視透かしの抽出",
+        "fileLabel": "検査する画像を選択",
+        "description": "管理者専用です。抽出した短縮コードを追跡データベースで解決して検証します。",
+        "action": "透かしを抽出",
+        "extracting": "抽出中",
+        "completed": "不可視透かしの検査が完了しました",
+        "empty": "画像を選択すると抽出結果が表示されます",
+        "fields": {
+          "found": "透かし検出",
+          "valid": "トークン有効",
+          "version": "ペイロード版",
+          "traceToken": "追跡トークン",
+          "traceType": "追跡タイプ",
+          "traceResolved": "データベース追跡の解決",
+          "payloadBytes": "ペイロードバイト数",
+          "payloadBits": "ペイロードビット数",
+          "payloadFormat": "ペイロード形式",
+          "watermarkEngine": "透かしエンジン",
+          "uid": "内部 UID",
+          "userId": "公開ユーザー ID",
+          "username": "ユーザー名またはニックネーム",
+          "uploadedAt": "アップロード時刻",
+          "sourceHash": "元ファイルのハッシュ",
+          "customText": "カスタム識別子",
+          "postId": "投稿 ID",
+          "imageId": "画像 ID",
+          "jobId": "保護ジョブ ID",
+          "includedFields": "含まれる項目"
+        }
+      }
+    },
+    "fileRecycleBin": {
+      "columns": {
+        "remaining": "残り時間"
+      },
+      "countdown": {
+        "remaining": "残り {value}",
+        "separator": "",
+        "day": "{count}日",
+        "hour": "{count}時間",
+        "minute": "{count}分",
+        "due": "削除期限到来",
+        "purged": "削除済み"
+      },
+      "actions": {
+        "inspect": "存在確認",
+        "preview": "プレビュー",
+        "download": "ダウンロード",
+        "close": "閉じる"
+      },
+      "toasts": {
+        "recycledExists": "回収コピーは存在します",
+        "recycledMissing": "回収コピーが見つかりません",
+        "directoryUnsupported": "ディレクトリのプレビューは未対応です",
+        "previewUnsupported": "このファイルはプレビューできません",
+        "downloadReady": "ダウンロードを開始しました"
+      },
+      "preview": {
+        "title": "回収ファイルプレビュー",
+        "original": "元の場所",
+        "recycled": "回収コピー",
+        "files": "ファイル一覧",
+        "noInspection": "プレビュー前に存在状態を確認してください。",
+        "imageAlt": "回収ファイルプレビュー",
+        "empty": "プレビューは未読み込みです"
+      },
+      "status": {
+        "unsafe": "危険",
+        "exists": "存在",
+        "missing": "欠落",
+        "notConfigured": "未設定",
+        "directory": "ディレクトリ",
+        "file": "ファイル"
+      },
+      "errors": {
+        "invalidID": "回収項目 ID が無効です",
+        "idsRequired": "先に回収項目を選択してください",
+        "notFound": "回収項目が見つかりません",
+        "unsafePath": "回収パスは安全性チェックに失敗しました",
+        "fileMissing": "回収コピーが見つかりません",
+        "directoryPreviewUnsupported": "このバージョンではディレクトリのプレビューとダウンロードに対応していません",
+        "previewUnsupported": "このファイル形式はプレビューできません",
+        "inspectFailed": "回収項目の検査に失敗しました"
+      }
+    },
+    "aiAgentPanel": {
+      "title": "AI エージェント",
+      "description": "OpenAI 互換サービス、プロンプトタブ、ストリーミング生成、待機同時実行数、監査ログを設定します。",
+      "loading": "AI 設定を読み込み中",
+      "save": "保存",
+      "saving": "保存中",
+      "saved": "AI 設定を保存しました",
+      "tabs": {
+        "base": "基本設定",
+        "markdown": "ノート整形",
+        "polish": "ノート推敲",
+        "review": "自動評価",
+        "comments": "AI コメント",
+        "commentReply": "コメント返信",
+        "vision": "画像分析",
+        "copy": "運営文案",
+        "logs": "監査ログ",
+        "moderation": "コンテンツ審査",
+        "publishGeneration": "詳細生成",
+        "contentFormat": "エディター AI"
+      },
+      "base": {
+        "title": "接続と制限",
+        "enabled": "AI 有効",
+        "disabled": "AI 無効",
+        "baseUrl": "Base URL",
+        "model": "モデル",
+        "apiKey": "API Key",
+        "apiKeyPlaceholder": "新しいキーを貼り付けて置換",
+        "timeout": "上流が無応答なら自動停止（秒）",
+        "maxRun": "バックグラウンド最大実行秒数",
+        "chunkSize": "チャンク最大文字数",
+        "concurrency": "グローバル最大同時実行数（既定 5）",
+        "temperature": "既定 temperature",
+        "maxOutput": "既定最大出力 Token",
+        "showReasoningOn": "推論を表示",
+        "showReasoningOff": "推論を非表示",
+        "thinkingParameterOn": "thinking パラメータを送信",
+        "thinkingParameterOff": "thinking パラメータを送信しない",
+        "thinkingOn": "モデル thinking を有効化",
+        "thinkingOff": "モデル thinking を無効化",
+        "logHttpDetailsOn": "リモート HTTP 詳細を記録",
+        "logHttpDetailsOff": "リモート HTTP 詳細を記録しない",
+        "extraHeaders": "カスタム Headers JSON",
+        "extraHeadersPlaceholder": "{\n  \"X-Provider\": \"openai-compatible\"\n}",
+        "extraHeadersInvalid": "カスタム Headers は JSON オブジェクトである必要があります。",
+        "reasoningEffort": "推論深度",
+        "reasoningEfforts": {
+          "default": "プロバイダー既定",
+          "minimal": "最小",
+          "low": "低",
+          "medium": "中",
+          "high": "高"
+        },
+        "modelParameters": "モデル追加パラメータ JSON",
+        "modelParametersPlaceholder": "{\n  \"top_p\": 0.9\n}",
+        "modelParametersInvalid": "モデル追加パラメータは JSON オブジェクトで指定してください。"
+      },
+      "autoComment": {
+        "enabled": "投稿後の AI 自動コメントを有効化",
+        "disabled": "投稿後の AI 自動コメントを無効化",
+        "botUserId": "フォールバック bot UID",
+        "template": "自動コメントテンプレート",
+        "delaySeconds": "遅延秒数",
+        "maxImages": "Vision に送る最大画像数",
+        "botUserIdMin": "ランダム UID 範囲の開始",
+        "botUserIdMax": "ランダム UID 範囲の終了",
+        "style": "プロンプトスタイル",
+        "styles": {
+          "normal": "通常",
+          "humorous": "ユーモア",
+          "bold": "強め"
+        },
+        "imageSelectionMode": "画像選択モード"
+      },
+      "commentReply": {
+        "title": "AI コメント返信",
+        "enabled": "AI コメント返信を有効化",
+        "disabled": "AI コメント返信を無効化",
+        "template": "返信テンプレート",
+        "delaySeconds": "遅延秒数",
+        "maxImages": "Vision に送る最大画像数",
+        "maxReplies": "AI コメントごとの最大返信数",
+        "mentionEnabled": "メンション返信を有効化",
+        "mentionDisabled": "メンション返信を無効化",
+        "mentionName": "メンション名",
+        "mentionTemplate": "メンション返信テンプレート",
+        "mentionBotUserIdMin": "ランダムメンション bot UID 開始",
+        "mentionBotUserIdMax": "ランダムメンション bot UID 終了",
+        "maxMentionReplies": "投稿ごとの最大メンション返信数",
+        "style": "プロンプトスタイル",
+        "imageSelectionMode": "画像選択モード"
+      },
+      "templatesTitle": "プロンプトテンプレート",
+      "templates": {
+        "markdown_format": "Markdown 整形",
+        "post_polish": "ノート推敲",
+        "post_review_reply": "AI 評価返信",
+        "post_auto_comment": "投稿自動コメント",
+        "comment_reply": "コメント返信",
+        "comment_mention_reply": "メンション返信",
+        "image_analysis": "画像分析",
+        "announcement": "お知らせ",
+        "system_notification": "システム通知",
+        "popup": "ポップアップ",
+        "activity_description": "イベント説明",
+        "post_title": "投稿タイトル",
+        "post_summary": "投稿要約",
+        "tag_suggestions": "タグ提案",
+        "post_custom_generate": "カスタム投稿生成",
+        "comment_moderation": "コメント審査",
+        "post_moderation": "投稿審査",
+        "publish_title_generate": "投稿タイトル要約",
+        "publish_detail_generate": "投稿詳細生成",
+        "publish_title_detail_generate": "旧タイトル・詳細生成"
+      },
+      "template": {
+        "enabled": "有効",
+        "disabled": "無効",
+        "temperature": "Temperature",
+        "maxOutput": "最大出力 Token",
+        "concurrency": "プロジェクト同時実行数",
+        "concurrencyHint": "0 は全体上限を継承、1-50 はこのテンプレートだけを制限します。",
+        "jsonOn": "JSON オン",
+        "jsonOff": "JSON オフ",
+        "prompt": "プロンプト",
+        "systemPrompt": "システムプロンプト",
+        "userPrompt": "ユーザープロンプト",
+        "resetDefault": "デフォルトに戻す",
+        "style": "スタイル",
+        "styles": {
+          "normal": "通常",
+          "humorous": "ユーモア",
+          "bold": "強め"
+        },
+        "model": "個別モデル",
+        "modelPlaceholder": "空欄なら基本モデルを使用",
+        "runtimeOverrides": "実行時オーバーライド",
+        "runtimeOverridesHint": "このテンプレートだけ推論設定とモデル追加パラメータを上書きします。",
+        "runtimeOn": "上書きオン",
+        "runtimeOff": "全体設定を継承",
+        "runtimeModelParameters": "テンプレートモデルパラメータ JSON"
+      },
+      "generator": {
+        "title": "文案生成ワークスペース",
+        "template": "テンプレート",
+        "input": "入力",
+        "inputPlaceholder": "運営目的、対象、トーン、事実、制約を入力してください。",
+        "output": "出力",
+        "reasoning": "推論",
+        "emptyOutput": "生成結果がここに表示されます。",
+        "emptyInput": "先に入力してください。",
+        "run": "生成",
+        "generating": "生成中",
+        "progress": "進捗 {percent}%",
+        "queue": "待機 {position}/{total}、ETA {eta}"
+      },
+      "logs": {
+        "title": "AI 監査ログ",
+        "refresh": "更新",
+        "loading": "AI ログを読み込み中",
+        "empty": "AI ログはありません",
+        "durationMs": "{value} ms",
+        "columns": {
+          "type": "種類",
+          "status": "状態",
+          "actor": "操作者",
+          "model": "モデル",
+          "tokens": "Token",
+          "duration": "時間",
+          "created": "作成日時",
+          "imagesSent": "送信成功画像数",
+          "tokenSpeed": "Token/秒",
+          "error": "API エラー",
+          "details": "詳細"
+        },
+        "types": {
+          "format_markdown": "Markdown 整形",
+          "admin_copy": "管理用文案生成",
+          "post_review_reply": "AI レビュー返信",
+          "post_auto_comment": "投稿自動コメント",
+          "comment_reply": "コメント返信",
+          "comment_mention_reply": "メンション返信",
+          "image_analysis": "画像分析",
+          "post_polish": "投稿推敲",
+          "post_custom_generate": "カスタム投稿生成",
+          "publish_title_generate": "投稿タイトル要約",
+          "publish_detail_generate": "投稿詳細生成",
+          "publish_title_detail_generate": "旧タイトル・詳細生成",
+          "comment_moderation": "コメント審査",
+          "post_moderation": "投稿審査"
+        },
+        "statuses": {
+          "running": "実行中",
+          "completed": "完了",
+          "failed": "失敗",
+          "canceled": "キャンセル済み"
+        },
+        "actors": {
+          "user": "ユーザー",
+          "admin": "管理者",
+          "system": "システム"
+        },
+        "details": {
+          "show": "表示",
+          "hide": "閉じる",
+          "httpStatus": "HTTP ステータス",
+          "contentType": "Content-Type",
+          "usage": "Token 使用量",
+          "usageValue": "Prompt {prompt} / Completion {completion} / Total {total}",
+          "attempts": "試行回数",
+          "outputSummary": "生成内容",
+          "responseSummary": "上流レスポンス",
+          "upstreamAttempts": "HTTP 試行詳細",
+          "rawMetadata": "生メタデータ"
+        }
+      },
+      "eta": {
+        "lessThanMinute": "1 分未満",
+        "minutes": "{count} 分"
+      },
+      "moderation": {
+        "title": "AI コメント・投稿審査",
+        "enabled": "審査オン",
+        "disabled": "審査オフ",
+        "templateKey": "テンプレートキー",
+        "prompt": "プロンプト上書き",
+        "promptPlaceholder": "任意: この審査対象のテンプレートプロンプトを上書きします。",
+        "ruleEnabled": "審査",
+        "ruleDisabled": "スキップ",
+        "targets": {
+          "comment": {
+            "title": "コメント審査",
+            "description": "新しいコメントは先に表示され、AI が検出した場合に設定済みアクションを適用します。"
+          },
+          "post": {
+            "title": "投稿審査",
+            "description": "新しい投稿は先に表示され、AI が検出した場合に設定済みアクションを適用します。"
+          }
+        },
+        "rules": {
+          "spam": "スパム",
+          "porn": "性的表現",
+          "political_sensitive": "政治的センシティブ"
+        },
+        "actions": {
+          "observe": "観察",
+          "delete": "削除",
+          "private": "非公開にする"
+        },
+        "sensitivity": "感度",
+        "debugTitle": "審査デバッグテスト",
+        "debugRun": "テスト実行",
+        "debugRunning": "テスト中",
+        "debugTarget": "対象",
+        "debugInput": "テスト内容",
+        "debugPlaceholder": "コメントまたは投稿本文を貼り付け、モデルの生出力と解析結果を確認します。",
+        "debugEmpty": "テスト前に内容を入力してください。",
+        "debugEmptyOutput": "テストを実行すると解析結果と生出力が表示されます。",
+        "debugStatus": "ステータス:",
+        "debugAction": "アクション:",
+        "debugTemplate": "テンプレート:",
+        "debugDecision": "解析結果",
+        "debugRaw": "モデル生出力"
+      },
+      "publishGeneration": {
+        "title": "投稿詳細を生成",
+        "enabled": "詳細生成オン",
+        "disabled": "詳細生成オフ",
+        "maxImages": "解析する画像数",
+        "template": "テンプレート",
+        "titleMaxChars": "タイトル文字数上限",
+        "imageSelectionMode": "画像選択モード",
+        "detailTemplate": "詳細生成テンプレート",
+        "titleTemplate": "タイトル要約テンプレート"
+      },
+      "imageSelectionModes": {
+        "ordered": "順番に選択",
+        "random": "ランダム"
+      },
+      "contentFormat": {
+        "title": "エディター AI 整形",
+        "enabled": "エディター AI 有効",
+        "disabled": "エディター AI 無効",
+        "template": "テンプレート",
+        "modes": {
+          "format": {
+            "enabled": "スマート整形は有効です",
+            "disabled": "スマート整形は無効です"
+          },
+          "polish": {
+            "enabled": "ノート推敲は有効です",
+            "disabled": "ノート推敲は無効です"
+          },
+          "custom": {
+            "enabled": "コンテンツ生成は有効です",
+            "disabled": "コンテンツ生成は無効です"
+          }
+        },
+        "continuation": {
+          "enabled": "長文の圧縮コンテキスト継続生成は有効です",
+          "disabled": "長文の圧縮コンテキスト継続生成は無効です",
+          "triggerChars": "開始文字数",
+          "maxRounds": "継続生成回数",
+          "contextChars": "圧縮コンテキスト文字数"
+        }
+      },
+      "jobs": {
+        "title": "AI タスクキュー",
+        "refresh": "更新",
+        "loading": "AI タスクを読み込み中",
+        "empty": "待機中または生成中の AI タスクはありません",
+        "cancel": "破棄",
+        "cancelSuccess": "AI タスクを破棄しました",
+        "metrics": {
+          "active": "キュー合計",
+          "queued": "待機中",
+          "running": "生成中"
+        },
+        "statuses": {
+          "queued": "待機中",
+          "running": "生成中",
+          "completed": "完了",
+          "failed": "失敗",
+          "canceled": "破棄済み"
+        },
+        "userLine": "ユーザー ID {user} · 数値 ID {id}",
+        "queuePosition": "キュー {position}/{total}",
+        "lastToken": "最後の token",
+        "tokenRate": "10 秒平均速度",
+        "tokenRateValue": "{value} tokens/s",
+        "tokenRatePending": "出力待ち",
+        "notAvailable": "N/A",
+        "waiting": "待機中",
+        "generatedTokens": "生成済み token 合計",
+        "estimatedTokens": "推定 tokens",
+        "upstream": {
+          "show": "上流出力",
+          "hide": "出力を閉じる",
+          "title": "上流リアルタイム出力",
+          "live": "リアルタイム",
+          "history": "履歴",
+          "empty": "上流出力はまだありません",
+          "streaming": "監視中",
+          "stopped": "停止済み"
+        },
+        "time": {
+          "unknown": "更新なし",
+          "secondsAgo": "{count} 秒前",
+          "minutesAgo": "{count} 分前",
+          "hoursAgo": "{count} 時間前",
+          "daysAgo": "{count} 日前"
+        }
+      }
+    },
+    "accessBlockPanel": {
+      "title": "IP / UA アクセスブロック",
+      "description": "完全一致 IP、CIDR、User-Agent の部分一致または正規表現でリクエストをブロックします。ルート実行前にメモリ snapshot で高速照合します。",
+      "refresh": "更新",
+      "viewLogs": "発火ログ",
+      "disabledHint": "ACCESS_BLOCK_DISABLED によりアクセスブロックは無効です。",
+      "loading": "アクセスブロック規則を読み込み中",
+      "rulesTitle": "規則",
+      "rulesSummary": "{active}/{total} 件の規則が有効",
+      "newRule": "新規規則",
+      "empty": "アクセスブロック規則はありません",
+      "editTitle": "規則を編集",
+      "createTitle": "規則を作成",
+      "formHint": "複数の IP、CIDR、UA pattern を貼り付けて一括追加できます。強制保存は自己ロック保護をスキップします。",
+      "kind": "種別",
+      "matchType": "照合方式",
+      "pattern": "パターン",
+      "batch": "一括パターン",
+      "batchPlaceholder": "1 行に 1 pattern。空行と # で始まる行は無視されます。",
+      "action": "動作",
+      "statusCode": "ステータス",
+      "redirectUrl": "リダイレクト URL",
+      "priority": "優先度",
+      "note": "メモ",
+      "enabled": "有効",
+      "disabled": "無効",
+      "enable": "有効化",
+      "disable": "無効化",
+      "delete": "削除",
+      "deleteConfirm": "このアクセスブロック規則を削除しますか？",
+      "force": "この規則が現在の管理者リクエストに一致しても強制保存します。",
+      "cancel": "キャンセル",
+      "save": "保存",
+      "batchSave": "一括追加",
+      "actionStatus": "{code} を返す",
+      "actionRedirect": "{url} へリダイレクト",
+      "columns": {
+        "rule": "規則",
+        "action": "動作",
+        "priority": "優先度",
+        "note": "メモ",
+        "state": "状態",
+        "operations": "操作"
+      },
+      "kinds": {
+        "ip": "IP",
+        "ua": "User-Agent"
+      },
+      "matchTypes": {
+        "ip": "完全一致 IP",
+        "cidr": "CIDR",
+        "ua_contains": "UA 部分一致",
+        "ua_regex": "UA 正規表現"
+      },
+      "actions": {
+        "status": "ステータスコード",
+        "redirect": "リダイレクト"
+      },
+      "toasts": {
+        "loadFailed": "アクセスブロック規則を読み込めませんでした",
+        "saved": "アクセスブロック規則を保存しました",
+        "batchSaved": "一括完了: 作成 {created} 件、失敗 {failed} 件",
+        "saveFailed": "アクセスブロック規則を保存できませんでした",
+        "deleted": "アクセスブロック規則を削除しました",
+        "deleteFailed": "アクセスブロック規則を削除できませんでした",
+        "importSaved": "URL インポートソースを保存しました",
+        "importSaveFailed": "URL インポートソースの保存に失敗しました",
+        "importSynced": "URL インポートを同期しました: {count} 件のルール",
+        "importSyncFailed": "URL インポートソースの同期に失敗しました",
+        "importDeleted": "URL インポートソースを削除しました",
+        "importDeleteFailed": "URL インポートソースの削除に失敗しました"
+      },
+      "importedRule": "URL インポート",
+      "importsTitle": "IP URL インポート",
+      "importsSummary": "{active}/{total} 件のソースが有効",
+      "newImport": "新規インポート",
+      "importsEmpty": "URL インポートソースはまだありません",
+      "editImportTitle": "URL インポートを編集",
+      "createImportTitle": "URL インポートを作成",
+      "importFormHint": "プレーンテキストの IP リストを取得します。1 行につき 1 つの IP または CIDR を指定します。空行と # コメントは無視されます。",
+      "importUrl": "インポート URL",
+      "updateIntervalMinutes": "更新間隔（分）",
+      "saveImport": "ソースを保存",
+      "syncNow": "今すぐ同期",
+      "importForce": "インポートリストが現在の管理者リクエストに一致しても手動同期を強制します。",
+      "importDeleteConfirm": "この URL インポートソースと取り込まれたルールを削除しますか？",
+      "importCount": "{count} 件のルール",
+      "intervalMinutes": "{minutes} 分",
+      "importColumns": {
+        "url": "URL",
+        "interval": "間隔",
+        "lastSync": "前回同期",
+        "nextSync": "次回同期"
+      },
+      "importStatuses": {
+        "pending": "待機中",
+        "success": "成功",
+        "failed": "失敗"
+      },
+      "errors": {
+        "selfLock": "このルールは現在の管理者リクエストをブロックします。復旧手段がある場合のみ強制保存してください。",
+        "importDisabled": "サーバーで URL インポートが無効化されています。",
+        "importFetchFailed": "リモート IP リストの取得または解析に失敗しました。",
+        "invalidRule": "アクセスブロックルールが無効です。",
+        "saveFailed": "アクセスブロックルールを保存できませんでした。",
+        "unavailable": "アクセスブロックサービスを利用できません。"
+      }
+    }
+  }
+}

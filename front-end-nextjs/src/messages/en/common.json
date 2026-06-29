@@ -1,0 +1,304 @@
+{
+  "app": {
+    "name": "Yuem",
+    "description": "A clean XHS-style planning and media feed."
+  },
+  "error": {
+    "access_blocked": "Access has been blocked by the current access policy.",
+    "api_key_rate_limited": "Too many failed API key checks. Try again later.",
+    "balance_center_not_configured": "The User Center balance API is not configured.",
+    "invalid_file_recycle_setting": "File recycle bin settings are invalid.",
+    "invalid_redis_maintenance_config": "The Redis maintenance configuration is invalid.",
+    "redis_unavailable": "Redis is unavailable.",
+    "redis_maintenance_busy": "Redis maintenance is already running.",
+    "redis_maintenance_failed": "Redis maintenance failed."
+  },
+  "nav": {
+    "home": "Home",
+    "friends": "Following",
+    "works": "Works",
+    "create": "Create",
+    "messages": "Messages",
+    "profile": "Profile",
+    "assistant": "Notes AI",
+    "red": "RED",
+    "live": "Live",
+    "publish": "Publish",
+    "more": "More",
+    "logout": "Log out",
+    "loggingOut": "Logging out...",
+    "logoutSuccess": "Logged out.",
+    "about": "About",
+    "watermarkInspector": "Hidden Watermark Inspector"
+  },
+  "settingsPage": {
+    "title": "System Settings",
+    "back": "Back",
+    "language": {
+      "title": "Language",
+      "description": "Change the interface language."
+    },
+    "account": {
+      "title": "Account capabilities",
+      "description": "Verification profile and account identity tools.",
+      "verificationTitle": "Apply for verification",
+      "verificationDescription": "Submit personal or official verification details",
+      "networkDiagnosticsTitle": "Network diagnostics",
+      "networkDiagnosticsDescription": "View current IP, Geo, CDN, and privacy risks"
+    },
+    "privacy": {
+      "title": "Privacy settings",
+      "description": "Control whether birthday, age, zodiac sign, and MBTI appear on your profile.",
+      "summary": "{visible}/{total} profile fields are public",
+      "items": {
+        "birthday": {
+          "title": "Birthday",
+          "description": "Control whether others can see your birthday."
+        },
+        "age": {
+          "title": "Age",
+          "description": "Control whether your profile shows the age calculated from your birthday."
+        },
+        "zodiac": {
+          "title": "Zodiac sign",
+          "description": "Control whether others can see your zodiac sign."
+        },
+        "mbti": {
+          "title": "MBTI",
+          "description": "Control whether others can see your MBTI."
+        }
+      }
+    },
+    "checkingAuth": "Checking sign-in status",
+    "loading": "Loading settings",
+    "save": "Save system settings",
+    "saved": "System settings saved",
+    "loginRequired": {
+      "title": "Sign in to update settings",
+      "description": "Sign in to read and save your system settings.",
+      "login": "Sign in"
+    },
+    "errors": {
+      "load": "Could not load system settings",
+      "save": "Could not save system settings"
+    },
+    "aiAutoComment": {
+      "title": "AI auto comments",
+      "description": "When turned off, AI will not automatically comment on your posts. Replies summoned by other users with @yueai still work."
+    }
+  },
+  "moreMenu": {
+    "wallet": {
+      "title": "Moon Coin balance",
+      "loading": "Loading...",
+      "error": "Balance unavailable",
+      "amount": "{amount} Moon Coins",
+      "login": "Sign in to view",
+      "account": "Account {username}",
+      "detail": "Open wallet for details"
+    },
+    "invite": "Invite users",
+    "verification": "Apply for verification",
+    "theme": {
+      "title": "Theme",
+      "options": {
+        "system": "Follow system",
+        "light": "Light",
+        "dark": "Dark"
+      }
+    },
+    "systemSettings": "System Settings",
+    "appDownload": "App Download"
+  },
+  "tabs": {
+    "recommended": "Recommended",
+    "latest": "Latest",
+    "hot": "Hot",
+    "following": "Following",
+    "videoCenter": "Video Center"
+  },
+  "search": {
+    "placeholder": "Search posts, creators, or tags",
+    "compose": "Create",
+    "idea": "Ask for ideas",
+    "aiBadge": "AI",
+    "submit": "Search",
+    "clear": "Clear",
+    "resultFor": "Results for {keyword}"
+  },
+  "category": {
+    "all": "All",
+    "names": {
+      "beauty": "Beauty",
+      "fashion": "Fashion",
+      "food": "Food",
+      "gaming": "Gaming",
+      "interest": "Interests",
+      "knowledge": "Knowledge",
+      "lifestyle": "Lifestyle",
+      "music": "Music",
+      "novel": "Novel",
+      "photography": "Photography",
+      "pictureSet": "Set of pictures",
+      "ropeBondage": "Rope bondage",
+      "shackles": "Shackles",
+      "sports": "Sports",
+      "technology": "Technology",
+      "travel": "Travel",
+      "video": "Video"
+    }
+  },
+  "video": {
+    "error": "Video playback failed.",
+    "loading": "Loading video",
+    "unavailable": "No playable video URL is available."
+  },
+  "login": {
+    "title": "Log in to unlock more",
+    "description": "Log in to keep browsing, liking, saving, and commenting.",
+    "home": "Back to feed",
+    "modes": {
+      "login": "Sign in",
+      "register": "Register"
+    },
+    "fields": {
+      "identifier": "Email or account",
+      "password": "Password",
+      "userID": "Account",
+      "nickname": "Nickname",
+      "email": "Email",
+      "emailCode": "Email code",
+      "captcha": "Captcha"
+    },
+    "placeholders": {
+      "identifier": "Enter email or account",
+      "password": "Enter password",
+      "userID": "3-15 letters, numbers, or underscores",
+      "nickname": "Enter nickname",
+      "email": "Enter email",
+      "emailCode": "Enter code",
+      "newPassword": "Create password",
+      "captcha": "Enter captcha"
+    },
+    "actions": {
+      "login": "Sign in",
+      "loggingIn": "Signing in...",
+      "register": "Create account",
+      "registering": "Creating account...",
+      "sendEmailCode": "Send code",
+      "resendEmailCode": "Resend",
+      "refreshCaptcha": "Refresh captcha"
+    },
+    "success": {
+      "login": "Signed in.",
+      "register": "Account created."
+    },
+    "emailCodeSent": "Email code sent.",
+    "captchaAlt": "Captcha image",
+    "errors": {
+      "missingLogin": "Enter email or account and password.",
+      "missingRegister": "Enter account, nickname, email, and password.",
+      "passwordLength": "Password must be 6-20 characters.",
+      "emailInvalid": "Enter a valid email address.",
+      "emailCodeRequired": "Enter the email verification code.",
+      "captchaRequired": "Enter the captcha.",
+      "loginFailed": "The email/account or password is incorrect.",
+      "registerFailed": "Registration failed. Check the fields and try again.",
+      "emailCodeFailed": "Could not send the email code.",
+      "captchaLoadFailed": "Could not load the captcha.",
+      "geetestUnavailable": "Password registration is unavailable while GeeTest verification is enabled."
+    },
+    "userCenterLogin": "Log in",
+    "redirecting": "Opening User Center...",
+    "loadingConfig": "Loading authorization settings...",
+    "configLoadFailed": "Authorization settings could not be loaded. The default sign-in entry will be used.",
+    "oauthOnly": "Log in to unlock more content.",
+    "oauthPrompt": "Log in to continue with the full experience.",
+    "oauthSuccess": "OAuth2 sign-in successful",
+    "oauthStatusFailed": "OAuth2 sign-in status could not be confirmed. Please try again.",
+    "nativeStateFailed": "The app sign-in request expired or did not match. Please try again.",
+    "nativeCancelled": "Sign-in was cancelled.",
+    "nativeCancelledWithDetail": "Sign-in was cancelled: {detail}",
+    "nativeExchangeFailed": "The app could not finish signing in. Please try again.",
+    "nativeExchangeFailedWithDetail": "The app could not finish signing in: {detail}",
+    "nativeBackAgain": "Press Back again to exit",
+    "nativeOffline": "You are offline. Yuem will reconnect automatically.",
+    "nativeCallbackTitle": "Return to Yuem",
+    "nativeCallbackDescription": "Authorization is complete. Open the Yuem app to continue.",
+    "nativeCallbackOpen": "Open Yuem",
+    "nativeCallbackInvalid": "This authorization link is invalid or has expired.",
+    "nativeStatus": {
+      "title": "App sign-in did not finish",
+      "callbackReceived": "The browser callback reached the app and sign-in is being processed.",
+      "stateFailed": "The sign-in request expired or does not match this app session. Please start sign-in again.",
+      "oauthError": "User Center returned an authorization failure.",
+      "missingCode": "The browser callback did not include a login ticket.",
+      "tokenExchangeFailed": "The app failed to exchange the login token.",
+      "tokenStorageFailed": "The app received a token, but failed to store the local sign-in state.",
+      "profileFailed": "The app stored a token, but could not verify the current user.",
+      "signedIn": "The app sign-in state has been stored.",
+      "unknown": "The app sign-in failed for an unknown reason.",
+      "detail": "Detail: {detail}"
+    }
+  },
+  "loginUnlock": {
+    "title": "Sign in to unlock more",
+    "description": "Sign in to keep browsing, liking, saving, and joining the conversation.",
+    "login": "Sign in",
+    "later": "Maybe later"
+  },
+  "status": {
+    "refresh": "Refresh",
+    "refreshed": "Feed refreshed",
+    "liked": "Liked",
+    "unliked": "Like removed"
+  },
+  "locale": {
+    "trigger": "Change language",
+    "label": "Language",
+    "options": {
+      "en": "English",
+      "zh-CN": "简体中文",
+      "zh-TW": "繁體中文",
+      "vi": "Tiếng Việt",
+      "ja": "日本語",
+      "ko": "한국어"
+    }
+  },
+  "maintenance": {
+    "serviceMode": "Service Mode / Maintenance",
+    "title": "System maintenance in progress",
+    "defaultMessage": "The service is under maintenance. Please come back later.",
+    "estimatedRemaining": "Estimated time remaining",
+    "unknownTime": "To be confirmed",
+    "entryHint": "Use the dedicated link from an administrator to enter service mode.",
+    "edgeLabel": "Service Mode / Maintenance",
+    "entry": {
+      "eyebrow": "SERVICE ENTRY",
+      "title": "Entering service mode",
+      "checking": "Checking the entry code and preparing your session...",
+      "success": "Entry verified. Opening the site now.",
+      "error": "This entry is invalid or expired. Contact an administrator."
+    },
+    "closeEdge": "Close maintenance border"
+  },
+  "appDownload": {
+    "metadataTitle": "App Download",
+    "backHome": "Back home",
+    "badge": "App Download",
+    "official": "Official download",
+    "title": "Yuem App",
+    "description": "Choose the package for your device. Download links, versions, and app names are managed in system settings.",
+    "version": "Version {version}",
+    "build": "Build {build}",
+    "size": "Size {size}",
+    "androidFastLabel": "Android Fast",
+    "featuresTitle": "Fast edition features",
+    "featureTinySize": "Tiny package size ≤ 1 MB",
+    "featureSameWebStyle": "Exactly the same web styling",
+    "featureThirdPartyLogin": "Supports Google, Discord, Steam, and more third-party login",
+    "featureNativeBridge": "Returns to the App automatically after browser login",
+    "download": "Download",
+    "unavailable": "Download unavailable"
+  }
+}

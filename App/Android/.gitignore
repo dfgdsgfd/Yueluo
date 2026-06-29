@@ -1,0 +1,13 @@
+node_modules/
+android/.gradle/
+android/app/build/
+android/build/
+dist/
+.release-secrets/*
+!.release-secrets/keystore.properties
+!.release-secrets/yuem-release.p12
+!.release-secrets/yuem-release-certificate.pem
+!.release-secrets/certificate-fingerprint.txt
+local.properties
+*.log
+.DS_Store

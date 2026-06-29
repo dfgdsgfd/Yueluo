@@ -1,0 +1,197 @@
+{
+  "walletPage": {
+    "balance": {
+      "defaultAccount": "Moon Coin アカウント",
+      "loading": "読み込み中...",
+      "errorTitle": "Moon Coin 残高を取得できません",
+      "unit": "Moon Coin",
+      "account": "アカウント {account}",
+      "title": "Moon Coin 残高"
+    },
+    "errors": {
+      "partial": "一部のウォレットデータを利用できません：",
+      "loadFailed": "ウォレットデータの取得に失敗しました",
+      "balanceCenterNotConfigured": "ユーザーセンターの残高 API が設定されていません。",
+      "httpStatus": "HTTP {status}",
+      "businessCode": "ビジネスコード {code}",
+      "requestId": "リクエスト ID {requestId}",
+      "sources": {
+        "balanceConfig": "Moon Coin 設定",
+        "rechargeConfig": "チャージ設定",
+        "localPoints": "ポイント残高",
+        "userBalance": "Moon Coin 残高",
+        "withdrawOrders": "請求",
+        "balanceOrders": "購入履歴",
+        "pointsOverview": "ポイントセンター",
+        "pointsLogs": "ポイント明細"
+      }
+    },
+    "title": "ウォレット",
+    "subtitle": "Moon Coin、ポイント、ギフトカード、請求",
+    "loading": "ウォレットデータを読み込み中",
+    "actions": {
+      "back": "前のページに戻る",
+      "backHome": "ホームに戻る",
+      "refresh": "更新",
+      "recharge": "チャージ",
+      "open": "開く"
+    },
+    "login": {
+      "title": "ログインしてウォレットを見る",
+      "description": "ウォレット、チャージ、購入履歴を表示するには現在のアカウントでログインしてください。",
+      "login": "ログイン"
+    },
+    "points": {
+      "title": "ポイントセンター",
+      "todaySummary": "今日 {earned} / {cap}",
+      "available": "利用可能ポイント",
+      "todayEarned": "今日獲得",
+      "dailyCap": "1日の上限",
+      "withdrawBonus": "出金到着ボーナス {percent}%",
+      "expiresAt": "{date} 期限"
+    },
+    "tasks": {
+      "title": "デイリータスク",
+      "empty": "デイリータスクはありません",
+      "done": "完了",
+      "inProgress": "進行中",
+      "daily": "デイリータスク",
+      "once": "一回限りのタスク",
+      "progress": "進捗"
+    },
+    "giftCards": {
+      "title": "ギフトカード交換",
+      "empty": "交換可能なギフトカードはありません",
+      "redeemSuccess": "{name} を交換しました。カードコードはシステムメッセージに送信されました。",
+      "redeemFailed": "交換に失敗しました",
+      "defaultFaceValue": "ギフトカード",
+      "meta": "{value} · 在庫 {stock}"
+    },
+    "redemptions": {
+      "title": "交換履歴",
+      "total": "交換記録 {total} 件",
+      "loading": "交換履歴を読み込み中",
+      "loadFailed": "交換履歴の読み込みに失敗しました",
+      "empty": "交換履歴はありません",
+      "meta": "{value} · {points} ポイント · {status}",
+      "status": {
+        "completed": "完了",
+        "other": "処理中"
+      },
+      "pageSummary": "{page}/{pages} ページ · 全 {total} 件",
+      "previous": "前のページ",
+      "next": "次のページ",
+      "copy": "コードをコピー",
+      "copySuccess": "カードコードをコピーしました",
+      "copyFailed": "コピーに失敗しました。手動で選択してください。",
+      "codeUnavailable": "カードコードを利用できません"
+    },
+    "recharge": {
+      "title": "チャージ",
+      "customAmount": "カスタム金額に対応",
+      "fixedOptions": "固定プラン",
+      "balanceDisabled": "残高センターは無効です",
+      "empty": "チャージプランはありません",
+      "bonus": "{amount} Moon Coin ボーナス",
+      "noBonus": "ボーナスなし",
+      "range": "{min}-{max} Moon Coin",
+      "min": "{amount} Moon Coin から",
+      "max": "最大 {amount} Moon Coin"
+    },
+    "bills": {
+      "title": "請求",
+      "empty": "請求記録はありません",
+      "defaultType": "請求",
+      "types": {
+        "moonCoin": "Moon Coin へ振替",
+        "cash": "現金出金"
+      }
+    },
+    "purchases": {
+      "title": "購入履歴",
+      "empty": "購入記録はありません",
+      "fallbackTitle": "コンテンツ #{id}",
+      "defaultType": "コンテンツ購入"
+    },
+    "pointsLogs": {
+      "title": "ポイント明細",
+      "empty": "ポイント記録はありません",
+      "balanceAfter": "ポイント残高 {points}",
+      "defaultType": "ポイント記録",
+      "types": {
+        "giftCardRedeem": "ギフトカード交換",
+        "achievement": "実績報酬",
+        "task": "デイリータスク"
+      }
+    },
+    "money": {
+      "moonCoinAmount": "{amount} Moon Coin",
+      "points": "{amount} ポイント",
+      "pointsPlus": "+{amount} ポイント"
+    },
+    "time": {
+      "justNow": "たった今"
+    }
+  },
+  "adminWithdraw": {
+    "title": "出金審査",
+    "description": "クリエイターの出金申請を承認・却下し、支払済みに更新します。",
+    "orders": "申請一覧",
+    "searchPlaceholder": "ニックネームまたはアカウントを検索",
+    "search": "検索",
+    "allStatuses": "すべての状態",
+    "loading": "出金申請を読み込み中",
+    "empty": "出金申請はありません",
+    "userFallback": "ユーザー {id}",
+    "amount": "金額",
+    "type": "種類",
+    "wechatCode": "WeChat受取コード",
+    "alipayCode": "Alipay受取コード",
+    "noPaymentCode": "受取コードが保存されていません",
+    "previewHint": "サムネイルをクリックしてプレビュー",
+    "confirmAction": "この出金申請を「{action}」しますか？",
+    "actionCompleted": "出金申請を処理しました：{action}",
+    "actions": {
+      "approve": "承認",
+      "reject": "却下",
+      "payout": "支払済みにする"
+    },
+    "types": {
+      "cash": "現金",
+      "moonCoin": "Moon Coin"
+    },
+    "statuses": {
+      "pending": "審査待ち",
+      "approved": "承認済み",
+      "rejected": "却下済み",
+      "paid": "支払済み",
+      "unknown": "不明"
+    }
+  },
+  "adminBalanceTransactions": {
+    "title": "外部Moon Coin取引監査",
+    "description": "ユーザーセンターのMoon Coin変更を確認します。結果不明の取引は手動確認までロックされます。",
+    "refresh": "更新",
+    "loading": "Moon Coin取引を読み込み中",
+    "operation": "操作",
+    "oauth2Id": "OAuth2 ID",
+    "amount": "金額",
+    "status": "状態",
+    "created": "作成日時",
+    "action": "操作",
+    "compensate": "補償",
+    "confirmCompensation": "ユーザーセンターでこの適用済み取引を反対仕訳しますか？",
+    "compensated": "取引を補償しました。",
+    "empty": "Moon Coin取引はありません",
+    "statuses": {
+      "prepared": "準備済み",
+      "requesting": "リクエスト中",
+      "applied": "リモート適用済み",
+      "local_committed": "ローカル確定済み",
+      "compensating": "補償中",
+      "compensated": "補償済み",
+      "unknown": "結果不明",
+      "failed": "失敗"
+    }
+  }
+}

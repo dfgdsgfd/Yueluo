@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.yuelk.xsewebfast",
+      "sha256_cert_fingerprints": [
+        "F5:D0:6B:43:DD:37:18:AA:25:A5:A2:8F:F1:1B:BE:C9:0D:10:49:9D:41:99:9B:D4:8D:52:91:AD:18:E7:28:63"
+      ]
+    }
+  }
+]
