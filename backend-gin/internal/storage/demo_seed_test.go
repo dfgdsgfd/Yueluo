@@ -1,0 +1,177 @@
+package storage
+
+import (
+	"context"
+	"strings"
+	"testing"
+	"time"
+
+	"github.com/glebarez/sqlite"
+	"gorm.io/gorm"
+
+	"yuem-go/backend-gin/internal/domain"
+	"yuem-go/backend-gin/internal/security"
+)
+
+func TestSeedDemoDataCreatesAndIsIdempotent(t *testing.T) {
+	db := openDemoSeedTestDB(t)
+	ctx := context.Background()
+	now := time.Date(2026, 6, 30, 10, 0, 0, 0, time.UTC)
+
+	result, err := SeedDemoData(ctx, db, DemoSeedOptions{
+		Password:  "TestDemo123!",
+		UserLimit: 6,
+		PostLimit: 7,
+		Now:       now,
+	})
+	if err != nil {
+		t.Fatalf("SeedDemoData() error = %v", err)
+	}
+	if result.UserCount != 6 || result.PostCount != 7 {
+		t.Fatalf("SeedDemoData() targets = users %d posts %d, want 6 and 7", result.UserCount, result.PostCount)
+	}
+	if len(result.LoginAccounts) != 6 {
+		t.Fatalf("login accounts = %d, want 6", len(result.LoginAccounts))
+	}
+
+	var alice domain.User
+	if err := db.Where("user_id = ?", "demo_alice").First(&alice).Error; err != nil {
+		t.Fatalf("find demo_alice: %v", err)
+	}
+	if alice.Email == nil || *alice.Email != "demo-alice@example.test" {
+		t.Fatalf("demo_alice email = %v, want demo-alice@example.test", alice.Email)
+	}
+	if alice.Password == nil || !security.VerifyPassword("TestDemo123!", *alice.Password) {
+		t.Fatal("demo_alice password was not seeded with a verifiable Argon2id hash")
+	}
+
+	assertRowCount(t, db, &domain.User{}, 6)
+	assertRowCount(t, db, &domain.Category{}, int64(len(demoCategorySeeds)))
+	assertRowCount(t, db, &domain.Tag{}, int64(len(demoTagSeeds)))
+	assertRowCount(t, db, &domain.Post{}, 7)
+	assertMinimumRows(t, db, &domain.PostImage{}, 10)
+	assertRowCount(t, db, &domain.PostVideo{}, 1)
+	assertRowCount(t, db, &domain.PostAttachment{}, 1)
+	assertRowCount(t, db, &domain.PostPaymentSetting{}, 1)
+	assertMinimumRows(t, db, &domain.Comment{}, 7)
+	assertMinimumRows(t, db, &domain.Like{}, 7)
+	assertMinimumRows(t, db, &domain.Collection{}, 1)
+	assertMinimumRows(t, db, &domain.Notification{}, 1)
+	assertRowCount(t, db, &domain.UserPoints{}, 6)
+	assertRowCount(t, db, &domain.UserWallet{}, 6)
+	assertRowCount(t, db, &domain.CreatorEarnings{}, 6)
+	assertRowCount(t, db, &domain.GiftCardProduct{}, 2)
+	assertRowCount(t, db, &domain.GiftCardCode{}, 6)
+	assertRowCount(t, db, &domain.Announcement{}, 1)
+	assertRowCount(t, db, &domain.SystemNotification{}, 1)
+	assertRowCount(t, db, &domain.IMConversation{}, 1)
+	assertRowCount(t, db, &domain.IMMessage{}, 3)
+
+	before := demoSeedRowCounts(t, db)
+	second, err := SeedDemoData(ctx, db, DemoSeedOptions{
+		Password:  "ChangedDemo123!",
+		UserLimit: 6,
+		PostLimit: 7,
+		Now:       now.Add(time.Hour),
+	})
+	if err != nil {
+		t.Fatalf("SeedDemoData() second run error = %v", err)
+	}
+	if second.UsersCreated != 0 || second.PostsCreated != 0 {
+		t.Fatalf("second run created users=%d posts=%d, want 0 and 0", second.UsersCreated, second.PostsCreated)
+	}
+	after := demoSeedRowCounts(t, db)
+	for table, count := range before {
+		if after[table] != count {
+			t.Fatalf("second run changed row count for %s: got %d, want %d", table, after[table], count)
+		}
+	}
+	if err := db.Where("user_id = ?", "demo_alice").First(&alice).Error; err != nil {
+		t.Fatalf("reload demo_alice: %v", err)
+	}
+	if alice.Password == nil || !security.VerifyPassword("ChangedDemo123!", *alice.Password) {
+		t.Fatal("second run did not reset demo_alice password")
+	}
+}
+
+func openDemoSeedTestDB(t *testing.T) *gorm.DB {
+	t.Helper()
+	db, err := gorm.Open(sqlite.Open("file:"+strings.ReplaceAll(t.Name(), "/", "_")+"?mode=memory&cache=shared"), &gorm.Config{})
+	if err != nil {
+		t.Fatalf("open sqlite: %v", err)
+	}
+	if err := db.AutoMigrate(demoSeedTestModels()...); err != nil {
+		t.Fatalf("auto migrate: %v", err)
+	}
+	return db
+}
+
+func demoSeedTestModels() []any {
+	return []any{
+		&domain.User{},
+		&domain.Category{},
+		&domain.Tag{},
+		&domain.UserPoints{},
+		&domain.PointsLog{},
+		&domain.UserWallet{},
+		&domain.CreatorEarnings{},
+		&domain.CreatorEarningsLog{},
+		&domain.Post{},
+		&domain.Comment{},
+		&domain.Like{},
+		&domain.Collection{},
+		&domain.Follow{},
+		&domain.Notification{},
+		&domain.PostImage{},
+		&domain.PostAttachment{},
+		&domain.PostVideo{},
+		&domain.PostPaymentSetting{},
+		&domain.PostTag{},
+		&domain.GiftCardProduct{},
+		&domain.GiftCardCode{},
+		&domain.Announcement{},
+		&domain.SystemNotification{},
+		&domain.IMConversation{},
+		&domain.IMConversationMember{},
+		&domain.IMMessage{},
+		&domain.IMMessageReceipt{},
+		&domain.UserSearchHistory{},
+		&domain.BrowsingHistory{},
+	}
+}
+
+func demoSeedRowCounts(t *testing.T, db *gorm.DB) map[string]int64 {
+	t.Helper()
+	counts := map[string]int64{}
+	for _, model := range demoSeedTestModels() {
+		stmt := &gorm.Statement{DB: db}
+		if err := stmt.Parse(model); err != nil {
+			t.Fatalf("parse model: %v", err)
+		}
+		counts[stmt.Schema.Table] = countRows(t, db, model)
+	}
+	return counts
+}
+
+func assertRowCount(t *testing.T, db *gorm.DB, model any, want int64) {
+	t.Helper()
+	if got := countRows(t, db, model); got != want {
+		t.Fatalf("%T row count = %d, want %d", model, got, want)
+	}
+}
+
+func assertMinimumRows(t *testing.T, db *gorm.DB, model any, want int64) {
+	t.Helper()
+	if got := countRows(t, db, model); got < want {
+		t.Fatalf("%T row count = %d, want at least %d", model, got, want)
+	}
+}
+
+func countRows(t *testing.T, db *gorm.DB, model any) int64 {
+	t.Helper()
+	var count int64
+	if err := db.Model(model).Count(&count).Error; err != nil {
+		t.Fatalf("count %T: %v", model, err)
+	}
+	return count
+}

@@ -50,6 +50,23 @@ go run ./cmd/api
 
 后端默认监听 `http://localhost:3001`。环境变量读取顺序为 `GIN_ENV_FILE` 或 `ENV_FILE` 指定文件、`backend-gin/.env`、根目录 `.env`，进程环境变量优先级最高。
 
+### 演示数据填充
+
+后端连接好数据库后，可以根据现有 GORM 数据表自动迁移并填充一组可重复执行的演示数据：
+
+```bash
+cd backend-gin
+go run ./cmd/demo-seed
+```
+
+默认会创建演示用户、分类、标签、图文/视频帖子、评论、点赞、收藏、关注、通知、钱包/积分、礼品卡、系统公告和 IM 会话。命令是幂等的，重复执行会补齐缺失数据，并把 demo 用户密码重置为本次指定值，不会重复创建相同用户或帖子。
+
+默认登录账号示例：`demo_alice` 或 `demo-alice@example.test`，密码 `Demo123456!`。可按需限制数量或修改密码：
+
+```bash
+go run ./cmd/demo-seed --password 'LocalDemo123!' --users 6 --posts 12
+```
+
 ### 前端
 
 ```bash
