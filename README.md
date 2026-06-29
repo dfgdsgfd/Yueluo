@@ -16,7 +16,6 @@ Yueluo 是一个内容社区项目，包含 Go/Gin 后端、Next.js 前端、隐
 
 - Go：`backend-gin/go.mod` 声明 `go 1.25.0`，CI 使用 Go 1.26。
 - Node.js：前端建议使用 24+；生产环境按项目约定使用 Node.js 25.x。
-- Python：`blind-watermark-fastapi` 需要 Python 3.14，并通过 `uv` 管理依赖。
 - 数据库：推荐 PostgreSQL；后端也保留 MySQL driver。
 - Redis：队列、缓存、IM、系统日志和限流相关功能会用到 Redis；开发时可按 `.env.example` 关闭队列。
 
