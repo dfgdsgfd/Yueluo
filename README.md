@@ -10,7 +10,6 @@ Yueluo 是一个内容社区项目，包含 Go/Gin 后端、Next.js 前端、隐
 | `front-end-nextjs/` | Next.js 16、React 19、TypeScript、next-intl 前端应用。 |
 | `blind-watermark-fastapi/` | 内部 FastAPI 隐藏水印服务，供 Go 后端远程嵌入/提取水印 payload。 |
 | `App/Android/` | Capacitor Android Release 工程。 |
-| `demo_oauth21/` | OAuth2.1 + PKCE + DPoP 第三方应用接入示例。 |
 | `scripts/` | 源码体量检查、联调 readiness 等根级工具。 |
 
 ## 环境要求
