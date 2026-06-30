@@ -12,21 +12,21 @@ import (
 )
 
 func main() {
-	password := flag.String("password", storage.DefaultDemoPassword, "password for all demo login accounts")
-	userLimit := flag.Int("users", 0, "maximum demo users to seed; 0 seeds all")
-	postLimit := flag.Int("posts", 0, "maximum demo posts to seed; 0 seeds all")
-	autoMigrate := flag.Bool("auto-migrate", true, "run schema auto migration before seeding")
-	timeout := flag.Duration("timeout", 30*time.Second, "database seeding timeout")
+	password := flag.String("password", storage.DefaultDemoPassword, "所有演示账号使用的登录密码")
+	userLimit := flag.Int("users", 0, "最多填充多少个演示用户；0 表示全部")
+	postLimit := flag.Int("posts", 0, "最多填充多少篇演示帖子；0 表示全部")
+	autoMigrate := flag.Bool("auto-migrate", true, "填充前执行数据库自动迁移")
+	timeout := flag.Duration("timeout", 30*time.Second, "数据库填充超时时间")
 	flag.Parse()
 
 	cfg := config.Load()
 	cfg.Database.AutoMigrate = *autoMigrate
 	db, err := storage.OpenDatabase(cfg.Database)
 	if err != nil {
-		exitf("open database: %v", err)
+		exitf("打开数据库失败：%v", err)
 	}
 	if db == nil {
-		exitf("database URL is required; set DATABASE_URL or DB_* environment values")
+		exitf("缺少数据库连接，请设置 DATABASE_URL 或 DB_* 环境变量")
 	}
 	sqlDB, err := db.DB()
 	if err == nil {
@@ -41,15 +41,15 @@ func main() {
 		PostLimit: *postLimit,
 	})
 	if err != nil {
-		exitf("seed demo data: %v", err)
+		exitf("填充演示数据失败：%v", err)
 	}
 	printResult(result)
 }
 
 func printResult(result storage.DemoSeedResult) {
-	fmt.Println("Demo data seed complete.")
-	fmt.Printf("Targets: users=%d categories=%d tags=%d posts=%d\n", result.UserCount, result.CategoryCount, result.TagCount, result.PostCount)
-	fmt.Printf("Created or completed rows: users=%d posts=%d images=%d videos=%d attachments=%d payments=%d comments=%d likes=%d collections=%d follows=%d notifications=%d\n",
+	fmt.Println("中文演示数据填充完成。")
+	fmt.Printf("目标数据：用户=%d 分类=%d 标签=%d 帖子=%d\n", result.UserCount, result.CategoryCount, result.TagCount, result.PostCount)
+	fmt.Printf("新增或补齐：用户=%d 帖子=%d 图片=%d 视频=%d 附件=%d 付费设置=%d 评论=%d 点赞=%d 收藏=%d 关注=%d 通知=%d\n",
 		result.UsersCreated,
 		result.PostsCreated,
 		result.PostImagesCreated,
@@ -62,7 +62,7 @@ func printResult(result storage.DemoSeedResult) {
 		result.FollowsCreated,
 		result.NotificationsCreated,
 	)
-	fmt.Printf("Support rows: wallets=%d points=%d creators=%d gift_cards=%d system=%d im=%d history=%d post_tags=%d categories=%d tags=%d\n",
+	fmt.Printf("配套数据：钱包=%d 积分=%d 创作者=%d 礼品卡=%d 系统=%d 消息=%d 历史=%d 帖子标签=%d 分类=%d 标签=%d\n",
 		result.WalletRowsCreated,
 		result.PointRowsCreated,
 		result.CreatorRowsCreated,
@@ -74,10 +74,10 @@ func printResult(result storage.DemoSeedResult) {
 		result.CategoriesCreated,
 		result.TagsCreated,
 	)
-	fmt.Printf("Demo password: %s\n", result.Password)
-	fmt.Println("Login accounts:")
+	fmt.Printf("演示密码：%s\n", result.Password)
+	fmt.Println("可登录账号：")
 	for _, account := range result.LoginAccounts {
-		fmt.Printf("- %s or %s\n", account.Account, account.Email)
+		fmt.Printf("- %s 或 %s\n", account.Account, account.Email)
 	}
 }
 

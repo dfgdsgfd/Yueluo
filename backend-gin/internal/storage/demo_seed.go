@@ -101,6 +101,7 @@ type demoPostSeed struct {
 	Key          string
 	Author       string
 	Title        string
+	LegacyTitle  string
 	Content      string
 	Category     string
 	Type         int

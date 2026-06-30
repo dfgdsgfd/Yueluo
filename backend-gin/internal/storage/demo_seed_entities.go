@@ -2,6 +2,7 @@ package storage
 
 import (
 	"context"
+	"errors"
 	"strings"
 	"time"
 
@@ -24,20 +25,14 @@ func (state *demoSeedState) seedCategories(ctx context.Context, tx *gorm.DB, now
 			return result.Error
 		}
 		state.result.CategoriesCreated += result.RowsAffected
-		updates := map[string]any{}
-		if row.CategoryTitle == nil || strings.TrimSpace(*row.CategoryTitle) == "" {
-			updates["category_title"] = seed.Title
+		if err := tx.WithContext(ctx).Model(&domain.Category{}).Where("id = ?", row.ID).Updates(map[string]any{
+			"category_title": seed.Title,
+			"translations":   demoTranslations(seed.Title),
+		}).Error; err != nil {
+			return err
 		}
-		if isEmptyJSON(row.Translations) {
-			updates["translations"] = demoTranslations(seed.Title)
-		}
-		if len(updates) > 0 {
-			if err := tx.WithContext(ctx).Model(&domain.Category{}).Where("id = ?", row.ID).Updates(updates).Error; err != nil {
-				return err
-			}
-			if err := tx.WithContext(ctx).Where("id = ?", row.ID).First(&row).Error; err != nil {
-				return err
-			}
+		if err := tx.WithContext(ctx).Where("id = ?", row.ID).First(&row).Error; err != nil {
+			return err
 		}
 		state.categories[seed.Name] = row
 	}
@@ -45,14 +40,39 @@ func (state *demoSeedState) seedCategories(ctx context.Context, tx *gorm.DB, now
 }
 
 func (state *demoSeedState) seedTags(ctx context.Context, tx *gorm.DB, now time.Time) error {
-	for _, name := range demoTagSeeds {
+	for _, seed := range demoTagSeeds {
 		var row domain.Tag
-		result := tx.WithContext(ctx).Where("name = ?", name).Attrs(domain.Tag{Name: name, CreatedAt: now}).FirstOrCreate(&row)
-		if result.Error != nil {
-			return result.Error
+		err := tx.WithContext(ctx).Where("name = ?", seed.Name).First(&row).Error
+		if errors.Is(err, gorm.ErrRecordNotFound) {
+			for _, legacyName := range seed.LegacyNames {
+				err = tx.WithContext(ctx).Where("name = ?", legacyName).First(&row).Error
+				if err == nil {
+					break
+				}
+				if !errors.Is(err, gorm.ErrRecordNotFound) {
+					return err
+				}
+			}
 		}
-		state.result.TagsCreated += result.RowsAffected
-		state.tags[name] = row
+		if errors.Is(err, gorm.ErrRecordNotFound) {
+			result := tx.WithContext(ctx).Create(&domain.Tag{Name: seed.Name, CreatedAt: now})
+			if result.Error != nil {
+				return result.Error
+			}
+			state.result.TagsCreated += result.RowsAffected
+			if err := tx.WithContext(ctx).Where("name = ?", seed.Name).First(&row).Error; err != nil {
+				return err
+			}
+		} else if err != nil {
+			return err
+		}
+		if row.Name != seed.Name {
+			if err := tx.WithContext(ctx).Model(&domain.Tag{}).Where("id = ?", row.ID).Update("name", seed.Name).Error; err != nil {
+				return err
+			}
+			row.Name = seed.Name
+		}
+		state.tags[seed.Name] = row
 	}
 	return nil
 }
@@ -88,17 +108,31 @@ func (state *demoSeedState) seedUsers(ctx context.Context, tx *gorm.DB, seeds []
 			return result.Error
 		}
 		state.result.UsersCreated += result.RowsAffected
-		updates := map[string]any{"password": state.passwordHash}
+		updates := map[string]any{
+			"password":          state.passwordHash,
+			"nickname":          seed.Nickname,
+			"avatar":            seed.Avatar,
+			"bio":               seed.Bio,
+			"bio_audit_status":  1,
+			"location":          seed.Location,
+			"is_active":         true,
+			"updated_at":        now,
+			"gender":            seed.Gender,
+			"education":         seed.Education,
+			"major":             seed.Major,
+			"mbti":              seed.MBTI,
+			"interests":         jsonValue(seed.Interests),
+			"custom_fields":     jsonValue(map[string]any{"demo": true, "region": "中国"}),
+			"profile_completed": true,
+		}
 		if state.emailAvailable(ctx, tx, seed.Email, row.ID) && (row.Email == nil || !strings.EqualFold(strings.TrimSpace(*row.Email), seed.Email)) {
 			updates["email"] = seed.Email
 		}
 		if err := tx.WithContext(ctx).Model(&domain.User{}).Where("id = ?", row.ID).Updates(updates).Error; err != nil {
 			return err
 		}
-		if result.RowsAffected == 0 || len(updates) > 1 {
-			if err := tx.WithContext(ctx).Where("id = ?", row.ID).First(&row).Error; err != nil {
-				return err
-			}
+		if err := tx.WithContext(ctx).Where("id = ?", row.ID).First(&row).Error; err != nil {
+			return err
 		}
 		state.users[seed.UserID] = row
 		state.result.LoginAccounts = append(state.result.LoginAccounts, DemoLoginAccount{Account: seed.UserID, Email: seed.Email})
@@ -131,8 +165,8 @@ func (state *demoSeedState) seedUserBalances(ctx context.Context, tx *gorm.DB, u
 			return err
 		}
 	}
-	pointReason := "Demo starting balance"
-	if err := state.ensurePointsLog(ctx, tx, userID, seed.Points, seed.Points, "demo_seed", &pointReason, now); err != nil {
+	pointReason := "演示初始积分"
+	if err := state.ensurePointsLog(ctx, tx, userID, seed.Points, seed.Points, "demo_seed", &pointReason, now, "Demo starting balance"); err != nil {
 		return err
 	}
 
@@ -167,27 +201,49 @@ func (state *demoSeedState) seedUserBalances(ctx context.Context, tx *gorm.DB, u
 		}
 	}
 	if seed.Earnings > 0 {
-		reason := "Demo creator earnings"
-		result = tx.WithContext(ctx).Where("user_id = ? AND earnings_id = ? AND type = ?", userID, earnings.ID, "demo_seed").
-			Attrs(domain.CreatorEarningsLog{UserID: userID, EarningsID: earnings.ID, Amount: seed.Earnings, BalanceAfter: seed.Earnings, Type: "demo_seed", Reason: &reason, CreatedAt: now}).
-			FirstOrCreate(&domain.CreatorEarningsLog{})
-		if result.Error != nil {
-			return result.Error
+		reason := "演示创作者收益"
+		reasons := []string{reason, "Demo creator earnings"}
+		var row domain.CreatorEarningsLog
+		err := tx.WithContext(ctx).Where("user_id = ? AND earnings_id = ? AND type = ? AND reason IN ?", userID, earnings.ID, "demo_seed", reasons).First(&row).Error
+		if errors.Is(err, gorm.ErrRecordNotFound) {
+			result = tx.WithContext(ctx).Create(&domain.CreatorEarningsLog{UserID: userID, EarningsID: earnings.ID, Amount: seed.Earnings, BalanceAfter: seed.Earnings, Type: "demo_seed", Reason: &reason, CreatedAt: now})
+			if result.Error != nil {
+				return result.Error
+			}
+			state.result.CreatorRowsCreated += result.RowsAffected
+		} else if err != nil {
+			return err
+		} else {
+			if err := tx.WithContext(ctx).Model(&domain.CreatorEarningsLog{}).Where("id = ?", row.ID).Updates(map[string]any{"amount": seed.Earnings, "balance_after": seed.Earnings, "reason": reason}).Error; err != nil {
+				return err
+			}
 		}
-		state.result.CreatorRowsCreated += result.RowsAffected
 	}
 	return nil
 }
 
-func (state *demoSeedState) ensurePointsLog(ctx context.Context, tx *gorm.DB, userID int64, amount float64, balance float64, logType string, reason *string, now time.Time) error {
-	result := tx.WithContext(ctx).Where("user_id = ? AND type = ? AND reason = ?", userID, logType, deref(reason)).
-		Attrs(domain.PointsLog{UserID: userID, Amount: amount, BalanceAfter: balance, Type: logType, Reason: reason, PaymentMethod: "points", CreatedAt: now}).
-		FirstOrCreate(&domain.PointsLog{})
-	if result.Error != nil {
-		return result.Error
+func (state *demoSeedState) ensurePointsLog(ctx context.Context, tx *gorm.DB, userID int64, amount float64, balance float64, logType string, reason *string, now time.Time, legacyReasons ...string) error {
+	reasons := []string{deref(reason)}
+	reasons = append(reasons, legacyReasons...)
+	var row domain.PointsLog
+	err := tx.WithContext(ctx).Where("user_id = ? AND type = ? AND reason IN ?", userID, logType, reasons).First(&row).Error
+	if errors.Is(err, gorm.ErrRecordNotFound) {
+		result := tx.WithContext(ctx).Create(&domain.PointsLog{UserID: userID, Amount: amount, BalanceAfter: balance, Type: logType, Reason: reason, PaymentMethod: "points", CreatedAt: now})
+		if result.Error != nil {
+			return result.Error
+		}
+		state.result.PointRowsCreated += result.RowsAffected
+		return nil
 	}
-	state.result.PointRowsCreated += result.RowsAffected
-	return nil
+	if err != nil {
+		return err
+	}
+	return tx.WithContext(ctx).Model(&domain.PointsLog{}).Where("id = ?", row.ID).Updates(map[string]any{
+		"amount":         amount,
+		"balance_after":  balance,
+		"reason":         reason,
+		"payment_method": "points",
+	}).Error
 }
 
 func (state *demoSeedState) seedRelationships(ctx context.Context, tx *gorm.DB, now time.Time) error {
@@ -247,11 +303,36 @@ func (state *demoSeedState) seedPosts(ctx context.Context, tx *gorm.DB, seeds []
 			QualityLevel:       quality,
 		}
 		var row domain.Post
-		result := tx.WithContext(ctx).Where("user_id = ? AND title = ?", author.ID, seed.Title).Attrs(post).FirstOrCreate(&row)
-		if result.Error != nil {
-			return result.Error
+		err := tx.WithContext(ctx).Where("user_id = ? AND title IN ?", author.ID, seed.postTitles()).First(&row).Error
+		if errors.Is(err, gorm.ErrRecordNotFound) {
+			result := tx.WithContext(ctx).Create(&post)
+			if result.Error != nil {
+				return result.Error
+			}
+			state.result.PostsCreated += result.RowsAffected
+			row = post
+		} else if err != nil {
+			return err
+		} else {
+			if err := tx.WithContext(ctx).Model(&domain.Post{}).Where("id = ?", row.ID).Updates(map[string]any{
+				"title":                seed.Title,
+				"content":              seed.Content,
+				"category_id":          category.ID,
+				"type":                 seed.Type,
+				"view_count":           seed.ViewCount,
+				"is_draft":             false,
+				"visibility":           demoVisibilityPublic,
+				"public_access_exempt": true,
+				"audit_status":         1,
+				"audit_result":         jsonValue(map[string]any{"demo": true, "status": "approved"}),
+				"quality_level":        quality,
+			}).Error; err != nil {
+				return err
+			}
+			if err := tx.WithContext(ctx).Where("id = ?", row.ID).First(&row).Error; err != nil {
+				return err
+			}
 		}
-		state.result.PostsCreated += result.RowsAffected
 		state.posts[seed.Key] = row
 		if err := state.seedPostChildren(ctx, tx, row, seed, now); err != nil {
 			return err
@@ -294,11 +375,17 @@ func (state *demoSeedState) seedPostChildren(ctx context.Context, tx *gorm.DB, p
 			Filesize:      seed.Attachment.Filesize,
 			CreatedAt:     now,
 		}
-		result := tx.WithContext(ctx).Where("post_id = ? AND attachment_url = ?", post.ID, seed.Attachment.URL).Attrs(attachment).FirstOrCreate(&domain.PostAttachment{})
+		var row domain.PostAttachment
+		result := tx.WithContext(ctx).Where("post_id = ? AND attachment_url = ?", post.ID, seed.Attachment.URL).Attrs(attachment).FirstOrCreate(&row)
 		if result.Error != nil {
 			return result.Error
 		}
 		state.result.PostAttachmentsCreated += result.RowsAffected
+		if result.RowsAffected == 0 {
+			if err := tx.WithContext(ctx).Model(&domain.PostAttachment{}).Where("id = ?", row.ID).Updates(map[string]any{"filename": seed.Attachment.Filename, "filesize": seed.Attachment.Filesize}).Error; err != nil {
+				return err
+			}
+		}
 	}
 	if seed.Payment != nil {
 		payment := domain.PostPaymentSetting{
@@ -313,11 +400,26 @@ func (state *demoSeedState) seedPostChildren(ctx context.Context, tx *gorm.DB, p
 			CreatedAt:        now,
 			UpdatedAt:        &now,
 		}
-		result := tx.WithContext(ctx).Where("post_id = ?", post.ID).Attrs(payment).FirstOrCreate(&domain.PostPaymentSetting{})
+		var row domain.PostPaymentSetting
+		result := tx.WithContext(ctx).Where("post_id = ?", post.ID).Attrs(payment).FirstOrCreate(&row)
 		if result.Error != nil {
 			return result.Error
 		}
 		state.result.PostPaymentSettingsCreated += result.RowsAffected
+		if result.RowsAffected == 0 {
+			if err := tx.WithContext(ctx).Model(&domain.PostPaymentSetting{}).Where("id = ?", row.ID).Updates(map[string]any{
+				"enabled":            true,
+				"payment_type":       payment.PaymentType,
+				"payment_method":     payment.PaymentMethod,
+				"price":              payment.Price,
+				"free_preview_count": payment.FreePreviewCount,
+				"preview_duration":   payment.PreviewDuration,
+				"hide_all":           payment.HideAll,
+				"updated_at":         now,
+			}).Error; err != nil {
+				return err
+			}
+		}
 	}
 	for _, tagName := range seed.Tags {
 		tag, ok := state.tags[tagName]

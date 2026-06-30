@@ -2,6 +2,7 @@ package storage
 
 import (
 	"context"
+	"errors"
 	"fmt"
 	"time"
 
@@ -42,12 +43,12 @@ func (state *demoSeedState) seedContentActivity(ctx context.Context, tx *gorm.DB
 		firstCommentUser := state.pickUser(activityUsers[(index+1)%len(activityUsers)], authorID)
 		secondCommentUser := state.pickUser(activityUsers[(index+2)%len(activityUsers)], authorID)
 		if firstCommentUser.ID != 0 {
-			comment, err := state.ensureComment(ctx, tx, post.ID, firstCommentUser.ID, nil, "This demo post makes the feed feel alive.", now.Add(time.Duration(index)*time.Hour))
+			comment, err := state.ensureComment(ctx, tx, post.ID, firstCommentUser.ID, nil, "这条中文演示内容让信息流更接近真实使用场景。", now.Add(time.Duration(index)*time.Hour), "This demo post makes the feed feel alive.")
 			if err != nil {
 				return err
 			}
 			if secondCommentUser.ID != 0 {
-				reply, err := state.ensureComment(ctx, tx, post.ID, secondCommentUser.ID, &comment.ID, "Agreed. The sample data is useful for QA.", now.Add(time.Duration(index)*time.Hour+15*time.Minute))
+				reply, err := state.ensureComment(ctx, tx, post.ID, secondCommentUser.ID, &comment.ID, "同意，这组数据很适合做中文界面和流程验收。", now.Add(time.Duration(index)*time.Hour+15*time.Minute), "Agreed. The sample data is useful for QA.")
 				if err != nil {
 					return err
 				}
@@ -56,7 +57,11 @@ func (state *demoSeedState) seedContentActivity(ctx context.Context, tx *gorm.DB
 				}
 			}
 		}
-		if err := state.ensureSearchHistory(ctx, tx, authorID, seed.Category, now.Add(time.Duration(index)*time.Minute)); err != nil {
+		keyword := seed.Category
+		if category, ok := state.categories[seed.Category]; ok {
+			keyword = nonEmpty(deref(category.CategoryTitle), seed.Category)
+		}
+		if err := state.ensureSearchHistory(ctx, tx, authorID, keyword, now.Add(time.Duration(index)*time.Minute), seed.Category); err != nil {
 			return err
 		}
 	}
@@ -76,19 +81,34 @@ func (state *demoSeedState) pickUser(key string, notID int64) domain.User {
 	return domain.User{}
 }
 
-func (state *demoSeedState) ensureComment(ctx context.Context, tx *gorm.DB, postID int64, userID int64, parentID *int64, content string, createdAt time.Time) (domain.Comment, error) {
+func (state *demoSeedState) ensureComment(ctx context.Context, tx *gorm.DB, postID int64, userID int64, parentID *int64, content string, createdAt time.Time, legacyContents ...string) (domain.Comment, error) {
 	row := domain.Comment{PostID: postID, UserID: userID, ParentID: parentID, Content: content, AuditStatus: 1, IsPublic: true, AuditResult: jsonValue(map[string]any{"demo": true}), CreatedAt: createdAt}
-	query := tx.WithContext(ctx).Where("post_id = ? AND user_id = ? AND content = ?", postID, userID, content)
+	contents := []string{content}
+	contents = append(contents, legacyContents...)
+	query := tx.WithContext(ctx).Where("post_id = ? AND user_id = ? AND content IN ?", postID, userID, contents)
 	if parentID == nil {
 		query = query.Where("parent_id IS NULL")
 	} else {
 		query = query.Where("parent_id = ?", *parentID)
 	}
-	result := query.Attrs(row).FirstOrCreate(&row)
-	if result.Error != nil {
-		return domain.Comment{}, result.Error
+	err := query.First(&row).Error
+	if errors.Is(err, gorm.ErrRecordNotFound) {
+		result := tx.WithContext(ctx).Create(&row)
+		if result.Error != nil {
+			return domain.Comment{}, result.Error
+		}
+		state.result.CommentsCreated += result.RowsAffected
+		return row, nil
 	}
-	state.result.CommentsCreated += result.RowsAffected
+	if err != nil {
+		return domain.Comment{}, err
+	}
+	if row.Content != content {
+		if err := tx.WithContext(ctx).Model(&domain.Comment{}).Where("id = ?", row.ID).Updates(map[string]any{"content": content, "audit_result": jsonValue(map[string]any{"demo": true})}).Error; err != nil {
+			return domain.Comment{}, err
+		}
+		row.Content = content
+	}
 	return row, nil
 }
 
@@ -125,32 +145,64 @@ func (state *demoSeedState) ensureBrowsingHistory(ctx context.Context, tx *gorm.
 	return nil
 }
 
-func (state *demoSeedState) ensureSearchHistory(ctx context.Context, tx *gorm.DB, userID int64, keyword string, at time.Time) error {
-	result := tx.WithContext(ctx).Where("user_id = ? AND keyword = ?", userID, keyword).
-		Attrs(domain.UserSearchHistory{UserID: userID, Keyword: keyword, CreatedAt: at}).
-		FirstOrCreate(&domain.UserSearchHistory{})
-	if result.Error != nil {
-		return result.Error
+func (state *demoSeedState) ensureSearchHistory(ctx context.Context, tx *gorm.DB, userID int64, keyword string, at time.Time, legacyKeywords ...string) error {
+	keywords := []string{keyword}
+	keywords = append(keywords, legacyKeywords...)
+	var row domain.UserSearchHistory
+	err := tx.WithContext(ctx).Where("user_id = ? AND keyword IN ?", userID, keywords).First(&row).Error
+	if errors.Is(err, gorm.ErrRecordNotFound) {
+		result := tx.WithContext(ctx).Create(&domain.UserSearchHistory{UserID: userID, Keyword: keyword, CreatedAt: at})
+		if result.Error != nil {
+			return result.Error
+		}
+		state.result.HistoryRowsCreated += result.RowsAffected
+		return nil
 	}
-	state.result.HistoryRowsCreated += result.RowsAffected
+	if err != nil {
+		return err
+	}
+	if row.Keyword != keyword {
+		return tx.WithContext(ctx).Model(&domain.UserSearchHistory{}).Where("id = ?", row.ID).Update("keyword", keyword).Error
+	}
 	return nil
 }
 
 func (state *demoSeedState) seedCommerce(ctx context.Context, tx *gorm.DB, now time.Time) error {
-	products := []domain.GiftCardProduct{
-		{Name: "Demo Coffee Card", Description: stringPtr("A demo reward for points redemption tests."), FaceValue: stringPtr("10 USD"), PointsRequired: 120, IsActive: true, SortOrder: 10, CreatedAt: now, UpdatedAt: &now},
-		{Name: "Demo Book Card", Description: stringPtr("A demo creator reward for bookstore flows."), FaceValue: stringPtr("25 USD"), PointsRequired: 260, IsActive: true, SortOrder: 20, CreatedAt: now, UpdatedAt: &now},
+	products := []struct {
+		Product    domain.GiftCardProduct
+		LegacyName string
+	}{
+		{Product: domain.GiftCardProduct{Name: "演示咖啡兑换卡", Description: stringPtr("用于积分兑换流程测试的中文演示奖励。"), FaceValue: stringPtr("10元"), PointsRequired: 120, IsActive: true, SortOrder: 10, CreatedAt: now, UpdatedAt: &now}, LegacyName: "Demo Coffee Card"},
+		{Product: domain.GiftCardProduct{Name: "演示书店礼品卡", Description: stringPtr("用于创作者礼品卡流程测试的中文演示奖励。"), FaceValue: stringPtr("25元"), PointsRequired: 260, IsActive: true, SortOrder: 20, CreatedAt: now, UpdatedAt: &now}, LegacyName: "Demo Book Card"},
 	}
-	for index, product := range products {
+	for index, seed := range products {
 		var row domain.GiftCardProduct
-		result := tx.WithContext(ctx).Where("name = ?", product.Name).Attrs(product).FirstOrCreate(&row)
-		if result.Error != nil {
-			return result.Error
+		err := tx.WithContext(ctx).Where("name IN ?", []string{seed.Product.Name, seed.LegacyName}).First(&row).Error
+		if errors.Is(err, gorm.ErrRecordNotFound) {
+			result := tx.WithContext(ctx).Create(&seed.Product)
+			if result.Error != nil {
+				return result.Error
+			}
+			state.result.GiftCardRowsCreated += result.RowsAffected
+			row = seed.Product
+		} else if err != nil {
+			return err
+		} else {
+			if err := tx.WithContext(ctx).Model(&domain.GiftCardProduct{}).Where("id = ?", row.ID).Updates(map[string]any{
+				"name":            seed.Product.Name,
+				"description":     seed.Product.Description,
+				"face_value":      seed.Product.FaceValue,
+				"points_required": seed.Product.PointsRequired,
+				"is_active":       seed.Product.IsActive,
+				"sort_order":      seed.Product.SortOrder,
+				"updated_at":      now,
+			}).Error; err != nil {
+				return err
+			}
 		}
-		state.result.GiftCardRowsCreated += result.RowsAffected
 		for codeIndex := 1; codeIndex <= 3; codeIndex++ {
 			code := fmt.Sprintf("DEMO-%02d-%02d", index+1, codeIndex)
-			result = tx.WithContext(ctx).Where("product_id = ? AND code = ?", row.ID, code).
+			result := tx.WithContext(ctx).Where("product_id = ? AND code = ?", row.ID, code).
 				Attrs(domain.GiftCardCode{ProductID: row.ID, Code: code, Status: demoGiftCardCodeStatusAvailable, ImportBatch: stringPtr("demo-seed"), CreatedAt: now, UpdatedAt: &now}).
 				FirstOrCreate(&domain.GiftCardCode{})
 			if result.Error != nil {
@@ -166,8 +218,8 @@ func (state *demoSeedState) seedSystemRows(ctx context.Context, tx *gorm.DB, now
 	publishedAt := now.Add(-2 * time.Hour)
 	expiresAt := now.AddDate(0, 1, 0)
 	announcement := domain.Announcement{
-		Title:       "Demo data is available",
-		Content:     "Sample users, posts, comments, wallet balances, gift cards, and messages have been prepared for local validation.",
+		Title:       "中文演示数据已准备好",
+		Content:     "系统已准备好来自中国场景的演示用户、帖子、评论、钱包余额、礼品卡和站内消息，适合本地中文验收。",
 		Type:        "info",
 		IsPublished: true,
 		PublishedAt: &publishedAt,
@@ -175,15 +227,25 @@ func (state *demoSeedState) seedSystemRows(ctx context.Context, tx *gorm.DB, now
 		CreatedAt:   now,
 		UpdatedAt:   &now,
 	}
-	result := tx.WithContext(ctx).Where("title = ?", announcement.Title).Attrs(announcement).FirstOrCreate(&domain.Announcement{})
-	if result.Error != nil {
+	var existingAnnouncement domain.Announcement
+	result := tx.WithContext(ctx).Where("title IN ?", []string{announcement.Title, "Demo data is available"}).First(&existingAnnouncement)
+	if errors.Is(result.Error, gorm.ErrRecordNotFound) {
+		result = tx.WithContext(ctx).Create(&announcement)
+		if result.Error != nil {
+			return result.Error
+		}
+		state.result.SystemRowsCreated += result.RowsAffected
+	} else if result.Error != nil {
 		return result.Error
+	} else {
+		if err := tx.WithContext(ctx).Model(&domain.Announcement{}).Where("id = ?", existingAnnouncement.ID).Updates(announcement).Error; err != nil {
+			return err
+		}
 	}
-	state.result.SystemRowsCreated += result.RowsAffected
 
 	systemNotification := domain.SystemNotification{
-		Title:         "Demo workspace ready",
-		Content:       "Use demo_alice or demo-alice@example.test with the configured demo password to explore the app.",
+		Title:         "中文演示环境已就绪",
+		Content:       "可使用 demo_alice 或 demo-alice@example.test 搭配配置的演示密码体验中文社区数据。",
 		Type:          "info",
 		ContentFormat: "markdown",
 		ShowPopup:     true,
@@ -193,11 +255,21 @@ func (state *demoSeedState) seedSystemRows(ctx context.Context, tx *gorm.DB, now
 		CreatedAt:     now,
 		UpdatedAt:     &now,
 	}
-	result = tx.WithContext(ctx).Where("title = ?", systemNotification.Title).Attrs(systemNotification).FirstOrCreate(&domain.SystemNotification{})
-	if result.Error != nil {
+	var existingNotification domain.SystemNotification
+	result = tx.WithContext(ctx).Where("title IN ?", []string{systemNotification.Title, "Demo workspace ready"}).First(&existingNotification)
+	if errors.Is(result.Error, gorm.ErrRecordNotFound) {
+		result = tx.WithContext(ctx).Create(&systemNotification)
+		if result.Error != nil {
+			return result.Error
+		}
+		state.result.SystemRowsCreated += result.RowsAffected
+	} else if result.Error != nil {
 		return result.Error
+	} else {
+		if err := tx.WithContext(ctx).Model(&domain.SystemNotification{}).Where("id = ?", existingNotification.ID).Updates(systemNotification).Error; err != nil {
+			return err
+		}
 	}
-	state.result.SystemRowsCreated += result.RowsAffected
 	return nil
 }
 
@@ -207,15 +279,27 @@ func (state *demoSeedState) seedIM(ctx context.Context, tx *gorm.DB, now time.Ti
 	if !okA || !okB {
 		return nil
 	}
-	name := "Demo chat"
+	name := "中文演示会话"
+	legacyName := "Demo chat"
 	var conversation domain.IMConversation
-	result := tx.WithContext(ctx).Where("type = ? AND creator_id = ? AND name = ?", "direct", alice.ID, name).
-		Attrs(domain.IMConversation{Type: "direct", Name: &name, CreatorID: alice.ID, CreatedAt: now.Add(-6 * time.Hour), UpdatedAt: &now}).
-		FirstOrCreate(&conversation)
-	if result.Error != nil {
+	result := tx.WithContext(ctx).Where("type = ? AND creator_id = ? AND name IN ?", "direct", alice.ID, []string{name, legacyName}).First(&conversation)
+	if errors.Is(result.Error, gorm.ErrRecordNotFound) {
+		result = tx.WithContext(ctx).Create(&domain.IMConversation{Type: "direct", Name: &name, CreatorID: alice.ID, CreatedAt: now.Add(-6 * time.Hour), UpdatedAt: &now})
+		if result.Error != nil {
+			return result.Error
+		}
+		state.result.IMRowsCreated += result.RowsAffected
+		if err := tx.WithContext(ctx).Where("type = ? AND creator_id = ? AND name = ?", "direct", alice.ID, name).First(&conversation).Error; err != nil {
+			return err
+		}
+	} else if result.Error != nil {
 		return result.Error
+	} else if deref(conversation.Name) != name {
+		if err := tx.WithContext(ctx).Model(&domain.IMConversation{}).Where("id = ?", conversation.ID).Updates(map[string]any{"name": name, "updated_at": now}).Error; err != nil {
+			return err
+		}
+		conversation.Name = &name
 	}
-	state.result.IMRowsCreated += result.RowsAffected
 	for _, user := range []domain.User{alice, ben} {
 		result = tx.WithContext(ctx).Where("conversation_id = ? AND user_id = ?", conversation.ID, user.ID).
 			Attrs(domain.IMConversationMember{ConversationID: conversation.ID, UserID: user.ID, JoinedAt: now.Add(-6 * time.Hour)}).
@@ -231,18 +315,28 @@ func (state *demoSeedState) seedIM(ctx context.Context, tx *gorm.DB, now time.Ti
 		Text   string
 		At     time.Time
 	}{
-		{alice, "demo-msg-001", "The demo feed is ready for review.", now.Add(-5 * time.Hour)},
-		{ben, "demo-msg-002", "Great. I will check login, comments, and wallet flows.", now.Add(-5*time.Hour + 8*time.Minute)},
-		{alice, "demo-msg-003", "Use this conversation for unread badge testing.", now.Add(-5*time.Hour + 18*time.Minute)},
+		{alice, "demo-msg-001", "中文演示信息流已经准备好，可以开始验收。", now.Add(-5 * time.Hour)},
+		{ben, "demo-msg-002", "收到，我会检查登录、评论、钱包和通知流程。", now.Add(-5*time.Hour + 8*time.Minute)},
+		{alice, "demo-msg-003", "这条会话也可以用来测试消息未读角标。", now.Add(-5*time.Hour + 18*time.Minute)},
 	}
 	var lastMessageID *int64
 	for _, message := range messages {
 		row := domain.IMMessage{ConversationID: conversation.ID, SenderID: message.Sender.ID, Content: message.Text, ClientMsgID: &message.ID, CreatedAt: message.At}
-		result = tx.WithContext(ctx).Where("conversation_id = ? AND client_msg_id = ?", conversation.ID, message.ID).Attrs(row).FirstOrCreate(&row)
-		if result.Error != nil {
+		result = tx.WithContext(ctx).Where("conversation_id = ? AND client_msg_id = ?", conversation.ID, message.ID).First(&row)
+		if errors.Is(result.Error, gorm.ErrRecordNotFound) {
+			result = tx.WithContext(ctx).Create(&row)
+			if result.Error != nil {
+				return result.Error
+			}
+			state.result.IMRowsCreated += result.RowsAffected
+		} else if result.Error != nil {
 			return result.Error
+		} else if row.Content != message.Text {
+			if err := tx.WithContext(ctx).Model(&domain.IMMessage{}).Where("id = ?", row.ID).Update("content", message.Text).Error; err != nil {
+				return err
+			}
+			row.Content = message.Text
 		}
-		state.result.IMRowsCreated += result.RowsAffected
 		lastMessageID = &row.ID
 		for _, user := range []domain.User{alice, ben} {
 			deliveredAt := message.At.Add(time.Minute)
@@ -296,6 +390,9 @@ func (state *demoSeedState) recountAffectedRows(ctx context.Context, tx *gorm.DB
 				return err
 			}
 			if existing > 0 {
+				if err := tx.WithContext(ctx).Model(&domain.Notification{}).Where("user_id = ? AND type = ? AND target_id = ?", post.UserID, 1, post.ID).Update("title", "点赞了你的帖子").Error; err != nil {
+					return err
+				}
 				break
 			}
 			var liked int64
@@ -305,7 +402,7 @@ func (state *demoSeedState) recountAffectedRows(ctx context.Context, tx *gorm.DB
 			if liked == 0 {
 				continue
 			}
-			result := tx.WithContext(ctx).Create(&domain.Notification{UserID: post.UserID, SenderID: likeUser.ID, Type: 1, Title: "liked your post", TargetID: &targetID, CreatedAt: now})
+			result := tx.WithContext(ctx).Create(&domain.Notification{UserID: post.UserID, SenderID: likeUser.ID, Type: 1, Title: "点赞了你的帖子", TargetID: &targetID, CreatedAt: now})
 			if result.Error != nil {
 				return result.Error
 			}
