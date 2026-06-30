@@ -1,25 +1,25 @@
 {
   "walletPage": {
     "balance": {
-      "defaultAccount": "Moon Coin account",
+      "defaultAccount": "Internal wallet",
       "loading": "Loading...",
-      "errorTitle": "Could not read Moon Coin balance",
-      "unit": "Moon Coins",
+      "errorTitle": "Could not read internal balance",
+      "unit": "balance",
       "account": "Account {account}",
-      "title": "Moon Coin balance"
+      "title": "Internal balance"
     },
     "errors": {
       "partial": "Some wallet data is unavailable:",
       "loadFailed": "Wallet data request failed",
-      "balanceCenterNotConfigured": "The User Center balance API is not configured.",
+      "balanceCenterNotConfigured": "Internal wallet service is unavailable.",
       "httpStatus": "HTTP {status}",
       "businessCode": "Business code {code}",
       "requestId": "Request ID {requestId}",
       "sources": {
-        "balanceConfig": "Moon Coin configuration",
+        "balanceConfig": "Balance configuration",
         "rechargeConfig": "Recharge configuration",
         "localPoints": "Points balance",
-        "userBalance": "Moon Coin balance",
+        "userBalance": "Internal balance",
         "withdrawOrders": "Bills",
         "balanceOrders": "Purchase history",
         "pointsOverview": "Points center",
@@ -27,7 +27,7 @@
       }
     },
     "title": "Wallet",
-    "subtitle": "Moon Coins, points, gift cards, and bills",
+    "subtitle": "Internal balance, points, gift cards, and bills",
     "loading": "Loading wallet data",
     "actions": {
       "back": "Go back",
@@ -92,18 +92,18 @@
       "fixedOptions": "Fixed options",
       "balanceDisabled": "Balance center is disabled",
       "empty": "No recharge options",
-      "bonus": "Bonus {amount} Moon Coins",
+      "bonus": "Bonus {amount} balance",
       "noBonus": "No bonus",
-      "range": "{min}-{max} Moon Coins",
-      "min": "From {amount} Moon Coins",
-      "max": "Up to {amount} Moon Coins"
+      "range": "{min}-{max} balance",
+      "min": "From {amount} balance",
+      "max": "Up to {amount} balance"
     },
     "bills": {
       "title": "Bills",
       "empty": "No bill records",
       "defaultType": "Bill",
       "types": {
-        "moonCoin": "Transfer to Moon Coins",
+        "moonCoin": "Transfer to balance",
         "cash": "Cash withdrawal"
       }
     },
@@ -125,7 +125,7 @@
       }
     },
     "money": {
-      "moonCoinAmount": "{amount} Moon Coins",
+      "moonCoinAmount": "{amount} balance",
       "points": "{amount} pts",
       "pointsPlus": "+{amount} pts"
     },
@@ -158,7 +158,7 @@
     },
     "types": {
       "cash": "Cash",
-      "moonCoin": "Moon Coin"
+      "moonCoin": "Balance"
     },
     "statuses": {
       "pending": "Pending",
@@ -170,7 +170,7 @@
   },
   "adminBalanceTransactions": {
     "title": "External balance transaction audit",
-    "description": "Review remote Moon Coin mutations. Unknown results remain locked for manual investigation.",
+    "description": "Review external balance changes. Unknown results remain locked for manual investigation.",
     "refresh": "Refresh",
     "loading": "Loading balance transactions",
     "operation": "Operation",
@@ -180,7 +180,7 @@
     "created": "Created",
     "action": "Action",
     "compensate": "Compensate",
-    "confirmCompensation": "Reverse this applied transaction at the user center?",
+    "confirmCompensation": "Reverse this applied transaction?",
     "compensated": "Transaction compensated.",
     "empty": "No balance transactions",
     "statuses": {

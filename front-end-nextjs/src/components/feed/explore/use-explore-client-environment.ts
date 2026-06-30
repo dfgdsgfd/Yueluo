@@ -1,12 +1,7 @@
 "use client";
 
 import { useEffect, type Dispatch, type SetStateAction } from "react";
-import { getAuthConfig, getCurrentUser, getStoredAccessToken } from "@/lib/api";
-import type { VideoCenterVisibilityConfig } from "@/lib/types";
-import {
-  normalizeVideoCenterConfig,
-  videoCenterConfigFromAuthConfig,
-} from "@/lib/video-center";
+import { getStoredAccessToken } from "@/lib/api";
 import {
   EXPLORE_THEME_STORAGE_KEY,
   type ExploreTheme,
@@ -16,25 +11,19 @@ import {
 export function useExploreClientEnvironment({
   exploreTheme,
   exploreThemePreference,
-  hasClientAccessToken,
   hasLoadedExploreTheme,
   setExploreTheme,
   setExploreThemePreference,
   setHasClientAccessToken,
   setHasLoadedExploreTheme,
-  setVideoCenterConfig,
-  setViewerCreatedAt,
 }: {
   exploreTheme: ExploreTheme;
   exploreThemePreference: ExploreThemePreference;
-  hasClientAccessToken: boolean;
   hasLoadedExploreTheme: boolean;
   setExploreTheme: Dispatch<SetStateAction<ExploreTheme>>;
   setExploreThemePreference: Dispatch<SetStateAction<ExploreThemePreference>>;
   setHasClientAccessToken: Dispatch<SetStateAction<boolean>>;
   setHasLoadedExploreTheme: Dispatch<SetStateAction<boolean>>;
-  setVideoCenterConfig: Dispatch<SetStateAction<VideoCenterVisibilityConfig>>;
-  setViewerCreatedAt: Dispatch<SetStateAction<string | null>>;
 }) {
   useEffect(() => {
     let cancelled = false;
@@ -57,43 +46,6 @@ export function useExploreClientEnvironment({
       window.clearInterval(intervalId);
     };
   }, [setHasClientAccessToken]);
-
-  useEffect(() => {
-    let cancelled = false;
-    getAuthConfig()
-      .then((config) => {
-        if (!cancelled) {
-          setVideoCenterConfig(videoCenterConfigFromAuthConfig(config));
-        }
-      })
-      .catch(() => {
-        if (!cancelled) {
-          setVideoCenterConfig((current) =>
-            normalizeVideoCenterConfig(current),
-          );
-        }
-      });
-    if (!hasClientAccessToken) {
-      setViewerCreatedAt(null);
-      return () => {
-        cancelled = true;
-      };
-    }
-    getCurrentUser()
-      .then((user) => {
-        if (!cancelled) {
-          setViewerCreatedAt(user.created_at ?? null);
-        }
-      })
-      .catch(() => {
-        if (!cancelled) {
-          setViewerCreatedAt(null);
-        }
-      });
-    return () => {
-      cancelled = true;
-    };
-  }, [hasClientAccessToken, setVideoCenterConfig, setViewerCreatedAt]);
 
   useEffect(() => {
     const storedTheme = window.localStorage.getItem(EXPLORE_THEME_STORAGE_KEY);

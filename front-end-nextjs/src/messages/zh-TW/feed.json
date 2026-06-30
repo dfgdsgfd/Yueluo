@@ -43,7 +43,7 @@
     },
     "loadingPost": "正在載入筆記",
     "originalIncentiveTitle": "原創激勵",
-    "originalIncentiveAmount": "已獲得 {amount} 月幣原創激勵",
+    "originalIncentiveAmount": "已獲得 {amount} 餘額原創激勵",
     "close": "關閉",
     "views": "{count} 次浏览",
     "comments": "{count} 則留言",
@@ -190,8 +190,8 @@
         "action": "了解如何取得積分"
       },
       "balance": {
-        "title": "月幣不足",
-        "description": "目前月幣不足以解鎖這篇內容，可以前往錢包儲值後再試。",
+        "title": "餘額不足",
+        "description": "目前內部餘額不足以解鎖這篇內容，可以前往錢包儲值後再試。",
         "action": "去儲值"
       }
     },

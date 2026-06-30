@@ -43,7 +43,7 @@
     },
     "loadingPost": "게시글 불러오는 중",
     "originalIncentiveTitle": "창작 인센티브",
-    "originalIncentiveAmount": "{amount} 문코인 인센티브를 받았습니다",
+    "originalIncentiveAmount": "{amount} 잔액 인센티브를 받았습니다",
     "close": "닫기",
     "views": "{count} views",
     "comments": "댓글 {count}개",
@@ -190,8 +190,8 @@
         "action": "포인트 얻는 방법"
       },
       "balance": {
-        "title": "Moon Coin이 부족합니다",
-        "description": "이 게시물을 잠금 해제하기에 Moon Coin이 부족합니다. 지갑에서 충전한 뒤 다시 시도하세요.",
+        "title": "잔액이 부족합니다",
+        "description": "이 게시물을 잠금 해제하기에 내부 잔액이 부족합니다. 지갑에서 충전한 뒤 다시 시도하세요.",
         "action": "충전하기"
       }
     },

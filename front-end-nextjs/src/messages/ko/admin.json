@@ -860,10 +860,10 @@
         }
       },
       "fields": {
-        "videoCenterEnabled": "비디오 센터 스위치",
-        "videoCenterHomepageEnabled": "홈 비디오 센터 추천",
-        "videoCenterRecommendLimit": "비디오 센터 추천 수",
-        "videoCenterAccountCutoff": "비디오 센터 가입 시간 기준",
+        "videoCenterEnabled": "동영상 기능 스위치",
+        "videoCenterHomepageEnabled": "홈 동영상 추천",
+        "videoCenterRecommendLimit": "동영상 추천 수",
+        "videoCenterAccountCutoff": "동영상 가입 시간 기준",
         "imageWebpEnabled": "WebP로 변환",
         "imageWebpQuality": "일반 이미지 품질",
         "imageAvatarWebpQuality": "아바타 이미지 품질",
@@ -880,9 +880,9 @@
         "imageProtectionEnabled": "강화 워터마크 보호",
         "imageProtectionNoticeEnabled": "보호 안내 표시",
         "imageSelectAllEnabled": "이미지 전체 선택 허용",
-        "paidContentBalanceEnabled": "월코인 결제 허용",
+        "paidContentBalanceEnabled": "잔액 결제 허용",
         "paidContentPointsEnabled": "포인트 결제 허용",
-        "paidContentBalanceMaxPrice": "월코인 가격 상한",
+        "paidContentBalanceMaxPrice": "잔액 가격 상한",
         "paidContentPointsMaxPrice": "포인트 가격 상한",
         "hiddenWatermarkEnabled": "숨은 워터마크 사용",
         "hiddenWatermarkIncludeUid": "내부 UID 포함",
@@ -894,7 +894,7 @@
         "hiddenWatermarkCustomText": "숨은 워터마크 사용자 지정 식별자"
       },
       "hints": {
-        "videoCenterAccountCutoff": "이 시간 이후에 가입한 사용자는 비디오 센터를 볼 수 없습니다. 비워 두면 가입 시간 기준 숨김을 사용하지 않습니다.",
+        "videoCenterAccountCutoff": "이 시간 이후에 가입한 사용자는 동영상 기능을 볼 수 없습니다. 비워 두면 가입 시간 기준 숨김을 사용하지 않습니다.",
         "imageMaxDimension": "0은 제한 없음을 뜻합니다. 이미지 비율을 유지하여 축소합니다.",
         "imageProcessingConcurrency": "숨은 워터마크 처리는 메모리를 많이 사용하므로 1을 권장합니다.",
         "imagePostMaxCount": "게시물과 일괄 업로드의 이미지 상한입니다. 기본 100, 최대 500.",
@@ -904,7 +904,7 @@
         "imageProtectionEnabled": "표지가 아닌 이미지를 보호하여 추적 가능한 워터마크 ZIP으로만 다운로드하게 합니다.",
         "imageProtectionNoticeEnabled": "게시 화면에 보호 설명 또는 전역 비활성화 안내를 표시할지 설정합니다.",
         "imageSelectAllEnabled": "끄면 전체 선택을 숨기고 선택이 없을 때 일괄 작업이 모든 이미지에 적용되지 않습니다.",
-        "paidContentPaymentMethod": "유료 이미지에 이 결제 수단을 사용할 수 있는지 설정합니다. 월코인과 포인트를 함께 켤 수 있습니다.",
+        "paidContentPaymentMethod": "유료 이미지에 이 결제 수단을 사용할 수 있는지 설정합니다. 잔액과 포인트를 함께 켤 수 있습니다.",
         "paidContentPriceLimit": "유료 이미지에서 작성자가 입력할 수 있는 최대 잠금 해제 가격을 제어합니다.",
         "hiddenWatermarkCustomText": "사용자 지정 식별자를 켜면 추적 레코드에 저장되며 이미지 토큰에는 삽입되지 않습니다."
       },

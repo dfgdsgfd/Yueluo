@@ -119,6 +119,13 @@ const fileRecycleSettingKeys = new Set([
   "file_recycle_cleanup_interval_hours",
 ]);
 
+const hiddenSettingKeys = new Set([
+  "video_center_enabled",
+  "video_center_homepage_enabled",
+  "video_center_recommend_limit",
+  "video_center_account_cutoff",
+]);
+
 function appDownloadSizeBytesSetting(key: string) {
   return key.startsWith("app_download_") && key.endsWith("_size_bytes");
 }
@@ -308,11 +315,19 @@ export function SettingsPanel({ token }: { token: string }) {
         adminRequest<Record<string, unknown>>("/api/admin/settings", { method: "GET", token }),
       ]);
       const nextSettings = Object.fromEntries(
-        Object.entries(data.settings ?? {}).filter(([key]) => !isOnboardingSettingKey(key)),
+        Object.entries(data.settings ?? {}).filter(
+          ([key]) => !isOnboardingSettingKey(key) && !hiddenSettingKeys.has(key),
+        ),
       );
       const nextRawSettings = rawData && typeof rawData === "object" ? rawData : data.raw ?? {};
       setSettings(nextSettings);
-      setRawSettings(Object.fromEntries(Object.entries(nextRawSettings).filter(([key]) => !isOnboardingSettingKey(key))));
+      setRawSettings(
+        Object.fromEntries(
+          Object.entries(nextRawSettings).filter(
+            ([key]) => !isOnboardingSettingKey(key) && !hiddenSettingKeys.has(key),
+          ),
+        ),
+      );
       setDraft(Object.fromEntries(Object.entries(nextSettings).map(([key, value]) => [
         key,
         appDownloadSizeBytesSetting(key) ? sizeBytesToMBInput(value.value) : value.value,

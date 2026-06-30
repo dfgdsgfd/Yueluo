@@ -93,7 +93,7 @@ export const systemNotificationTemplates: SystemNotificationTemplate[] = [
       "",
       "你参与的活动奖励已完成发放。",
       "",
-      "- **奖励类型**：积分 / 月币 / 礼品卡",
+      "- **奖励类型**：积分 / 余额 / 礼品卡",
       "- **发放时间**：YYYY-MM-DD HH:mm",
       "- **查看入口**：[前往钱包](/wallet)",
       "",

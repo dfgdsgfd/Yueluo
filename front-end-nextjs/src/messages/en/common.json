@@ -6,7 +6,7 @@
   "error": {
     "access_blocked": "Access has been blocked by the current access policy.",
     "api_key_rate_limited": "Too many failed API key checks. Try again later.",
-    "balance_center_not_configured": "The User Center balance API is not configured.",
+    "balance_center_not_configured": "Internal wallet service is unavailable.",
     "invalid_file_recycle_setting": "File recycle bin settings are invalid.",
     "invalid_redis_maintenance_config": "The Redis maintenance configuration is invalid.",
     "redis_unavailable": "Redis is unavailable.",
@@ -89,13 +89,13 @@
   },
   "moreMenu": {
     "wallet": {
-      "title": "Moon Coin balance",
+      "title": "Internal balance",
       "loading": "Loading...",
       "error": "Balance unavailable",
-      "amount": "{amount} Moon Coins",
+      "amount": "{amount} balance",
       "login": "Sign in to view",
       "account": "Account {username}",
-      "detail": "Open wallet for details"
+      "detail": "View internal wallet details"
     },
     "invite": "Invite users",
     "verification": "Apply for verification",
@@ -115,7 +115,7 @@
     "latest": "Latest",
     "hot": "Hot",
     "following": "Following",
-    "videoCenter": "Video Center"
+    "videoCenter": "Videos"
   },
   "search": {
     "placeholder": "Search posts, creators, or tags",
@@ -209,7 +209,7 @@
       "geetestUnavailable": "Password registration is unavailable while GeeTest verification is enabled."
     },
     "userCenterLogin": "Log in",
-    "redirecting": "Opening User Center...",
+    "redirecting": "Opening sign-in service...",
     "loadingConfig": "Loading authorization settings...",
     "configLoadFailed": "Authorization settings could not be loaded. The default sign-in entry will be used.",
     "oauthOnly": "Log in to unlock more content.",
@@ -231,7 +231,7 @@
       "title": "App sign-in did not finish",
       "callbackReceived": "The browser callback reached the app and sign-in is being processed.",
       "stateFailed": "The sign-in request expired or does not match this app session. Please start sign-in again.",
-      "oauthError": "User Center returned an authorization failure.",
+      "oauthError": "The sign-in service returned an authorization failure.",
       "missingCode": "The browser callback did not include a login ticket.",
       "tokenExchangeFailed": "The app failed to exchange the login token.",
       "tokenStorageFailed": "The app received a token, but failed to store the local sign-in state.",

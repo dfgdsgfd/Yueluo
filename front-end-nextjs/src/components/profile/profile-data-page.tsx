@@ -171,7 +171,6 @@ function ProfileDataPage({
       key={`${cacheKey}:${payloadRevision}`}
       profile={payload.profile}
       tabs={payload.tabs}
-      videoCenter={payload.videoCenter}
       variant={variant}
       onBack={onBack}
     />

@@ -6,7 +6,7 @@
   "error": {
     "access_blocked": "Quyền truy cập đã bị chặn bởi chính sách hiện tại.",
     "api_key_rate_limited": "Có quá nhiều lần xác thực khóa API thất bại. Vui lòng thử lại sau.",
-    "balance_center_not_configured": "API số dư của Trung tâm người dùng chưa được cấu hình.",
+    "balance_center_not_configured": "Dịch vụ ví nội bộ hiện không khả dụng.",
     "invalid_file_recycle_setting": "Cài đặt thùng rác tệp không hợp lệ.",
     "invalid_redis_maintenance_config": "Cấu hình bảo trì Redis không hợp lệ.",
     "redis_unavailable": "Redis hiện không khả dụng.",
@@ -89,13 +89,13 @@
   },
   "moreMenu": {
     "wallet": {
-      "title": "Số dư Moon Coin",
+      "title": "Số dư nội bộ",
       "loading": "Đang đọc...",
       "error": "Không đọc được số dư",
-      "amount": "{amount} Moon Coin",
+      "amount": "{amount} số dư",
       "login": "Đăng nhập để xem",
       "account": "Tài khoản {username}",
-      "detail": "Mở ví để xem chi tiết"
+      "detail": "Xem chi tiết ví nội bộ"
     },
     "invite": "Mời đăng ký",
     "verification": "Đăng ký xác minh",
@@ -115,7 +115,7 @@
     "latest": "Mới nhất",
     "hot": "Nổi bật",
     "following": "Đang theo dõi",
-    "videoCenter": "Trung tâm video"
+    "videoCenter": "Video"
   },
   "search": {
     "placeholder": "Tìm bài viết, tác giả hoặc thẻ",
@@ -209,7 +209,7 @@
       "geetestUnavailable": "Không thể đăng ký bằng mật khẩu khi GeeTest đang bật."
     },
     "userCenterLogin": "Đăng nhập",
-    "redirecting": "Đang mở Trung tâm người dùng...",
+    "redirecting": "Đang mở dịch vụ đăng nhập...",
     "loadingConfig": "Đang tải cấu hình xác thực...",
     "configLoadFailed": "Không thể tải cấu hình xác thực. Hệ thống sẽ dùng cổng đăng nhập mặc định.",
     "oauthOnly": "Đăng nhập để mở thêm nội dung hấp dẫn.",
@@ -231,7 +231,7 @@
       "title": "Đăng nhập trong ứng dụng chưa hoàn tất",
       "callbackReceived": "Ứng dụng đã nhận callback từ trình duyệt và đang xử lý trạng thái đăng nhập.",
       "stateFailed": "Yêu cầu đăng nhập đã hết hạn hoặc không khớp với phiên ứng dụng hiện tại. Vui lòng đăng nhập lại.",
-      "oauthError": "Trung tâm người dùng trả về lỗi ủy quyền.",
+      "oauthError": "Dịch vụ đăng nhập trả về lỗi ủy quyền.",
       "missingCode": "Callback từ trình duyệt thiếu ticket đăng nhập.",
       "tokenExchangeFailed": "Ứng dụng không thể đổi token đăng nhập.",
       "tokenStorageFailed": "Ứng dụng đã nhận token nhưng không thể lưu trạng thái đăng nhập cục bộ.",

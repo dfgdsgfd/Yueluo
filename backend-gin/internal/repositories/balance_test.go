@@ -39,16 +39,16 @@ func TestQualityRewardLabel(t *testing.T) {
 	}
 }
 
-func TestPurchaseContentFinalizesRemoteMoonCoinPurchaseWithoutLocalWallet(t *testing.T) {
+func TestPurchaseContentDebitsInternalWalletAndFinalizesPurchase(t *testing.T) {
 	db := newBalanceTestDB(t)
 	seedBalancePaidPost(t, db, 6)
 
 	result, err := NewBalanceRepository(db).PurchaseContent(context.Background(), PurchaseContentInput{
-		UserID:          1,
-		PostID:          100,
-		PaymentMethod:   "balance",
-		BalanceAfter:    4,
-		PlatformFeeRate: 0.2,
+		UserID:             1,
+		PostID:             100,
+		PaymentMethod:      "balance",
+		PlatformFeeRate:    0.2,
+		UseInternalBalance: true,
 	})
 	if err != nil {
 		t.Fatalf("PurchaseContent() error = %v", err)
@@ -60,6 +60,12 @@ func TestPurchaseContentFinalizesRemoteMoonCoinPurchaseWithoutLocalWallet(t *tes
 	assertFloat(t, result.BalanceAfter, 4)
 	assertFloat(t, result.PlatformFee, 1.2)
 	assertFloat(t, result.AuthorEarnings, 4.8)
+
+	var wallet domain.UserWallet
+	if err := db.Where("user_id = ?", 1).First(&wallet).Error; err != nil {
+		t.Fatal(err)
+	}
+	assertFloat(t, wallet.CashBalance, 4)
 
 	var earnings domain.CreatorEarnings
 	if err := db.Where("user_id = ?", 2).First(&earnings).Error; err != nil {
@@ -238,6 +244,7 @@ func seedBalancePaidPost(t *testing.T, db *gorm.DB, price float64) {
 	records := []any{
 		&domain.User{ID: 1, UserID: "buyer", Nickname: "Buyer", CreatedAt: now},
 		&domain.User{ID: 2, UserID: "author", Nickname: "Author", CreatedAt: now},
+		&domain.UserWallet{UserID: 1, CashBalance: 10, CreatedAt: now},
 		&domain.Post{ID: 100, UserID: 2, Title: "Paid Post", Content: "body", Type: 1, CreatedAt: now, Visibility: "public"},
 		&domain.PostPaymentSetting{ID: 10, PostID: 100, Enabled: true, PaymentType: "single", PaymentMethod: "balance", Price: price, CreatedAt: now},
 	}

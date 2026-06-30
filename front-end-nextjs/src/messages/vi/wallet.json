@@ -1,25 +1,25 @@
 {
   "walletPage": {
     "balance": {
-      "defaultAccount": "Tài khoản Moon Coin",
+      "defaultAccount": "Ví nội bộ",
       "loading": "Đang đọc...",
-      "errorTitle": "Không thể đọc số dư Moon Coin",
-      "unit": "Moon Coin",
+      "errorTitle": "Không thể đọc số dư nội bộ",
+      "unit": "số dư",
       "account": "Tài khoản {account}",
-      "title": "Số dư Moon Coin"
+      "title": "Số dư nội bộ"
     },
     "errors": {
       "partial": "Một số dữ liệu ví hiện không khả dụng:",
       "loadFailed": "Yêu cầu dữ liệu ví thất bại",
-      "balanceCenterNotConfigured": "API số dư của Trung tâm người dùng chưa được cấu hình.",
+      "balanceCenterNotConfigured": "Dịch vụ ví nội bộ hiện không khả dụng.",
       "httpStatus": "HTTP {status}",
       "businessCode": "Mã nghiệp vụ {code}",
       "requestId": "ID yêu cầu {requestId}",
       "sources": {
-        "balanceConfig": "Cấu hình Moon Coin",
+        "balanceConfig": "Cấu hình số dư",
         "rechargeConfig": "Cấu hình nạp tiền",
         "localPoints": "Số dư điểm",
-        "userBalance": "Số dư Moon Coin",
+        "userBalance": "Số dư nội bộ",
         "withdrawOrders": "Hóa đơn",
         "balanceOrders": "Lịch sử mua",
         "pointsOverview": "Trung tâm điểm",
@@ -27,7 +27,7 @@
       }
     },
     "title": "Ví",
-    "subtitle": "Moon Coin, điểm, thẻ quà tặng và hóa đơn",
+    "subtitle": "Số dư nội bộ, điểm, thẻ quà tặng và hóa đơn",
     "loading": "Đang tải dữ liệu ví",
     "actions": {
       "back": "Quay lại",
@@ -92,18 +92,18 @@
       "fixedOptions": "Gói cố định",
       "balanceDisabled": "Trung tâm số dư đang tắt",
       "empty": "Chưa có gói nạp",
-      "bonus": "Tặng {amount} Moon Coin",
+      "bonus": "Tặng {amount} số dư",
       "noBonus": "Không tặng thêm",
-      "range": "{min}-{max} Moon Coin",
-      "min": "Từ {amount} Moon Coin",
-      "max": "Tối đa {amount} Moon Coin"
+      "range": "{min}-{max} số dư",
+      "min": "Từ {amount} số dư",
+      "max": "Tối đa {amount} số dư"
     },
     "bills": {
       "title": "Hóa đơn",
       "empty": "Chưa có hóa đơn",
       "defaultType": "Hóa đơn",
       "types": {
-        "moonCoin": "Chuyển sang Moon Coin",
+        "moonCoin": "Chuyển sang số dư",
         "cash": "Rút tiền mặt"
       }
     },
@@ -125,7 +125,7 @@
       }
     },
     "money": {
-      "moonCoinAmount": "{amount} Moon Coin",
+      "moonCoinAmount": "{amount} số dư",
       "points": "{amount} điểm",
       "pointsPlus": "+{amount} điểm"
     },
@@ -158,7 +158,7 @@
     },
     "types": {
       "cash": "Tiền mặt",
-      "moonCoin": "Moon Coin"
+      "moonCoin": "Số dư"
     },
     "statuses": {
       "pending": "Chờ duyệt",
@@ -169,10 +169,10 @@
     }
   },
   "adminBalanceTransactions": {
-    "title": "Kiểm tra giao dịch Moon Coin bên ngoài",
-    "description": "Kiểm tra thay đổi Moon Coin tại trung tâm người dùng; giao dịch chưa rõ kết quả sẽ tiếp tục bị khóa để xác minh thủ công.",
+    "title": "Kiểm tra giao dịch số dư bên ngoài",
+    "description": "Kiểm tra thay đổi số dư bên ngoài; giao dịch chưa rõ kết quả sẽ tiếp tục bị khóa để xác minh thủ công.",
     "refresh": "Làm mới",
-    "loading": "Đang tải giao dịch Moon Coin",
+    "loading": "Đang tải giao dịch số dư",
     "operation": "Thao tác",
     "oauth2Id": "ID OAuth2",
     "amount": "Số tiền",
@@ -180,9 +180,9 @@
     "created": "Thời gian tạo",
     "action": "Hành động",
     "compensate": "Hoàn tác",
-    "confirmCompensation": "Hoàn tác giao dịch đã áp dụng này tại trung tâm người dùng?",
+    "confirmCompensation": "Hoàn tác giao dịch đã áp dụng này?",
     "compensated": "Đã hoàn tác giao dịch.",
-    "empty": "Không có giao dịch Moon Coin",
+    "empty": "Không có giao dịch số dư",
     "statuses": {
       "prepared": "Đã chuẩn bị",
       "requesting": "Đang yêu cầu",

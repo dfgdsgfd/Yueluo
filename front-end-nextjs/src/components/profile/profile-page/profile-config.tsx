@@ -8,9 +8,7 @@ import type {
   ProfileCropperProps
 } from "@/components/profile/profile-cropper";
 import {
-  History,
-  UserRound,
-  Video
+  UserRound
 } from "lucide-react";
 import {
   CropperSkeleton
@@ -49,9 +47,7 @@ export const tabKeys = ["notes", "private", "collections", "likes"] as const;
 export const publicProfileTabKeys = ["notes", "collections", "likes"] as const;
 
 export const mobileQuickActions = [
-  { key: "history", icon: History, href: "/profile/history" },
   { key: "creatorCenter", icon: UserRound, href: "/creator-center" },
-  { key: "videoCenter", icon: Video, href: "https://v2.yuelk.com" },
 ] as const;
 
 

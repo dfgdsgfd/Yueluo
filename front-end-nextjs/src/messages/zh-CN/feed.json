@@ -43,7 +43,7 @@
     },
     "loadingPost": "正在加载笔记",
     "originalIncentiveTitle": "原创激励",
-    "originalIncentiveAmount": "已获得 {amount} 月币原创激励",
+    "originalIncentiveAmount": "已获得 {amount} 余额原创激励",
     "close": "关闭",
     "views": "{count} 次浏览",
     "comments": "{count} 条评论",
@@ -190,8 +190,8 @@
         "action": "了解如何获取积分"
       },
       "balance": {
-        "title": "月币不足",
-        "description": "当前月币不足以解锁这篇内容，可以前往钱包充值后再试。",
+        "title": "余额不足",
+        "description": "当前内部余额不足以解锁这篇内容，可以前往钱包充值后再试。",
         "action": "去充值"
       }
     },

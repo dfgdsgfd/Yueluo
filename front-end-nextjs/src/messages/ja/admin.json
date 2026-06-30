@@ -860,10 +860,10 @@
         }
       },
       "fields": {
-        "videoCenterEnabled": "動画センターの切り替え",
-        "videoCenterHomepageEnabled": "ホームの動画センター推薦",
-        "videoCenterRecommendLimit": "動画センター推薦数",
-        "videoCenterAccountCutoff": "動画センター登録日時の締切",
+        "videoCenterEnabled": "動画機能の切り替え",
+        "videoCenterHomepageEnabled": "ホームの動画推薦",
+        "videoCenterRecommendLimit": "動画推薦数",
+        "videoCenterAccountCutoff": "動画登録日時の締切",
         "imageWebpEnabled": "WebP に変換",
         "imageWebpQuality": "通常画像の品質",
         "imageAvatarWebpQuality": "アバター画像の品質",
@@ -880,9 +880,9 @@
         "imageProtectionEnabled": "強化透かし保護",
         "imageProtectionNoticeEnabled": "保護案内を表示",
         "imageSelectAllEnabled": "画像の全選択を許可",
-        "paidContentBalanceEnabled": "月コインでの支払いを許可",
+        "paidContentBalanceEnabled": "残高での支払いを許可",
         "paidContentPointsEnabled": "ポイントでの支払いを許可",
-        "paidContentBalanceMaxPrice": "月コイン価格上限",
+        "paidContentBalanceMaxPrice": "残高価格上限",
         "paidContentPointsMaxPrice": "ポイント価格上限",
         "hiddenWatermarkEnabled": "不可視透かしを有効化",
         "hiddenWatermarkIncludeUid": "内部 UID を含める",
@@ -894,7 +894,7 @@
         "hiddenWatermarkCustomText": "不可視透かしのカスタム識別子"
       },
       "hints": {
-        "videoCenterAccountCutoff": "この日時以降に登録したユーザーには動画センターを表示しません。空欄にすると登録日時による非表示を無効にします。",
+        "videoCenterAccountCutoff": "この日時以降に登録したユーザーには動画機能を表示しません。空欄にすると登録日時による非表示を無効にします。",
         "imageMaxDimension": "0 は制限なしです。縦横比を維持して縮小します。",
         "imageProcessingConcurrency": "不可視透かし処理はメモリを多く使うため、1 を推奨します。",
         "imagePostMaxCount": "1投稿と一括アップロードの画像上限です。既定値 100、最大 500。",
@@ -904,7 +904,7 @@
         "imageProtectionEnabled": "カバー以外の画像を保護し、追跡可能な透かし入り ZIP のみをダウンロード可能にします。",
         "imageProtectionNoticeEnabled": "投稿画面に保護説明または全体無効の案内を表示するかを設定します。",
         "imageSelectAllEnabled": "無効時は全選択を隠し、未選択時の一括操作が全画像に適用されないようにします。",
-        "paidContentPaymentMethod": "有料画像でこの支払い方法を選択できるかを設定します。月コインとポイントは同時に有効化できます。",
+        "paidContentPaymentMethod": "有料画像でこの支払い方法を選択できるかを設定します。残高とポイントは同時に有効化できます。",
         "paidContentPriceLimit": "有料画像で作者が入力できる最高ロック解除価格を制御します。",
         "hiddenWatermarkCustomText": "カスタム識別子を有効にすると追跡レコードへ保存され、画像内のトークンには埋め込まれません。"
       },

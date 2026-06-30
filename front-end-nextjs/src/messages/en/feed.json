@@ -43,7 +43,7 @@
     },
     "loadingPost": "Loading post",
     "originalIncentiveTitle": "Original Incentive",
-    "originalIncentiveAmount": "Awarded {amount} Moon Coins",
+    "originalIncentiveAmount": "Awarded {amount} balance",
     "close": "Close",
     "views": "{count} views",
     "comments": "{count} comments",
@@ -190,8 +190,8 @@
         "action": "How to get points"
       },
       "balance": {
-        "title": "Not enough Moon Coins",
-        "description": "You do not have enough Moon Coins to unlock this post. Recharge in Wallet and try again.",
+        "title": "Not enough balance",
+        "description": "You do not have enough internal balance to unlock this post. Recharge in Wallet and try again.",
         "action": "Recharge"
       }
     },

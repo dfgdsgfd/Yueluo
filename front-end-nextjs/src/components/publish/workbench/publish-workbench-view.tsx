@@ -101,14 +101,6 @@ export function PublishWorkbenchView({ controller }: { controller: ReturnType<ty
                 role="menu"
                 className="absolute right-0 top-full z-50 mt-2 w-44 overflow-hidden rounded-2xl border border-[#eeeeef] bg-white p-1 shadow-xl shadow-black/10"
               >
-                <Link
-                  href="/profile"
-                  onClick={() => setAccountMenuOpen(false)}
-                  role="menuitem"
-                  className="flex h-10 items-center rounded-xl px-3 text-sm font-medium text-[#4c4c54] hover:bg-[#f6f6f7] hover:text-[#1f1f24]"
-                >
-                  {t("publish.header.profile")}
-                </Link>
                 <button
                   type="button"
                   role="menuitem"

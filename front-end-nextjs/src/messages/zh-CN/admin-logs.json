@@ -61,12 +61,12 @@
       "security": "安全审计",
       "system": "系统日志",
       "points": "积分流水",
-      "balance": "月币流水"
+      "balance": "余额流水"
     },
     "loading": "正在加载日志",
     "emptyLogs": "暂无日志",
     "emptyPointsLogs": "暂无积分流水",
-    "emptyBalanceLogs": "暂无月币流水",
+    "emptyBalanceLogs": "暂无余额流水",
     "time": "时间",
     "behavior": "行为",
     "user": "用户",

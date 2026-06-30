@@ -6,7 +6,7 @@
   "error": {
     "access_blocked": "目前存取已被存取策略阻斷。",
     "api_key_rate_limited": "API 金鑰驗證失敗次數過多，請稍後再試。",
-    "balance_center_not_configured": "使用者中心月幣 API 尚未設定。",
+    "balance_center_not_configured": "內部錢包服務暫不可用。",
     "invalid_file_recycle_setting": "檔案回收站設定無效。",
     "invalid_redis_maintenance_config": "Redis 自動清理設定無效。",
     "redis_unavailable": "Redis 目前無法使用。",
@@ -89,13 +89,13 @@
   },
   "moreMenu": {
     "wallet": {
-      "title": "月幣餘額",
+      "title": "內部餘額",
       "loading": "讀取中...",
       "error": "餘額讀取失敗",
-      "amount": "{amount} 月幣",
+      "amount": "{amount} 餘額",
       "login": "登入後查看",
       "account": "帳號 {username}",
-      "detail": "進入錢包查看明細"
+      "detail": "進入錢包查看內部餘額明細"
     },
     "invite": "邀請註冊",
     "verification": "申請認證",
@@ -115,7 +115,7 @@
     "latest": "最新",
     "hot": "熱門",
     "following": "關注",
-    "videoCenter": "影片中心"
+    "videoCenter": "影片"
   },
   "search": {
     "placeholder": "搜尋筆記、作者或標籤",
@@ -209,7 +209,7 @@
       "geetestUnavailable": "目前啟用 GeeTest 驗證，暫不支援密碼註冊。"
     },
     "userCenterLogin": "去登入",
-    "redirecting": "正在前往使用者中心...",
+    "redirecting": "正在開啟登入服務...",
     "loadingConfig": "正在讀取授權設定...",
     "configLoadFailed": "授權設定讀取失敗，將使用預設授權入口。",
     "oauthOnly": "登入後即可解鎖更多精彩內容。",
@@ -231,7 +231,7 @@
       "title": "App 登入未完成",
       "callbackReceived": "已收到瀏覽器回調，正在處理登入狀態。",
       "stateFailed": "登入請求已過期或與目前 App 不相符，請重新發起登入。",
-      "oauthError": "使用者中心返回授權失敗。",
+      "oauthError": "登入服務返回授權失敗。",
       "missingCode": "瀏覽器回調缺少一次性登入 ticket。",
       "tokenExchangeFailed": "App 換取登入權杖失敗。",
       "tokenStorageFailed": "App 已取得權杖，但本機登入狀態寫入失敗。",

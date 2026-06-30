@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { buildApiUrl,getBalanceLocalPoints,getBalanceUserBalance,getPostPurchaseUsers } from "@/lib/api";
+import { buildApiUrl,getBalanceLocalPoints,getPostPurchaseUsers,getWithdrawWallet } from "@/lib/api";
 import type { FeedPost,PostImageArchiveJob,PostPurchaseUser,ProtectedPackageJob } from "@/lib/types";
 import * as Dialog from "@radix-ui/react-dialog";
 import { Copy,CreditCard,Download,Loader2,LockKeyhole,ShieldCheck,Users,X } from "lucide-react";
@@ -36,7 +36,7 @@ export function PurchaseUnlockPanel({
     let cancelled = false;
     const request = method === "points"
       ? getBalanceLocalPoints().then((payload) => payload.points)
-      : getBalanceUserBalance().then((payload) => payload.balance);
+      : getWithdrawWallet().then((payload) => payload.cash_balance);
     Promise.resolve()
       .then(() => {
         if (!cancelled) {

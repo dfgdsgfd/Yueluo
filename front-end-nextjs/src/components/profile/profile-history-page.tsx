@@ -114,10 +114,10 @@ export function ProfileHistoryDataPage() {
             asChild
             variant="ghost"
             size="icon"
-            aria-label={t("profile.personalCenter")}
+            aria-label={t("nav.home")}
             className="size-10 text-white hover:bg-white/[0.06]"
           >
-            <Link href="/profile">
+            <Link href="/">
               <ArrowLeft className="size-5" />
             </Link>
           </Button>
@@ -134,9 +134,9 @@ export function ProfileHistoryDataPage() {
             variant="ghost"
             className="h-10 px-3 text-white/64 hover:bg-white/[0.06] hover:text-white"
           >
-            <Link href="/profile">
+            <Link href="/">
               <ArrowLeft className="size-4" />
-              {t("profile.personalCenter")}
+              {t("nav.home")}
             </Link>
           </Button>
           <h1 className="text-xl font-bold text-white">{title}</h1>

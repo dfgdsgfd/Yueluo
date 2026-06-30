@@ -24,13 +24,14 @@ type CreatorRepository struct {
 }
 
 type PurchaseContentInput struct {
-	UserID          int64
-	PostID          int64
-	PaymentMethod   string
-	VIPLevel        int
-	BalanceAfter    float64
-	UserCouponID    *int64
-	PlatformFeeRate float64
+	UserID             int64
+	PostID             int64
+	PaymentMethod      string
+	VIPLevel           int
+	BalanceAfter       float64
+	UserCouponID       *int64
+	PlatformFeeRate    float64
+	UseInternalBalance bool
 }
 
 type PurchaseContentResult struct {
@@ -324,6 +325,13 @@ func (r BalanceRepository) PurchaseContent(ctx context.Context, input PurchaseCo
 		}
 
 		balanceAfter := mathRound2(input.BalanceAfter)
+		if method == "balance" && input.UseInternalBalance {
+			nextBalance, err := r.debitInternalWalletForPurchaseTx(ctx, tx, input.UserID, finalPayAmount)
+			if err != nil {
+				return err
+			}
+			balanceAfter = nextBalance
+		}
 
 		earnings, err := getOrCreateCreatorEarningsTx(ctx, tx, post.UserID)
 		if err != nil {
@@ -396,6 +404,29 @@ func (r BalanceRepository) PurchaseContent(ctx context.Context, input PurchaseCo
 		return nil, err
 	}
 	return &result, nil
+}
+
+func (r BalanceRepository) debitInternalWalletForPurchaseTx(ctx context.Context, tx *gorm.DB, userID int64, amount float64) (float64, error) {
+	if err := tx.WithContext(ctx).Clauses(clause.OnConflict{DoNothing: true}).Create(&domain.UserWallet{UserID: userID}).Error; err != nil {
+		return 0, err
+	}
+	var wallet domain.UserWallet
+	if err := tx.WithContext(ctx).Clauses(clause.Locking{Strength: "UPDATE"}).Where("user_id = ?", userID).First(&wallet).Error; err != nil {
+		return 0, err
+	}
+	amount = mathRound2(amount)
+	if wallet.CashBalance < amount {
+		return 0, ErrPurchaseInsufficient
+	}
+	nextBalance := mathRound2(wallet.CashBalance - amount)
+	now := time.Now()
+	if err := tx.WithContext(ctx).Model(&domain.UserWallet{}).Where("user_id = ?", userID).Updates(map[string]any{
+		"cash_balance": nextBalance,
+		"updated_at":   now,
+	}).Error; err != nil {
+		return 0, err
+	}
+	return nextBalance, nil
 }
 
 func (r BalanceRepository) purchaseContentWithPointsTx(ctx context.Context, tx *gorm.DB, input PurchaseContentInput, post domain.Post, payment domain.PostPaymentSetting, price, paidAmount, discountRate float64) (PurchaseContentResult, error) {

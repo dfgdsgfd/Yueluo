@@ -1,11 +1,10 @@
 "use client";
 
 import { useCallback, useState } from "react";
-import { FEED_BOTTOM_SENTINEL_ROOT_MARGIN, type MobileMainView } from "./explore-config";
+import { FEED_BOTTOM_SENTINEL_ROOT_MARGIN } from "./explore-config";
 import { useFeedSentinel } from "./explore-hooks";
 
 type LoginUnlockGateInput = {
-  activeMobileView: MobileMainView;
   feedQueryKey: readonly unknown[];
   hasClientAccessToken: boolean;
   hasNextPage?: boolean;
@@ -15,7 +14,6 @@ type LoginUnlockGateInput = {
 };
 
 export function useLoginUnlockGate({
-  activeMobileView,
   feedQueryKey,
   hasClientAccessToken,
   hasNextPage,
@@ -35,7 +33,6 @@ export function useLoginUnlockGate({
 
   const noMoreUnlockSentinelRef = useFeedSentinel({
     enabled:
-      activeMobileView === "feed" &&
       !hasClientAccessToken &&
       !isPlaceholderData &&
       !isFeedFetching &&

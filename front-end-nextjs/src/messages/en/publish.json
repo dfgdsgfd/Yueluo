@@ -361,9 +361,9 @@
       "allProtected": "Protect all",
       "allDirect": "Direct all",
       "paymentTitle": "{count} paid images",
-      "balance": "Moon Coin",
+      "balance": "Balance",
       "points": "Points",
-      "paymentDisabledToast": "Paid images are disabled because neither Moon Coin nor points is enabled.",
+      "paymentDisabledToast": "Paid images are disabled because neither balance nor points is enabled.",
       "paymentMethodDisabledToast": "This payment method is currently disabled.",
       "priceLabel": "Unlock price",
       "pricePlaceholder": "Enter price",
@@ -565,14 +565,14 @@
         "trendEmpty": "Sign in and publish content to see trend data",
         "earningsLog": "Earnings log",
         "qualityReward": "Quality rewards",
-        "moonCoinAmount": "+{amount} Moon Coin",
+        "moonCoinAmount": "+{amount} balance",
         "qualityContentReward": "Quality content reward",
         "qualityRatingReward": "Quality rating reward",
         "noQualityRewards": "No quality rewards",
         "noRemark": "No note",
         "noEarnings": "No earnings",
         "paidContent": "Paid content",
-        "salesRevenue": "{count} sales · {amount} Moon Coin",
+        "salesRevenue": "{count} sales · {amount} balance",
         "noPaidContent": "No paid content",
         "loadMore": "Load more",
         "detailsLoadFailed": "Details could not be loaded",
@@ -587,7 +587,7 @@
         },
         "contentType": {
           "video": "Video",
-          "videoCenter": "Video center",
+          "videoCenter": "Video",
           "article": "Post"
         },
         "earningsType": {
@@ -601,7 +601,7 @@
       },
       "withdrawType": {
         "cash": "Cash withdrawal",
-        "moonCoin": "Convert to Moon Coin"
+        "moonCoin": "Convert to balance"
       },
       "withdrawStatus": {
         "pending": "Pending review",

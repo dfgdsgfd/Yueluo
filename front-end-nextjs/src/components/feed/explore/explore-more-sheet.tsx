@@ -2,10 +2,10 @@
 
 import type { Dispatch, SetStateAction } from "react";
 import Link from "next/link";
-import { BadgeCheck, Check, ChevronDown, ChevronRight, Coins, Download, LoaderCircle, LogOut, Menu, Monitor, Moon, Palette, Settings, Sun, UserPlus, Users } from "lucide-react";
+import { BadgeCheck, Check, ChevronDown, ChevronRight, Coins, Download, LoaderCircle, LogOut, Menu, Monitor, Moon, Palette, Settings, Sun, UserPlus } from "lucide-react";
 import type { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
-import type { BalanceUserBalancePayload } from "@/lib/types";
+import type { WithdrawWalletPayload } from "@/lib/types";
 import { cn } from "@/lib/utils";
 import { type ExploreTheme, type ExploreThemePreference, exploreThemeOptions, formatWalletAmount } from "./explore-config";
 
@@ -21,10 +21,9 @@ type ExploreMoreSheetProps = {
   setExploreThemePreference: Dispatch<SetStateAction<ExploreThemePreference>>;
   setMobileMoreOpen: Dispatch<SetStateAction<boolean>>;
   setThemeSettingsOpen: Dispatch<SetStateAction<boolean>>;
-  showVideoCenter: boolean;
   t: ReturnType<typeof useTranslations>;
   themeSettingsOpen: boolean;
-  walletBalance: BalanceUserBalancePayload | null;
+  walletBalance: WithdrawWalletPayload | null;
   walletBalanceError: string | null;
 };
 
@@ -40,7 +39,6 @@ export function ExploreMoreSheet({
   setExploreThemePreference,
   setMobileMoreOpen,
   setThemeSettingsOpen,
-  showVideoCenter,
   t,
   themeSettingsOpen,
   walletBalance,
@@ -93,16 +91,14 @@ export function ExploreMoreSheet({
                         : walletBalanceError
                           ? t("moreMenu.wallet.error")
                           : walletBalance
-                            ? t("moreMenu.wallet.amount", { amount: formatWalletAmount(walletBalance.balance) })
+                            ? t("moreMenu.wallet.amount", { amount: formatWalletAmount(walletBalance.cash_balance) })
                             : t("moreMenu.wallet.loading")
                       : t("moreMenu.wallet.login")}
                   </span>
                   <span className="min-w-0 truncate text-xs font-medium text-[var(--explore-subtle)]">
                     {walletBalanceError
                       ? walletBalanceError
-                      : walletBalance?.username
-                        ? t("moreMenu.wallet.account", { username: walletBalance.username })
-                        : t("moreMenu.wallet.detail")}
+                      : t("moreMenu.wallet.detail")}
                   </span>
                 </Link>
                 <Link
@@ -129,18 +125,6 @@ export function ExploreMoreSheet({
                   <Download className="size-5 shrink-0 text-[var(--explore-muted)]" />
                   <span className="min-w-0 truncate">{t("moreMenu.appDownload")}</span>
                 </Link>
-                {showVideoCenter ? (
-                  <Link
-                    href="https://v2.yuelk.com"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="flex h-12 min-w-0 items-center gap-3 rounded-2xl bg-[var(--explore-surface-soft)] px-4 text-sm font-semibold text-[var(--explore-text)] transition-colors active:bg-[var(--explore-control-hover)]"
-                    onClick={() => setMobileMoreOpen(false)}
-                  >
-                    <Users className="size-5 shrink-0 text-[var(--explore-muted)]" />
-                    <span className="min-w-0 truncate">{t("tabs.videoCenter")}</span>
-                  </Link>
-                ) : null}
                 <div className="overflow-hidden rounded-2xl bg-[var(--explore-surface-soft)]">
                   <button
                     type="button"

@@ -43,7 +43,7 @@
     },
     "loadingPost": "Đang tải bài viết",
     "originalIncentiveTitle": "Khuyến khích sáng tạo",
-    "originalIncentiveAmount": "Đã nhận {amount} Moon Coin khuyến khích",
+    "originalIncentiveAmount": "Đã nhận {amount} số dư khuyến khích",
     "close": "Đóng",
     "views": "{count} views",
     "comments": "{count} bình luận",
@@ -190,8 +190,8 @@
         "action": "Cách nhận điểm"
       },
       "balance": {
-        "title": "Không đủ Moon Coin",
-        "description": "Bạn chưa đủ Moon Coin để mở khóa bài viết này. Hãy nạp trong Ví rồi thử lại.",
+        "title": "Không đủ số dư",
+        "description": "Bạn chưa đủ số dư nội bộ để mở khóa bài viết này. Hãy nạp trong Ví rồi thử lại.",
         "action": "Nạp tiền"
       }
     },

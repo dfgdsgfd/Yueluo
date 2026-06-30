@@ -424,7 +424,7 @@ export function OperationsPanelView({ controller }: { controller: ReturnType<typ
                   <Button type="button" variant="outline" disabled={acting === "earnings-info"} onClick={() => void runEarnings("info")} className="rounded-lg border-black/[0.08] bg-white"><Search className="size-4" />查询</Button>
                   <Button type="button" disabled={acting === "earnings-add"} onClick={() => void runEarnings("add")} className="rounded-lg bg-[#18a058] hover:bg-[#138a4a]"><Plus className="size-4" />增加收益</Button>
                   <Button type="button" variant="outline" disabled={acting === "earnings-deduct"} onClick={() => void runEarnings("deduct")} className="rounded-lg border-[#dc2626]/20 bg-white text-[#b91c1c] hover:bg-[#fef2f2]"><Trash2 className="size-4" />扣减收益</Button>
-                  <Button type="button" variant="outline" disabled={acting === "earnings-transfer"} onClick={() => void runEarnings("transfer")} className="rounded-lg border-black/[0.08] bg-white"><Wallet className="size-4" />月币转收益</Button>
+                  <Button type="button" variant="outline" disabled={acting === "earnings-transfer"} onClick={() => void runEarnings("transfer")} className="rounded-lg border-black/[0.08] bg-white"><Wallet className="size-4" />余额转收益</Button>
                 </div>
               </div>
             </Panel>

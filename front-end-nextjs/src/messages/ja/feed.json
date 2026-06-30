@@ -43,7 +43,7 @@
     },
     "loadingPost": "投稿を読み込み中",
     "originalIncentiveTitle": "オリジナル奨励",
-    "originalIncentiveAmount": "{amount} ムーンコインの奨励を獲得",
+    "originalIncentiveAmount": "{amount} 残高の奨励を獲得",
     "close": "閉じる",
     "views": "{count} views",
     "comments": "{count} 件のコメント",
@@ -190,8 +190,8 @@
         "action": "ポイントの獲得方法"
       },
       "balance": {
-        "title": "Moon Coin が不足しています",
-        "description": "この投稿をロック解除するには Moon Coin が足りません。ウォレットでチャージしてから再試行してください。",
+        "title": "残高が不足しています",
+        "description": "この投稿をロック解除するには内部残高が足りません。ウォレットでチャージしてから再試行してください。",
         "action": "チャージする"
       }
     },

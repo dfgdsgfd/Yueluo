@@ -21,8 +21,7 @@ import {
 PostCard
 } from "../post-card";
 import {
-Lightbox,
-ViewerProfileDataPage,
+  Lightbox,
 followingSortTabs
 } from "./explore-config";
 import { ExploreMoreSheet } from "./explore-more-sheet";
@@ -37,7 +36,7 @@ SearchForm
 import type { useExploreFeedController } from "./use-explore-feed-controller";
 
 export function ExploreFeedView({ controller }: { controller: ReturnType<typeof useExploreFeedController> }) {
-  const { activeCategory, activeMobileView, activeMode, activeSearch, bottomSentinelRef, canLoadMore, categories, categorySwipeStartRef, categoryVirtualizer, clearSearch, exploreTheme, exploreThemePreference, exploreThemeVars, feedQuery, feedSwipeStartRef, fetchPageWithAnchor, followingSort, handleCategoryPointerEnd, handleCategoryPointerStart, handleFeedClickCapture, handleFeedPointerEnd, handleFeedPointerStart, handleLike, handleLogout, handleSearchSubmit, hasClientAccessToken, isLightTheme, isLoggingOut, isPending, isReplacingFeed, isWalletBalanceLoading, lightboxIndex, lightboxSlides, loadCategory, loadMode, loginUnlockOpen, messageBadgeCount, mobileMoreOpen, mobileSearchOpen, noMoreUnlockSentinelRef, openProfileView, posts, priorityPostIds, refreshFeed, scrollCategoryIntoView, searchActive, searchInput, setActiveMobileView, setExploreTheme, setExploreThemePreference, setLightboxIndex, setLoginUnlockOpen, setMobileMoreOpen, setMobileSearchOpen, setSearchInput, setThemeSettingsOpen, showNextLoading, showPreviousLoading, showVideoCenter, siteProfile, t, themeSettingsOpen, toolbarItems, topSentinelRef, visibleDesktopNavItems, walletBalance, walletBalanceError, warmNavigationTarget } = controller;
+  const { activeCategory, activeMode, activeSearch, bottomSentinelRef, canLoadMore, categories, categorySwipeStartRef, categoryVirtualizer, clearSearch, exploreTheme, exploreThemePreference, exploreThemeVars, feedQuery, feedSwipeStartRef, fetchPageWithAnchor, followingSort, handleCategoryPointerEnd, handleCategoryPointerStart, handleFeedClickCapture, handleFeedPointerEnd, handleFeedPointerStart, handleLike, handleLogout, handleSearchSubmit, hasClientAccessToken, isLightTheme, isLoggingOut, isPending, isReplacingFeed, isWalletBalanceLoading, lightboxIndex, lightboxSlides, loadCategory, loadMode, loginUnlockOpen, messageBadgeCount, mobileMoreOpen, mobileSearchOpen, noMoreUnlockSentinelRef, posts, priorityPostIds, refreshFeed, scrollCategoryIntoView, searchActive, searchInput, setExploreTheme, setExploreThemePreference, setLightboxIndex, setLoginUnlockOpen, setMobileMoreOpen, setMobileSearchOpen, setSearchInput, setThemeSettingsOpen, showNextLoading, showPreviousLoading, siteProfile, t, themeSettingsOpen, toolbarItems, topSentinelRef, visibleDesktopNavItems, walletBalance, walletBalanceError, warmNavigationTarget } = controller;
   return (
     <div
       className="flex h-dvh flex-col overflow-x-hidden bg-[var(--explore-bg)] text-[var(--explore-text)]"
@@ -54,17 +53,8 @@ export function ExploreFeedView({ controller }: { controller: ReturnType<typeof 
         warmNavigationTarget={warmNavigationTarget}
       />
 
-      {activeMobileView === "profile" ? (
-        <div className="lg:hidden">
-          <ViewerProfileDataPage onBack={() => setActiveMobileView("feed")} />
-        </div>
-      ) : null}
-
       <main
-        className={cn(
-          "flex min-h-0 flex-1 flex-col pb-[calc(3.5rem+env(safe-area-inset-bottom))] lg:block lg:pb-0 lg:pl-[164px]",
-          activeMobileView === "profile" && "hidden",
-        )}
+        className="flex min-h-0 flex-1 flex-col pb-[calc(3.5rem+env(safe-area-inset-bottom))] lg:block lg:pb-0 lg:pl-[164px]"
       >
         <header className="fixed inset-x-0 top-0 z-30 h-[72px] bg-[var(--explore-bg)] lg:hidden">
           <div className="flex h-full items-center justify-between gap-3 px-4">
@@ -126,7 +116,6 @@ export function ExploreFeedView({ controller }: { controller: ReturnType<typeof 
           themeSettingsOpen={themeSettingsOpen}
           walletBalance={walletBalance}
           walletBalanceError={walletBalanceError}
-          showVideoCenter={showVideoCenter}
         />
 
         <div className="hidden px-8 pt-[62px] lg:block">
@@ -407,11 +396,9 @@ export function ExploreFeedView({ controller }: { controller: ReturnType<typeof 
       </div>
 
       <ExploreMobileBottomNav
-        activeMobileView={activeMobileView}
         activeMode={activeMode}
         loadMode={loadMode}
         messageBadgeCount={messageBadgeCount}
-        openProfileView={openProfileView}
         warmNavigationTarget={warmNavigationTarget}
       />
       <LoginUnlockDialog

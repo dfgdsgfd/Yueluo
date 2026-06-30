@@ -1,25 +1,25 @@
 {
   "walletPage": {
     "balance": {
-      "defaultAccount": "月幣帳戶",
+      "defaultAccount": "內部錢包",
       "loading": "讀取中...",
-      "errorTitle": "月幣餘額讀取失敗",
-      "unit": "月幣",
+      "errorTitle": "內部餘額讀取失敗",
+      "unit": "餘額",
       "account": "帳號 {account}",
-      "title": "月幣餘額"
+      "title": "內部餘額"
     },
     "errors": {
       "partial": "部分錢包資料暫時無法使用：",
       "loadFailed": "錢包資料請求失敗",
-      "balanceCenterNotConfigured": "使用者中心月幣介面尚未設定。",
+      "balanceCenterNotConfigured": "內部錢包服務暫不可用。",
       "httpStatus": "HTTP 狀態 {status}",
       "businessCode": "業務碼 {code}",
       "requestId": "請求 ID {requestId}",
       "sources": {
-        "balanceConfig": "月幣設定",
+        "balanceConfig": "餘額設定",
         "rechargeConfig": "儲值設定",
         "localPoints": "積分餘額",
-        "userBalance": "月幣餘額",
+        "userBalance": "內部餘額",
         "withdrawOrders": "帳單",
         "balanceOrders": "購買記錄",
         "pointsOverview": "積分中心",
@@ -27,7 +27,7 @@
       }
     },
     "title": "錢包",
-    "subtitle": "月幣、積分、禮品卡與帳單",
+    "subtitle": "內部餘額、積分、禮品卡與帳單",
     "loading": "正在載入錢包資料",
     "actions": {
       "back": "返回上一頁",
@@ -92,18 +92,18 @@
       "fixedOptions": "固定檔位",
       "balanceDisabled": "餘額中心暫未啟用",
       "empty": "暫無儲值檔位",
-      "bonus": "贈送 {amount} 月幣",
+      "bonus": "贈送 {amount} 餘額",
       "noBonus": "無贈送",
-      "range": "{min}-{max} 月幣",
-      "min": "{amount} 月幣起",
-      "max": "最高 {amount} 月幣"
+      "range": "{min}-{max} 餘額",
+      "min": "{amount} 餘額起",
+      "max": "最高 {amount} 餘額"
     },
     "bills": {
       "title": "帳單",
       "empty": "暫無帳單記錄",
       "defaultType": "帳單",
       "types": {
-        "moonCoin": "轉入月幣",
+        "moonCoin": "轉入餘額",
         "cash": "現金提現"
       }
     },
@@ -125,7 +125,7 @@
       }
     },
     "money": {
-      "moonCoinAmount": "{amount} 月幣",
+      "moonCoinAmount": "{amount} 餘額",
       "points": "{amount}分",
       "pointsPlus": "+{amount}分"
     },
@@ -158,7 +158,7 @@
     },
     "types": {
       "cash": "現金",
-      "moonCoin": "轉月幣"
+      "moonCoin": "轉餘額"
     },
     "statuses": {
       "pending": "待審核",
@@ -169,10 +169,10 @@
     }
   },
   "adminBalanceTransactions": {
-    "title": "外部月幣交易稽核",
-    "description": "檢查使用者中心月幣變更；結果不確定的交易會保持鎖定，等待人工確認。",
+    "title": "外部餘額交易稽核",
+    "description": "檢查外部餘額變更；結果不確定的交易會保持鎖定，等待人工確認。",
     "refresh": "重新整理",
-    "loading": "正在載入月幣交易",
+    "loading": "正在載入餘額交易",
     "operation": "操作",
     "oauth2Id": "OAuth2 數字 ID",
     "amount": "金額",
@@ -180,9 +180,9 @@
     "created": "建立時間",
     "action": "操作",
     "compensate": "補償",
-    "confirmCompensation": "確認在使用者中心反向補償這筆已套用交易嗎？",
+    "confirmCompensation": "確認反向補償這筆已套用交易嗎？",
     "compensated": "交易已補償。",
-    "empty": "暫無月幣交易",
+    "empty": "暫無餘額交易",
     "statuses": {
       "prepared": "已準備",
       "requesting": "請求中",

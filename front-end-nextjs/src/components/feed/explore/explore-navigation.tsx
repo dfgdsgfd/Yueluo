@@ -12,7 +12,6 @@ import {
   desktopNavItems,
   toolbarIconMap,
   type FollowingSort,
-  type MobileMainView,
 } from "./explore-config";
 import { NavIconWithBadge } from "./explore-widgets";
 
@@ -32,7 +31,7 @@ export function ExploreDesktopSidebar({
   onOpenMore: () => void;
   siteProfile: SiteProfile;
   toolbarItems: UserToolbarItem[];
-  visibleItems: Array<(typeof desktopNavItems)[number]>;
+  visibleItems: readonly (typeof desktopNavItems)[number][];
   warmNavigationTarget: WarmNavigationTarget;
 }) {
   const t = useTranslations();
@@ -65,7 +64,7 @@ export function ExploreDesktopSidebar({
                 strokeWidth={2.1}
               />
               <span className="truncate">
-                {key === "videoCenter" ? t("tabs.videoCenter") : t(`nav.${key}`)}
+                {t(`nav.${key}`)}
               </span>
             </Link>
           </div>
@@ -159,18 +158,14 @@ export function ExploreSiteBrand({
 }
 
 export function ExploreMobileBottomNav({
-  activeMobileView,
   activeMode,
   loadMode,
   messageBadgeCount,
-  openProfileView,
   warmNavigationTarget,
 }: {
-  activeMobileView: MobileMainView;
   activeMode: FeedMode;
   loadMode: (mode: FeedMode, categoryId?: number | "all", sort?: FollowingSort) => void;
   messageBadgeCount: number;
-  openProfileView: () => void;
   warmNavigationTarget: WarmNavigationTarget;
 }) {
   const t = useTranslations();
@@ -182,10 +177,8 @@ export function ExploreMobileBottomNav({
     >
       {bottomNavItems.map(({ key, icon: Icon, href }) => {
         const active =
-          (key === "profile" && activeMobileView === "profile") ||
-          (activeMobileView === "feed" &&
-            ((key === "home" && activeMode !== "following") ||
-              (key === "friends" && activeMode === "following")));
+          (key === "home" && activeMode !== "following") ||
+          (key === "friends" && activeMode === "following");
         const itemClassName = cn(
           "flex min-w-0 flex-1 flex-col items-center gap-0.5 text-[11px] font-medium text-[var(--explore-subtle)]",
           active && "text-[var(--explore-strong)]",
@@ -227,9 +220,9 @@ export function ExploreMobileBottomNav({
             type="button"
             aria-pressed={active}
             className={itemClassName}
-            onFocus={() => warmNavigationTarget(key, key === "profile" ? "/profile" : null)}
-            onMouseEnter={() => warmNavigationTarget(key, key === "profile" ? "/profile" : null)}
-            onTouchStart={() => warmNavigationTarget(key, key === "profile" ? "/profile" : null)}
+            onFocus={() => warmNavigationTarget(key, null)}
+            onMouseEnter={() => warmNavigationTarget(key, null)}
+            onTouchStart={() => warmNavigationTarget(key, null)}
             onClick={() => {
               if (key === "home") {
                 loadMode("recommended", "all");
@@ -238,12 +231,6 @@ export function ExploreMobileBottomNav({
 
               if (key === "friends") {
                 loadMode("following", "all");
-                return;
-              }
-
-              if (key === "profile") {
-                warmNavigationTarget(key, "/profile");
-                openProfileView();
               }
             }}
           >

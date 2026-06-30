@@ -3,8 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { isRichTextHtml, shouldInsertAsMarkdown } from "@/lib/rich-text";
 import { cn } from "@/lib/utils";
-import { AtSign,BookOpen,Bookmark,ExternalLink,Heart,ImageIcon,MessageCircle,MoreHorizontal,Pencil,Share2,Smile,Trash2,X } from "lucide-react";
-import Link from "next/link";
+import { AtSign,BookOpen,Bookmark,Heart,ImageIcon,MessageCircle,MoreHorizontal,Pencil,Share2,Smile,Trash2,X } from "lucide-react";
 import { useRef } from "react";
 import { Drawer } from "vaul";
 import { LoginUnlockDialog } from "../login-unlock-dialog";
@@ -669,14 +668,6 @@ export function PostDetailSectionContent({
                     </div>
                   </div>
 
-                  {post.video_center_url ? (
-                    <Button asChild variant="ghost" className="mt-3 h-9 text-xs text-[var(--post-comment-footer-subtle)] hover:text-[var(--post-comment-footer-text)]">
-                      <Link href={post.video_center_url} target="_blank">
-                        <ExternalLink className="size-4" />
-                        {t("drawer.openVideoCenter")}
-                      </Link>
-                    </Button>
-                  ) : null}
                 </footer>
               </aside>
             </div>

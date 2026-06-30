@@ -68,7 +68,7 @@ export function MobileInviteLandingPage({ code }: { code: string }) {
             </span>
             <div className="min-w-0">
               <h2 className="truncate text-[16px] font-black text-[#1f1f27]">
-                {notFound ? "邀请码不可用" : "使用用户中心完成注册"}
+                {notFound ? "邀请码不可用" : "完成注册后即可加入"}
               </h2>
               <p className="mt-1 text-[12px] font-bold text-[#9a96a5]">
                 注册或登录后，即可继续浏览内容。

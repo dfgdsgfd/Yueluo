@@ -9,7 +9,7 @@ import { getPrivateEntryPaths } from "@/lib/private-entry-paths";
 
 const INTERNAL_ADMIN_PATH = "/admin";
 const INTERNAL_BACKEND_API_PATH = "/backend-api";
-const protectedEntryPaths = ["/publish", "/profile", "/user"] as const;
+const protectedEntryPaths = ["/publish", "/user"] as const;
 const accessTokenCookieNames = [
   HTTP_ACCESS_TOKEN_COOKIE,
   ACCESS_TOKEN_COOKIE,

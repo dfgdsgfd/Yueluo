@@ -361,9 +361,9 @@
       "allProtected": "全部保護",
       "allDirect": "全部直看",
       "paymentTitle": "{count} 張圖片需付費查看",
-      "balance": "月幣",
+      "balance": "餘額",
       "points": "積分",
-      "paymentDisabledToast": "系統目前未開放月幣或積分收費，請先將圖片設為免費。",
+      "paymentDisabledToast": "系統目前未開放餘額或積分收費，請先將圖片設為免費。",
       "paymentMethodDisabledToast": "系統目前未開放此收費方式。",
       "priceLabel": "解鎖價格",
       "pricePlaceholder": "輸入價格",
@@ -565,14 +565,14 @@
         "trendEmpty": "Sign in and publish content to see trend data",
         "earningsLog": "Earnings log",
         "qualityReward": "Quality rewards",
-        "moonCoinAmount": "+{amount} Moon Coin",
+        "moonCoinAmount": "+{amount} 餘額",
         "qualityContentReward": "Quality content reward",
         "qualityRatingReward": "Quality rating reward",
         "noQualityRewards": "No quality rewards",
         "noRemark": "No note",
         "noEarnings": "No earnings",
         "paidContent": "Paid content",
-        "salesRevenue": "{count} sales · {amount} Moon Coin",
+        "salesRevenue": "{count} 筆銷售 · {amount} 餘額",
         "noPaidContent": "No paid content",
         "loadMore": "載入更多",
         "detailsLoadFailed": "Details could not be loaded",
@@ -587,7 +587,7 @@
         },
         "contentType": {
           "video": "Video",
-          "videoCenter": "Video center",
+          "videoCenter": "影片",
           "article": "Post"
         },
         "earningsType": {
@@ -601,7 +601,7 @@
       },
       "withdrawType": {
         "cash": "現金提現",
-        "moonCoin": "轉為月幣"
+        "moonCoin": "轉為餘額"
       },
       "withdrawStatus": {
         "pending": "待審核",

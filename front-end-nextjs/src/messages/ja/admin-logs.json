@@ -61,12 +61,12 @@
       "security": "セキュリティ監査",
       "system": "システムログ",
       "points": "ポイント台帳",
-      "balance": "Moon Coin 台帳"
+      "balance": "残高台帳"
     },
     "loading": "ログを読み込み中",
     "emptyLogs": "ログはありません",
     "emptyPointsLogs": "ポイント履歴はありません",
-    "emptyBalanceLogs": "Moon Coin 履歴はありません",
+    "emptyBalanceLogs": "残高履歴はありません",
     "time": "時間",
     "behavior": "行動",
     "user": "ユーザー",

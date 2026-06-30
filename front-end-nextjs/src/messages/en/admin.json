@@ -860,10 +860,10 @@
         }
       },
       "fields": {
-        "videoCenterEnabled": "Video Center switch",
-        "videoCenterHomepageEnabled": "Homepage Video Center recommendations",
-        "videoCenterRecommendLimit": "Video Center recommendation count",
-        "videoCenterAccountCutoff": "Video Center registration cutoff",
+        "videoCenterEnabled": "Video feature switch",
+        "videoCenterHomepageEnabled": "Homepage video recommendations",
+        "videoCenterRecommendLimit": "Video recommendation count",
+        "videoCenterAccountCutoff": "Video registration cutoff",
         "imageWebpEnabled": "Convert to WebP",
         "imageWebpQuality": "Content image quality",
         "imageAvatarWebpQuality": "Avatar image quality",
@@ -880,9 +880,9 @@
         "imageProtectionEnabled": "Enhanced watermark protection",
         "imageProtectionNoticeEnabled": "Show protection notice",
         "imageSelectAllEnabled": "Allow image select all",
-        "paidContentBalanceEnabled": "Allow Moon Coin payments",
+        "paidContentBalanceEnabled": "Allow balance payments",
         "paidContentPointsEnabled": "Allow points payments",
-        "paidContentBalanceMaxPrice": "Moon Coin price limit",
+        "paidContentBalanceMaxPrice": "Balance price limit",
         "paidContentPointsMaxPrice": "Points price limit",
         "hiddenWatermarkEnabled": "Enable hidden watermark",
         "hiddenWatermarkIncludeUid": "Include internal UID",
@@ -894,7 +894,7 @@
         "hiddenWatermarkCustomText": "Hidden watermark custom marker"
       },
       "hints": {
-        "videoCenterAccountCutoff": "Users registered at or after this time will not see the Video Center. Leave blank to disable registration-time hiding.",
+        "videoCenterAccountCutoff": "Users registered at or after this time will not see video features. Leave blank to disable registration-time hiding.",
         "imageMaxDimension": "Use 0 for no limit. Images keep their aspect ratio when resized.",
         "imageProcessingConcurrency": "Hidden watermark processing is memory intensive; keeping this at 1 is recommended.",
         "imagePostMaxCount": "Controls the image limit for one post and batch upload. Default 100, maximum 500.",
@@ -904,7 +904,7 @@
         "imageProtectionEnabled": "Lets authors protect non-cover images so viewers can only download a traceable watermarked ZIP.",
         "imageProtectionNoticeEnabled": "Controls whether the publisher shows the protection explanation or globally-disabled notice.",
         "imageSelectAllEnabled": "Hides Select All when disabled and prevents batch actions from targeting every image when none are selected.",
-        "paidContentPaymentMethod": "Controls whether authors can select this method for paid images. Moon Coin and points may both be enabled.",
+        "paidContentPaymentMethod": "Controls whether authors can select this method for paid images. Balance and points may both be enabled.",
         "paidContentPriceLimit": "Controls the highest unlock price authors can enter for paid images.",
         "hiddenWatermarkCustomText": "Stored in the trace record when the custom marker option is enabled; it is not embedded in the image token."
       },

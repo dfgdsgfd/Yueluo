@@ -361,9 +361,9 @@
       "allProtected": "Protect all",
       "allDirect": "Direct all",
       "paymentTitle": "{count} paid images",
-      "balance": "月コイン",
+      "balance": "残高",
       "points": "Points",
-      "paymentDisabledToast": "月コインとポイントのどちらも無効なため、有料画像は利用できません。",
+      "paymentDisabledToast": "残高とポイントのどちらも無効なため、有料画像は利用できません。",
       "paymentMethodDisabledToast": "この支払い方法は現在無効です。",
       "priceLabel": "Unlock price",
       "pricePlaceholder": "Enter price",
@@ -565,14 +565,14 @@
         "trendEmpty": "Sign in and publish content to see trend data",
         "earningsLog": "Earnings log",
         "qualityReward": "Quality rewards",
-        "moonCoinAmount": "+{amount} Moon Coin",
+        "moonCoinAmount": "+{amount} 残高",
         "qualityContentReward": "Quality content reward",
         "qualityRatingReward": "Quality rating reward",
         "noQualityRewards": "No quality rewards",
         "noRemark": "No note",
         "noEarnings": "No earnings",
         "paidContent": "Paid content",
-        "salesRevenue": "{count} sales · {amount} Moon Coin",
+        "salesRevenue": "{count} 件の販売 · {amount} 残高",
         "noPaidContent": "No paid content",
         "loadMore": "さらに読み込む",
         "detailsLoadFailed": "Details could not be loaded",
@@ -587,7 +587,7 @@
         },
         "contentType": {
           "video": "Video",
-          "videoCenter": "Video center",
+          "videoCenter": "動画",
           "article": "Post"
         },
         "earningsType": {
@@ -601,7 +601,7 @@
       },
       "withdrawType": {
         "cash": "現金出金",
-        "moonCoin": "Moon Coinへ交換"
+        "moonCoin": "残高へ交換"
       },
       "withdrawStatus": {
         "pending": "審査待ち",

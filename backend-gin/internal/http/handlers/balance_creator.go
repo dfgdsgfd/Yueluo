@@ -11,7 +11,6 @@ import (
 	"gorm.io/gorm"
 
 	"yuem-go/backend-gin/internal/config"
-	"yuem-go/backend-gin/internal/domain"
 	"yuem-go/backend-gin/internal/http/response"
 	"yuem-go/backend-gin/internal/repositories"
 	"yuem-go/backend-gin/internal/services"
@@ -87,23 +86,24 @@ func (h NativeHandlers) BalanceUserBalance(c *gin.Context) {
 		response.JSON(c, http.StatusUnauthorized, response.CodeUnauthorized, msgInvalidToken, nil)
 		return
 	}
-	if h.DB == nil || h.Balance == nil {
+	if h.DB == nil {
 		response.JSON(c, http.StatusInternalServerError, response.CodeError, msgBalanceInternal, nil)
 		return
 	}
-	remote, _, err := h.Balance.UserByInternalID(c.Request.Context(), user.ID)
+	wallet, err := repositories.NewWithdrawRepository(h.DB).GetOrCreateWallet(c.Request.Context(), user.ID)
 	if err != nil {
-		h.writeBalanceCenterError(c, err, msgBalanceGetFailed)
+		response.JSON(c, http.StatusInternalServerError, response.CodeError, msgBalanceInternal, nil)
 		return
 	}
 	c.JSON(http.StatusOK, gin.H{
 		"code": response.CodeSuccess,
 		"data": gin.H{
-			"balance":       remote.Balance,
-			"vip_level":     remote.VIPLevel,
-			"vip_expire_at": remote.VIPExpireAt,
-			"username":      remote.Username,
-			"is_active":     remote.IsActive,
+			"balance":       wallet.CashBalance,
+			"cash_balance":  wallet.CashBalance,
+			"vip_level":     0,
+			"vip_expire_at": nil,
+			"username":      nil,
+			"is_active":     true,
 		},
 		"message": "success",
 	})
@@ -209,21 +209,16 @@ func (h NativeHandlers) BalancePurchaseContent(c *gin.Context) {
 	}
 
 	userCouponID := optionalInt64FromAny(body.UserCouponID)
-	if h.Balance == nil {
+	wallet, err := repositories.NewWithdrawRepository(h.DB).GetOrCreateWallet(c.Request.Context(), user.ID)
+	if err != nil {
 		response.JSON(c, http.StatusInternalServerError, response.CodeError, msgBalanceInternal, nil)
 		return
 	}
-	remoteUser, oauth2ID, err := h.Balance.UserByInternalID(c.Request.Context(), user.ID)
-	if err != nil {
-		h.writeBalanceCenterError(c, err, msgBalanceGetFailed)
-		return
-	}
-
 	quote, err := repo.PurchaseQuote(c.Request.Context(), repositories.PurchaseContentInput{
 		UserID:        user.ID,
 		PostID:        postID,
 		PaymentMethod: "balance",
-		VIPLevel:      remoteUser.VIPLevel,
+		VIPLevel:      0,
 		UserCouponID:  userCouponID,
 	})
 	if h.writePurchaseError(c, err, quote) {
@@ -239,7 +234,7 @@ func (h NativeHandlers) BalancePurchaseContent(c *gin.Context) {
 		}, "message": msgAlreadyPurchased})
 		return
 	}
-	if quote.PaidAmount > remoteUser.Balance {
+	if quote.PaidAmount > wallet.CashBalance {
 		h.writePurchaseError(c, repositories.ErrPurchaseInsufficient, quote)
 		return
 	}
@@ -263,68 +258,24 @@ func (h NativeHandlers) BalancePurchaseContent(c *gin.Context) {
 	}
 
 	var result *repositories.PurchaseContentResult
-	commitPurchase := func(tx *gorm.DB, balanceAfter float64) error {
+	err = h.DB.WithContext(c.Request.Context()).Transaction(func(tx *gorm.DB) error {
 		var commitErr error
 		result, commitErr = repositories.NewBalanceRepository(tx).PurchaseContent(c.Request.Context(), repositories.PurchaseContentInput{
-			UserID:          user.ID,
-			PostID:          postID,
-			PaymentMethod:   "balance",
-			VIPLevel:        remoteUser.VIPLevel,
-			BalanceAfter:    balanceAfter,
-			UserCouponID:    userCouponID,
-			PlatformFeeRate: h.Config.Creator.PlatformFeeRate,
+			UserID:             user.ID,
+			PostID:             postID,
+			PaymentMethod:      "balance",
+			VIPLevel:           0,
+			UserCouponID:       userCouponID,
+			PlatformFeeRate:    h.Config.Creator.PlatformFeeRate,
+			UseInternalBalance: true,
 		})
 		if commitErr != nil {
 			return commitErr
 		}
 		return repositories.NewBalanceRepository(tx).CompletePurchaseIntent(c.Request.Context(), reservation.Intent.ID)
-	}
-	if quote.PaidAmount == 0 {
-		err = h.DB.WithContext(c.Request.Context()).Transaction(func(tx *gorm.DB) error {
-			return commitPurchase(tx, remoteUser.Balance)
-		})
-	} else {
-		authorID := quote.Post.UserID
-		estimatedPlatformFee := quote.Price * h.Config.Creator.PlatformFeeRate
-		mutation, mutationErr := h.Balance.ChangeBalance(c.Request.Context(), services.BalanceMutationInput{
-			OperationKey:       "paid_content:" + strconv.FormatInt(reservation.Intent.ID, 10) + ":debit",
-			UserID:             user.ID,
-			OAuth2ID:           oauth2ID,
-			Amount:             -quote.PaidAmount,
-			Reason:             "paid content purchase post=" + strconv.FormatInt(postID, 10) + " intent=" + strconv.FormatInt(reservation.Intent.ID, 10),
-			PostID:             &postID,
-			CounterpartyUserID: &authorID,
-			EntryRole:          "buyer_debit",
-			PaymentMethod:      "balance",
-			PlatformFee:        estimatedPlatformFee,
-			LocalCommit: func(tx *gorm.DB, transaction *domain.ExternalBalanceTransaction) error {
-				balanceAfter := remoteUser.Balance - quote.PaidAmount
-				if transaction.RemoteBalanceAfter != nil {
-					balanceAfter = *transaction.RemoteBalanceAfter
-				}
-				if err := commitPurchase(tx, balanceAfter); err != nil {
-					return err
-				}
-				if result != nil {
-					if err := tx.Model(&domain.ExternalBalanceTransaction{}).Where("id = ?", transaction.ID).Updates(map[string]any{
-						"purchase_id":  result.PurchaseID,
-						"platform_fee": result.PlatformFee,
-					}).Error; err != nil {
-						return err
-					}
-				}
-				return repositories.NewBalanceRepository(tx).MarkPurchaseIntentDebited(c.Request.Context(), reservation.Intent.ID)
-			},
-		})
-		err = mutationErr
-		if err == nil && result != nil && mutation != nil && mutation.BalanceAfter != nil {
-			result.BalanceAfter = *mutation.BalanceAfter
-		}
-	}
+	})
 	if h.writePurchaseError(c, err, result) {
-		if !errors.Is(err, services.ErrBalanceOperationUnknown) {
-			_ = repo.FailPurchaseIntent(c.Request.Context(), reservation.Intent.ID, purchaseIntentErrorCode(err))
-		}
+		_ = repo.FailPurchaseIntent(c.Request.Context(), reservation.Intent.ID, purchaseIntentErrorCode(err))
 		return
 	}
 	h.bumpCacheVersions(cacheScopePosts, cacheScopeSearch, cacheScopeInteractions)

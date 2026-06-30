@@ -1,25 +1,25 @@
 {
   "walletPage": {
     "balance": {
-      "defaultAccount": "Moon Coin アカウント",
+      "defaultAccount": "内部ウォレット",
       "loading": "読み込み中...",
-      "errorTitle": "Moon Coin 残高を取得できません",
-      "unit": "Moon Coin",
+      "errorTitle": "内部残高を取得できません",
+      "unit": "残高",
       "account": "アカウント {account}",
-      "title": "Moon Coin 残高"
+      "title": "内部残高"
     },
     "errors": {
       "partial": "一部のウォレットデータを利用できません：",
       "loadFailed": "ウォレットデータの取得に失敗しました",
-      "balanceCenterNotConfigured": "ユーザーセンターの残高 API が設定されていません。",
+      "balanceCenterNotConfigured": "内部ウォレットサービスは現在利用できません。",
       "httpStatus": "HTTP {status}",
       "businessCode": "ビジネスコード {code}",
       "requestId": "リクエスト ID {requestId}",
       "sources": {
-        "balanceConfig": "Moon Coin 設定",
+        "balanceConfig": "残高設定",
         "rechargeConfig": "チャージ設定",
         "localPoints": "ポイント残高",
-        "userBalance": "Moon Coin 残高",
+        "userBalance": "内部残高",
         "withdrawOrders": "請求",
         "balanceOrders": "購入履歴",
         "pointsOverview": "ポイントセンター",
@@ -27,7 +27,7 @@
       }
     },
     "title": "ウォレット",
-    "subtitle": "Moon Coin、ポイント、ギフトカード、請求",
+    "subtitle": "内部残高、ポイント、ギフトカード、請求",
     "loading": "ウォレットデータを読み込み中",
     "actions": {
       "back": "前のページに戻る",
@@ -92,18 +92,18 @@
       "fixedOptions": "固定プラン",
       "balanceDisabled": "残高センターは無効です",
       "empty": "チャージプランはありません",
-      "bonus": "{amount} Moon Coin ボーナス",
+      "bonus": "{amount} 残高ボーナス",
       "noBonus": "ボーナスなし",
-      "range": "{min}-{max} Moon Coin",
-      "min": "{amount} Moon Coin から",
-      "max": "最大 {amount} Moon Coin"
+      "range": "{min}-{max} 残高",
+      "min": "{amount} 残高から",
+      "max": "最大 {amount} 残高"
     },
     "bills": {
       "title": "請求",
       "empty": "請求記録はありません",
       "defaultType": "請求",
       "types": {
-        "moonCoin": "Moon Coin へ振替",
+        "moonCoin": "残高へ振替",
         "cash": "現金出金"
       }
     },
@@ -125,7 +125,7 @@
       }
     },
     "money": {
-      "moonCoinAmount": "{amount} Moon Coin",
+      "moonCoinAmount": "{amount} 残高",
       "points": "{amount} ポイント",
       "pointsPlus": "+{amount} ポイント"
     },
@@ -158,7 +158,7 @@
     },
     "types": {
       "cash": "現金",
-      "moonCoin": "Moon Coin"
+      "moonCoin": "残高"
     },
     "statuses": {
       "pending": "審査待ち",
@@ -169,10 +169,10 @@
     }
   },
   "adminBalanceTransactions": {
-    "title": "外部Moon Coin取引監査",
-    "description": "ユーザーセンターのMoon Coin変更を確認します。結果不明の取引は手動確認までロックされます。",
+    "title": "外部残高取引監査",
+    "description": "外部残高の変更を確認します。結果不明の取引は手動確認までロックされます。",
     "refresh": "更新",
-    "loading": "Moon Coin取引を読み込み中",
+    "loading": "残高取引を読み込み中",
     "operation": "操作",
     "oauth2Id": "OAuth2 ID",
     "amount": "金額",
@@ -180,9 +180,9 @@
     "created": "作成日時",
     "action": "操作",
     "compensate": "補償",
-    "confirmCompensation": "ユーザーセンターでこの適用済み取引を反対仕訳しますか？",
+    "confirmCompensation": "この適用済み取引を反対仕訳しますか？",
     "compensated": "取引を補償しました。",
-    "empty": "Moon Coin取引はありません",
+    "empty": "残高取引はありません",
     "statuses": {
       "prepared": "準備済み",
       "requesting": "リクエスト中",

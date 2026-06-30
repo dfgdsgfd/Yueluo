@@ -361,9 +361,9 @@
       "allProtected": "Protect all",
       "allDirect": "Direct all",
       "paymentTitle": "{count} paid images",
-      "balance": "월코인",
+      "balance": "잔액",
       "points": "Points",
-      "paymentDisabledToast": "월코인과 포인트가 모두 비활성화되어 유료 이미지를 사용할 수 없습니다.",
+      "paymentDisabledToast": "잔액과 포인트가 모두 비활성화되어 유료 이미지를 사용할 수 없습니다.",
       "paymentMethodDisabledToast": "이 결제 수단은 현재 비활성화되어 있습니다.",
       "priceLabel": "Unlock price",
       "pricePlaceholder": "Enter price",
@@ -565,14 +565,14 @@
         "trendEmpty": "Sign in and publish content to see trend data",
         "earningsLog": "Earnings log",
         "qualityReward": "Quality rewards",
-        "moonCoinAmount": "+{amount} Moon Coin",
+        "moonCoinAmount": "+{amount} 잔액",
         "qualityContentReward": "Quality content reward",
         "qualityRatingReward": "Quality rating reward",
         "noQualityRewards": "No quality rewards",
         "noRemark": "No note",
         "noEarnings": "No earnings",
         "paidContent": "Paid content",
-        "salesRevenue": "{count} sales · {amount} Moon Coin",
+        "salesRevenue": "{count}건 판매 · {amount} 잔액",
         "noPaidContent": "No paid content",
         "loadMore": "더 불러오기",
         "detailsLoadFailed": "Details could not be loaded",
@@ -587,7 +587,7 @@
         },
         "contentType": {
           "video": "Video",
-          "videoCenter": "Video center",
+          "videoCenter": "동영상",
           "article": "Post"
         },
         "earningsType": {
@@ -601,7 +601,7 @@
       },
       "withdrawType": {
         "cash": "현금 출금",
-        "moonCoin": "Moon Coin으로 전환"
+        "moonCoin": "잔액으로 전환"
       },
       "withdrawStatus": {
         "pending": "심사 대기",

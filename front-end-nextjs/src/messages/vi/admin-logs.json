@@ -61,12 +61,12 @@
       "security": "Kiểm toán bảo mật",
       "system": "Nhật ký hệ thống",
       "points": "Sổ điểm",
-      "balance": "Sổ Moon Coin"
+      "balance": "Sổ số dư"
     },
     "loading": "Đang tải nhật ký",
     "emptyLogs": "Chưa có nhật ký",
     "emptyPointsLogs": "Chưa có giao dịch điểm",
-    "emptyBalanceLogs": "Chưa có giao dịch Moon Coin",
+    "emptyBalanceLogs": "Chưa có giao dịch số dư",
     "time": "Thời gian",
     "behavior": "Hành vi",
     "user": "Người dùng",

@@ -61,12 +61,12 @@
       "security": "Security audits",
       "system": "System logs",
       "points": "Points ledger",
-      "balance": "Moon Coin ledger"
+      "balance": "Balance ledger"
     },
     "loading": "Loading logs",
     "emptyLogs": "No logs yet",
     "emptyPointsLogs": "No points ledger entries",
-    "emptyBalanceLogs": "No Moon Coin ledger entries",
+    "emptyBalanceLogs": "No balance ledger entries",
     "time": "Time",
     "behavior": "Behavior",
     "user": "User",

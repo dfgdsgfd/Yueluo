@@ -860,10 +860,10 @@
         }
       },
       "fields": {
-        "videoCenterEnabled": "影片中心開關",
-        "videoCenterHomepageEnabled": "首頁影片中心推薦",
-        "videoCenterRecommendLimit": "影片中心推薦數量",
-        "videoCenterAccountCutoff": "影片中心註冊時間截止",
+        "videoCenterEnabled": "影片功能開關",
+        "videoCenterHomepageEnabled": "首頁影片推薦",
+        "videoCenterRecommendLimit": "影片推薦數量",
+        "videoCenterAccountCutoff": "影片註冊時間截止",
         "imageWebpEnabled": "轉換為 WebP",
         "imageWebpQuality": "一般圖片品質",
         "imageAvatarWebpQuality": "頭像圖片品質",
@@ -880,9 +880,9 @@
         "imageProtectionEnabled": "增強浮水印保護全域開關",
         "imageProtectionNoticeEnabled": "顯示增強保護提示",
         "imageSelectAllEnabled": "允許圖片全選",
-        "paidContentBalanceEnabled": "允許月幣收費",
+        "paidContentBalanceEnabled": "允許餘額收費",
         "paidContentPointsEnabled": "允許積分收費",
-        "paidContentBalanceMaxPrice": "月幣收費上限",
+        "paidContentBalanceMaxPrice": "餘額收費上限",
         "paidContentPointsMaxPrice": "積分收費上限",
         "hiddenWatermarkEnabled": "啟用隱藏浮水印",
         "hiddenWatermarkIncludeUid": "浮水印包含內部 UID",
@@ -894,7 +894,7 @@
         "hiddenWatermarkCustomText": "隱藏浮水印自訂識別"
       },
       "hints": {
-        "videoCenterAccountCutoff": "註冊時間大於等於該時間的使用者將隱藏影片中心；留空表示不按註冊時間隱藏。",
+        "videoCenterAccountCutoff": "註冊時間大於等於該時間的使用者將隱藏影片功能；留空表示不按註冊時間隱藏。",
         "imageMaxDimension": "填寫 0 表示不限制；圖片會保持比例縮放。",
         "imageProcessingConcurrency": "隱藏浮水印運算會使用較多記憶體，建議維持為 1。",
         "imagePostMaxCount": "控制單篇筆記可發佈和批次上傳的圖片上限，預設 100，最高 500。",
@@ -904,7 +904,7 @@
         "imageProtectionEnabled": "開啟後作者可將非封面圖片設為增強保護，觀看者只能產生並下載帶追溯浮水印的 ZIP。",
         "imageProtectionNoticeEnabled": "控制發布圖片區域是否顯示增強保護說明或全域關閉提示。",
         "imageSelectAllEnabled": "關閉後隱藏全選入口，未選擇圖片時批次操作不會自動套用到全部圖片。",
-        "paidContentPaymentMethod": "控制作者發布付費圖片時能否選擇此收費方式；月幣與積分可同時開啟。",
+        "paidContentPaymentMethod": "控制作者發布付費圖片時能否選擇此收費方式；餘額與積分可同時開啟。",
         "paidContentPriceLimit": "控制作者發布付費圖片時可填寫的最高解鎖價格。",
         "hiddenWatermarkCustomText": "啟用自訂識別後儲存到追蹤記錄，不寫入圖片中的 Token。"
       },

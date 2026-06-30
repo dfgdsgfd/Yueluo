@@ -11,33 +11,17 @@ import {
   LinkIcon,
   MessageCircle,
   Plus,
-  User,
-  Video,
   Users
 } from "lucide-react";
-import {
-  ProfileTabSkeleton
-} from "./explore-widgets";
 
 export const Lightbox = dynamic(() => import("@/components/feed/lightbox-client"), {
   ssr: false,
 });
 
-export const ViewerProfileDataPage = dynamic(
-  () => import("@/components/profile/profile-data-page").then((mod) => mod.ViewerProfileDataPage),
-  {
-    loading: () => <ProfileTabSkeleton />,
-    ssr: false,
-  },
-);
-
-
 export const desktopNavItems = [
   { key: "home", icon: Home, href: "/" },
-  { key: "videoCenter", icon: Video, href: "https://v2.yuelk.com" },
   { key: "publish", icon: CirclePlus, href: "/publish" },
   { key: "messages", icon: Bell, href: "/messages" },
-  { key: "profile", icon: User, href: "/profile" },
 ] as const;
 
 export const toolbarIconMap = {
@@ -51,7 +35,6 @@ export const bottomNavItems = [
   { key: "friends", icon: Users, href: null },
   { key: "create", icon: Plus, href: "/publish/mobile" },
   { key: "messages", icon: MessageCircle, href: "/messages" },
-  { key: "profile", icon: User, href: null },
 ] as const;
 
 
@@ -62,8 +45,6 @@ export const followingSortTabs = [
 
 
 export type FollowingSort = (typeof followingSortTabs)[number]["sort"];
-
-export type MobileMainView = "feed" | "profile";
 
 export type ExploreTheme = "dark" | "light";
 

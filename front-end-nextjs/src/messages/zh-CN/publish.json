@@ -361,9 +361,9 @@
       "allProtected": "全部保护",
       "allDirect": "全部直看",
       "paymentTitle": "{count} 张图片需付费查看",
-      "balance": "月币",
+      "balance": "余额",
       "points": "积分",
-      "paymentDisabledToast": "系统当前未开放月币或积分收费，请先将图片设为免费。",
+      "paymentDisabledToast": "系统当前未开放余额或积分收费，请先将图片设为免费。",
       "paymentMethodDisabledToast": "系统当前未开放该收费方式。",
       "priceLabel": "解锁价格",
       "pricePlaceholder": "输入价格",
@@ -565,14 +565,14 @@
         "trendEmpty": "登录并发布内容后可查看趋势数据",
         "earningsLog": "收益记录",
         "qualityReward": "质量奖励",
-        "moonCoinAmount": "+{amount} 月币",
+        "moonCoinAmount": "+{amount} 余额",
         "qualityContentReward": "内容质量奖励",
         "qualityRatingReward": "质量评级奖励",
         "noQualityRewards": "暂无质量奖励",
         "noRemark": "无备注",
         "noEarnings": "暂无收益",
         "paidContent": "付费内容",
-        "salesRevenue": "{count} 笔销售 · {amount} 月币",
+        "salesRevenue": "{count} 笔销售 · {amount} 余额",
         "noPaidContent": "暂无付费内容",
         "loadMore": "加载更多",
         "detailsLoadFailed": "详情加载失败",
@@ -587,7 +587,7 @@
         },
         "contentType": {
           "video": "视频",
-          "videoCenter": "视频中心",
+          "videoCenter": "视频",
           "article": "文章"
         },
         "earningsType": {
@@ -601,7 +601,7 @@
       },
       "withdrawType": {
         "cash": "现金提现",
-        "moonCoin": "转为月币"
+        "moonCoin": "转为余额"
       },
       "withdrawStatus": {
         "pending": "待审核",

@@ -13,11 +13,11 @@ getBalanceConfig,
 getBalanceLocalPoints,
 getBalanceOrders,
 getBalanceRechargeConfig,
-getBalanceUserBalance,
 getPointsLogs,
 getPointsOverview,
 getStoredAccessToken,
 getWithdrawOrders,
+getWithdrawWallet,
 redeemPointsGiftCard
 } from "@/lib/api";
 import type { WalletInitialData } from "@/lib/server/wallet-page-data";
@@ -26,11 +26,11 @@ BalanceConfigPayload,
 BalanceLocalPointsPayload,
 BalanceOrdersPayload,
 BalanceRechargeConfigPayload,
-BalanceUserBalancePayload,
 PointsGiftCardProduct,
 PointsGiftCardRedemption,
 PointsLogsPayload,
 PointsOverviewPayload,
+WithdrawWalletPayload,
 WithdrawOrdersPayload
 } from "@/lib/types";
 import { cn } from "@/lib/utils";
@@ -71,7 +71,7 @@ export function WalletPage({
   const [localPoints, setLocalPoints] = useState<BalanceLocalPointsPayload | null>(
     () => initialData?.localPoints ?? null,
   );
-  const [userBalance, setUserBalance] = useState<BalanceUserBalancePayload | null>(
+  const [userBalance, setUserBalance] = useState<WithdrawWalletPayload | null>(
     () => initialData?.userBalance ?? null,
   );
   const [balanceStatus, setBalanceStatus] = useState<WalletBalanceStatus>(() => {
@@ -120,8 +120,8 @@ export function WalletPage({
   const money = useCallback((value?: number) => formatMoney(value, locale), [locale]);
   const date = useCallback((value?: string | null) => formatDate(value, locale, t("time.justNow")), [locale, t]);
 
-  const moonCoinBalance = userBalance?.balance ?? null;
-  const accountName = userBalance?.username?.trim() || t("balance.defaultAccount");
+  const moonCoinBalance = userBalance?.cash_balance ?? null;
+  const accountName = t("balance.defaultAccount");
   const purchaseOrders = balanceOrders?.list ?? [];
   const bills = withdrawOrders?.list ?? [];
   const pointsBalance = pointsOverview?.points ?? localPoints?.points ?? 0;
@@ -152,7 +152,7 @@ export function WalletPage({
       ["balanceConfig", getBalanceConfig()],
       ["rechargeConfig", getBalanceRechargeConfig()],
       ["localPoints", getBalanceLocalPoints()],
-      ["userBalance", getBalanceUserBalance()],
+      ["userBalance", getWithdrawWallet()],
       ["withdrawOrders", getWithdrawOrders({ limit: 8 })],
       ["balanceOrders", getBalanceOrders({ limit: 5 })],
       ["pointsOverview", getPointsOverview()],
@@ -189,7 +189,7 @@ export function WalletPage({
           setLocalPoints(result.value as BalanceLocalPointsPayload);
           break;
         case "userBalance":
-          setUserBalance(result.value as BalanceUserBalancePayload);
+          setUserBalance(result.value as WithdrawWalletPayload);
           setBalanceStatus("ready");
           setBalanceError(null);
           break;
@@ -217,7 +217,7 @@ export function WalletPage({
     if (initialData) {
       if (initialData.authenticated) {
         queueMicrotask(() => {
-          void getBalanceUserBalance()
+          void getWithdrawWallet()
             .then((payload) => {
               setUserBalance(payload);
               setBalanceStatus("ready");

@@ -6,7 +6,7 @@
   "error": {
     "access_blocked": "当前访问已被访问策略阻断。",
     "api_key_rate_limited": "API 密钥验证失败次数过多，请稍后重试。",
-    "balance_center_not_configured": "用户中心月币接口尚未配置。",
+    "balance_center_not_configured": "内部钱包服务暂不可用。",
     "invalid_file_recycle_setting": "文件回收站设置无效。",
     "invalid_redis_maintenance_config": "Redis 自动清理配置无效。",
     "redis_unavailable": "Redis 当前不可用。",
@@ -89,13 +89,13 @@
   },
   "moreMenu": {
     "wallet": {
-      "title": "月币余额",
+      "title": "内部余额",
       "loading": "读取中...",
       "error": "余额读取失败",
-      "amount": "{amount} 月币",
+      "amount": "{amount} 余额",
       "login": "登录后查看",
       "account": "账号 {username}",
-      "detail": "进入钱包查看明细"
+      "detail": "进入钱包查看内部余额明细"
     },
     "invite": "邀请注册",
     "verification": "申请认证",
@@ -115,7 +115,7 @@
     "latest": "最新",
     "hot": "热门",
     "following": "关注",
-    "videoCenter": "视频中心"
+    "videoCenter": "视频"
   },
   "search": {
     "placeholder": "搜索笔记、作者或标签",
@@ -209,7 +209,7 @@
       "geetestUnavailable": "当前启用 GeeTest 校验，暂不支持密码注册。"
     },
     "userCenterLogin": "去登录",
-    "redirecting": "正在前往用户中心...",
+    "redirecting": "正在打开登录服务...",
     "loadingConfig": "正在读取授权配置...",
     "configLoadFailed": "授权配置读取失败，将使用默认授权入口。",
     "oauthOnly": "登录后即可解锁更多精彩内容。",
@@ -231,7 +231,7 @@
       "title": "App 登录未完成",
       "callbackReceived": "已收到浏览器回调，正在处理登录状态。",
       "stateFailed": "登录请求已过期或与当前 App 不匹配，请重新发起登录。",
-      "oauthError": "用户中心返回了授权失败。",
+      "oauthError": "登录服务返回了授权失败。",
       "missingCode": "浏览器回调缺少一次性登录 ticket。",
       "tokenExchangeFailed": "App 换取登录令牌失败。",
       "tokenStorageFailed": "App 已拿到令牌，但本地登录状态写入失败。",

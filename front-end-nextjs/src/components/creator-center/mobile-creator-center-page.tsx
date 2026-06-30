@@ -10,7 +10,6 @@ import {
   Bell,
   ChevronRight,
   CircleDollarSign,
-  FileText,
   RefreshCw,
   Sparkles,
 } from "lucide-react";
@@ -53,13 +52,11 @@ export const creatorDataRanges: Array<{ days: RangeDays; label: string }> = [
 ];
 
 const shortcuts = [
-  { href: "/profile", icon: FileText, label: "作品管理", tone: "pink" },
   { href: "/creator-center/data", icon: BarChart3, label: "数据中心", tone: "blue" },
 ] as const;
 
 const shortcutToneClassNames = {
   blue: "bg-[#eaf2ff] text-[#5688e8]",
-  pink: "bg-[#ffeaf0] text-[#f26289]",
 } satisfies Record<(typeof shortcuts)[number]["tone"], string>;
 
 export const creatorTrendSeries: Array<{ color: string; key: TrendKey; label: string }> = [

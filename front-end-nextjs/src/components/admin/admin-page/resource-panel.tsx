@@ -268,7 +268,7 @@ export function ResourcePanel({
       } else if (action === "original-incentive") {
         const postID = row.post_id ?? row.id;
         const currentAmount = Number(row.quality_reward ?? row.reward_amount ?? 0);
-        const amountText = window.prompt("输入原创激励金额（月币）", Number.isFinite(currentAmount) && currentAmount > 0 ? String(currentAmount) : "");
+        const amountText = window.prompt("输入原创激励金额（余额）", Number.isFinite(currentAmount) && currentAmount > 0 ? String(currentAmount) : "");
         if (!amountText) return;
         const rewardAmount = Number(amountText);
         if (!Number.isFinite(rewardAmount) || rewardAmount <= 0) {

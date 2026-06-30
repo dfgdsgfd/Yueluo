@@ -860,10 +860,10 @@
         }
       },
       "fields": {
-        "videoCenterEnabled": "Công tắc Trung tâm video",
-        "videoCenterHomepageEnabled": "Đề xuất Trung tâm video ở trang chủ",
-        "videoCenterRecommendLimit": "Số đề xuất Trung tâm video",
-        "videoCenterAccountCutoff": "Mốc thời gian đăng ký cho Trung tâm video",
+        "videoCenterEnabled": "Công tắc tính năng video",
+        "videoCenterHomepageEnabled": "Đề xuất video ở trang chủ",
+        "videoCenterRecommendLimit": "Số đề xuất video",
+        "videoCenterAccountCutoff": "Mốc thời gian đăng ký cho video",
         "imageWebpEnabled": "Chuyển đổi sang WebP",
         "imageWebpQuality": "Chất lượng ảnh nội dung",
         "imageAvatarWebpQuality": "Chất lượng ảnh đại diện",
@@ -880,9 +880,9 @@
         "imageProtectionEnabled": "Bảo vệ hình mờ nâng cao",
         "imageProtectionNoticeEnabled": "Hiện thông báo bảo vệ",
         "imageSelectAllEnabled": "Cho phép chọn tất cả ảnh",
-        "paidContentBalanceEnabled": "Cho phép thanh toán bằng Moon Coin",
+        "paidContentBalanceEnabled": "Cho phép thanh toán bằng số dư",
         "paidContentPointsEnabled": "Cho phép thanh toán bằng điểm",
-        "paidContentBalanceMaxPrice": "Giới hạn giá Moon Coin",
+        "paidContentBalanceMaxPrice": "Giới hạn giá theo số dư",
         "paidContentPointsMaxPrice": "Giới hạn giá điểm",
         "hiddenWatermarkEnabled": "Bật hình mờ ẩn",
         "hiddenWatermarkIncludeUid": "Bao gồm UID nội bộ",
@@ -894,7 +894,7 @@
         "hiddenWatermarkCustomText": "Dấu nhận dạng hình mờ ẩn"
       },
       "hints": {
-        "videoCenterAccountCutoff": "Người dùng đăng ký vào hoặc sau thời điểm này sẽ không thấy Trung tâm video. Để trống để tắt ẩn theo thời gian đăng ký.",
+        "videoCenterAccountCutoff": "Người dùng đăng ký vào hoặc sau thời điểm này sẽ không thấy tính năng video. Để trống để tắt ẩn theo thời gian đăng ký.",
         "imageMaxDimension": "Dùng 0 để không giới hạn. Ảnh được thu nhỏ theo đúng tỷ lệ.",
         "imageProcessingConcurrency": "Xử lý hình mờ ẩn dùng nhiều bộ nhớ; nên giữ giá trị 1.",
         "imagePostMaxCount": "Giới hạn ảnh cho một bài và tải lên hàng loạt. Mặc định 100, tối đa 500.",
@@ -904,7 +904,7 @@
         "imageProtectionEnabled": "Cho phép bảo vệ ảnh không phải ảnh bìa để người xem chỉ tải ZIP có hình mờ truy vết.",
         "imageProtectionNoticeEnabled": "Kiểm soát việc hiển thị giải thích bảo vệ hoặc thông báo bị tắt toàn cục trong trang đăng bài.",
         "imageSelectAllEnabled": "Khi tắt sẽ ẩn chọn tất cả và không áp dụng thao tác hàng loạt cho mọi ảnh nếu chưa chọn ảnh nào.",
-        "paidContentPaymentMethod": "Kiểm soát việc tác giả có thể chọn phương thức này cho ảnh trả phí. Có thể bật cả Moon Coin và điểm.",
+        "paidContentPaymentMethod": "Kiểm soát việc tác giả có thể chọn phương thức này cho ảnh trả phí. Có thể bật cả số dư và điểm.",
         "paidContentPriceLimit": "Kiểm soát giá mở khóa cao nhất mà tác giả có thể nhập cho ảnh trả phí.",
         "hiddenWatermarkCustomText": "Được lưu trong bản ghi truy vết khi bật dấu tùy chỉnh và không được nhúng vào token trong ảnh."
       },

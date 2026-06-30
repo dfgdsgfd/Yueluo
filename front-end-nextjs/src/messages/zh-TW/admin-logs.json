@@ -61,12 +61,12 @@
       "security": "安全稽核",
       "system": "系統日誌",
       "points": "積分流水",
-      "balance": "月幣流水"
+      "balance": "餘額流水"
     },
     "loading": "正在載入日誌",
     "emptyLogs": "暫無日誌",
     "emptyPointsLogs": "暫無積分流水",
-    "emptyBalanceLogs": "暫無月幣流水",
+    "emptyBalanceLogs": "暫無餘額流水",
     "time": "時間",
     "behavior": "行為",
     "user": "使用者",

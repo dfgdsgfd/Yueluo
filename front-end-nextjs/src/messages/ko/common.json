@@ -6,7 +6,7 @@
   "error": {
     "access_blocked": "현재 접근 정책에 의해 접근이 차단되었습니다.",
     "api_key_rate_limited": "API 키 인증 실패가 너무 많습니다. 잠시 후 다시 시도해 주세요.",
-    "balance_center_not_configured": "사용자 센터 잔액 API가 설정되지 않았습니다.",
+    "balance_center_not_configured": "내부 지갑 서비스를 사용할 수 없습니다.",
     "invalid_file_recycle_setting": "파일 휴지통 설정이 올바르지 않습니다.",
     "invalid_redis_maintenance_config": "Redis 유지 관리 설정이 올바르지 않습니다.",
     "redis_unavailable": "Redis를 사용할 수 없습니다.",
@@ -89,13 +89,13 @@
   },
   "moreMenu": {
     "wallet": {
-      "title": "Moon Coin 잔액",
+      "title": "내부 잔액",
       "loading": "불러오는 중...",
       "error": "잔액을 불러오지 못했습니다",
-      "amount": "{amount} Moon Coin",
+      "amount": "{amount} 잔액",
       "login": "로그인 후 보기",
       "account": "계정 {username}",
-      "detail": "지갑에서 상세 보기"
+      "detail": "내부 지갑 상세 보기"
     },
     "invite": "가입 초대",
     "verification": "인증 신청",
@@ -115,7 +115,7 @@
     "latest": "최신",
     "hot": "인기",
     "following": "팔로잉",
-    "videoCenter": "비디오 센터"
+    "videoCenter": "동영상"
   },
   "search": {
     "placeholder": "게시물, 작성자 또는 태그 검색",
@@ -209,7 +209,7 @@
       "geetestUnavailable": "GeeTest 인증이 켜져 있는 동안에는 비밀번호 가입을 사용할 수 없습니다."
     },
     "userCenterLogin": "로그인",
-    "redirecting": "사용자 센터를 여는 중...",
+    "redirecting": "로그인 서비스를 여는 중...",
     "loadingConfig": "인증 설정을 불러오는 중...",
     "configLoadFailed": "인증 설정을 불러오지 못했습니다. 기본 인증 경로를 사용합니다.",
     "oauthOnly": "로그인하면 더 많은 콘텐츠를 볼 수 있습니다.",
@@ -231,7 +231,7 @@
       "title": "앱 로그인이 완료되지 않았습니다",
       "callbackReceived": "브라우저 콜백이 앱에 도착했으며 로그인 상태를 처리 중입니다.",
       "stateFailed": "로그인 요청이 만료되었거나 현재 앱 세션과 일치하지 않습니다. 다시 로그인해 주세요.",
-      "oauthError": "사용자 센터에서 인증 실패를 반환했습니다.",
+      "oauthError": "로그인 서비스에서 인증 실패를 반환했습니다.",
       "missingCode": "브라우저 콜백에 로그인 티켓이 없습니다.",
       "tokenExchangeFailed": "앱이 로그인 토큰 교환에 실패했습니다.",
       "tokenStorageFailed": "앱이 토큰을 받았지만 로컬 로그인 상태 저장에 실패했습니다.",

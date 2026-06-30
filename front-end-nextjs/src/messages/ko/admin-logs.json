@@ -61,12 +61,12 @@
       "security": "보안 감사",
       "system": "시스템 로그",
       "points": "포인트 원장",
-      "balance": "Moon Coin 원장"
+      "balance": "잔액 원장"
     },
     "loading": "로그 로딩 중",
     "emptyLogs": "로그 없음",
     "emptyPointsLogs": "포인트 내역이 없습니다",
-    "emptyBalanceLogs": "Moon Coin 내역이 없습니다",
+    "emptyBalanceLogs": "잔액 내역이 없습니다",
     "time": "시간",
     "behavior": "행동",
     "user": "사용자",

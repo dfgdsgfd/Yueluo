@@ -1,24 +1,20 @@
 import {
-  getBalanceUserBalance,
   getFeedPage,
   getNoteCategories,
   getUserToolbarItems,
+  getWithdrawWallet,
   hasNextFeedPage,
   logout,
   searchFeed,
 } from "@/lib/api";
 import type {
-  BalanceUserBalancePayload,
   Category,
   FeedMode,
   FeedPayload,
   InitialFeedData,
+  WithdrawWalletPayload,
 } from "@/lib/types";
 import { normalizeSiteProfile } from "@/lib/seo";
-import {
-  normalizeVideoCenterConfig,
-  shouldShowVideoCenterForUser,
-} from "@/lib/video-center";
 import {
   keepPreviousData,
   useInfiniteQuery,
@@ -48,7 +44,6 @@ import {
   FEED_MAX_PAGES,
   FEED_TOP_SENTINEL_ROOT_MARGIN,
   FollowingSort,
-  MobileMainView,
   desktopNavItems,
   estimateCategoryItemSize,
   getExploreThemeVars,
@@ -94,23 +89,15 @@ export function useExploreFeedController({
   const [lightboxIndex, setLightboxIndex] = useState(-1);
   const [searchInput, setSearchInput] = useState("");
   const [activeSearch, setActiveSearch] = useState("");
-  const [activeMobileView, setActiveMobileView] =
-    useState<MobileMainView>("feed");
   const [mobileSearchOpen, setMobileSearchOpen] = useState(false);
   const [mobileMoreOpen, setMobileMoreOpen] = useState(false);
   const [hasClientAccessToken, setHasClientAccessToken] = useState(
     Boolean(initialData.viewer),
   );
-  const [viewerCreatedAt, setViewerCreatedAt] = useState<string | null>(
-    initialData.viewer?.createdAt ?? null,
-  );
-  const [videoCenterConfig, setVideoCenterConfig] = useState(() =>
-    normalizeVideoCenterConfig(initialData.videoCenter),
-  );
   const [isLoggingOut, setIsLoggingOut] = useState(false);
   const [messageBadgeCount, setMessageBadgeCount] = useState(0);
   const [walletBalance, setWalletBalance] =
-    useState<BalanceUserBalancePayload | null>(null);
+    useState<WithdrawWalletPayload | null>(null);
   const [isWalletBalanceLoading, setIsWalletBalanceLoading] = useState(false);
   const [walletBalanceError, setWalletBalanceError] = useState<string | null>(
     null,
@@ -126,10 +113,6 @@ export function useExploreFeedController({
   const prefetchedNavigationRoutesRef = useRef(new Set<string>());
   const prefetchedNavigationDataRef = useRef(new Set<string>());
   const searchActive = activeSearch.trim().length > 0;
-  const showVideoCenter = shouldShowVideoCenterForUser(
-    viewerCreatedAt,
-    videoCenterConfig,
-  );
   const feedQueryKey = useMemo(
     () =>
       [
@@ -168,7 +151,6 @@ export function useExploreFeedController({
     number
   >({
     enabled:
-      (activeMode !== "videoCenter" || showVideoCenter) &&
       (activeMode !== "following" ||
         initialData.posts.length > 0 ||
         hasClientAccessToken ||
@@ -288,13 +270,7 @@ export function useExploreFeedController({
     [exploreTheme],
   );
   const isLightTheme = exploreTheme === "light";
-  const visibleDesktopNavItems = useMemo(
-    () =>
-      desktopNavItems.filter(
-        (item) => item.key !== "videoCenter" || showVideoCenter,
-      ),
-    [showVideoCenter],
-  );
+  const visibleDesktopNavItems = desktopNavItems;
   const warmNavigationTarget = useCallback(
     (key: string, href: string | null) => {
       if (
@@ -311,7 +287,6 @@ export function useExploreFeedController({
       if (
         !hasClientAccessToken &&
         (dataKey === "messages" ||
-          dataKey === "profile" ||
           dataKey === "publish" ||
           dataKey === "publish-mobile")
       ) {
@@ -321,12 +296,6 @@ export function useExploreFeedController({
       if (dataKey === "messages") {
         void import("@/lib/im-cache")
           .then((mod) => mod.prefetchMessagesPageData())
-          .catch(() => undefined);
-        return;
-      }
-      if (dataKey === "profile") {
-        void import("@/components/profile/profile-data-page")
-          .then((mod) => mod.prefetchViewerProfileData())
           .catch(() => undefined);
         return;
       }
@@ -348,24 +317,12 @@ export function useExploreFeedController({
   useExploreClientEnvironment({
     exploreTheme,
     exploreThemePreference,
-    hasClientAccessToken,
     hasLoadedExploreTheme,
     setExploreTheme,
     setExploreThemePreference,
     setHasClientAccessToken,
     setHasLoadedExploreTheme,
-    setVideoCenterConfig,
-    setViewerCreatedAt,
   });
-  useEffect(() => {
-    if (activeMode !== "videoCenter" || showVideoCenter) {
-      return;
-    }
-    void queryClient.cancelQueries({ queryKey: [FEED_QUERY_KEY] });
-    setActiveSearch("");
-    setActiveCategory("all");
-    setActiveMode("recommended");
-  }, [activeMode, queryClient, showVideoCenter]);
   useEffect(() => {
     if (!mobileMoreOpen) {
       return;
@@ -432,7 +389,7 @@ export function useExploreFeedController({
     let cancelled = false;
     setIsWalletBalanceLoading(true);
     setWalletBalanceError(null);
-    getBalanceUserBalance()
+    getWithdrawWallet()
       .then((payload) => {
         if (!cancelled) {
           setWalletBalance(payload);
@@ -443,9 +400,7 @@ export function useExploreFeedController({
           setWalletBalance(null);
           const message = error instanceof Error ? error.message : "";
           setWalletBalanceError(
-            message === "error.balance_center_not_configured"
-              ? t("error.balance_center_not_configured")
-              : message || t("moreMenu.wallet.error"),
+            message || t("moreMenu.wallet.error"),
           );
         }
       })
@@ -473,7 +428,6 @@ export function useExploreFeedController({
       window.cancelIdleCallback ?? ((id) => window.clearTimeout(id));
     const idleId = idleCallback(() => {
       warmNavigationTarget("messages", "/messages");
-      warmNavigationTarget("profile", "/profile");
       warmNavigationTarget("publish", "/publish");
       warmNavigationTarget("create", "/publish/mobile");
     });
@@ -492,7 +446,6 @@ export function useExploreFeedController({
     sort?: FollowingSort,
   ) {
     void queryClient.cancelQueries({ queryKey: [FEED_QUERY_KEY] });
-    setActiveMobileView("feed");
     const nextFollowingSort =
       mode === "following" ? (sort ?? followingSort) : followingSort;
     setActiveSearch("");
@@ -603,15 +556,6 @@ export function useExploreFeedController({
     setSearchInput("");
     loadMode(activeMode, "all");
   }
-  function openProfileView() {
-    if (!hasClientAccessToken) {
-      router.push("/login?next=%2Fprofile");
-      return;
-    }
-    setActiveMobileView("profile");
-    setMobileSearchOpen(false);
-    setLightboxIndex(-1);
-  }
   async function handleLogout() {
     if (isLoggingOut) {
       return;
@@ -623,7 +567,6 @@ export function useExploreFeedController({
       console.warn("Logout request failed after local session cleanup.", error);
     } finally {
       setHasClientAccessToken(false);
-      setViewerCreatedAt(null);
       setMobileMoreOpen(false);
       setThemeSettingsOpen(false);
       setIsLoggingOut(false);
@@ -633,7 +576,6 @@ export function useExploreFeedController({
   }
   async function fetchPageWithAnchor(direction: "next" | "previous") {
     if (
-      activeMobileView !== "feed" ||
       feedQuery.isPlaceholderData ||
       isReplacingFeed ||
       feedQuery.isFetchingNextPage ||
@@ -679,7 +621,6 @@ export function useExploreFeedController({
   }
   const topSentinelRef = useFeedSentinel({
     enabled:
-      activeMobileView === "feed" &&
       !feedQuery.isPlaceholderData &&
       posts.length > 0 &&
       feedQuery.hasPreviousPage,
@@ -689,7 +630,6 @@ export function useExploreFeedController({
   });
   const bottomSentinelRef = useFeedSentinel({
     enabled:
-      activeMobileView === "feed" &&
       !feedQuery.isPlaceholderData &&
       posts.length > 0 &&
       feedQuery.hasNextPage,
@@ -704,7 +644,6 @@ export function useExploreFeedController({
     requireLogin,
     setLoginUnlockOpen,
   } = useLoginUnlockGate({
-    activeMobileView,
     feedQueryKey,
     hasClientAccessToken,
     hasNextPage: feedQuery.hasNextPage,
@@ -720,7 +659,6 @@ export function useExploreFeedController({
   });
   return {
     activeCategory,
-    activeMobileView,
     activeMode,
     activeSearch,
     bottomSentinelRef,
@@ -758,7 +696,6 @@ export function useExploreFeedController({
     messageBadgeCount,
     mobileMoreOpen,
     mobileSearchOpen,
-    openProfileView,
     noMoreUnlockSentinelRef,
     posts,
     priorityPostIds,
@@ -766,7 +703,6 @@ export function useExploreFeedController({
     scrollCategoryIntoView,
     searchActive,
     searchInput,
-    setActiveMobileView,
     setExploreTheme,
     setExploreThemePreference,
     setLightboxIndex,
@@ -777,7 +713,6 @@ export function useExploreFeedController({
     setThemeSettingsOpen,
     showNextLoading,
     showPreviousLoading,
-    showVideoCenter,
     siteProfile,
     t,
     themeSettingsOpen,

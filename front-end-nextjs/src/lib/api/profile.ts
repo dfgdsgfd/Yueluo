@@ -24,7 +24,6 @@ import {
   numberFromUnknown
 } from "./core";
 import {
-  getAuthConfig,
   getCurrentUser
 } from "./auth";
 import {
@@ -33,10 +32,6 @@ import {
 import {
   getFollowStatus
 } from "./social";
-import {
-  normalizeVideoCenterConfig,
-  videoCenterConfigFromAuthConfig
-} from "../video-center";
 
 export function mapUserProfile(user: AuthUser, isViewer = false): UserProfile {
   const interests = Array.isArray(user.interests)
@@ -228,16 +223,12 @@ export async function getUserPostTabs(
 
 
 export async function getViewerProfileData(context: ApiRequestContext = {}): Promise<UserProfilePayload> {
-  const [user, videoCenter] = await Promise.all([
-    getCurrentUser(context),
-    getVideoCenterVisibilityConfig(context),
-  ]);
+  const user = await getCurrentUser(context);
   const tabs = await getUserPostTabs(user.user_id ?? user.id, context);
 
   return {
     profile: mapUserProfile({ ...user, post_count: tabs.notes.length }, true),
     tabs,
-    videoCenter,
   };
 }
 
@@ -246,11 +237,10 @@ export async function getUserProfileData(
   userId: string,
   context: ApiRequestContext = {},
 ): Promise<UserProfilePayload> {
-  const [user, tabs, followStatus, videoCenter] = await Promise.all([
+  const [user, tabs, followStatus] = await Promise.all([
     apiGet<AuthUser>(`/api/users/${encodeURIComponent(userId)}`, undefined, { context }),
     getUserPostTabs(userId, context),
     getFollowStatus(userId, context),
-    getVideoCenterVisibilityConfig(context),
   ]);
 
   return {
@@ -261,14 +251,7 @@ export async function getUserProfileData(
       post_count: tabs.notes.length,
     }),
     tabs,
-    videoCenter,
   };
-}
-
-async function getVideoCenterVisibilityConfig(context: ApiRequestContext = {}) {
-  return getAuthConfig(context)
-    .then(videoCenterConfigFromAuthConfig)
-    .catch(() => normalizeVideoCenterConfig());
 }
 
 

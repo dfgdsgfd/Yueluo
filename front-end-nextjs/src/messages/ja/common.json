@@ -6,7 +6,7 @@
   "error": {
     "access_blocked": "現在のアクセスポリシーによりアクセスがブロックされました。",
     "api_key_rate_limited": "API キーの認証失敗が多すぎます。しばらくしてから再試行してください。",
-    "balance_center_not_configured": "ユーザーセンターの残高 API が設定されていません。",
+    "balance_center_not_configured": "内部ウォレットサービスは現在利用できません。",
     "invalid_file_recycle_setting": "ファイルごみ箱の設定が無効です。",
     "invalid_redis_maintenance_config": "Redis メンテナンス設定が無効です。",
     "redis_unavailable": "Redis を利用できません。",
@@ -89,13 +89,13 @@
   },
   "moreMenu": {
     "wallet": {
-      "title": "Moon Coin 残高",
+      "title": "内部残高",
       "loading": "読み込み中...",
       "error": "残高を取得できません",
-      "amount": "{amount} Moon Coin",
+      "amount": "{amount} 残高",
       "login": "ログインして表示",
       "account": "アカウント {username}",
-      "detail": "ウォレットで詳細を確認"
+      "detail": "内部ウォレットの明細を見る"
     },
     "invite": "招待登録",
     "verification": "認証を申請",
@@ -115,7 +115,7 @@
     "latest": "最新",
     "hot": "人気",
     "following": "フォロー中",
-    "videoCenter": "動画センター"
+    "videoCenter": "動画"
   },
   "search": {
     "placeholder": "投稿・作者・タグを検索",
@@ -209,7 +209,7 @@
       "geetestUnavailable": "GeeTest 認証が有効な間はパスワード登録を利用できません。"
     },
     "userCenterLogin": "ログイン",
-    "redirecting": "ユーザーセンターを開いています...",
+    "redirecting": "ログインサービスを開いています...",
     "loadingConfig": "認証設定を読み込んでいます...",
     "configLoadFailed": "認証設定を読み込めませんでした。既定の認証入口を使用します。",
     "oauthOnly": "ログインするとさらに多くの内容を楽しめます。",
@@ -231,7 +231,7 @@
       "title": "アプリのログインが完了しませんでした",
       "callbackReceived": "ブラウザーのコールバックをアプリで受信し、ログイン状態を処理しています。",
       "stateFailed": "ログイン要求が期限切れ、または現在のアプリセッションと一致しません。もう一度ログインしてください。",
-      "oauthError": "ユーザーセンターが認証失敗を返しました。",
+      "oauthError": "ログインサービスが認証失敗を返しました。",
       "missingCode": "ブラウザーのコールバックにログインチケットがありません。",
       "tokenExchangeFailed": "アプリがログイントークンの交換に失敗しました。",
       "tokenStorageFailed": "アプリはトークンを受け取りましたが、ローカルのログイン状態を書き込めませんでした。",

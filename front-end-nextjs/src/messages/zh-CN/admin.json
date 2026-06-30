@@ -860,10 +860,10 @@
         }
       },
       "fields": {
-        "videoCenterEnabled": "视频中心开关",
-        "videoCenterHomepageEnabled": "首页视频中心推荐",
-        "videoCenterRecommendLimit": "视频中心推荐数量",
-        "videoCenterAccountCutoff": "视频中心注册时间截止",
+        "videoCenterEnabled": "视频功能开关",
+        "videoCenterHomepageEnabled": "首页视频推荐",
+        "videoCenterRecommendLimit": "视频推荐数量",
+        "videoCenterAccountCutoff": "视频注册时间截止",
         "imageWebpEnabled": "转换为 WebP",
         "imageWebpQuality": "普通图片质量",
         "imageAvatarWebpQuality": "头像图片质量",
@@ -880,9 +880,9 @@
         "imageProtectionEnabled": "增强水印保护全局开关",
         "imageProtectionNoticeEnabled": "显示增强保护提示",
         "imageSelectAllEnabled": "允许图片全选",
-        "paidContentBalanceEnabled": "允许月币收费",
+        "paidContentBalanceEnabled": "允许余额收费",
         "paidContentPointsEnabled": "允许积分收费",
-        "paidContentBalanceMaxPrice": "月币收费上限",
+        "paidContentBalanceMaxPrice": "余额收费上限",
         "paidContentPointsMaxPrice": "积分收费上限",
         "hiddenWatermarkEnabled": "启用隐藏水印",
         "hiddenWatermarkIncludeUid": "水印包含内部 UID",
@@ -894,7 +894,7 @@
         "hiddenWatermarkCustomText": "隐藏水印自定义标识"
       },
       "hints": {
-        "videoCenterAccountCutoff": "注册时间大于等于该时间的用户将隐藏视频中心；留空表示不按注册时间隐藏。",
+        "videoCenterAccountCutoff": "注册时间大于等于该时间的用户将隐藏视频功能；留空表示不按注册时间隐藏。",
         "imageMaxDimension": "填写 0 表示不限制；图片会保持比例缩放。",
         "imageProcessingConcurrency": "隐藏水印计算占用内存较高，建议保持为 1。",
         "imagePostMaxCount": "控制单篇笔记可发布和批量上传的图片上限，默认 100，最高 500。",
@@ -904,7 +904,7 @@
         "imageProtectionEnabled": "开启后作者可将非封面图片设为增强保护，观看者只能生成并下载带追溯水印的 ZIP。",
         "imageProtectionNoticeEnabled": "控制发布图片区域是否显示增强保护说明或全局关闭提示。",
         "imageSelectAllEnabled": "关闭后隐藏全选入口，未选择图片时批量操作不会自动作用于全部图片。",
-        "paidContentPaymentMethod": "控制作者发布付费图片时能否选择该收费方式；月币和积分可同时开启。",
+        "paidContentPaymentMethod": "控制作者发布付费图片时能否选择该收费方式；余额和积分可同时开启。",
         "paidContentPriceLimit": "控制作者发布付费图片时可填写的最高解锁价格。",
         "hiddenWatermarkCustomText": "启用自定义标识后保存到追踪记录，不写入图片中的 Token。"
       },

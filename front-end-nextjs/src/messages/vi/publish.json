@@ -361,9 +361,9 @@
       "allProtected": "Protect all",
       "allDirect": "Direct all",
       "paymentTitle": "{count} paid images",
-      "balance": "Moon Coin",
+      "balance": "Số dư",
       "points": "Points",
-      "paymentDisabledToast": "Ảnh trả phí bị tắt vì cả Moon Coin và điểm đều chưa được bật.",
+      "paymentDisabledToast": "Ảnh trả phí bị tắt vì cả số dư và điểm đều chưa được bật.",
       "paymentMethodDisabledToast": "Phương thức thanh toán này hiện đang bị tắt.",
       "priceLabel": "Unlock price",
       "pricePlaceholder": "Enter price",
@@ -565,14 +565,14 @@
         "trendEmpty": "Sign in and publish content to see trend data",
         "earningsLog": "Earnings log",
         "qualityReward": "Quality rewards",
-        "moonCoinAmount": "+{amount} Moon Coin",
+        "moonCoinAmount": "+{amount} số dư",
         "qualityContentReward": "Quality content reward",
         "qualityRatingReward": "Quality rating reward",
         "noQualityRewards": "No quality rewards",
         "noRemark": "No note",
         "noEarnings": "No earnings",
         "paidContent": "Paid content",
-        "salesRevenue": "{count} sales · {amount} Moon Coin",
+        "salesRevenue": "{count} lượt bán · {amount} số dư",
         "noPaidContent": "No paid content",
         "loadMore": "Tải thêm",
         "detailsLoadFailed": "Details could not be loaded",
@@ -587,7 +587,7 @@
         },
         "contentType": {
           "video": "Video",
-          "videoCenter": "Video center",
+          "videoCenter": "Video",
           "article": "Post"
         },
         "earningsType": {
@@ -601,7 +601,7 @@
       },
       "withdrawType": {
         "cash": "Rút tiền mặt",
-        "moonCoin": "Đổi sang Moon Coin"
+        "moonCoin": "Đổi sang số dư"
       },
       "withdrawStatus": {
         "pending": "Chờ duyệt",

@@ -48,8 +48,7 @@ import {
 import type {
   FeedPost,
   ProfileTabs,
-  UserProfile,
-  VideoCenterVisibilityConfig
+  UserProfile
 } from "@/lib/types";
 import {
   cn
@@ -76,8 +75,7 @@ import {
   tabKeys
 } from "./profile-config";
 import {
-  normalizeProfileTabs,
-  shouldShowVideoCenter
+  normalizeProfileTabs
 } from "./profile-tabs";
 import {
   ProfileEditDialog,
@@ -95,13 +93,11 @@ export function ProfilePage({
   onBack,
   profile,
   tabs,
-  videoCenter,
   variant,
 }: {
   onBack?: () => void;
   profile: UserProfile;
   tabs: ProfileTabs;
-  videoCenter?: VideoCenterVisibilityConfig;
   variant: "viewer" | "user";
 }) {
   const t = useTranslations();
@@ -124,9 +120,6 @@ export function ProfilePage({
   const safeActiveContent = visibleTabKeys.includes(activeContent)
     ? activeContent
     : "notes";
-  const visibleMobileQuickActions = mobileQuickActions.filter(
-    (action) => action.key !== "videoCenter" || shouldShowVideoCenter(profileState.createdAt, videoCenter),
-  );
   const visiblePosts = postsByTab[safeActiveContent];
   const stats = useMemo(
     () => [
@@ -592,7 +585,7 @@ export function ProfilePage({
 
             {variant === "viewer" ? (
               <div className="mt-4 flex gap-2 overflow-x-auto overscroll-x-contain pb-1 [scrollbar-width:none] lg:hidden [&::-webkit-scrollbar]:hidden">
-                {visibleMobileQuickActions.map(({ key, icon: Icon, href }) => {
+                {mobileQuickActions.map(({ key, icon: Icon, href }) => {
                   const content = (
                     <>
                       <Icon className="size-4 shrink-0" />

@@ -10,6 +10,7 @@ import {
   getPointsRedemptions,
   getRequestAccessToken,
   getWithdrawOrders,
+  getWithdrawWallet,
   type ApiRequestContext,
 } from "@/lib/api";
 import type {
@@ -17,10 +18,10 @@ import type {
   BalanceLocalPointsPayload,
   BalanceOrdersPayload,
   BalanceRechargeConfigPayload,
-  BalanceUserBalancePayload,
   PointsLogsPayload,
   PointsOverviewPayload,
   PointsRedemptionsPayload,
+  WithdrawWalletPayload,
   WithdrawOrdersPayload,
 } from "@/lib/types";
 
@@ -29,7 +30,7 @@ export type WalletInitialData = {
   balanceConfig: BalanceConfigPayload | null;
   rechargeConfig: BalanceRechargeConfigPayload | null;
   localPoints: BalanceLocalPointsPayload | null;
-  userBalance: BalanceUserBalancePayload | null;
+  userBalance: WithdrawWalletPayload | null;
   withdrawOrders: WithdrawOrdersPayload | null;
   balanceOrders: BalanceOrdersPayload | null;
   pointsOverview: PointsOverviewPayload | null;
@@ -48,6 +49,7 @@ export async function getWalletInitialData(
   const privateRequests = authenticated
     ? ([
         getBalanceLocalPoints(context),
+        getWithdrawWallet(context),
         getWithdrawOrders({ limit: 8 }, context),
         getBalanceOrders({ limit: 5 }, context),
         getPointsOverview(context),
@@ -65,12 +67,12 @@ export async function getWalletInitialData(
     balanceConfig: fulfilledValue(publicResults[0]),
     rechargeConfig: fulfilledValue(publicResults[1]),
     localPoints: fulfilledValue(privateResults?.[0]),
-    userBalance: null,
-    withdrawOrders: fulfilledValue(privateResults?.[1]),
-    balanceOrders: fulfilledValue(privateResults?.[2]),
-    pointsOverview: fulfilledValue(privateResults?.[3]),
-    pointsLogs: fulfilledValue(privateResults?.[4]),
-    pointsRedemptions: fulfilledValue(privateResults?.[5]),
+    userBalance: fulfilledValue(privateResults?.[1]),
+    withdrawOrders: fulfilledValue(privateResults?.[2]),
+    balanceOrders: fulfilledValue(privateResults?.[3]),
+    pointsOverview: fulfilledValue(privateResults?.[4]),
+    pointsLogs: fulfilledValue(privateResults?.[5]),
+    pointsRedemptions: fulfilledValue(privateResults?.[6]),
   };
 }
 
